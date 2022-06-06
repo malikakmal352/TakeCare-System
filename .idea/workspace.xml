@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654532682318</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1654537928041</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654537928041</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
