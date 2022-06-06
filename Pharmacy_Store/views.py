@@ -1,6 +1,7 @@
 import uuid
 from datetime import datetime
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 from django.shortcuts import render, redirect
 from django.utils.timezone import now
@@ -21,8 +22,13 @@ def Pharmacies(request, id):
     labcity = Labcity.objects.all()
     labcitys = Labcity.objects.all()
     Test_name = Add_New_Medicine.objects.all()
-    all_Medicine = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
+    all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
     Customer = Patient.objects.all()
+
+    paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+    page_number = request.GET.get('page')
+    all_Medicine = paginator.get_page(page_number)
+
     # book_Test = Book_Test.objects.all()
     w = datetime.date(now())
 

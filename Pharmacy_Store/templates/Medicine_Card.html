@@ -120,7 +120,6 @@ border-color:#014e78
 
     </style>
 
-
     <!--////////////////////////////////Autocomplete js cdn start//////////////////////////////////////-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
     </script>
@@ -316,7 +315,7 @@ border-color:#014e78
                         <div class="product__thumb fix">
                             <div class="product-image w-img">
                                 <a href="/Medicine_details/{{i.id}}">
-                                    <img alt="product" src="/media/{{ i.img }}" style="max-height:20vh;">
+                                    <img alt="product" src="/media/{{ i.img }}" style="height:20vh;min-height:15vh">
                                 </a>
                             </div>
                             <div class="product-action">
@@ -373,6 +372,41 @@ border-color:#014e78
                 </div>
                 {% endfor%}
             </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="basic-pagination text-center pt-30 pb-30">
+
+                        <nav>
+                            <ul>
+                       <span class="step-links">
+                            {% if all_Medicine.has_previous %}
+                            <a href="?page=1">
+                                <button class="btn btn-outline-warning">&laquo; first</button>
+                            </a>
+                            <a href="?page={{ all_Medicine.previous_page_number }}">
+                                    <button class="btn btn-outline-warning">previous</button>
+                                </a>
+                            {% endif %}
+                            <span class="current">
+                                Page {{ all_Medicine.number }} of {{ all_Medicine.paginator.num_pages }}.
+                            </span>
+
+                            {% if all_Medicine.has_next %}
+                                <a href="?page={{ all_Medicine.next_page_number }}">
+                                    <button class="btn btn-outline-warning">next</button>
+                                </a>
+                                <a href="?page={{ all_Medicine.paginator.num_pages }}">
+                                    <button class="btn btn-outline-warning">last &raquo;</button>
+                                </a>
+                            {% endif %}
+                        </span>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 

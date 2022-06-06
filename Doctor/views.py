@@ -7,17 +7,13 @@ import uuid
 from datetime import *
 import time
 from django.contrib import messages
-from django.utils.timezone import now
-
-from Laboratory.Middleware.Lab_auth import Lab_middleware
-from Laboratory.models.Book_lab_test import Book_Test
-from Laboratory.models.Lab_tests_list import Test_list
 from Laboratory.models.Labcity import Labcity
 from Laboratory.models.Samplest import Samplest
 from Laboratory.models.add_lab import Lab
 
 from mainpage.Sent_Email import send_forget_password_mail_doctor, Doctor_Request_Sent_mail_doctor
 from mainpage.models.Patient import Patient
+from django.core.paginator import Paginator
 
 from Doctor.models.ADD_Docror import Doctors
 from Doctor.models.Doctor_Request import Doctor_request
@@ -1265,7 +1261,12 @@ def Health_blog(request):
     search = None
     labcity = Labcity.objects.all()
     Customer = Patient.objects.all()
+
     Blogs = Health_blogs.objects.all()
+    paginator = Paginator(Blogs, 5)  # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     Blogs_new = Health_blogs.objects.all().order_by('-blog_create_time')
     if request.method == 'POST':
         data = request.POST
@@ -1276,7 +1277,8 @@ def Health_blog(request):
 
     Data = {'Customer': Customer, 'labcity': labcity,
             'Blogs': Blogs, "Blogs_new": Blogs_new,
-            "search": search, "Blogs_new_count": Blogs_new_count}
+            "search": search, "Blogs_new_count": Blogs_new_count,
+            'page_obj': page_obj}
     return render(request, 'Health_blogs.html', Data)
 
 
