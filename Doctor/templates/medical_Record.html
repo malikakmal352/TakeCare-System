@@ -1,0 +1,239 @@
+{% include "mainheader.html" %}
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .card_length{
+      width:31%;
+      margin: 0 1%;
+      float:left;
+    }
+    .prescription_btn{
+       border-radius:50px;
+       margin-left:-10%;
+    }
+   @media screen and (max-width: 960px) {
+    .card_length{
+      width:43%;
+      margin:0 3%;
+    }
+   }
+   @media screen and (max-width: 600px) {
+    .card_length{
+      width:90%;
+      margin:0 4%;
+    }
+   }
+   @media screen and (max-width: 300px) {
+    .card_length{
+      width:100%;
+      margin: 0%;
+    }
+    .prescription_btn{
+       margin-left:-11%;
+    }
+   }
+
+</style>
+
+<div class="container-lg  mt-4 align-center ">
+    <div id="Prescription_frame">
+        <div class="col-sm-5 col-11 mx-auto border" style="border-radius:50px;background-color:white;">
+            <button class="col-6 btn btn-default" id="Reports_btn" style="border-radius:50px;"><b>Reports</b></button>
+            <button class="col-7 btn btn-danger prescription_btn">Prescription
+            </button>
+        </div>
+        <div class="Reports_Box">
+            {% if prescription_records_count > 0 %}
+            {% for i in prescription_records %}
+            {% if i.Prescription %}
+            <div class="col-12  mb-2 mt-2 bg-white row card_length border" style="float:left;">
+                <div class="col-sm-3 col-4 ga-event-listing-doctor-photo text-center">
+                    {% if i.Doctor.img %}
+                    <img alt="Dr.{{ i.Doctor.Doctor_name }} Picture"
+                         class="rounded-circle " src="/media/{{ i.Doctor.img}}"
+                         style=" width: 70px; margin: 10px; height:70px;">
+                    {% else %}
+                    {% if i.Doctor.Gender == 'Female'%}
+                    <a href="#">
+                        <img alt="Psychiatrist in Lahore - Dr. Junaid Rasool"
+                             class="rounded-circle"
+                             height="70"
+                             src='{% static "female_doctor_dp.jpg" %}'
+                             width="auto">
+                    </a>
+                    {% else %}
+                    <a href="#">
+                        <img alt="{{i.Doctor}}"
+                             class="rounded-circle"
+                             height="70"
+                             src='{% static "male_doctor_dp.jpg" %}'>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col-sm-9 col-7 ">
+                    <p><b>Appointment no</b></p>
+                    <p style="margin-left:5%;">{{i.Name}}</p>
+                    <br>
+                    <p><i class="fas fa-user-md" style="color:green;margin-right:10px;"></i>{{i.Doctor}}</p>
+                    <P><i class="fas fa-calendar-check" style="color:green;margin-right:10px;"></i>{{i.Appointment_date}}
+                        | {{i.Time_slot}}</P>
+                </div>
+                <button class="btn col-10 btn-outline-danger mb-3 mx-auto"
+                        data-toggle="modal"
+                        href="#Prescription_model{{i.id}}">
+                    View Prescription
+                </button>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <div class="col-12 row  mt-5 box-shadow-sm mx-auto">
+                <button class="btn border bg-white col-sm-3 col-6 mx-auto">No Prescription Found</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="Reports_frame">
+        <div class="col-sm-5 col-11 mx-auto border" style="border-radius:50px;background-color:white;">
+            <button class="col-6 btn btn-danger" style="border-radius:50px;">Reports</button>
+            <button class="col-7 btn prescription_btn " id="Prescription_btn"><b>Prescription</b>
+            </button>
+        </div>
+        {% if error %}
+        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+            <div class="d-flex alert-danger">
+                <div class="toast-body ">
+                    {{error}}
+                </div>
+                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+            </div>
+        </div>
+        {% elif success %}
+        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+            <div class="d-flex alert-success">
+                <div class="toast-body ">
+                    {{success}}
+                </div>
+                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+            </div>
+        </div>
+        {% endif %}
+
+        {% for j in Save_Reports %}
+        <div class="col-10  mb-2 mt-2 bg-white row card_length border" style="float:left;">
+            <div class="col-sm-3 col-4 ga-event-listing-doctor-photo text-center">
+
+                <a href="#">
+                    <img alt=''
+                         class="rounded-circle"
+                         height="60"
+                         src='{% static "img/madical_reports.jfif" %}'
+                         style="margin-top:10px"
+                         width="60">
+                </a>
+            </div>
+            <div class="col-sm-9 col-7 ">
+                <p><b>{{j.Report_Title}}</b></p>
+                <p>
+                    <i class="fas fa-procedures" style="color:green;margin-right:10px;"></i>{{j.Patient_name}}
+                </p>
+                <p><i class="fas fa-user-md" style="color:green;margin-right:10px;"></i>{{j.Doctor_name}}</p>
+                <P><i class="fas fa-calendar-check" style="color:green;margin-right:10px;"></i>{{j.Date}}</P>
+            </div>
+            <a
+                    class="btn col-10 btn-outline-danger mb-3 mx-auto"
+                    href="/view report detail/{{j.id}}/">
+                View Report Details
+            </a>
+        </div>
+        {% endfor %}
+        <div class="col-12 row  mt-5 box-shadow-sm mx-auto">
+            <a class="btn border bg-white col-sm-3 col-10 mx-auto"
+               href="Add_new_Reports/" style="border-radius:30px;">
+                <span><i class="fas fa-plus" style="color:green;margin-right:5%;"></i></span>Add New Report</a>
+        </div>
+    </div>
+</div>
+
+
+{% for i in prescription_records %}
+<div aria-hidden="true" class="modal" id="Prescription_model{{i.id}}"
+     role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                        type="button"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <h5 class="text-center">Appointment Details</h5>
+                <div class="table-responsive">
+                    <table class="table width:100% align-middle ">
+                        <thead>
+                        <tr align="center">
+                            <th class="col-6"><h6 style="color:green">Appointment ID </h6>
+                            </th>
+                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-light table-borderless">
+
+                        <tr align="center">
+                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                            </th>
+                            <td>{{i.Name}}</td>
+                        </tr>
+                        <tr align="center">
+                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                            </th>
+                            <td>{{i.Doctor.Doctor_name}}</td>
+                        </tr>
+                        <tr align="center">
+                            <!--                                                            <th class="col-6"><h6 style="color:green">Date</h6>-->
+                            <!--                                                            </th>-->
+                            <td colspan="2">{{i.Appointment_date}} | {{i.Time_slot}}</td>
+                        </tr>
+                        <tfoot class="borderless">
+                        <tr align="center">
+                            <th class="col-12" colspan="2"><h4 style="color:green">Doctor Prescription</h4>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">{{i.Prescription}}</td>
+
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<script>
+    var Prescription_frame = document.getElementById("Prescription_frame");
+    var Reports_frame = document.getElementById("Reports_frame");
+
+    var Prescription_btn = document.getElementById("Prescription_btn");
+    var Reports_btn = document.getElementById("Reports_btn");
+
+      Prescription_frame.style.display = "none";
+      Reports_frame.style.display = "block";
+
+     Prescription_btn.onclick = function (){
+           Prescription_frame.style.display = "block";
+           Reports_frame.style.display = "none";
+     }
+
+    Reports_btn.onclick = function (){
+           Prescription_frame.style.display = "none";
+           Reports_frame.style.display = "block";
+     }
+
+
+</script>

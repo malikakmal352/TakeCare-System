@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>TakeCare Registration form</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Font Awesome CND -->
+    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+
+    <!-- <title>Title</title> -->
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+
+  body{
+          background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url({% static "dteam.jpg" %});
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          padding: 0px 0;
+        }
+
+  .feild input{
+    background: transparent;
+    outline: none;
+    border: none;
+    height: 5vh;
+    border-bottom: solid white 2px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  select{
+    background: transparent;
+    outline: none;
+    border: none;
+    height: 6vh;
+    border-bottom: solid white 2px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .feild input:hover{
+    background: white;
+    border-bottom: solid deepskyblue 3px;
+
+  }
+  .container{
+	background: rgba(255, 255, 255, 0.1);
+    width: 35%;
+    height:auto;
+    box-shadow: 10px;
+    padding: 0 10px;
+    margin-top: 3vh;
+    margin-left: 30%;
+    justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+
+	backdrop-filter: blur(5px);
+    /*top: 20vh;*/
+  }
+
+    @media screen and (max-width: 1100px) {
+         .container
+           {
+             width: 50%;
+             height: auto;
+             margin-top: 7vh;
+             margin-left: 25%;
+                    }
+                  }
+
+
+                @media screen and (max-width: 900px) {
+                    .container{
+                    width: 66%;
+                    height: auto;
+                    margin-top: 6vh;
+                    margin-left: 18%;
+                }
+
+                  }
+
+             @media screen and (max-width: 700px) {
+                    .container{
+                    width:86% ;
+                    height: auto;
+                    margin-top: 6vh;
+                    margin-left: 7%;
+                }
+
+                  }
+
+               @media screen and (max-width: 560px) {
+                    .container{
+                    width:96% ;
+                    height: auto;
+                    margin-top: 6vh;
+                    margin-left: 2%;
+                }
+
+                  }
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="container col-md-6">
+    <div class="p-2 m-2 mx-auto">
+        <form action="/register/" autocomplete="off" autofocus="true" method="POST">
+            {% csrf_token %}
+            <h1 style="text-align: center;color: white;"><b>Registration Form</b></h1>
+            {% if error %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+                <div class="d-flex alert-danger">
+                    <div class="toast-body ">
+                        {{error}}
+                    </div>
+                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            type="button"></button>
+                </div>
+            </div>
+    {% endif %}
+    <div class="feild">
+        <input name="fullname" placeholder="Fullname" type="text" value="{{Value.fullname}}">
+        <input name="email" placeholder="Email" required type="email" value="{{Value.email}}">
+        <input name="password" placeholder="Password" required type="password" value="{{Value.password}}">
+        <input name="C_password" placeholder="Comford Password" required type="password" value="">
+        <input name="Mn" placeholder="Phone Number" type="tel" value="{{Value.phone}}">
+        <select class="form-select form-select-md mb-3" name="city" style="width:100%;">
+            <option selected value="No-cities">Select your city</option>
+            <option value="Islamabad">Islamabad</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Rawalpindi">Rawalpindi</option>
+            <option value="Multan">Multan</option>
+            <option value="Karachi">Karachi</option>
+        </select>
+        <textarea name="address" placeholder="Enter your Address" required style="width:100%;height:25vh;"></textarea>
+        <!--            <input type="text" name="gender" placeholder="Gender">-->
+
+    </div>
+    <!--            <b style="color:white;float: left;">Gender</b>-->
+    <!--            <b style="color: white">-->
+    <!--                <input name="gender" required style="margin-left:10%;" type="radio" value="Male">Male-->
+    <!--                <input name="gender" type="radio" value="Female">Female-->
+    <!--                <input name="gender" type="radio" value="Other">Others</b>-->
+    <table align="center" width="100">
+        <tr align="center">
+            <td>
+                <input name="submit"
+                       class="btn btn-danger"
+                       style="border-radius: 30px;margin-top: 20px;color:white;padding: 5px 10px;"
+                       type="submit"
+                       value="Create new account">
+            </td>
+        </tr>
+    </table>
+    </form>
+    <div class="d-flex justify-content-center links">
+        Already have an account? <a class="ml-2" href="/Login" style="color:white;">Login</a>
+    </div>
+</div>
+</div>
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

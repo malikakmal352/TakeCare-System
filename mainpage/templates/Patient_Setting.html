@@ -1,0 +1,280 @@
+{% load static %}
+{% include "mainheader.html" %}
+
+
+<section class="box-shadow-sm bg-white container-lg my-2 py-3">
+    {% if error %}
+
+    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+        <div class="d-flex alert-danger">
+            <div class="toast-body ">
+                {{error}}
+            </div>
+            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+        </div>
+    </div>
+    {% elif success %}
+    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+        <div class="d-flex alert-success">
+            <div class="toast-body ">
+                {{success}}
+            </div>
+            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+        </div>
+    </div>
+    {% endif %}
+
+    {% for i in patient %}
+    <div class="table-responsive">
+        <table class="table w-100 table-borderless">
+            <tbody>
+            <tr align="center">
+                {% if i.img %}
+                <td colspan="2"><img src="/media/{{ i.img }}" style="width:150px;border-radius:50%;max-height:150px;">
+                </td>
+                {% else %}
+                <td colspan="2"><img src="{% static  'deault_profile_image.png' %}"
+                                     style="width:100px;border-radius:50%;"></td>
+                {% endif %}
+            </tr>
+            <tr align="center">
+                <td align="center" colspan="2">
+                    <div class="btn-block">
+                        <a class="mr-1 delete-record-link"
+                           data-toggle="modal" href="#Change_img">
+                            <button class='button btn-info btn' type="submit"><b style="color:white;">Change Profile
+                                Image</b></button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr style="background-color:#49738f;">
+                <td align="center" colspan="2"><b style="color:white;">Personal Detail</b></td>
+            </tr>
+            <tr align="center">
+                <td align="right" class="col-6">Patient Name:</td>
+                <td align="left" class="col-6">
+                    <div id="username_frame">
+                        {{i.name}}
+                        <button class="btn">
+                            <i class="far fa-edit fa" id="username" style="color:green;"></i>
+                        </button>
+                    </div>
+
+                    <div id="username_edit_frame">
+                        <form action="/updates_patient_profile/" method="POST">
+                            {% csrf_token %}
+                            <input name="username" required style="width:70%;" type="text"
+                                   value="{{i.name}}"/>
+                            <button class="btn btn-outline-success">
+                                <i class="fas fa-check-circle fa-md-2x" id="username_edit"
+                                   style="height:2vh;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email Address:</td>
+                <td align="left">{{i.email}}</td>
+            </tr>
+            <tr>
+                <td align="right">Phone Number:</td>
+                <td align="left">
+                    <div id="Phone_frame">
+                        +92{{i.Mn}}
+                        <button class="btn">
+                            <i class="far fa-edit fa" id="phone" style="color:green;"></i>
+                        </button>
+                    </div>
+
+                    <div id="Phone_edit_frame">
+                        <form action="/updates_patient_profile/" method="POST">
+                            {% csrf_token %}
+                            <input class="no-arrow" maxlength="10" name="phone"
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                   required
+                                   style="width:70%;" type="number"
+                                   value="{{i.Mn}}"/>
+
+                            <button class="btn btn-outline-success">
+                                <i class="fas fa-check-circle fa-md-2x" id="Phone_edit"
+                                   style="height:2vh"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">User Address:</td>
+                <td align="left">
+                    <div id="Address_frame">
+                        {{i.Address}}
+                        <button class="btn">
+                            <i class="far fa-edit fa" id="Address" style="color:green;"></i>
+                        </button>
+                    </div>
+
+                    <div id="Address_edit_frame">
+                        <form action="/updates_patient_profile/" method="POST">
+                            {% csrf_token %}
+                            <textarea name="Address" required rows="4" style="width:70%;">{{i.Address}}
+                            </textarea>
+                            <button class="btn btn-outline-success" style="margin-top:-100px;">
+                                <i class="fas fa-check-circle fa-md-2x" id="Address_edit"
+                                   style="height:2vh"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr style="background-color:#49738f;">
+                <td align="center" colspan="2"><b style="color:white;">Change Password</b></td>
+            </tr>
+
+            <form action="/Patient_Setting/" method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td align="right">
+                        <label>Current Password:</label>
+                    </td>
+                    <td align="left">
+                        <input name="C_pass" placeholder="Current Password" required type="password">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td align="right">
+                        <label>New Password:</label>
+
+                    </td>
+                    <td align="left">
+                        <input name="New_password" placeholder="Enter New Password" required type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>Conform Password:</label>
+                    </td>
+                    <td align="left">
+                        <input name="NConform_pass" placeholder="Enter Confirm Password" required type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <div class="btn-block">
+                            <button class='button btn-info btn' type="submit"><b style="color:white;">Change
+                                Password</b></button>
+                        </div>
+                    </td>
+                </tr>
+            </form>
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+
+    <script type="text/javascript">
+                            var targetDiv = document.getElementById("username_edit_frame");
+                            var btn = document.getElementById("username");
+                            var username_frame = document.getElementById("username_frame")
+                            var username_edit = document.getElementById("username_edit")
+
+                            var Address_edit_frame = document.getElementById("Address_edit_frame");
+                            var Address_btn = document.getElementById("Address");
+                            var Address_frame = document.getElementById("Address_frame")
+                            var Address_edit = document.getElementById("Address_edit")
+
+
+                            var Phone_edit_frame = document.getElementById("Phone_edit_frame");
+                            var Phone_btn = document.getElementById("phone");
+                            var Phone_frame = document.getElementById("Phone_frame")
+                            var Phone_edit = document.getElementById("Phone_edit")
+
+                             targetDiv.style.display = "none";
+                             Address_edit_frame.style.display = "none";
+                             Phone_edit_frame.style.display = "none";
+
+
+                            btn.onclick = function () {
+                              if (targetDiv.style.display !== "none") {
+                                targetDiv.style.display = "none";
+                                username_frame.style.display = "block";
+
+                              } else {
+                                targetDiv.style.display = "block";
+                                username_frame.style.display = "none";
+                              }
+                            };
+
+
+                            Address_btn.onclick = function () {
+                              if (Address_edit_frame.style.display !== "none") {
+                                Address_edit_frame.style.display = "none";
+                                Address_frame.style.display = "block";
+
+                              } else {
+                                Address_edit_frame.style.display = "block";
+                                Address_frame.style.display = "none";
+                              }
+                            };
+
+
+
+                            Phone_btn.onclick = function () {
+                              if (Address_edit_frame.style.display !== "none") {
+                                Phone_edit_frame.style.display = "none";
+                                Phone_frame.style.display = "block";
+
+                              } else {
+                                Phone_edit_frame.style.display = "block";
+                                Phone_frame.style.display = "none";
+                              }
+                            };
+
+
+                        </script>
+
+</section>
+
+<div aria-hidden="true" class="modal" id="Change_img" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                        type="button"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <h5 class="text-center">Select New Image </h5>
+                <div class="table-responsive">
+                    <table class="table width:100% align-middle">
+                        <form action="/patient_profile_img/" enctype="multipart/form-data"
+                              method="POST">
+                            {% csrf_token %}
+                            <tr align="center">
+                                <td><h6 style="color:green">
+                                    <input accept="image/*" name="image" required type="file">
+                                </h6>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td>
+                                    <input class="btn btn-info" style="color:white;" type="submit" value="Change"/>
+                                </td>
+                            </tr>
+                        </form>
+                    </table>
+                    <br/>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>

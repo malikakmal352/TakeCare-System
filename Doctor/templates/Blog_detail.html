@@ -1,0 +1,91 @@
+{% load static %}
+
+{% include "mainheader.html" %}
+
+<head>
+    <link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        html
+         {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent
+         }
+        body {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #202124;
+            text-align: left;
+            background-color: #f7f7f7;
+            /*background-color: rebeccapurple;*/
+            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="main-wrap" style="transform: none;">
+
+    <div class="main ts-contain cf right-sidebar">
+        <div class="col-12">
+            <section class="container-lg"
+                     style="justify-content: space-around;justify-content: space-around;align-content: center;">
+                    <article class="l-post bg-white mb-3   grid-base-post grid-post">
+                        <div class="media" style="width:50%;margin-left:20%;">
+                            <a class="image-link media-ratio ratio-16-9">
+                                <span
+                                        class="img bg-cover wp-post-image"
+                                        role="img"
+                                        style="background-image: url('/media/{{Blogs.img}}');">
+
+                                </span>
+                            </a>
+                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
+                                    class="category term-color-14"
+                                    href="/Health_blog/{{Blogs.Health_blogs_issue}}/"
+                                    rel="category">{{Blogs.Health_blogs_issue}}</a> </span>
+                        </div>
+                        <div class=" p-3 content">
+                            <div class="post-meta post-meta-a has-below">
+                                <h1 class="is-title post-title">
+                                    <b style="font-size:30px;">{{Blogs.Main_heading}}</b>
+                                </h1>
+
+                                <div class="post-meta-items meta-below"><span
+                                        class="meta-item post-author"><span class="by">By</span> <a
+                                        title="Posts by {{i.Doctor}}">{{Blogs.Doctor}}</a></span>
+                                    <span
+                                            class="meta-item date">
+                                    <span class="date-link ml-1">
+                                        <time class="post-date">({{Blogs.blog_create_time}})</time>
+                                    </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="excerpt">
+                                <p>
+                                    {{Blogs.Health_blogs_Detail}}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+</body>

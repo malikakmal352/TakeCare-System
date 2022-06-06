@@ -1,0 +1,250 @@
+{% include "Admin_site/admin_header.html" %}
+{% load static %}
+
+
+<body class="crm_body_bg">
+
+
+<!-- sidebar  -->
+<!-- sidebar part here -->
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" class="active" href="/lab_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                Dashboard
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Function</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fal fa-vial"></i>
+                <span>Test Bookings<i class="fal fa-chevron-down"
+                                      style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View_all_new_booking/">View All New Booking</a></li>
+                <li><a href="/view_all_comfirm_booking/">View Conform Booking</a></li>
+                <li><a href="/lab_admin/#table_sub_2">View Today Booking</a></li>
+
+            </ul>
+        </li>
+
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Test List<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse ">
+                <li><a  href="/view_test_list/">View All Test list </a></li>
+                <li><a href="/Add_new_test/">ADD New Test</a></li>
+            </ul>
+        </li>
+        <li class="mm-active">
+            <a aria-expanded="true" href="#">
+                <i class="fal fa-vial"></i>
+                <span style="font-size:12px;">Sample Collecting Staff<i class="fal fa-chevron-down"
+                                                                        style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse mm-show">
+                <li><a class="active" href="/View_all_samplest/">View All Staff</a></li>
+                <li><a  href="/add_new_Samplest/">ADD New Staff</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fal fa-vial"></i>
+                <span>Upload Test Report</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+
+<!--                                <div class="search_field">-->
+<!--                                    <input id="tag" placeholder="Search here..." type="text">-->
+<!--                                </div>-->
+
+<!--                                <button type="submit"><img alt="" src=' {% static "Hospital_files/icon_search.svg" %}'>-->
+<!--                                </button>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#"> <img
+                                        alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+                            <img alt="#" src='/media/{{current_lab.img}}'>
+                            <div class="profile_info_iner">
+                                <p>{{current_lab.Labname}}</p>
+                                <h5>{{current_lab.city}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="#">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <a href="#">Settings
+                                        <i class="fal fa-user-cog"></i></a>
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+                {% for i in Update_Samplest %}
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+                        <h2 class="text-center">Update Samplest  Record</h2>
+                        <div class="testbox">
+                            <form action="/update_samplest/{{i.id}}" autocomplete="on" class="form"
+                                  enctype="multipart/form-data"
+                                  method="POST">
+                                {% csrf_token %}
+                                <br/>
+                                <div class="colums">
+                                    <div class="item sa ">
+                                        <label>Samplest Name<span>*</span></label>
+                                        <input name="name" required type="text" value="{{i.name}}"/>
+                                    </div>
+                                    <div class="item sa ">
+                                        <label>Samplest CNIC<span>*</span></label>
+                                        <input class="no-arrow" name="CNIC" required type="number"
+                                        value="{{i.CNIC}}"/>
+                                    </div>
+                                    <div class="item sa">
+                                        <label>Phone Number<span>*</span></label>
+                                        <input class="no-arrow" name="phone" required type="number"
+                                        value="0{{i.Callnumber}}"/>
+                                    </div>
+
+                                    <div class="item sa">
+                                        <label>insert Samplest Image<span>*</span></label>
+                                        <input accept="image/*" name="image"  type="file" value="/media/{{ i.img }}"/>
+                                    </div>
+
+                                </div>
+                                <div class="btn-block">
+                                    <button class='button btn-info btn' type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</section>
+<!-- main content part end -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jquery slim -->
+<!--<script crossorigin="anonymous"-->
+<!--        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="-->
+<!--        src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>-->
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.js"-->
+<!--        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="-->
+<!--        crossorigin="anonymous"></script>-->
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+<!-- waypoints js -->
+<!--<script src='{% static "Hospital_files/Chart.min.js.download" %}'></script>-->
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- nice select -->
+<script src='{% static  "Hospital_files/jquery.nice-select.min.js.download" %}'></script>
+<!-- owl carousel -->
+<script src='{% static  "Hospital_files/owl.carousel.min.js.download" %}'></script>
+
+<!-- tag input -->
+<script src='{% static "Hospital_files/tagsinput.js.download" %}'></script>
+<!-- text editor js -->
+<script src='{% static "Hospital_files/summernote-bs4.js.download" %}'></script>
+
+
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+<link href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    var availableTags = [
+      {% for i in all_lab %}
+             "{{i.Labname}}",
+       {% endfor %}
+    ];
+    $( "#tag" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+</script>
+
+</body>

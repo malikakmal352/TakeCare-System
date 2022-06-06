@@ -1,0 +1,237 @@
+{% load static %}
+
+{% include "Doctor_admin_site/Doctor_admin_base.html" %}
+<body class="crm_body_bg">
+
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                <span>Dashboard</span>
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Functions</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Appointments<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/Doctor_admin/#examples">View All Appointments </a></li>
+                <li><a href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
+                <li><a href="/Doctor_admin/confirm_today">All confirm Appointments </a></li>
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/clinic_profile/">
+                <i class="fas fa-clinic-medical"></i>
+                <span>Clinic Detail/Profile</span>
+            </a>
+        </li>
+
+
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
+                <i class="fas fa-books-medical"></i>
+                <span>Health Blogs<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/view_Doctor_blogs/">View all Health Blogs</a></li>
+                <li><a class="active" href="/add_new_blog/">ADD New Health Blogs</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-pills"></i>
+                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="#">View All Pharmacies</a></li>
+                <li><a href="#">ADD New pharmacy</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_profile/">
+                <i class="fad fa-address-card"></i>
+                <span>Profile Page</span>
+            </a>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Logout/">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#">
+                                    <img
+                                            alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+
+                            {% if current_doctor.img %}
+                            <img alt="#" src='/media/{{current_doctor.img}}'
+                                 style="width:50px;height:50px;">
+                            {% else %}
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{current_doctor.Doctor_name}}</p>
+                                <h5>{{current_doctor.email}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Doctor_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+
+
+            <div class="row justify-content-center">
+
+                <!-- Add New Health Blogs -->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        {% if error_message %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-danger">
+                                <div class="toast-body ">
+                                    {{error_message}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% elif success %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{success}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <h2 class="text-center">Update Health Blog</h2>
+                        <div class="testbox">
+                            <form action="/view_Doctor_blogs/" autocomplete="on" class="form"
+                                  enctype="multipart/form-data"
+                                  method="POST">
+                                {% csrf_token %}
+                                <br/>
+                                <div class="colums">
+
+                                    <div class="item sa ">
+                                        <label for="Health_blogs_issue">Blog Topic<span>*</span></label>
+                                        <input id="Health_blogs_issue" name="Health_blogs_issue"
+                                               value="{{Health_Blog.Health_blogs_issue}}"
+                                               maxlength="25" required type="text"/>
+                                    </div>
+                                    <div class="item sa">
+                                        <label for="Main_heading">Blog main Heading or Issue<span>*</span></label>
+                                        <input  id="Main_heading" name="Main_heading" required type="text"
+                                                value="{{Health_Blog.Main_heading}}"/>
+                                    </div>
+                                    <div class="item sa">
+                                        <label for="blog_img">Blog main Image<span>(optional)</span></label>
+                                        <input  id="blog_img" name="blog_img" accept="image/*"  type="file"/>
+                                    </div>
+                                    <input type="text" name="name" value="update_blog" hidden/>
+                                    <input hidden name="blog_id" type="number" value="{{Health_Blog.id}}"/>
+
+                                </div>
+                                <div class="item" id="Blog_details">
+                                    <label for="visit">Write your Blog in details</label>
+                                    <textarea id="visit"  name='Blog_details' rows="5"
+                                              placeholder="Start writing your blog ...."
+                                              required>{{Health_Blog.Health_blogs_Detail}}</textarea>
+                                </div>
+                                <div class="btn-block">
+                                    <button class='button btn-info btn' type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+</body>

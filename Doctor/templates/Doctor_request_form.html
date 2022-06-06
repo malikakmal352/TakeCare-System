@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Icon -->
+    <link href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}" rel="stylesheet">
+    <!--    <link href=" {% static 'css/style.css' %}" rel="stylesheet">-->
+    <style>
+        .no-arrow
+        {
+            -moz-appearance: textfield;
+        }
+        .no-arrow::-webkit-inner-spin-button
+        {
+          display: none;
+        }
+        .no-arrow::-webkit-outer-spin-button,
+        .no-arrow::-webkit-inner-spin-button
+        {
+          -webkit-appearance: none;
+           margin: 0;
+        }
+
+
+
+    </style>
+
+    <style>
+
+  body{
+          background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url({% static "doct_login 2.jpg" %});
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          padding: 60px 0;
+        }
+
+     a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+  transition: all 300ms ease 0s;
+  -moz-transition: all 300ms ease 0s;
+  -webkit-transition: all 300ms ease 0s;
+  -o-transition: all 300ms ease 0s;
+  -ms-transition: all 300ms ease 0s; }
+
+.input, select, textarea {
+  outline: none;
+  appearance: unset !important;
+  -moz-appearance: unset !important;
+  -webkit-appearance: unset !important;
+  -o-appearance: unset !important;
+  -ms-appearance: unset !important; }
+
+.input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none !important;
+  -ms-appearance: none !important;
+  margin: 0; }
+
+h2 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Roboto Slab';
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-transform: uppercase; }
+
+h3 {
+  font-weight: bold;
+  color: #222;
+  font-size: 15px;
+  margin: 0px;
+  margin-bottom: 35px; }
+
+
+
+.main {
+  padding: 10px 0;
+  position: relative; }
+
+.container {
+  width: 586px;
+  background: #fff;
+  margin-left: 165px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px; }
+
+.appointment-form {
+  padding: 50px 60px 70px 60px; }
+
+.input, select {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+  padding: 5px 0;
+  color: #222;
+  margin-bottom: 31px;
+  font-family: 'Roboto Slab'; }
+  input:focus, select:focus {
+    color: #222;
+    border-bottom: 2px solid #4966b1; }
+
+
+.form-check {
+  margin-bottom: 20px; }
+
+.select-list {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 55px; }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 auto; } }
+@media screen and (max-width: 768px) {
+  .container {
+    width: calc( 100% - 30px);
+    max-width: 100%; } }
+@media screen and (max-width: 480px) {
+  .appointment-form {
+    padding: 50px 30px 70px 30px; } }
+
+/*# sourceMappingURL=style.css.map */
+
+
+
+    </style>
+</head>
+<body>
+<div class="main">
+
+    <div class="container">
+        <form action="/Doctor_request_form/" autocomplete="off" autofocus="true" class="appointment-form"
+              id="appointment-form" method="POST">
+            {% csrf_token %}
+            {% if error %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+                <div class="d-flex alert-danger">
+                    <div class="toast-body ">
+                        {{error}}
+                    </div>
+                </div>
+
+            </div>
+            {% elif success %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+                <div class="d-flex alert-success">
+                    <div class="toast-body ">
+                        {{success}}
+                    </div>
+                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            type="button"></button>
+                </div>
+            </div>
+            {% endif %}
+            <h2 class="text-center">Docter Registration Request Form</h2>
+            <div class="form-group-1" style="margin-bottom:5px;">
+                <input class="input" id="name" name="name" placeholder="Enter Your Fullname" required type="text"
+                       value="{{Value.fullname}}"/>
+                <input class="input" id="email" name="email" placeholder="Email@xyz.com" required type="email"
+                       value="{{Value.email}}"/>
+                <input class="no-arrow input" id="phone_number" name="phone_number" placeholder="Phone number" required
+                       type="number" value="{{Value.phone_number}}"/>
+
+                <select class="input" id="city" name="city" required>
+                    <option selected value="">Enter Your City</option>
+                    {% for i in labcitys %}
+                    <option value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
+                    {% endfor %}
+                </select>
+
+                <input class="input" class="no-arrow" id="PMID_number" name="PMID_number" placeholder="PMID Number"
+                       required
+                       type="number"/>
+
+                <select class="input" id="Speciality" name="Speciality" required>
+                    <option selected value="">Enter Your Speciality</option>
+                    {% for i in all_sp %}
+                    <option value="{{i.Doctor_Speciality}}">{{i.Doctor_Speciality}}</option>
+                    {% endfor %}
+                </select>
+
+                <input name="gender" required style="margin-left:10px;margin-right:6px" type="radio" value="Male">Male
+                <input name="gender" required style="margin-left:10px;margin-right:6px" type="radio" value="Female">Female
+
+
+                <!--                <textarea class="w-100" rows="4" name="about" placeholder="Write something about your self...."></textarea>-->
+
+
+            </div>
+
+            <div class="form-check">
+                <input class="agree-term" id="agree-term" name="agree-term" required style="float:left;margin-right:5px;margin-top:5px;"
+                       type="checkbox"/>
+                <label class="label-agree-term" for="agree-term"><span><span></span></span>I agree to the <a
+                        class="term-service"
+                        href="#">Terms
+                    and Conditions</a></label>
+            </div>
+            <div class="form-submit">
+                <input class="btn btn-info input" name="submit" type="submit" value="Request Submit"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- JS -->
+<script src=" {% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

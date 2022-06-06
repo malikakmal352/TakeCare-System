@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/TakeCare System.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/migrations/0002_alter_health_blogs_blog_create_time.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doctor/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/migrations/0002_alter_add_new_medicine_expiry_alert_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systemadmin/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakeCare_System/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakeCare_System/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakeCare_System/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Health_blogs_img/phy_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Background2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/DoctorTipCards.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/TeamCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/aboutus.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/loginPopup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/dataTables.responsive.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/datatables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/dynamic.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/ga.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/responsive.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/DataTables/site.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/2(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/3(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/4(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/5(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/Chart.min.js(1).download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/Chart.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/apex_chart_list.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/apexcharts.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/bar_active_1.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/bell.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/bootstrap.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/buttons.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/buttons.flash.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/buttons.html5.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/buttons.print.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/cap.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/client_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/custom.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/dataTables.buttons.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/dataTables.responsive.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/gijgo.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/gijgo.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/icon_search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery-3.4.1.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.barfiller.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.counterup.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.dataTables.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.nice-select.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.waypoints.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/jszip.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/man.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/material-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/metisMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/metisMenu.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/msg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/nice-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/owl.carousel.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/pataint.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/pdfmake.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/pharma.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/popper.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/responsive.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/summernote-bs4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/summernote-bs4.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/swiper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/swiper.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/tagsinput.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/tagsinput.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/vfs_fonts.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Hospital_files/wheel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/backtotop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/font-awesome-pro.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_444444_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_555555_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_777620_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_777777_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_cc0000_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/images/ui-icons_ffffff_256x240.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/meanmenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/nice-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/owl-carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/owl.video.play.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/preloader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/swiper-bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/css/ui-range-slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon10fb.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon10fb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon10fb.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon10fb.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/flaticon/flaticon10fb.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-brands-400d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-duotone-900d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-light-300d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-regular-400d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/fonts/fa-solid-900d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/about/ab-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/about/ab-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/about/about-b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/about/c-icon-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/author/author-sm-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/page-banner-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/page-banner-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/page-banner-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/sl-banner-sm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/banner/sl-banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/bg/about-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/bg/img-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/bg/img-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/bg/menu-item.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/blog-thumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/incen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/news-author.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sponsor-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/app_android.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/app_ios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/cart/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/cart/shop-p-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/cart/shop-p-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/categorie/cat-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fp-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fpb-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fpb-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fpsm-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/fpsm-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/features-product/product-content-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/gallery/gal-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/logo/logo-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/logo/logo1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/payment/payment.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-nav-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-nav-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-nav-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-nav-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-view-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-view-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-view-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/quick-view/quick-view-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/01-slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/01-slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/01-slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/02-slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/02-slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/02-slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/03-slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/03-slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/03-slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/slider/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/team/person-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/team/person-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/team/person-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/ajax-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/backtotop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/bootstrap-bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/countdown.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/counterup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/imagesloaded-pkgd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/isotope-pkgd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/meanmenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/nice-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/owl-carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/parallax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/swiper-bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/tweenmax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/ui-slider-range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/vendor/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/vendor/waypoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/js/wow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Order_pending.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Patient_save_Reports/Malik_Akmal_Naseer_Resume.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Patient_save_Reports/cancel_btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/Child_Specil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/acupuncturist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/addiction-medicine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/allergy-specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/alternative-medicine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/andrologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/anesthesiologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/audiologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/bariatric-surgery.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/behavioural-counselling.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/cardiac_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/cardiologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/chiropractor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/cosmetologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/dentist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/dermatologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/diabetologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/dietitian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/endocrinologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/ent-surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/gastroenterologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/general_physician.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/general_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/gynecologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/hair_transplant_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/hematologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/hepatobiliary-surgery.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/hepatologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/hijama-specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/homeopathy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/infectious_disease_specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/internal-medicine-specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/laparoscopic_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/maternal-fetal-medicine-specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/maxillofacial-surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/medical_specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/nephrologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/neurologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/neurosurgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/oncologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/ophthalmologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/orthopedic_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pain-management-specialist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric-cardiologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric-gastroenterologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric-nephrologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric-neuro-physician.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric-urologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatric_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pediatrician.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/physiotherapist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/plastic_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/psychiatrist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/psychologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/pulmonlogist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/radiologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/rheumatologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/sexologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/sleep-medicine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/sonologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/speech-therapist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/sports_medicine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/thoracic-surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/urologist.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Speciality_img/vascular_surgeon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Team members/membar 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Team members/membar 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Team members/membar3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/nav_sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/nav_sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/additional-methods.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/bootstrap.bundle.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/bs-custom-file-input.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/dengage_sdk.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/intlTelInput.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/intlTelInput.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/jquery.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/jquery.rateyo.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/jquery.rateyo.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/jquery.toast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/jquery.validate.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/moeena-baig-dietitian-nutritionist-lahore-61_80X80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/tiny-slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/book time slot_files/utils.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/cancel_btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/custom.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/da.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/da1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/da2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deault_profile_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/doct_login 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/doct_login 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/doct_login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dteam.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/dteam2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/ent.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/female_doctor_dp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fileing.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/final_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/css/material-design-iconic-font.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/css/material-design-iconic-font.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/health_blog_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/2+arrow-down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/3+arrow-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/Quiz 2(352-FBAS-BSIT4_F18).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/madical_reports.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/record.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery.counterup.min.js.download" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/ktech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/lab_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/madical_reports.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/male_doctor_dp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/md.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/not_found.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/ns.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/p.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/pharmacy_profile.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/phy_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/ps.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/s8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/common/extend.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/common/fonts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/common/global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/common/minxi.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/common/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/layouts/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/layouts/responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/config.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick-theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/style2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/view-details.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/view_detail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Y2Mate.is - Aladdin movie mastering Sanjay Dutt Anita full HD30 March 2022-vL4tv2j9ABg-480p-1652988198177.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/senser_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/Senser_store/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../senser_project/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2ACCKG5EjBYTtRwY3gm7azAdwq3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pharmacy_Store" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Pharmacy_Store" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Systemadmin" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Doctor" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="TakeCare System" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="" />
+      <created>1654504115136</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654504115136</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1654508503307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654508503307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,385 @@
+{% include "Admin_site/admin_header.html" %}
+{% load static %}
+<body class="crm_body_bg">
+
+
+<!-- sidebar  -->
+<!-- sidebar part here -->
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" class="active" class="active" href="/Phy_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                Dashboard
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Function</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-cart-plus" style="color:green;"></i>
+                <span>Orders<i class="fal fa-chevron-down"
+                               style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View_all_new_Orders/">View All New Orders</a></li>
+                <li><a href="/view_all_comfirm_Orders/">View Conform Order</a></li>
+                <li><a href="/Phy_admin/#table_sub_2">View Today Orders</a></li>
+                <li><a href="/view complete orders/">View Complete Orders</a></li>
+
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-engine-warning" style="color:green;"></i>
+                <span style="font-size:14px;">Medicine Expiry Alert<i class="fal fa-chevron-down"
+                                                                      style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View_all_Expiry Medicine/">View All Expiry Medicine</a></li>
+                <li><a href="/View Expiring Soon/">Expiring Soon</a></li>
+            </ul>
+        </li>
+
+
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Products/Medicines<i class="fal fa-chevron-down"
+                                                                   style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/View_all_Medicine/">View All Medicine</a></li>
+                <li><a class="active" href="/add_new_Medicine/">ADD New Medicine</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fad fa-biking-mountain" style="color:green;"></i>
+                <span style="font-size:14px;">Local Rider<i class="fal fa-chevron-down"
+                                                            style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View_all_samplest/">View All your Rider</a></li>
+                <li><a href="/add_new_Samplest/">ADD New Rider</a></li>
+            </ul>
+        </li>
+
+
+    </ul>
+</nav>
+<!-- sidebar part end -->
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+
+                                <!--                                <div class="search_field">-->
+                                <!--                                    <input id="tag" placeholder="Search here..." type="text">-->
+                                <!--                                </div>-->
+
+                                <!--                                <button type="submit"><img alt="" src=' {% static "Hospital_files/icon_search.svg" %}'>-->
+                                <!--                                </button>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#"> <img
+                                        alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+                            {% if Current_pharmacy.img %}
+                            <img alt="#" src='/media/{{Current_pharmacy.img}}'>
+                            {% else %}
+                            <img alt="" src="{% static 'pharmacy_profile.jfif' %}">
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{Current_pharmacy.Pharmacy_name}}</p>
+                                <h5>{{Current_pharmacy.city}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Phy_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+
+                <!-- Add Update Medicine -->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+
+                        {% if messages %}
+
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% if error_message %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-danger">
+                                <div class="toast-body ">
+                                    {{error_message}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% elif success %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{success}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <h2 class="text-center">Edit Medicine Detail</h2>
+                        <div class="testbox">
+                            <form action="/Update Medicine/" autocomplete="on" class="form" method="POST">
+                                {% csrf_token %}
+                                <br/>
+                                <div class="colums">
+                                     <input hidden value="{{Update_Medicine.id}}" name="id">
+                                    <div class="item sa  w-100">
+                                        <label for="name">Medicine Name<span>*</span></label>
+                                        <input id="name" name="name" required type="text"
+                                               value="{{Update_Medicine.Medicine_name}}"/>
+                                    </div>
+                                    <div class="item sa">
+                                        <label for="phone">Medicine Price<span>*</span></label>
+                                        <input class="no-arrow" id="phone" min="1" name="Price"
+                                               value="{{Update_Medicine.Medicine_price}}" type="number"/>
+                                    </div>
+                                    <div class="item sa ">
+                                        <label for="Date">Pick Medicine Expiry Date<span>*</span></label>
+                                        <input aria-required="true" id="Date" min="{% now '20y-m-d'%}"
+                                               name="Expiry_Date"
+                                               value="{{date}}"
+                                               type="date"/>
+                                    </div>
+
+                                    <div class="question">
+                                        <label>Select Medicine packaging Type<span
+                                                style="color:red;margin-left:0">*</span></label>
+                                        <div class="question-answer">
+                                            {% if Update_Medicine.Medicine_packaging == "Blister packs" %}
+                                            <script>
+                                                let ch=1
+                                            </script>
+                                            {% else %}
+                                            <script>
+                                               let ch = 2
+                                            </script>
+                                            {% endif %}
+                                            <div id="select_Blister">
+                                                <div>
+                                                <input id="Bottles_uncheck" name="Medicine_type2" required
+                                                       type="radio" value="Bottles\Sachets"/>
+                                                <label for="Bottles_uncheck" class="radio">
+                                                    <span>Bottles\Sachets</span>
+                                                </label>
+                                            </div>
+                                                <div>
+                                                <input  id='Blister_check' name="Medicine_type2" required checked
+                                                       type="radio" value="Blister packs"/>
+                                                <label for="Blister_check" class="radio">
+                                                    <span>Blister packs</span>
+                                                </label>
+                                            </div>
+                                            </div>
+                                            <div id="select_Bottles">
+                                                <div>
+                                                <input id="Bottles_check" name="Medicine_type" required checked
+                                                       type="radio" value="Bottles\Sachets"/>
+                                                <label for="Bottles_check" class="radio">
+                                                    <span>Bottles\Sachets</span>
+                                                </label>
+                                            </div>
+                                                <div>
+                                                <input id="Blister_uncheck" name="Medicine_type" required
+                                                       type="radio" value="Blister packs"/>
+                                                <label for="Blister_uncheck" class="radio">
+                                                    <span>Blister packs</span>
+                                                </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item sa" id="address">
+                                       <div id="Blister">
+                                         <label>
+                                            Total Stock(one Blister or tablet box = 1)<span>*</span>
+                                        </label>
+                                       </div>
+                                        <div id="Bottles">
+                                          <label>
+                                            Total Stock(one Bottles\Sachets= 1)<span>*</span>
+                                        </label>
+                                        </div>
+
+                                        <input class="no-arrow" name='Stock' required
+                                               type="number" value="{{Update_Medicine.Total_Stock}}"/>
+                                    </div>
+
+                                </div>
+
+                                <div class="btn-block">
+                                    <button class='button btn-info btn ' style="color:white;"
+                                            type="submit">Update Medicine</button>
+                                </div>
+                            </form>
+                        </div>
+                        <script>
+                        var select_Blister = document.getElementById('select_Blister');
+                        var select_Bottles = document.getElementById('select_Bottles');
+
+                        var Bottles_uncheck = document.getElementById('Bottles_uncheck');
+                        var Blister_check = document.getElementById('Blister_check');
+
+                        var Bottles_check = document.getElementById('Bottles_check');
+                        var Blister_uncheck = document.getElementById('Blister_uncheck');
+
+                        var Blister = document.getElementById('Blister');
+                        var Bottles = document.getElementById('Bottles');
+                        if (ch == 2){
+                           Blister.style.display= 'none';
+                           Bottles.style.display= 'block';
+                           select_Blister.style.display = 'none';
+                           select_Bottles.style.display = 'block';
+                           }
+                        else {
+                           select_Blister.style.display = 'block';
+                           select_Bottles.style.display = 'none';
+                           Blister.style.display= 'block';
+                           Bottles.style.display= 'none';
+                           }
+
+                        Blister_uncheck.onclick = function()
+                        {
+                           Blister.style.display= 'block';
+                           Bottles.style.display= 'none';
+                        }
+                        Bottles_check.onclick = function()
+                        {
+                           Blister.style.display= 'none';
+                           Bottles.style.display= 'block';
+                        }
+
+
+                        Blister_check.onclick = function()
+                        {
+                           Blister.style.display= 'block';
+                           Bottles.style.display= 'none';
+                        }
+                        Bottles_uncheck.onclick = function()
+                        {
+                           Blister.style.display= 'none';
+                           Bottles.style.display= 'block';
+                        }
+
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.js"-->
+<!--        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="-->
+<!--        crossorigin="anonymous"></script>-->
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+<!-- waypoints js -->
+<!--<script src='{% static "Hospital_files/Chart.min.js.download" %}'></script>-->
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- nice select -->
+<script src='{% static  "Hospital_files/jquery.nice-select.min.js.download" %}'></script>
+<!-- owl carousel -->
+<script src='{% static  "Hospital_files/owl.carousel.min.js.download" %}'></script>
+
+<!-- tag input -->
+<script src='{% static "Hospital_files/tagsinput.js.download" %}'></script>
+<!-- text editor js -->
+<script src='{% static "Hospital_files/summernote-bs4.js.download" %}'></script>
+
+
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+</body>

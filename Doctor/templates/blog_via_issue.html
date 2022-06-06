@@ -1,0 +1,220 @@
+{% load static %}
+
+{% include "mainheader.html" %}
+<head>
+    <link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        html
+         {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent
+         }
+        body {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #202124;
+            text-align: left;
+            background-color: #f7f7f7;
+            /*background-color: rebeccapurple;*/
+            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="main-wrap" style="transform: none;">
+
+    <div class="container-lg ">
+
+        <div class="row mt-2">
+            <div class="col-12 p-0">
+                <section class="container bg-white py-2">
+
+                    <div class="d-flex justify-content-between">
+                        <form action="/Health_blog/" autocomplete="on" method="POST">
+                            {% csrf_token %}
+                            <input hidden name="name" value="filter">
+                            <input type="search" name="search" placeholder="search via issue" />
+                            <input class='button btn-danger btn' type="submit" value="Search"/>
+                        </form>
+                        <div class="d-flex">
+                            <select class="form-select w-auto ml-3 font-size-sm   d-sm-block  sort-by"
+                                    onchange="showDiv(this)" required>
+                                <option selected value="0">Sort By</option>
+                                <option value="1">blog (new to old)</option>
+                                <option value="2">blog (old to new)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <div class="mt-2" id="doctors">
+
+
+            <!-- Online Consultation Banner -->
+            <!-- This Id is used to track impressions -->
+
+            {% if filer_result %}
+            <h1 class="archive-heading"> Search Results: <span>d (4643)</span></h1>
+            {% endif %}
+            <section class="container-lg" id="all_blogs"
+                     style="justify-content: space-around;justify-content: space-around;align-content: center;">
+                <div class=" grid grid-3 md:grid-2 xs:grid-1 mb-5 mt-3">
+                    {% for i in Blogs %}
+                    <article class="l-post bg-white mb-3   grid-base-post grid-post" style="overflow:hidden;">
+                        <div class="media m-2">
+                            <a class="image-link media-ratio ratio-16-9"
+                               href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">
+                                <span
+                                        class="img bg-cover wp-post-image attachment-bunyad-medium size-bunyad-medium lazyloaded"
+                                        role="img"
+                                        style="background-image: url('/media/{{i.img}}');">
+
+                                </span>
+                            </a>
+                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
+                                    class="category term-color-14"
+                                    href="/Health_blog/{{i.Health_blogs_issue}}"
+                                    rel="category">{{i.Health_blogs_issue}}</a> </span>
+                        </div>
+                        <div class=" p-3 content">
+                            <div class="post-meta post-meta-a has-below">
+                                <h2 class="is-title post-title">
+                                    <a href="Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">{{i.Main_heading}}</a>
+                                </h2>
+
+                                <div class="post-meta-items meta-below"><span
+                                        class="meta-item post-author"><span class="by">By</span> <a
+                                        title="Posts by {{i.Doctor}}">{{i.Doctor}}</a></span>
+                                    <span
+                                            class="meta-item date">
+                                    <span class="date-link ml-1">
+                                        <time class="post-date">({{i.blog_create_time}})</time>
+                                    </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="excerpt" style="max-height:12vh;">
+                                <p>
+                                    {{i.Health_blogs_Detail}}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="container-lg" id="new_to_old"
+                     style="justify-content: space-around;justify-content: space-around;align-content: center;">
+                <div class=" grid grid-3 md:grid-2 xs:grid-1 mb-5 mt-3">
+                    {% for i in Blogs_new %}
+                    <article class="l-post bg-white mb-3   grid-base-post grid-post" style="overflow:hidden;">
+                        <div class="media m-2">
+                            <a class="image-link media-ratio ratio-16-9"
+                               href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">
+                                <span
+                                        class="img bg-cover wp-post-image attachment-bunyad-medium size-bunyad-medium lazyloaded"
+                                        role="img"
+                                        style="background-image: url('/media/{{i.img}}');">
+
+                                </span>
+                            </a>
+                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
+                                    class="category term-color-14"
+                                    href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}"
+                                    rel="category">{{i.Health_blogs_issue}}</a> </span>
+                        </div>
+                        <div class=" p-3 content">
+                            <div class="post-meta post-meta-a has-below">
+                                <h2 class="is-title post-title">
+                                    <a href="#">{{i.Main_heading}}</a>
+                                </h2>
+
+                                <div class="post-meta-items meta-below"><span
+                                        class="meta-item post-author"><span class="by">By</span> <a
+                                        title="Posts by {{i.Doctor}}">{{i.Doctor}}</a></span>
+                                    <span
+                                            class="meta-item date">
+                                    <span class="date-link ml-1">
+                                        <time class="post-date">({{i.blog_create_time}})</time>
+                                    </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="excerpt" style="max-height:12vh;">
+                                <p>
+                                    {{i.Health_blogs_Detail}}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+        </div>
+
+        <script type="text/javascript">
+              function showDiv(select)
+              {
+                    if(select.value==0)
+                    {
+                        document.getElementById('all_blogs').style.display = "block";
+                        document.getElementById('new_to_old').style.display = "none";
+
+                    } else
+                       if(select.value==1){
+                           document.getElementById('all_blogs').style.display = "none";
+                           document.getElementById('new_to_old').style.display = "block";
+                         }
+                     else
+                        if(select.value==2){
+                           document.getElementById('all_blogs').style.display = "block";
+                           document.getElementById('new_to_old').style.display = "none";
+                     }
+              }
+
+
+
+        </script>
+
+        <style>
+                          #all_blogs{
+                            display:block;
+                           }
+                           #new_to_old{
+                             display:none;
+                           }
+
+
+
+        </style>
+
+
+    </div>
+
+</div>
+
+</body>

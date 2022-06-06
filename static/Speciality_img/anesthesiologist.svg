@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117.2" height="117.199" viewBox="0 0 117.2 117.199">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ebebeb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <g id="anesthesia" transform="translate(-8.2 -8.801)">
+    <circle id="Ellipse_1270" data-name="Ellipse 1270" cx="58.6" cy="58.6" r="58.6" transform="translate(8.2 8.8)" fill="url(#linear-gradient)"/>
+    <path id="Path_40316" data-name="Path 40316" d="M87.4,57.5l-17.7.3s2.5,2,3,3.7c0,0-1.2.2-6.7-.7v1.1H63.3a5.572,5.572,0,0,1-1.9,6.6L75,69.9a5.125,5.125,0,0,1,3.7,5.8,4.875,4.875,0,0,1-5.5,4.9s1.6,4.6-4.5,6.7a12.885,12.885,0,0,1-8.5,0s13,.1,11.1-7l-15.4-1s-3.3,6.9,2.4,9.4,22.2,8.2,22.2,8.2l13,4.9s4.3,1.9,7.8-.9l4,1.2s10-10.8,11.8-26.4l-6.9-2.9s-2-13-6.2-19.8l-4.6-8.7s-3.1-.7-4.2,4.2h.9V60.1h-.6L97,62.8s.7,5.9,1.6,8.2c0,0-3.9.1-4.5-9.5Z" fill="#fbc4a3"/>
+    <path id="Path_40317" data-name="Path 40317" d="M73.6,78.7,55,77.4a3.934,3.934,0,0,1-3.5-4.3h0a3.934,3.934,0,0,1,4.3-3.5l17.9,1.8a3.934,3.934,0,0,1,3.5,4.3h0C76.9,77.9,74.8,78.5,73.6,78.7Z" fill="#e99a82"/>
+    <ellipse id="Ellipse_1271" data-name="Ellipse 1271" cx="4.4" cy="5.6" rx="4.4" ry="5.6" transform="matrix(0.057, -0.998, 0.998, 0.057, 50.462, 67.791)" fill="#e99a82"/>
+    <path id="Path_40318" data-name="Path 40318" d="M25.4,52v6.9l23.7-.5V51.5Z" fill="#67c9d6"/>
+    <path id="Path_40319" data-name="Path 40319" d="M50.2,51.5l11.5-.3v1.2l-11.5.2" fill="#d4d6d5"/>
+    <path id="Path_40320" data-name="Path 40320" d="M50.2,53.3v3.4l11.5-.2V53.3Z" fill="#67c9d6"/>
+    <path id="Path_40321" data-name="Path 40321" d="M50.2,57.6v.9H61.7V57.2H50.2Z" fill="#d4d6d5"/>
+    <path id="Path_40322" data-name="Path 40322" d="M62.6,48.8v12h2.2v-12Z" fill="#d4d6d5"/>
+    <path id="Path_40323" data-name="Path 40323" d="M65.8,51.5H76.5l-14.2-8s-6.7-3.5-8.8,1.4a4.367,4.367,0,0,0,2,5.2l5.8-.1-.1-2.5h4.5Z" fill="#e99a82"/>
+    <path id="Path_40324" data-name="Path 40324" d="M65.4,52.9v3.5L92.7,56V52.6Z" fill="#d4d6d5"/>
+    <path id="Path_40325" data-name="Path 40325" d="M93.5,49.8H95l.3,9H93.5Z" fill="#d4d6d5"/>
+    <rect id="Rectangle_3783" data-name="Rectangle 3783" width="1.2" height="4.9" transform="translate(23.5 52.7)" fill="#d4d6d5"/>
+    <path id="Path_40326" data-name="Path 40326" d="M22.7,53.9v2.7L14,55.7Z" fill="#d4d6d5"/>
+    <path id="Path_40327" data-name="Path 40327" d="M55.9,79.3l15.4,1s2.1,7.7-11.1,7l-3.9.1C56.3,87.3,52.9,86.3,55.9,79.3Z" fill="#e99a82"/>
+  </g>
+</svg>

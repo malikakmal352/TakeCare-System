@@ -1,0 +1,1597 @@
+<html>
+<head>
+    {% include "mainheader.html" %}
+    {% load static %}
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      h5{
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      color: #666;
+      line-height: 22px;
+      }
+
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      overflow:hidden;
+      }
+      .card_body {
+      width: 90%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999;
+      }
+      .status_sm{
+         display:none;
+        }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+
+
+      @media (max-width: 796px) {
+
+             th{
+          font-size:13px;
+         }
+         .card_body {
+             width: 100%;
+             padding:20px
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+       }
+       @media (max-width: 767.5px) {
+        .status_sm{
+         display:block;
+        }
+       .status{
+          display:none;
+        }
+        }
+       @media (max-width: 530px) {
+         th{
+          font-size:12px;
+         }
+       .testbox {
+          width: 100%;
+          padding: 10px 20px;
+        }
+         .card_body {
+             width: 101%;
+             padding: 20px ;
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+           .font-p{
+            font-size:10px;
+           }
+           .font-h5{
+             font-size:12px;
+           }
+
+       }
+        @media (max-width: 400px) {
+         th{
+          font-size:9px;
+         }
+         }
+      .mh:hover{
+      color:green;
+      border-bottom:#49738f solid;
+      }
+      .img_height{
+             height:90px;
+           }
+
+
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+{% if error %}
+<div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+    <div class="d-flex alert-danger">
+        <div class="toast-body ">
+            {{error}}
+        </div>
+        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+    </div>
+</div>
+{% elif success %}
+<div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+    <div class="d-flex alert-success">
+        <div class="toast-body ">
+            {{success}}
+        </div>
+        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+    </div>
+</div>
+{% endif %}
+
+<div class="testbox" style="justify-content: center;align-items: center;height: inherit;">
+    <div class="card_body" style="justify-content: center;align-items: center;height: inherit;">
+        <h5 class="text-center">Your All Book Lab tests, doctor Appointments, Medicine Orders</h5>
+        <s style="color:green;">
+            <hr>
+        </s>
+        <div class="table-responsive">
+            <table class="table width:100% align-middle">
+                <thead>
+                <tr align="center">
+                    <th class="col-3 mh" id="all">All</th>
+                    <th class="col-3 mh" id="lab">Lab Tests</th>
+                    <th class="col-4 mh" id="DA">Doctor Appointments</th>
+                    <!--                    <th class="col-4 mh" id="Order">Medicine Orders</th>-->
+                </tr>
+                </thead>
+            </table>
+            <hr>
+            <!-- //////////////////////////////////////////////All sub tabs code//////////////////////////////-->
+            <div id="all_sub">
+                <table class="table width:100% align-middle">
+
+                    <thead>
+                    <tr align="center">
+                        <th class="col-6 mh w-100" id="upcoming">Upcoming</th>
+                        <th class="col-6 mh" id="past">Past</th>
+                    </tr>
+                    </thead>
+
+                </table>
+                <div id="all_upcoming">
+                    {% for i in book_Test %}
+                    {% if w <= i.Test_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+                            <div class="col-md-2 col-4 col-sm-3 col-lg-3 text-center " style="float:left;">
+                                <img alt="Lab Picture"
+                                     class="doctor-image pb-2 " src="/media/{{ i.Laboratory.img }}"
+                                     style=" width: 100%; margin: auto;">
+                            </div>
+
+                            <div class="col-md-7 col-8 col-sm-8 col-lg-6 mt-2" style="float:left;">
+                                <a class="font-size-md font-weight-bold lab-name" href="/View_list/{{i.id}}"
+                                   style="text-decoration: underline;">{{i.Laboratory.Labname}}</a>
+
+                                <p class="mb-0 font-size-sm py-1">
+                                    <svg height="13" viewBox="0 0 10.674 13.343" width="10">
+                                        <i class="fas fa-map-marker-alt" style="user-select: auto;"></i>
+                                    </svg>
+                                    Book Test: {{i.Book_Test}}
+                                </p>
+
+                                <p class="  font-size-sm py-1">
+                                    <svg height="13" width="10">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        {{i.Test_date}}
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="  col-lg-2 col-sd-6  col-xs-6 col-12 col-md-3 text-center"
+                                 style="justify-content:center;align-items:center">
+                                {% if i.status == 'Pending'%}
+                                <h4 style="color:yellow">{{i.status}}...</h4>
+                                {% elif i.status == 'Conform'%}
+                                <h4 style="color:green">{{i.status}}</h4>
+                                {% elif i.status == 'Sample Collected'%}
+                                <h4 style="color:brown">{{i.status}}</h4>
+                                {% elif i.status == 'Test Report'%}
+                                <a download href="{{i.Test_report.url}}">
+                                    <button class="btn btn-outline-info btn-block col-10"
+                                            style="border:2px solid; " type="button">Download test report
+                                    </button>
+                                </a>
+                                {% elif i.status == 'Cancelled'%}
+                                <h4 style="color:red">{{i.status}}</h4>
+                                {% elif i.status == 'Dispatch'%}
+                                <h4 style="color:blue">{{i.status}}</h4>
+                                {% endif %}
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#helpline-modal{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div aria-hidden="true" class="modal" id="helpline-modal{{i.id}}" role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Lab Test Booking Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle">
+                                                        <tbody>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Order ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Patient_Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.Phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Laboratory</h6>
+                                                            </th>
+                                                            <td>{{i.Laboratory}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Lab Test Name</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test Price</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test.test_price}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test type</h6>
+                                                            </th>
+                                                            <td>{{i.Test_Type}}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!--                        All Upcoming Appointments & Orders-->
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='all_past'
+                     style="justify-content: center;align-items: center;height: inherit;">
+                    {% for i in book_Test %}
+                    {% if w > i.Test_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+                            <div class="col-md-2 col-4 col-sm-3 col-lg-3 text-center " style="float:left;">
+                                <img alt="Lab Picture"
+                                     class="doctor-image pb-2 " src="/media/{{ i.Laboratory.img }}"
+                                     style=" width: 100%; margin: auto;">
+                            </div>
+
+                            <div class="col-md-7 col-8 col-sm-8 col-lg-6 mt-2" style="float:left;">
+                                <a class="font-size-md font-weight-bold lab-name" href="/View_list/{{i.id}}"
+                                   style="text-decoration: underline;">{{i.Laboratory.Labname}}</a>
+
+                                <p class="mb-0 font-size-sm py-1">
+                                    <svg height="13" viewBox="0 0 10.674 13.343" width="10">
+                                        <i class="fas fa-map-marker-alt" style="user-select: auto;"></i>
+                                    </svg>
+                                    Book Test: {{i.Book_Test}}
+                                </p>
+
+                                <p class="  font-size-sm py-1">
+                                    <svg height="13" width="10">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        {{i.Test_date}}
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="  col-lg-2 col-sd-6  col-xs-6 col-12 col-md-3 text-center"
+                                 style="justify-content:center;align-items:center">
+                                {% if i.status == 'Pending'%}
+                                <h4 style="color:yellow">{{i.status}}...</h4>
+                                {% elif i.status == 'Conform'%}
+                                <h4 style="color:green">{{i.status}}</h4>
+                                {% elif i.status == 'Sample Collected'%}
+                                <h4 style="color:brown">{{i.status}}</h4>
+                                {% elif i.status == 'Test Report'%}
+                                <a download href="{{i.Test_report.url}}">
+                                    <button class="btn btn-outline-info btn-block col-10"
+                                            style="border:2px solid; " type="button">Download test report
+                                    </button>
+                                </a>
+                                {% elif i.status == 'Cancelled'%}
+                                <h4 style="color:red">{{i.status}}</h4>
+                                {% elif i.status == 'Dispatch'%}
+                                <h4 style="color:blue">{{i.status}}</h4>
+                                {% endif %}
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#detail{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div aria-hidden="true" class="modal" id="detail{{i.id}}" role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Lab Test Booking Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle">
+                                                        <tbody>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Order ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Patient_Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.Phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Laboratory</h6>
+                                                            </th>
+                                                            <td>{{i.Laboratory}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Lab Test Name</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test Price</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test.test_price}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test type</h6>
+                                                            </th>
+                                                            <td>{{i.Test_Type}}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!--                        All Upcoming Appointments & Orders-->
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <!--                    All Past Appointments & Orders-->
+                </div>
+            </div>
+            <!--//////////////////////////////////////////////All sub tabs code End//////////////////////////////-->
+
+            <!-- //////////////////////////////////////////////Lab Tests sub tabs code//////////////////////////////-->
+            <div id="Lab_sub">
+                <table class="table width:100% align-middle">
+
+                    <thead>
+                    <tr align="center">
+                        <th class="col-6 mh " id="lab_comingTab">Upcoming</th>
+                        <th class="col-6 mh" id="lab_pastTab">Past</th>
+                    </tr>
+                    </thead>
+
+                </table>
+
+                <div id="lab_upcoming">
+                    {% for i in book_Test %}
+                    {% if w <= i.Test_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+                            <div class="col-md-2 col-4 col-sm-3 col-lg-3 text-center " style="float:left;">
+                                <img alt="Lab Picture"
+                                     class="doctor-image pb-2 " src="/media/{{ i.Laboratory.img }}"
+                                     style=" width: 100%; margin: auto;">
+                            </div>
+                            <div class="col-md-7 col-8 col-sm-8 col-lg-6 mt-2" style="float:left;">
+                                <a class="font-size-md font-weight-bold lab-name" href="/View_list/{{i.id}}"
+                                   style="text-decoration: underline;">{{i.Laboratory.Labname}}</a>
+
+                                <p class="mb-0 font-size-sm py-1">
+                                    <svg height="13" viewBox="0 0 10.674 13.343" width="10">
+                                        <i class="fas fa-map-marker-alt" style="user-select: auto;"></i>
+                                    </svg>
+                                    Book Test: {{i.Book_Test}}
+                                </p>
+
+                                <p class="  font-size-sm py-1">
+                                    <svg height="13" width="10">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        {{i.Test_date}}
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="  col-lg-2 col-sd-6  col-xs-6 col-12 col-md-3 text-center"
+                                 style="justify-content:center;align-items:center">
+                                {% if i.status == 'Pending'%}
+                                <h4 style="color:yellow">{{i.status}}...</h4>
+                                {% elif i.status == 'Conform'%}
+                                <h4 style="color:green">{{i.status}}</h4>
+                                {% elif i.status == 'Sample Collected'%}
+                                <h4 style="color:brown">{{i.status}}</h4>
+                                {% elif i.status == 'Test Report'%}
+                                <a download href="{{i.Test_report.url}}">
+                                    <button class="btn btn-outline-info btn-block col-10"
+                                            style="border:2px solid; " type="button">Download test report
+                                    </button>
+                                </a>
+                                {% elif i.status == 'Cancelled'%}
+                                <h4 style="color:red">{{i.status}}</h4>
+                                {% elif i.status == 'Dispatch'%}
+                                <h4 style="color:blue">{{i.status}}</h4>
+                                {% endif %}
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#lab_test_upcoming_detail{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div aria-hidden="true" class="modal" id="lab_test_upcoming_detail{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Lab Test Booking Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle">
+                                                        <tbody>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Order ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Patient_Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.Phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Laboratory</h6>
+                                                            </th>
+                                                            <td>{{i.Laboratory}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Lab Test Name</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test Price</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test.test_price}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test type</h6>
+                                                            </th>
+                                                            <td>{{i.Test_Type}}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='lab_past'
+                     style="justify-content: center;align-items: center;height: inherit;">
+                    {% for i in book_Test %}
+                    {% if w > i.Test_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+                            <div class="col-md-2 col-4 col-sm-3 col-lg-3 text-center " style="float:left;">
+                                <img alt="Lab Picture"
+                                     class="doctor-image pb-2 " src="/media/{{ i.Laboratory.img }}"
+                                     style=" width: 100%; margin: auto;">
+                            </div>
+
+                            <div class="col-md-7 col-8 col-sm-8 col-lg-6 mt-2" style="float:left;">
+                                <a class="font-size-md font-weight-bold lab-name" href="/View_list/{{i.id}}"
+                                   style="text-decoration: underline;">{{i.Laboratory.Labname}}</a>
+
+                                <p class="mb-0 font-size-sm py-1">
+                                    <svg height="13" viewBox="0 0 10.674 13.343" width="10">
+                                        <i class="fas fa-map-marker-alt" style="user-select: auto;"></i>
+                                    </svg>
+                                    Book Test: {{i.Book_Test}}
+                                </p>
+
+                                <p class="  font-size-sm py-1">
+                                    <svg height="13" width="10">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        {{i.Test_date}}
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="  col-lg-2 col-sd-6  col-xs-6 col-12 col-md-3 text-center"
+                                 style="justify-content:center;align-items:center">
+                                {% if i.status == 'Pending'%}
+                                <h4 style="color:yellow">{{i.status}}...</h4>
+                                {% elif i.status == 'Conform'%}
+                                <h4 style="color:green">{{i.status}}</h4>
+                                {% elif i.status == 'Sample Collected'%}
+                                <h4 style="color:brown">{{i.status}}</h4>
+                                {% elif i.status == 'Test Report'%}
+                                <a download href="{{i.Test_report.url}}">
+                                    <button class="btn btn-outline-info btn-block col-10"
+                                            style="border:2px solid; " type="button">Download test report
+                                    </button>
+                                </a>
+                                {% elif i.status == 'Cancelled'%}
+                                <h4 style="color:red">{{i.status}}</h4>
+                                {% elif i.status == 'Dispatch'%}
+                                <h4 style="color:blue">{{i.status}}</h4>
+                                {% endif %}
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#lab_test_detail{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div aria-hidden="true" class="modal" id="lab_test_detail{{i.id}}" role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Lab Test Booking Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle">
+                                                        <tbody>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Order ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Patient_Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.Phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Laboratory</h6>
+                                                            </th>
+                                                            <td>{{i.Laboratory}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Lab Test Name</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test Price</h6>
+                                                            </th>
+                                                            <td>{{i.Book_Test.test_price}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Test type</h6>
+                                                            </th>
+                                                            <td>{{i.Test_Type}}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!--//////////////////////////////////////////////Lab Tests sub tabs code End//////////////////////////////-->
+
+            <!-- //////////////////////////////////////////////Doctor Appointment sub tabs code//////////////////////////////-->
+            <div id="DA_sub">
+                <table class="table width:100% align-middle">
+
+                    <thead>
+                    <tr align="center">
+                        <th class="col-6 mh " id="DA_comingTab">Upcoming</th>
+                        <th class="col-6 mh" id="DA_pastTab">Past</th>
+                    </tr>
+                    </thead>
+
+                </table>
+                <div id="DA_upcoming">
+                    {% for i in book_appointments %}
+                    {% if w <= i.Appointment_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+                            <div class="col-md-2 col-4 col-sm-2 col-lg-2 text-center " style="float:left;">
+                                {% if i.Doctor.img %}
+
+                                <img alt="Dr.{{ i.Doctor.Doctor_name }} Picture"
+                                     class="rounded-circle " src="/media/{{ i.Doctor.img}}"
+                                     style=" width: 90px; margin: auto; height:90px;">
+                                {% else %}
+                                {% if i.Gender == 'Female'%}
+                                <img alt="Psychiatrist in Lahore - Dr. Junaid Rasool"
+                                     class="rounded-circle img_height" src='{% static "female_doctor_dp.jpg" %}'
+                                     width="auto">
+                                {% else %}
+                                <img alt="Dr.{{ i.Doctor.Doctor_name }} Picture"
+                                     class="rounded-circle img_height"
+                                     src='{% static "male_doctor_dp.jpg" %}'
+                                     style=" width: 100%; margin: auto;">
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class="col-md-7 col-8 col-sm-9 col-lg-7 mt-2" style="float:left;">
+                                <p class="font-p"
+                                   style="text-decoration: underline;">
+                                    <b>Dr.{{ i.Doctor.Doctor_name }}</b>
+                                </p>
+                                <div class="status_sm" style="float:right;margin-top:-20px;">
+                                    {% if i.Status == 'Pending'%}
+                                    <p style="color:yellow;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}...</b>
+                                    </p>
+                                    {% elif i.Status == 'Accepted'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle mr-1"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% elif i.Status == 'Completed'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% elif i.Status == 'Cancel'%}
+                                    <p style="color:red;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>Cancelled</b>
+                                    </p>
+                                    {% elif i.Status == 'Dispatch'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                                <p class="font-p py-1">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{i.Time_slot}} | {{i.Appointment_date}}
+                                </p>
+                                <h5 class="font-h5" style="color:green;">
+                                    <i class="fas fa-procedures"></i>
+                                    <b>{{ i.Doctor.Doctor_Clinic }}</b>
+                                </h5>
+                                <div class="status">
+                                    {% if i.Status == 'Pending' or i.Status == 'Accepted'%}
+                                    {% if i.Medical_report_1 %}
+                                    <button class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                            href="#view_attached_Report{{i.id}}" style="font-size:13px"
+                                            type="button">View Report Attached
+                                    </button>
+                                    {% else %}
+                                    <a class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                       href="#Attach_report{{i.id}}" style="font-size:13px"
+                                       type="button">Attach Report
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-danger btn-block col-6 disabled"
+                                            style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% elif i.Status == 'Cancel' or i.Status == 'Dispatch'%}
+                                    <button class="btn btn-danger btn-block col-5 disabled"
+                                            style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-danger btn-block col-6   disabled"
+                                            style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-danger btn-block col-5 disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-block col-6" data-toggle="modal"
+                                            href="#Prescription{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-12 col-sd-6 col-lg-2 text-center "
+                                 style="justify-content:center;align-items:center">
+                                <div class="status">
+                                    {% if i.Status == 'Pending'%}
+                                    <h5 style="color:yellow;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}...</b>
+                                    </h5>
+                                    {% elif i.Status == 'Accepted'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle mr-1"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% elif i.Status == 'Completed'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% elif i.Status == 'Cancel'%}
+                                    <h5 style="color:red;">
+                                        <b><i class="fad fa-circle"></i>Cancelled</b>
+                                    </h5>
+                                    {% elif i.Status == 'Dispatch'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% endif %}
+                                </div>
+
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#appointment_upcoming_detail{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div class="status_sm">
+                                    {% if i.Status == 'Pending' or i.Status == 'Accepted'%}
+                                    {% if i.Medical_report_1 %}
+                                    <button class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                            href="#view_attached_Report{{i.id}}" style="font-size:13px"
+                                            type="button">View Report Attached
+                                    </button>
+                                    {% else %}
+                                    <a class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                       href="#Attach_report{{i.id}}" style="font-size:13px"
+                                       type="button">Attach Report
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-danger btn-block col-6   disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% elif i.Status == 'Cancel' or i.Status == 'Dispatch'%}
+                                    <button class="btn btn-danger btn-block col-5 disabled"
+                                            style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-danger btn-block col-6   disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-danger btn-block col-5 disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-block col-6   " data-toggle="modal"
+                                            href="#Prescription{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% endif %}
+                                </div>
+                                <div aria-hidden="true" class="modal" id="appointment_upcoming_detail{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Appointment Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle ">
+                                                        <thead>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Appointment
+                                                                ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="table-light table-borderless">
+
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.patient_phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">
+                                                                Hospital/Clinic</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_Clinic}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Address</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_Clinic.Location}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Date</h6>
+                                                            </th>
+                                                            <td>{{i.Appointment_date}} | {{i.Time_slot}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Status</h6>
+                                                            </th>
+                                                            <td>{{i.Status}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Payment</h6>
+                                                            </th>
+                                                            <td>Unpaid</td>
+                                                        </tr>
+                                                        </tbody>
+                                                        <tfoot class="borderless">
+                                                        <tr>
+                                                            <th class="col-6"><h6 style="color:green">Sub Total</h6>
+                                                            </th>
+                                                            <td align="center">{{i.Doctor.Doctor_Clinic.Doctor_Fee}}/-
+                                                                Rs
+                                                            </td>
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" class="modal" id="Prescription{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Appointment Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle ">
+                                                        <thead>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Appointment
+                                                                ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="table-light table-borderless">
+
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <td colspan="2">{{i.Appointment_date}} | {{i.Time_slot}}
+                                                            </td>
+                                                        </tr>
+                                                        <tfoot class="borderless">
+                                                        <tr align="center">
+                                                            <th class="col-12" colspan="2"><h4 style="color:green">
+                                                                Doctor Prescription</h4>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" colspan="2">
+                                                                <textarea disabled
+                                                                          rows="4">{{i.Prescription}}</textarea></td>
+
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" class="modal" id="Attach_report{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Select Report </h5>
+                                                <div class="table-responsive">
+                                                    <form action="/View_Your_Appointments/{{request.session.id}}/"
+                                                          class="border" method="POST">
+                                                        <input hidden name="app_id" type="text" value="{{i.id}}"/>
+                                                        {% csrf_token %}
+                                                        <div class="table-responsive" style="max-height:250px;">
+                                                            {% for i in Save_reports %}
+                                                            <input name="report_attach" required
+                                                                   style="float:left;margin-top:50px;"
+                                                                   type="radio"
+                                                                   value="{{i.id}}"/>
+                                                            <div class="col-10  m-3 bg-white text-center row card_length border">
+                                                                <div class="col-sm-3 col-4 ga-event-listing-doctor-photo ">
+                                                                    <a>
+                                                                        <img alt=''
+                                                                             class="rounded-circle"
+                                                                             height="50"
+                                                                             src='{% static "img/madical_reports.jfif" %}'
+                                                                             style="margin-top:10px"
+                                                                             width="50">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col-sm-9 col-7 ">
+                                                                    <p style="margin-bottom:1px;">
+                                                                        <b>{{i.Report_Title}}</b>
+                                                                    </p>
+                                                                    <p style="margin-bottom:1px;margin-left:-5px;">
+                                                                        <i class="fas fa-user-md"
+                                                                           style="color:green;margin-right:10px;"></i>
+                                                                        {{i.Doctor_name}}
+                                                                    </p>
+                                                                    <P><i class="fas fa-calendar-check"
+                                                                          style="color:green;margin-right:10px;">
+                                                                    </i>{{i.Date}}</P>
+                                                                </div>
+                                                            </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                        <input class="btn-danger btn mx-auto col-8"
+                                                               style="margin-left:-15px"
+                                                               type="submit"
+                                                               value="Attach Report"/>
+                                                    </form>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" class="modal" id="view_attached_Report{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Select Report </h5>
+                                                {% for r in book_appointments %}
+                                                 {% if i.id == r.id %}
+                                                <div class="table-responsive">
+                                                    <iframe src="static/Patient_save_Reports/Malik_Akmal_Naseer_Resume.pdf"
+                                                            style="color:red;width:100%;max-height:500px;"></iframe>
+
+                                                    <br/>
+                                                </div>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='DA_past'
+                     style="justify-content: center;align-items: center;height: inherit;">
+                    {% for i in book_appointments %}
+                    {% if w > i.Appointment_date %}
+                    <div class="card_body mb-3 container-lg col-12"
+                         style="justify-content: center;align-items: center;height: inherit;">
+                        <div class="row py-3">
+
+                            <div class="col-md-2 col-4 col-sm-2 col-lg-2 text-center " style="float:left;">
+                                {% if i.img %}
+                                <img alt="Dr.{{ i.Doctor.Doctor_name }} Picture"
+                                     class="rounded-circle " src="/media/{{ i.Doctor.img}}"
+                                     style=" width: 90px; margin: auto; height:90px;">
+                                {% else %}
+                                {% if i.Gender == 'Female'%}
+                                <img alt="{{i.Doctor_name}} "
+                                     class="rounded-circle img_height"
+                                     src='{% static "female_doctor_dp.jpg" %}'>
+                                {% else %}
+                                <img alt="Dr.{{ i.Doctor.Doctor_name }} Picture"
+                                     class="doctor-image pb-2 "
+                                     src='{% static "male_doctor_dp.jpg" %}'
+                                     style=" width: 100%; margin: auto;">
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class="col-md-7 col-8 col-sm-9 col-lg-7 mt-2" style="float:left;">
+                                <p class="font-p"
+                                   style="text-decoration: underline;">
+                                    <b>Dr.{{ i.Doctor.Doctor_name }}</b>
+                                </p>
+                                <div class="status_sm" style="float:right;margin-top:-20px;">
+                                    {% if i.Status == 'Pending'%}
+                                    <p style="color:yellow;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}...</b>
+                                    </p>
+                                    {% elif i.Status == 'Accepted'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle mr-1"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% elif i.Status == 'Completed'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% elif i.Status == 'Cancel'%}
+                                    <p style="color:red;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>Cancelled</b>
+                                    </p>
+                                    {% elif i.Status == 'Dispatch'%}
+                                    <p style="color:green;font-size:14px;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                                <p class="font-p py-1">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{i.Time_slot}} | {{i.Appointment_date}}
+                                </p>
+                                <h5 class="font-h5" style="color:green;">
+                                    <i class="fas fa-procedures"></i>
+                                    <b>{{ i.Doctor.Doctor_Clinic }}</b>
+                                </h5>
+                                <div class="status">
+                                    {% if i.Status == 'Pending' or i.Status == 'Accepted'%}
+                                    <button class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-danger btn-block col-6 disabled"
+                                            style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% elif i.Status == 'Cancel' or i.Status == 'Dispatch'%}
+                                    <button class="btn btn-danger btn-block col-5 disabled"
+                                            style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-danger btn-block col-6   disabled"
+                                            style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-danger btn-block col-5 disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-block col-6" data-toggle="modal"
+                                            href="#Prescription_past{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-12 col-sd-6 col-lg-2 text-center "
+                                 style="justify-content:center;align-items:center">
+                                <div class="status">
+                                    {% if i.Status == 'Pending'%}
+                                    <h5 style="color:yellow;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}...</b>
+                                    </h5>
+                                    {% elif i.Status == 'Accepted'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle mr-1"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% elif i.Status == 'Completed'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% elif i.Status == 'Cancel'%}
+                                    <h5 style="color:red;">
+                                        <b><i class="fad fa-circle"></i>Cancelled</b>
+                                    </h5>
+                                    {% elif i.Status == 'Dispatch'%}
+                                    <h5 style="color:green;">
+                                        <b><i class="fad fa-circle"></i>{{i.Status}}</b>
+                                    </h5>
+                                    {% endif %}
+                                </div>
+
+                                <button class="btn btn-info btn-block col-10" data-toggle="modal"
+                                        href="#appointment_Past_detail{{i.id}}"
+                                        style="color:white; " type="button">View Detail
+                                </button>
+                                <div class="status_sm">
+                                    {% if i.Status == 'Pending' or i.Status == 'Accepted'%}
+
+                                    {% if i.Medical_report_1 %}
+                                    <button class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                            href="#view_attached_Report_past{{i.id}}" style="font-size:13px"
+                                            type="button">View Report Attached
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-outline-danger btn-block col-5" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    {% endif %}
+                                    <button class="btn btn-danger btn-block col-6   disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% elif i.Status == 'Cancel' or i.Status == 'Dispatch'%}
+                                    <button class="btn btn-danger btn-block col-5 disabled"
+                                            style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-danger btn-block col-6   disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-danger btn-block col-5 disabled" data-toggle="modal"
+                                            href="#appointment_past_detail{{i.id}}" style="font-size:13px"
+                                            type="button">Attach Report
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-block col-6   " data-toggle="modal"
+                                            href="#Prescription_past{{i.id}}" style="font-size:13px"
+                                            type="button">view Prescription
+                                    </button>
+                                    {% endif %}
+                                </div>
+                                <div aria-hidden="true" class="modal" id="appointment_Past_detail{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Appointment Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle ">
+                                                        <thead>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Appointment
+                                                                ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="table-light table-borderless">
+
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                            <td>0{{i.patient_phone}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">
+                                                                Hospital/Clinic</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_Clinic}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Address</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_Clinic.Location}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Date</h6>
+                                                            </th>
+                                                            <td>{{i.Appointment_date}} | {{i.Time_slot}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Status</h6>
+                                                            </th>
+                                                            <td>{{i.Status}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Payment</h6>
+                                                            </th>
+                                                            <td>Unpaid</td>
+                                                        </tr>
+                                                        </tbody>
+                                                        <tfoot class="borderless">
+                                                        <tr>
+                                                            <th class="col-6"><h6 style="color:green">Sub Total</h6>
+                                                            </th>
+                                                            <td align="center">{{i.Doctor.Doctor_Clinic.Doctor_Fee}}/-
+                                                                Rs
+                                                            </td>
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" class="modal" id="Prescription_past{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Appointment Details</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle ">
+                                                        <thead>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Appointment
+                                                                ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="table-light table-borderless">
+
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                            </th>
+                                                            <td>{{i.Name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <!--                                                            <th class="col-6"><h6 style="color:green">Date</h6>-->
+                                                            <!--                                                            </th>-->
+                                                            <td colspan="2">{{i.Appointment_date}} | {{i.Time_slot}}
+                                                            </td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                        <tfoot class="borderless">
+                                                        <tr align="center">
+                                                            <th class="col-12" colspan="2"><h4 style="color:green">
+                                                                Doctor Prescription</h4>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th align="center" class="col-12" colspan="2">
+                                                                <textarea class="col-12" disabled rows="4">{{i.Prescription}}</textarea>
+                                                            </th>
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!--//////////////////////////////////////////////Doctor Appointment sub tabs code End//////////////////////////////-->
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var all = document.getElementById('all');
+    var lab = document.getElementById('lab');
+    var DA = document.getElementById('DA');
+
+    var all_sub = document.getElementById('all_sub');
+    var Lab_sub = document.getElementById('Lab_sub');
+    var DA_sub = document.getElementById('DA_sub');
+
+
+
+    var all_cards = document.getElementById('all_upcoming');
+    var all_past  = document.getElementById('all_past');
+    var lab_comingTab = document.getElementById('lab_comingTab');
+    var lab_pastTab = document.getElementById('lab_pastTab');
+    var DA_comingTab = document.getElementById('DA_comingTab');
+    var DA_pastTab = document.getElementById('DA_pastTab');
+
+
+
+    var upcoming = document.getElementById('upcoming');
+    var past = document.getElementById('past');
+    var lab_upcoming  = document.getElementById('lab_upcoming');
+    var lab_past  = document.getElementById('lab_past');
+    var DA_upcoming  = document.getElementById('DA_upcoming');
+    var DA_past  = document.getElementById('DA_past');
+
+
+       			all.style.color = "green";
+                all.style.borderBottom = "#49738f solid";
+                all_cards.style.display  ="block";
+                all_past.style.display  = "none";
+                lab_past.style.display  = "none";
+                DA_past.style.display  = "none";
+
+
+                all_sub.style.display = "block";
+                Lab_sub.style.display = "none";
+                DA_sub.style.display = "none";
+
+
+       			upcoming.style.color = "green";
+                upcoming.style.borderBottom = "#49738f solid";
+                upcoming.style.display  ="block";
+
+<!--///////////////////////////////////////////JavaScript for ALL TAB//////////////////////////////////////-->
+     all.onclick = function ()
+       {
+              all.style.color = "green";
+              all.style.borderBottom = "#49738f solid";
+              lab.style.color = "black";
+              lab.style.borderBottom = "none";
+              DA.style.color = "black";
+              DA.style.borderBottom = "none";
+              DA_sub.style.display = "none";
+
+              all_sub.style.display = "block";
+              Lab_sub.style.display = "none";
+
+
+
+			all_cards.style.display  ="block";
+            all_past.style.display  = "none";
+
+
+            upcoming.style.color = "green";
+			upcoming.style.borderBottom = "#49738f solid";
+       		past.style.color = "black";
+            past.style.borderBottom = "none";
+		}
+
+
+		past.onclick = function () {
+			past.style.color = "green";
+			past.style.borderBottom = "#49738f solid";
+
+       		upcoming.style.color = "black";
+            upcoming.style.borderBottom = "none";
+
+            all_cards.style.display  ="none";
+            all_past.style.display  = "block";
+
+		}
+
+		upcoming.onclick = function () {
+			upcoming.style.color = "green";
+			upcoming.style.borderBottom = "#49738f solid";
+       		past.style.color = "black";
+            past.style.borderBottom = "none";
+            all_cards.style.display  ="block";
+            all_past.style.display  = "none";
+		}
+<!--///////////////////////////////////////////JavaScript for ALL TAB End//////////////////////////////////////-->
+
+<!--///////////////////////////////////////////JavaScript for Lab Test TAB//////////////////////////////////////-->
+
+		 lab.onclick = function ()
+       {
+              all.style.color = "black";
+              all.style.borderBottom = "none";
+              DA.style.color = "black";
+              DA.style.borderBottom = "none";
+              lab.style.color = "green";
+              lab.style.borderBottom = "#49738f solid";
+
+              all_sub.style.display = "none";
+              Lab_sub.style.display = "block";
+              DA_sub.style.display = "none";
+
+
+			all_cards.style.display  ="block";
+			all_cards.style.display  ="block";
+            all_past.style.display  = "none";
+
+            lab_comingTab.style.color = "green";
+			lab_comingTab.style.borderBottom = "#49738f solid";
+       		lab_pastTab.style.color = "black";
+            lab_pastTab.style.borderBottom = "none";
+		}
+
+
+        lab_pastTab.onclick = function () {
+			lab_pastTab.style.color = "green";
+			lab_pastTab.style.borderBottom = "#49738f solid";
+
+       		lab_comingTab.style.color = "black";
+            lab_comingTab.style.borderBottom = "none";
+
+            lab_upcoming.style.display  ="none";
+            lab_past.style.display  = "block";
+
+		}
+
+		lab_comingTab.onclick = function () {
+			lab_comingTab.style.color = "green";
+			lab_comingTab.style.borderBottom = "#49738f solid";
+
+       		lab_pastTab.style.color = "black";
+            lab_pastTab.style.borderBottom = "none";
+
+            lab_upcoming.style.display  ="block";
+            lab_past.style.display  = "none";
+
+		}
+
+<!--///////////////////////////////////////////JavaScript for Lab Test TAB End//////////////////////////////////////-->
+
+
+<!--///////////////////////////////////////////JavaScript for Doctor Appointment TAB Start//////////////////////////////////////-->
+
+		 DA.onclick = function ()
+       {
+
+              all.style.color = "black";
+              all.style.borderBottom = "none";
+              lab.style.color = "black";
+              lab.style.borderBottom = "none";
+              DA.style.color = "green";
+              DA.style.borderBottom = "#49738f solid";
+
+
+               all_sub.style.display = "none";
+              Lab_sub.style.display = "none";
+              DA_sub.style.display = "block";
+
+			all_cards.style.display  ="block";
+			all_cards.style.display  ="block";
+            all_past.style.display  = "none";
+
+
+            DA_comingTab.style.color = "green";
+			DA_comingTab.style.borderBottom = "#49738f solid";
+
+       		DA_pastTab.style.color = "black";
+            DA_pastTab.style.borderBottom = "none";
+		}
+
+        DA_pastTab.onclick = function () {
+			DA_pastTab.style.color = "green";
+			DA_pastTab.style.borderBottom = "#49738f solid";
+       		DA_comingTab.style.color = "black";
+            DA_comingTab.style.borderBottom = "none";
+            DA_upcoming.style.display  ="none";
+            DA_past.style.display  = "block";
+		}
+
+		DA_comingTab.onclick = function () {
+			DA_comingTab.style.color = "green";
+			DA_comingTab.style.borderBottom = "#49738f solid";
+       		DA_pastTab.style.color = "black";
+            DA_pastTab.style.borderBottom = "none";
+            DA_upcoming.style.display  ="block";
+            DA_past.style.display  = "none";
+
+		}
+
+<!--///////////////////////////////////////////JavaScript for Doctor Appointment TAB End//////////////////////////////////////-->
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+

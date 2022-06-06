@@ -1,0 +1,526 @@
+{% include "Admin_site/admin_header.html" %}
+
+{% load static %}
+
+<body class="crm_body_bg">
+
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/Super_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                <span>Dashboard</span>
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Users</span>
+        </li>
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Patient<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a class="active" href="/view_Patient_list/">View All Patients </a></li>
+                <li><a href="#">ADD New Patient</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-user-md"></i>
+                <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a  href="/all_Register_doctor/">View All Doctors</a></li>
+                <li><a href="/view_N_D/">New Doctor Request</a></li>
+                <li><a href="/add_new_doctor/">ADD New Doctor</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-pills"></i>
+                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View ALL Pharmacy/">View All Pharmacies</a></li>
+                <li><a href="/ADD_New_Pharmacy/">ADD New pharmacy</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fal fa-vial"></i>
+                <span>Laboratories<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="#">View All Laboratories</a></li>
+                <li><a href="#">ADD New Laboratory</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+
+                                <!--                                <div class="search_field">-->
+                                <!--                                    <input id="tag" placeholder="Search here..." type="text">-->
+                                <!--                                    <script>-->
+                                <!--                                            $(function () {-->
+                                <!--                                                var availableTags = [-->
+                                <!--                                                  {% for i in all_lab %}-->
+                                <!--                                                       "{{i.Labname}}",-->
+                                <!--                                                  {% endfor %}-->
+                                <!--                                                  ];-->
+                                <!--                                            $("#tag").autocomplete({-->
+                                <!--                                                source: availableTags-->
+                                <!--                                            });-->
+                                <!--                                      } );-->
+
+
+                                <!--                                    </script>-->
+
+                                <!--                                </div>-->
+
+                                <!--                                <button type="submit"><img alt="" src=' {% static "Hospital_files/icon_search.svg" %}'>-->
+                                <!--                                </button>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#"> <img
+                                        alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+                            {% for i in current_admin %}
+                            {% if i.img %}
+                            <img alt="#" src='/media/{{current_lab.img}}'>
+                            {% else %}
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="max-width:40px;"></a>
+                            {% endif %}
+                            {% endfor %}
+                            <div class="profile_info_iner">
+                                <p>{{current_lab.Username}}</p>
+                                <h5>{{current_lab.email}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Lab_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+                <!--View All Register Patients Details-->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        <div class="table-responsive">
+                            <h2 align="center">View All Register Patients/Users</h2>
+                            {% if error_message %}
+                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                                 role="alert">
+                                <div class="d-flex alert-danger">
+                                    <div class="toast-body ">
+                                        {{error_message}}
+                                    </div>
+                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                            type="button"></button>
+                                </div>
+                            </div>
+                            {% elif success %}
+                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                                 role="alert">
+                                <div class="d-flex alert-success">
+                                    <div class="toast-body ">
+                                        {{success}}
+                                    </div>
+                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                            type="button"></button>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <br><br>
+
+                            <table class="table table-bordered table-hover" id="examples">
+                                <thead>
+                                <tr align="center">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Call</th>
+                                    <th scope="col">View Detail</th>
+                                    <th scope="col">Actions</th>
+                                    <th scope="col">Active/Deactivate</th>
+
+                                </tr>
+                                </thead>
+                                <tbody align="center">
+                                {% for i in all_Patients %}
+                                <tr>
+                                    <th scope="row">{{forloop.counter}}</th>
+                                    <td>{{i.name}}</td>
+                                    <td>
+                                        <button class="btn btn-info" onclick="location.href='tel:0{{i.Mn}}'"
+                                                style="border:2px solid;color:white; " type="button">Call now
+                                        </button>
+                                    </td>
+                                    <td><a class="mr-1 View-record-details-link"
+                                           data-toggle="modal" href="#view-detail_Patients{{i.id}}"
+                                           style="height:38px;width: 55px;">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                    <td><a class="mr-1 delete-record-link"
+                                           data-toggle="modal" href="#delete_Patients{{i.id}}">
+                                        <i class="fas fa-trash-alt fa-2x" style="color:red;"></i></a>
+                                    </td>
+                                    <td>
+                                        {% if i.is_Active %}
+                                        <label class="switchs">
+                                            <a class="mr-1 helpline-number-link"
+                                               data-toggle="modal" href="#Deactive_Patients{{i.id}}">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </a>
+                                        </label>
+
+                                        {% else %}
+                                        <label class="switchs">
+                                            <a class="mr-1 helpline-number-link"
+                                               data-toggle="modal" href="#Active_Patients{{i.id}}"> <input checked
+                                                                                                           type="checkbox">
+                                                <span class="slider round"></span>
+                                            </a>
+                                        </label>
+                                        {% endif %}
+                                    </td>
+
+                                </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                            {% for i in all_Patients %}
+                            <!-- Popup for view detail-->
+                            <div aria-hidden="true" class="modal" id="view-detail_Patients{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Register User Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6" colspan="2"><img src="/media/{{ i.img }}"
+                                                                                           style="height:10vh;">
+                                                        </th>
+
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">{{i.name}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">E-mail</h6>
+                                                        </th>
+                                                        <td>{{i.email}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                        <td>0{{i.Mn}}</td>
+                                                    </tr>
+                                                    {% if i.is_Active %}
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6>
+                                                        </th>
+                                                        <td>Activate</td>
+                                                    </tr>
+                                                    {% else %}
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6>
+                                                        </th>
+                                                        <td>Deactivate</td>
+                                                    </tr>
+                                                    {% endif %}
+
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- delete for view detail -->
+                            <div aria-hidden="true" class="modal" id="delete_Patients{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure delete this Patient </h5>
+                                            <p class="text-center" style="color:blue;">Once you delete Parentally</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/Patients_del/" method="post">
+                                                                    {% csrf_token %}
+                                                                    <input hidden name="name" type="text"
+                                                                           value="{{i.name}}"/>
+                                                                    <input hidden name="id" type="number"
+                                                                           value="{{i.id}}"/>
+                                                                    <button class="btn btn-danger"
+                                                                            style="font-family:sans-serif;">
+                                                                        Delete
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Active_Patients-->
+                            <div aria-hidden="true" class="modal" id="Active_Patients{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">Active this User</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/Status_Patients/" method="post">
+                                                                    {% csrf_token %}
+                                                                    <input hidden name="name" type="text"
+                                                                           value="{{i.name}}"/>
+                                                                    <input hidden name="id" type="number"
+                                                                           value="{{i.id}}"/>
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;">
+                                                                        Activate
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Deactivate_Patients-->
+                            <div aria-hidden="true" class="modal" id="Deactive_Patients{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">Deactivate this User</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/Status_Patients/" method="post">
+                                                                    {% csrf_token %}
+                                                                    <input hidden name="name" type="text"
+                                                                           value="{{i.name}}"/>
+                                                                    <input hidden name="id" type="number"
+                                                                           value="{{i.id}}"/>
+                                                                    <button class="btn btn-danger"
+                                                                            style="font-family:sans-serif;">
+                                                                        Deactivate
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jquery slim -->
+<!--<script crossorigin="anonymous"-->
+<!--        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="-->
+<!--        src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>-->
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.js"-->
+<!--        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="-->
+<!--        crossorigin="anonymous"></script>-->
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+<!-- waypoints js -->
+<!--<script src='{% static "Hospital_files/Chart.min.js.download" %}'></script>-->
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- nice select -->
+<script src='{% static  "Hospital_files/jquery.nice-select.min.js.download" %}'></script>
+<!-- owl carousel -->
+<script src='{% static  "Hospital_files/owl.carousel.min.js.download" %}'></script>
+
+<!-- tag input -->
+<script src='{% static "Hospital_files/tagsinput.js.download" %}'></script>
+<!-- text editor js -->
+<script src='{% static "Hospital_files/summernote-bs4.js.download" %}'></script>
+
+
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+<link href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" rel="stylesheet">
+<!--<script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    var availableTags = [
+      {% for i in all_lab %}
+             "{{i.Labname}}",
+       {% endfor %}
+    ];
+    $( "#tag" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+
+
+</script>
+
+</body>

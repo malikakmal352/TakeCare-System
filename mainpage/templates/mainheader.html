@@ -1,0 +1,1076 @@
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{% static 'Medicine_assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+
+    <!--    <meta content="width=device-width, initial-scale=1" name="viewport">-->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>-->
+    <!-- Font Awsome CND -->
+    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+
+    <title>TakeCare: Find, Book &amp; Consult Doctors | Pakistan's Most Trusted Platform</title>
+    <meta content="TakeCare" name="author"/>
+
+
+    <link href="{% static 'Medicine_assets/css/meanmenu.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/owl-carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/swiper-bundle.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/ui-range-slider.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/nice-select.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/flaticon/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/font-awesome-pro.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/default.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/style.css' %}" rel="stylesheet">
+
+    <!--    /////////////////////CSS for button color and setting start///////////////////////////////-->
+    <style>
+
+        .btn-info{color:#2b3445;background-color:#49738f;border-color:#49738f;box-shadow:none}
+        .btn-info:not(:disabled):not(.disabled):active:focus,.show>
+        .btn-outline-info{color:#49738f;border-color:#49738f}
+        .btn-outline-info:hover{color:white;background-color:#49738f;border-color:#49738f}
+
+
+        .btn-group-lg>.btn,.btn-lg{
+              padding:.75rem 1.5rem;
+              font-size:1.0625rem;
+              line-height:1.5;
+              border-radius:.4375rem
+              }
+        .btn-group-sm>.btn,.btn-sm{
+                  padding:.425rem 1rem;font-size:.8125rem;
+                  line-height:1.5;
+                  border-radius:.1875rem
+                  }
+
+
+
+
+
+
+
+    </style>
+    <!--    /////////////////////CSS for button color and setting end////////////////////////////////-->
+
+    <style>
+            .no-arrow {
+  -moz-appearance: textfield;
+}
+.no-arrow::-webkit-inner-spin-button {
+  display: none;
+}
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+    </style>
+
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        html
+         {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent
+         }
+        body {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #202124;
+            text-align: left;
+            background-color: #f7f7f7;
+            /*background-color: rebeccapurple;*/
+            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
+        }
+
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: #014e78;
+            text-decoration: none;
+            background-color: transparent
+        }
+
+
+
+
+        .flex-wrap {
+            -ms-flex-wrap: wrap !important;
+            flex-wrap: wrap !important
+        }
+
+
+         .mega-dropdown-column {
+            width: 15rem
+        }
+
+       .img{
+            display: none;
+          }
+
+        u{
+          font-size: 12px;
+        }
+
+        ul, li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            background-color: transparent
+        }
+
+
+        .navbar-expand-lg .dropdown:hover>.sd {
+                display: block;
+                -webkit-animation: slide-up .25s ease-in-out;
+                animation: slide-up .25s ease-in-out
+            }
+        l{
+        font-size:13.5px;
+        }
+
+       .order-lg-3 .dropdown:hover>.dropdown-menu {
+                display: block;
+                -webkit-animation: slide-up .25s ease-in-out;
+                animation: slide-up .5s ease-in-out
+            }
+
+        @media (min-width:992px){
+           .navbar-expand-lg .dropdown:hover>.dropdown-menu {
+                display: block;
+                -webkit-animation: slide-up .25s ease-in-out;
+                animation: slide-up .25s ease-in-out
+            }
+
+            .sub-li{
+               margin-top:-27px !important;
+                margin-left: 120px;
+            }
+            .flex-md-nowrap {
+                -ms-flex-wrap: nowrap !important;
+                flex-wrap: nowrap !important
+            }
+            .ic{
+                display: block;
+            }
+           .img{
+               display: block;
+            }
+        }
+
+        @media (max-width: 1270px){
+          @media (min-width: 1150px){
+          .sub{
+            margin-left: -190px;
+           }
+        }
+      }
+        @media (max-width: 1150px){
+          @media (min-width: 992px){
+          .sub{
+            margin-left: -210px;
+           }
+           .h_logo{
+            height: 40px;
+            margin-right: 10px;
+           }
+           .hd{
+            font-size: 13px;
+            font: bold;
+           }
+
+           l{
+               font-size:11.5px;
+             }
+        }
+      }
+
+       @media (min-width:992px) {
+            .navbar-expand-lg .mega-nav .dropdown-menu>.mega-dropdown .dropdown-menu::before {
+                position: absolute;
+                top: 0;
+                right: 16rem;
+                width: 1px;
+                height: 100%;
+                background-color: #e3e9ef;
+                content: ''
+            }
+            .navbar-expand-lg .dropdown-menu {
+                margin-top: 0;
+                border-color: #fff;
+                background-color: #fff;
+                box-shadow: 0 .25rem .5625rem -.0625rem rgba(0, 0, 0, .03), 0 .275rem 1.25rem -.0625rem rgba(0, 0, 0, .05)
+            }
+            .navbar-expand-lg .dropdown-menu.show {
+                display: none
+            }
+
+        }
+
+        @media (max-width: 400px){
+          @media (min-width: 50px){
+          .log{
+             display:none;
+          }
+          }}
+
+        .h_logo{
+            height: 60px;
+            margin-right: 30px;
+        }
+        //////////////////////////////////////////header_CSS END//////////////////////////////////
+
+
+
+
+
+
+
+    </style>
+
+    <style>
+.profile {
+  position: relative;
+}
+
+.profile img {
+  max-width: 69px;
+  max-height: 69px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profile .profile_info_iner {
+  right: 0;
+  background-color: #2E4765;
+  text-align: right;
+  width: 215px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.profile .profile_info_iner::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 20px 15px;
+  border-color: #2E4765 transparent;
+}
+
+/* line 216, H:/admin_project/hospital/scss/_header.scss */
+.profile .profile_info_iner a {
+  display: block;
+}
+
+.profile .profile_info_iner p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.profile .profile_info_iner h5 {
+  font-size: 12px;
+  color: #fff;
+}
+
+.profile:hover .profile_info_iner {
+  opacity: 1;
+  visibility: visible;
+  top: 50px;
+}
+
+
+.profile .profile_info_details {
+  margin-top: 15px;
+  border-top: 1px solid #79838b;
+  padding-top: 10px;
+}
+
+
+.profile .profile_info_details a {
+  color: #fff;
+  font-size: 13px;
+  display: block;
+  padding: 10px 0;
+}
+
+.profile .profile_info_details a:hover {
+  color: #fff;
+}
+
+.profile .profile_info_details i {
+  color: #cccccc;
+  font-size: 12px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding:0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+<header class="header d-blue-bg" style="padding:10px 0">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-inner">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="header-inner-start">
+                            <div class="support d-none d-lg-block">
+                                <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5  d-sm-block">
+                        <div class="header-inner-end text-md-end">
+                            <div class="ovic-menu-wrapper">
+                                <ul>
+                                    <li><a href="/about us/">About Us</a></li>
+                                    <!--                                    <li><a href="contact.html">Order Tracking</a></li>-->
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="/Our Services/">Our Services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ///////////////////////////////////////Header_Start////////////////////////////////////////////// -->
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;">
+    <div class="container-fluid mx-auto">
+        <a class="img" href="/"><img class="h_logo" src='{% static "final_logo.png" %}'></a>
+        <div class="header__bottom-left d-flex d-lg-none">
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="side-menu-btn offcanvas-toggle-btn d-lg-none"
+                    data-bs-toggle="collapse" style="background-color: white;border: none;" type="button">
+                <span class="navbar-toggler-icon " ></span>
+
+            </button>
+        </div>
+        <!--        <div class="header__bottom-left d-flex d-xl-block align-items-center">-->
+        <!--            <div class="side-menu d-lg-none mr-20">-->
+        <!--                <button class="side-menu-btn offcanvas-toggle-btn" type="button">-->
+        <!--                <span class="navbar-toggler-icon"></span>-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+
+        <div class="navbar-brand mr-2 order-lg-2 align-items-center d-lg-none log" style="min-width: 150px">
+            <div class="d-flex">
+                <a href="/">
+                    <img alt="TakeCare.pk Logo" class="w-100" src='{% static "final_logo.png" %}' style="height:70px;"/>
+                </a>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center order-lg-3">
+            <a class="mr-1 helpline-number-link btn btn-info btn-sm"
+               data-toggle="modal" href="#helpline-modal" style="height:38px;width: 55px;margin-right: 10px; "
+               title="TakeCare Helpline Button">
+                <svg class="bi bi-telephone-fill" fill="currentColor" height="21" style="color:white;font-style:bold;"
+                     viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                          fill-rule="evenodd"/>
+                </svg>
+            </a>
+
+            {% if request.session.email %}
+            {% for i in Customer %}
+            {% if i.email == request.session.email %}
+            <li class=" dropdown profile" style="margin-top:1px;margin-right:30px;">
+                {% if i.img %}
+                <a><img alt="#" src='/media/{{i.img}}' style="width:40px;border-radius:50%;height:40px;"></a>
+                {% else %}
+                <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+
+                {% endif %}
+                <div class="profile_info_iner dropdown-menu"
+                     style="background-color: #2E4765;margin-top:-15px;margin-right:-30px;border-color:none;">
+                    <h4 class="text-center" style="padding-right:15px;color:white;font-size:14px;">{{i.name}}</h4>
+                    <h5 style="padding-right:15px;">{{request.session.email}}</h5>
+                    <div class="profile_info_details" style="padding-right:15px; background-color: #2E4765;">
+                        <a href="/Patient_Setting/">My Profile
+                            <i class="fal fa-user"></i></a>
+                        <a href="/Patient_Setting/">Settings
+
+                            <i class="fal fa-user-cog"></i></a>
+                        <a href="/Medical Records/">My Medical Records
+                            <i class="fas fa-books-medical"></i></a>
+                        <a href="/Logout/">Log Out
+                            <i class="fal fa-sign-out"></i></a>
+                    </div>
+                </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-link hd mt-1 ">
+                    <a href="/">
+                        <l>Home</l>
+                    </a>
+                </li>
+
+                <!-- //////////////////////////////Doctor dropdown/////////////////// -->
+                <li class="nav-link  dropdown hd">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <l>Doctors</l>
+                    </a>
+                    <div class="dropdown-menu p-0 sub">
+                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+                            <div class="mega-dropdown-column py-4 px-3">
+                                <div>
+                                    <h6 style="color: #014e78">Find doctor by speciality</h6>
+                                    <ul>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/Dermatologist"
+                                               style="padding-left: 0;">
+                                                Dermatologist
+                                            </a>
+                                            <ul class="dropdown-menu sd bg-dark sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Dermatologist/Lahore" style="color:white;">
+                                                        <u>Dermatologist in Lahore</u>
+                                                    </a>
+                                                </li>
+
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Dermatologist/Karachi" style="color:white;">
+                                                        <u>Dermatologist in Karachi</u>
+                                                    </a>
+                                                </li>
+
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Dermatologist/Islamabad" style="color:white;">
+                                                        <u>Dermatologist in Islamabad</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Dermatologist" style="color:white;">
+                                                        <u>Dermatologist in Pakistan</u>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/Gynecologist"
+                                               style="padding-left: 0;">
+                                                Gynecologist
+                                            </a>
+                                            <ul class="dropdown-menu sd  bg-dark sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gynecologist/Lahore" style="color:white;">
+                                                        <u>Gynecologist in Lahore</u>
+                                                    </a>
+                                                </li>
+
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gynecologist/Karachi" style="color:white;">
+                                                        <u>Gynecologist in Karachi</u>
+                                                    </a>
+                                                </li>
+
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gynecologist/Islamabad" style="color:white;">
+                                                        <u>Gynecologist in Islamabad</u>
+                                                    </a>
+                                                </li>
+
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gynecologist" style="color:white;">
+                                                        <u>Gynecologist in Pakistan</u>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle"
+                                               href="/Doctors/Child Specialist" style="padding-left: 0;">
+                                                Child Specialist</a>
+                                            <ul class="dropdown-menu sd bg-dark sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Child Specialist/Lahore" style="color:white;">
+                                                        <u>Child Specialist in Lahore</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Child Specialist/Karachi" style="color:white;"><u>Child
+                                                        Specialist in Karachi</u></a></li>
+                                                <li class="dropdown-item "><a href="/Doctors/Child Specialist/Islamabad"
+                                                                              style="color:white;"><u>Child
+                                                    Specialist in Islamabad</u></a></li>
+                                                <li class="dropdown-item "><a href="/Doctors/Child Specialist"
+                                                                              style="color:white;"><u>Child
+                                                    Specialist in Pakistan</u></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/Gastroenterologist"
+                                               style="padding-left: 0;">Gastroenterologist</a>
+                                            <ul class="dropdown-menu sd bg-dark sub-li">
+                                                <li class="dropdown-item "
+                                                ><a href="/Doctors/Gastroenterologist/Lahore" style="color:white;"><u>Gastroenterologist
+                                                    in Lahore</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gastroenterologist/Karachi"
+                                                       style="color:white;"><u>Gastroenterologist
+                                                        in Karachi</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gastroenterologist/Islamabad"
+                                                       style="color:white;"><u>Gastroenterologist
+                                                        in Islamabad</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Gastroenterologist" style="color:white;">
+                                                        <u>Gastroenterologist in pakistan</u>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/Psychiatrist"
+                                               style="padding-left: 0;">
+                                                Psychiatrist
+                                            </a>
+                                            <ul class="dropdown-menu sd bg-dark sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Psychiatrist/Lahore" style="color:white;"><u>Psychiatrist
+                                                        in Lahore</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Psychiatrist/Karachi" style="color:white;"><u>Psychiatrist
+                                                        in Karachi</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Psychiatrist/Islamabad" style="color:white;"><u>Psychiatrist
+                                                        in Islamabad</u></a></li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Psychiatrist" style="color:white;"><u>Psychiatrist
+                                                        in Pakistan</u></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/Neurologist"
+                                               style="padding-left: 0;">
+                                                Neurologist
+                                            </a>
+                                            <ul class="dropdown-menu sd bg-dark sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Neurologist/Lahore" style="color:white;">
+                                                        <u>Neurologist in Lahore</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Neurologist/Karachi" style="color:white;">
+                                                        <u>Neurologist in Karachi</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Neurologist/Islamabad" style="color:white;">
+                                                        <u>Neurologist in Islamabad</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/Neurologist" style="color:white;"><u>
+                                                        Neurologist in Pakistan</u></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Doctors/General Physician"
+                                               style="padding-left: 0;">
+                                                General Physician
+                                            </a>
+                                            <ul class="dropdown-menu sd bg-dark mb-2 sub-li">
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/General Physician/Lahore" style="color:white;">
+                                                        <u>General Physician in Lahore</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/General Physician" style="color:white;">
+                                                        <u>General Physician in Karachi</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/General Physician/Islamabad" style="color:white;">
+                                                        <u>General Physician in Islamabad</u>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-item ">
+                                                    <a href="/Doctors/General Physician" style="color:white;">
+                                                        <u>General Physician in Pakistan</u>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="/view_specialities/">
+                                                <u style="font-size:15px;">
+                                                    View All Specialities
+                                                </u>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <br><br>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a class=" btn btn-outline-info" href="/Doctor_request_form/">Are you a
+                                                doctor?</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mega-dropdown-column py-4 pr-3">
+                                <div class="mb-3">
+                                    <h6 style="color: #014e78">Find doctor via city</h6>
+                                    <ul>
+                                        <li class="pb-1"><a href="/Doctors_by_city/Lahore">Doctors in Lahore</a></li>
+                                        <li class="pb-1"><a href="/Doctors_by_city/Karachi">Doctors in Karachi</a></li>
+                                        <li class="pb-1"><a href="/Doctors_by_city/Islamabad">Doctors in Islamabad</a>
+                                        </li>
+                                        <li class="pb-1"><a href="/Doctors_by_city/Rawalpindi">Doctors in Rawalpindi</a>
+                                        </li>
+                                        <li class="pb-1"><a href="/view_all_doctors/">Doctors in All Cities -
+                                            Pakistan</a></li>
+                                    </ul>
+                                </div>
+                                <!-- <div> -->
+                                <!-- <h6 style="color: #014e78t">Find surgeon</h6> -->
+                                <!-- <ul>
+                                    <li class="pb-1"><a  href="#">Hernia</a></li>
+                                    <li class="pb-1"><a  href="#">Endoscopy</a></li>
+                                    <li class="pb-1"><a  href="#">Liver Transplant</a></li>
+                                    <li class="pb-1"><a  href="#">Knee Replacement</a></li>
+                                    <li class="pb-1"><a  href="#">Find best surgeons</a></li>
+                                </ul> -->
+                                <!-- </div> -->
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- //////////////////////////////Doctor dropdown End/////////////////////////////////////-->
+
+                <!-- /////////////////////////////////////Lab Tests dropdown//////////////////////////////// -->
+                <li class="nav-link dropdown hd"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <l>Lab Tests</l>
+                </a>
+                    <div class="dropdown-menu p-0">
+                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+
+                            <div class="mega-dropdown-column py-4 px-3">
+                                <div class="mb-3">
+                                    <h6 style="color: #014e78 !important">Labs in Pakistan</h6>
+                                    <ul class="ga-event-desktop-header-labs-in-pakistan  ">
+                                        {% for i in labcity %}
+                                        {% if forloop.counter < 6 %}
+                                        <li class="pb-1"><a href="/laboratory/{{i.id}}">Labs in {{ i.Lab_city_name}}</a>
+                                        </li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        <li class="pb-1"><a href="/laboratory/400">Labs in Pakistan</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
+
+
+                <!-- /////////////////////////////////////Order Medicines dropdown//////////////////////////////// -->
+                <li class="nav-link dropdown hd"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <l>Order Medicines</l>
+                </a>
+                    <div class="dropdown-menu p-0">
+                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+
+                            <div class="mega-dropdown-column py-4 px-3">
+                                <div class="mb-3">
+                                    <h6 style="color: #014e78 !important">Pharmacies in Pakistan</h6>
+                                    <ul class="ga-event-desktop-header-labs-in-pakistan  ">
+                                        {% for i in labcity %}
+                                        {% if forloop.counter < 6 %}
+                                        <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
+                                            {{i.Lab_city_name}}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                        <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!--  /////////////////////////////////// dropdown end/////////////////////////////////////////////-->
+
+
+                <li class="nav-link hd mt-1"><a href="/Health_blog/">
+                    <l>Health Tips</l>
+                </a></li>
+                {% if request.session.email %}
+                <li class="nav-link mt-1"><a href="/View_Your_Appointments/{{request.session.id}}">
+                    <l>View Appointment</l>
+                </a></li>
+                {% else %}
+
+                <!-- /////////////////////////////////////Login as provider dropdown//////////////////////////////// -->
+                <li class="nav-link dropdown hd"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <l>Login as provider</l>
+                </a>
+                    <div class="dropdown-menu p-0">
+                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+
+                            <div class="mega-dropdown-column py-4 px-3">
+                                <div class="mb-3">
+                                    <h6 style="color: #014e78 !important">Labs in Pakistan</h6>
+                                    <ul class="ga-event-desktop-header-labs-in-pakistan  ">
+                                        <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
+                                        <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
+                                        <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
+                                        <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
+
+                {% endif %}
+            </ul>
+
+            <ul class="navbar-nav">
+
+                <!--              <li class="nav-item" style="margin-left:10px;">-->
+                <!--                    <a class="nav-link"  href="/Cart" style="color:black;margin-top:10px;">-->
+                <!--                        <i class="fas fa-cart-plus fa-2x"></i><b style="margin-left: -15px;">-->
+                <!--                        {% if request.session.email %}-->
+                <!--                         <span  class="badge btn-info">{{request.session.cart}}</span></b></a>-->
+                <!--                        {% else %}-->
+                <!--                        <span  class="badge btn-info">{{request.session.cart.keys|length}}</span></b></a>-->
+                <!--                        {% endif %}-->
+                <!--                </li>-->
+                <li class="nav-item form-inline my-2 my-lg-0">
+                    {% if request.session.email %}
+
+                    {% else %}
+                    <a class="btn btn-info m-3" href="/Login/" style="color:white;font-style:bold;">Login</a>
+                    {% endif %}
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- //////////////////////////////////Header_end///////////////////////////////////////////////////////// -->
+<!-- header-start -->
+<div class="row g-0 align-items-center">
+    <div class="d-block d-sm-none">
+        <div class="cat__menu-wrapper side-border d-none d-lg-block">
+            <div class="cat-toggle">
+                <div class="cat__menu">
+                    <nav id="mobile-menu" style="display: block;">
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Doctors<i class="far fa-angle-down"></i></a>
+                                <ul class="mega-menu">
+                                    <h5 style="color: #014e78">Find doctor by speciality</h5>
+                                    <li><a href="/Doctors/Dermatologist">Dermatologist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Dermatologist/Lahore">Dermatologist in Lahore</a></li>
+                                            <li><a href="/Doctors/Dermatologist/Karachi">Dermatologist in Karachi</a>
+                                            </li>
+                                            <li><a href="/Doctors/Dermatologist/Islamabad">Dermatologist in
+                                                Islamabad</a></li>
+                                            <li><a href="/Doctors/Dermatologist">Dermatologist in Pakistan</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Doctors/Gynecologist">Gynecologist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Gynecologist/Lahore">Gynecologist in Lahore</a></li>
+                                            <li><a href="/Doctors/Gynecologist/Karachi">Gynecologist in Karachi</a></li>
+                                            <li><a href="/Doctors/Gynecologist/Islamabad">Gynecologist in Islamabad</a>
+                                            </li>
+                                            <li><a href="/Doctors/Gynecologist">Gynecologist in Pakistan</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Doctors/Child Specialist">Child Specialist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Child Specialist/Lahore">Child Specialist in
+                                                Lahore</a></li>
+                                            <li><a href="/Doctors/Child Specialist/Karachi">Child Specialist in
+                                                Karachi</a></li>
+                                            <li><a href="/Doctors/Child Specialist/Islamabad">Child Specialist in
+                                                Islamabad</a></li>
+                                            <li><a href="/Doctors/Child Specialist">Child Specialist in Pakistan</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Doctors/Gastroenterologist">Gastroenterologist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Gastroenterologist/Lahore">Gastroenterologist in
+                                                Lahore</a></li>
+                                            <li><a href="/Doctors/Gastroenterologist/Karachi">Gastroenterologist in
+                                                Karachi</a></li>
+                                            <li><a href="/Doctors/Gastroenterologist/Islamabad">Gastroenterologist in
+                                                Islamabad</a></li>
+                                            <li><a href="/Doctors/Gastroenterologist">Gastroenterologist in Pakistan</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Doctors/Psychiatrist">Psychiatrist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Psychiatrist/Lahore">Psychiatrist in Lahore</a></li>
+                                            <li><a href="/Doctors/Psychiatrist/Karachi">Psychiatrist in Karachi</a></li>
+                                            <li><a href="/Doctors/Psychiatrist/Islamabad">Psychiatrist in Islamabad</a>
+                                            </li>
+                                            <li><a href="/Doctors/Psychiatrist">Psychiatrist in Pakistan</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/Doctors/Neurologist">Neurologist</a>
+                                        <ul class="mega-item">
+                                            <li><a href="/Doctors/Neurologist/Lahore">Neurologist in Lahore</a></li>
+                                            <li><a href="/Doctors/Neurologist/Karachi">Neurologist in Karachi</a></li>
+                                            <li><a href="/Doctors/Neurologist/Islamabad">Neurologist in Islamabad</a>
+                                            </li>
+                                            <li><a href="/Doctors/Neurologist">Neurologist in Pakistan</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/view_specialities/">
+                                            View All Specialities
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/laboratory/400">Lab Test<i
+                                        class="far fa-angle-down"></i></a>
+                                <ul class="mega-menu mega-menu-2">
+                                    {% for i in labcity %}
+                                    {% if forloop.counter < 6 %}
+                                    <li class="pb-1"><a href="/laboratory/{{i.id}}">Labs in {{ i.Lab_city_name}}</a>
+                                    </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <li class="pb-1"><a href="/laboratory/400">Labs in Pakistan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Pharmacies/400">Order Medicines<i
+                                        class="far fa-angle-down"></i></a>
+                                <ul class="mega-menu mega-menu-2">
+                                    {% for i in labcity %}
+                                    {% if forloop.counter < 6 %}
+                                    <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
+                                        {{i.Lab_city_name}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="product.html">New Arrivals <i class="far fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="product.html">Home Appliances</a></li>
+                                    <li><a href="product.html">Technology</a>
+                                        <ul class="submenu">
+                                            <li><a href="product.html">Storage Devices</a></li>
+                                            <li><a href="product.html">Monitors</a></li>
+                                            <li><a href="product.html">Laptops</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="product.html">Office Equipments</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Health_blog/">
+                                <l>Health Tips</l>
+                            </a></li>
+                            {% if request.session.email %}
+                            <li><a href="/View_Your_Appointments/{{request.session.id}}">
+                                <l>View Appointment</l>
+                            </a></li>
+                            {% else %}
+                            <!-- /////////////////////////////////////Login as provider dropdown//////////////////////////////// -->
+                            <li>
+                                <a href="#">Login as provider <i class="far fa-angle-down"></i></a>
+                                <ul class="mega-menu mega-menu-2">
+                                    <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
+                                    <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
+                                    <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
+                                    <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
+                                </ul>
+                            </li>
+
+                            <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
+
+                            {% endif %}
+                            {% if request.session.email %}
+                            <li><a href="/Medical Records/">My Medical Records</a></li>
+                            <li><a href="/Logout/">Log Out</a></li>
+
+                            {% else %}
+                            <li><a href="/Login/">Login</a></li>
+                            {% endif %}
+                        </ul>
+                        <a class=" btn btn-outline-info w-90 text-center" href="/Doctor_request_form/">Are you a
+                            doctor?</a>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-end -->
+
+<!-- offcanvas area start -->
+<div class="offcanvas__area">
+    <div class="offcanvas__wrapper">
+        <div class="offcanvas__close">
+            <button class="offcanvas__close-btn" id="offcanvas__close-btn">
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas__content">
+            <div class="offcanvas__logo mb-40">
+                <a href="index.html">
+                    <img alt="logo" src="{% static 'Medicine_assets/img/logo/logo-white.png' %}">
+                </a>
+            </div>
+            <div class="mobile-menu fix"></div>
+            <div class="offcanvas__action">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- offcanvas area end -->
+<div class="body-overlay"></div>
+<!-- offcanvas area end -->
+
+
+<!-- Required Modals -->
+<!-- Helpline Modal -->
+<div aria-hidden="true" class="modal" id="helpline-modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button aria-label="Close" class="btn-close" data-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <p class="text-bold mb-0">We are here to help you</p>
+                <p>Feel free to call our helpline</p>
+                <button class="mt-2 btn btn-info btn-sm " onclick="location.href='tel:0330-5464761'"
+                        style="color:white;font-style:bold;" type="button">
+                    Call 0330-5464761
+                </button>
+                <br/>
+                <button class="mt-2 btn btn-info btn-sm " onclick="location.href='tel:042-32591427'"
+                        style="color:white;font-style:bold;" type="button">
+                    Call 042-32591490
+                </button>
+                <br/>
+            </div>
+            <p class="pb-4">Available: 09:00 AM - 11:00 PM</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- JS here -->
+<!--<script src="{% static 'Medicine_assets/js/vendor/jquery.js' %}"></script>-->
+<script src="{% static 'Medicine_assets/js/vendor/waypoints.js' %} "></script>
+<script src="{% static 'Medicine_assets/js/meanmenu.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/swiper-bundle.js' %}"></script>
+<!--<script src="{% static 'Medicine_assets/js/nice-select.js' %}"></script>-->
+<script src="{% static 'Medicine_assets/js/main.js' %}"></script>
+
+
+</body>
+</html>
+

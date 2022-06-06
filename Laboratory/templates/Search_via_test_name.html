@@ -1,0 +1,172 @@
+{% load static %}
+{% include "mainheader.html" %}
+<head>
+<style>
+       .card_size{
+          width:32%;
+       }
+      .hcr_img{
+          width: 30%;
+          margin-left:2%;
+         }
+         .ltd{
+          width:60%;
+          margin-left:4%;
+         }
+    @media screen and (min-width:500px)
+    {
+       @media screen and (max-width:990px){
+              .card_size{
+              width:48%;
+       }
+         }
+    }
+    @media screen and (max-width:500px)
+    {
+      .card_size{
+          width:100%;
+       }
+      .hcr_img{
+          width: 90%;
+          margin-left:5%;
+          margin-right:5%;
+          margin-bottom: 4%;
+         }
+       .ltd{
+          width:90%;
+          margin-left:5%;
+          margin-right:5%;
+         }
+  }
+    @media screen and (max-width:790px)
+    {
+
+  }
+
+</style>
+    <!--////////////////////////////////Autocomplete js cdn start//////////////////////////////////////-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+    </script>
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+
+
+    <!--///////////////////////////////Autocomplete js cdn End/////////////////////////////////////////-->
+</head>
+<section class="box-shadow-sm bg-white container-lg my-2 py-2">
+    <table align="center" style="width:100%;">
+        <!-- search bar right align -->
+        <tr>
+            <td align="center">
+                <div class="search">
+                    <form action="/laboratory/" method="post" style="background-color:#49738f;">
+                        {% csrf_token %}
+
+                        <input type="text" id="tag" name="search"
+                               placeholder=" Search Labs via name,city or test"
+                               style="border-radius:50px;width:60%;padding-left:30px;height:8vh;margin-top:10px;margin-bottom:10px;">
+                         <script>
+                            $(function () {
+                                var availableTags = [
+                                  {% for i in all_lab %}
+                                "{{i.Labname}}",
+                                {% endfor %}
+
+                                  {% for i in labcitys %}
+                                "Laboratories in {{i.Lab_city_name}}",
+                                {% endfor %}
+
+                                 {% for i in Test_name %}
+                                "{{i.Test_name}}",
+                                {% endfor %}
+
+                        ];
+                            $("#tag").autocomplete({
+                                source: availableTags
+                            });
+                      } );
+                        </script>
+
+                        <button style="background-color:#49738f;border:none;">
+                            <i class="fa fa-search btn-info"
+                               style="font-size: 18px;background-color:#49738f;color:white;">
+                            </i>
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>
+{% if Test_name %}
+<section class="container-xl mb-2    justify-content-evenly"  style="" >
+    {% for i in Test_name %}
+    <div class="box-shadow bg-white border mb-2 mt-2   justify-content-evenly  card_size" style="float:left;margin-right:1%;min-height:28vh;">
+        <div class="row justify-content-evenly " style="margin: 15px 20px">
+            <div class=" col-sm-10 hcr_img" >
+                <img alt="Lab Picture"
+                     class="col-10" src="/media/{{ i.laboratory.img }}">
+            </div>
+            <div class=" col-sm-10 ltd">
+                <a style="text-decoration:none;"><l>Test Name: {{i.Test_name}}</l></a><br>
+                <a style="text-decoration:none;"><l>Price: {{i.test_price}}Rs</l></a><br>
+                {% if i.Home_Sample %}
+                 <a style="text-decoration:none;"><l>Home Sampling: Available</l></a>
+                {% else %}
+                  <a style="text-decoration:none;"><l>Home Sampling: Not Available</l></a>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            {% if request.session.email %}
+            <a href="/Booking_form/{{i.id}}"><button class=" btn btn-outline-info mb-2 " style="width:80%; margin-left:10%;"> Book Lab Test</button></a>
+            {% else %}
+            <a class="mr-1"
+               data-toggle="modal" href="#helpline-modal1"><button class=" btn btn-outline-info mb-2 " style="width:80%; margin-left:10%;"> Book Lab Test</button></a>
+            {% endif %}
+        </div>
+        <div>
+
+        </div>
+    </div>
+    {% endfor%}
+
+    <!-- Login Modal -->
+  <div aria-hidden="true" class="modal" id="helpline-modal1" role="dialog" tabindex="-1">
+    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button aria-label="Close" class="btn-close" data-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <p class="text-bold mb-0">For Booking Lab Test</p>
+                <p>Please Login First</p>
+
+                <button  class="mt-2 btn btn-info btn-sm" style="color:white;font-style:bold;"  type="button">
+                    <a href="/Login/" style="color:white;">Login</a>
+                </button>
+                <br/>
+                <button  aria-label="Close" class="mt-2 btn btn-info btn-sm" data-dismiss="modal" style="color:white;font-style:bold;"  type="button">
+                    Close
+                </button>
+                <br>
+            </div>
+            <p class="pb-4">Thanks for you visit</p>
+        </div>
+    </div>
+</div>
+
+</section>
+{% else %}
+<section class="box-shadow-sm bg-white container-lg my-2 py-2" style="text-align: center;justify-content: space-around;">
+    <h1> You Search <em style="color:49738f">'{{ser}}'</em> </h1>
+    <div class="d-flex" style="justify-content: space-around;margin-top:-60px;">
+          <img alt="not found img Logo" class="col-lg-4 col-sm-auto col-md-6 col-auto" src='{% static "not_found.png" %}'/>
+    </div>
+    <h2>Sorry Search Not Found </h2>
+</section>
+{% endif %}

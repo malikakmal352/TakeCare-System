@@ -1,0 +1,111 @@
+<html>
+<head>
+    {% include "mainheader.html" %}
+    {% load static %}
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      h5{
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      color: #666;
+      line-height: 22px;
+      }
+
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      .card_body {
+      width: 70%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+
+      @media (max-width: 796px) {
+         .card_body {
+             width: 80%;
+             padding:20px
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+       }
+
+       @media (max-width: 500px) {
+         .card_body {
+             width: 100%;
+             padding: 20px;
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+       }
+
+
+    </style>
+
+</head>
+<body>
+<div class="testbox">
+    <div class="card_body">
+        <h5 class="text-center">Lab Test Booking Details</h5>
+        <div class="table-responsive">
+            <table class="table width:100% align-middle" >
+                {% for i in Latest_order %}
+                {% if forloop.counter < 2 %}
+                <tbody>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Order ID </h6></th>
+                    <th class="col-6"><h6 style="color:green">0{{i.id}} </h6></th>
+                </tr>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Patient Name</h6></th>
+                    <td>{{i.Patient_Name}}</td>
+                </tr>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                    <td>0{{i.Phone}}</td>
+                </tr>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Laboratory</h6></th>
+                    <td>{{i.Laboratory}}</td>
+                </tr>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Lab Test Name</h6></th>
+                    <td>{{i.Book_Test}}</td>
+                </tr>
+                 <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Test Price</h6></th>
+                    <td>{{i.Book_Test.test_price}}</td>
+                </tr>
+                <tr align="center">
+                    <th class="col-6"><h6 style="color:green">Test type</h6>
+                    </th>
+                    <td>{{i.Test_Type}}</td>
+                </tr>
+                 <tr align="center">
+                    <td colspan="2" align="center"><h6 style="color:green">Our Lab Team will contact with in 3-4 Working hours</h6></td>
+                </tr>
+                </tbody>
+                {%  endif %}
+                {% endfor  %}
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

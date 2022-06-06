@@ -1,0 +1,870 @@
+{% load static %}
+
+{% include "Doctor_admin_site/Doctor_admin_base.html" %}
+<body class="crm_body_bg">
+
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                <span>Dashboard</span>
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Functions</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Appointments<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/Doctor_admin/#examples">View All Appointments </a></li>
+                <li><a href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
+                <li><a href="/Doctor_admin/confirm_today">All confirm Appointments </a></li>
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/clinic_profile/">
+                <i class="fas fa-clinic-medical"></i>
+                <span class="active">Clinic Detail/Profile</span>
+            </a>
+        </li>
+
+
+
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
+                <i class="fas fa-books-medical"></i>
+                <span>Health Blogs<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/view_Doctor_blogs/">View all Health Blogs</a></li>
+                <li><a class="active" href="/add_new_blog/">ADD New Health Blogs</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-pills"></i>
+                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="#">View All Pharmacies</a></li>
+                <li><a href="#">ADD New pharmacy</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_profile/">
+                <i class="fad fa-address-card"></i>
+                <span>Profile Page</span>
+            </a>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Logout/">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#">
+                                    <img
+                                            alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+
+                            {% if current_doctor.img %}
+                            <img alt="#" src='/media/{{current_doctor.img}}'
+                                 style="width:50px;height:50px;">
+                            {% else %}
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{current_doctor.Doctor_name}}</p>
+                                <h5>{{current_doctor.email}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Doctor_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+                {% if current_doctor.Doctor_Clinic %}
+                <section class="box-shadow-sm bg-white container-lg my-2 py-3">
+                    {% if error %}
+
+                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                         role="alert">
+                        <div class="d-flex alert-danger">
+                            <div class="toast-body ">
+                                {{error}}
+                            </div>
+                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                    {% elif success %}
+                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                         role="alert">
+                        <div class="d-flex alert-success">
+                            <div class="toast-body ">
+                                {{success}}
+                            </div>
+                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="table-responsive">
+                        <table class="table w-100 table-borderless">
+                            <tbody>
+                            <tr align="center">
+                                {% if current_doctor.img %}
+                                <td colspan="2"><img src="/media/{{ current_doctor.img }}"
+                                                     style="width:150px;border-radius:50%;max-height:150px;">
+                                </td>
+                                {% else %}
+                                <td colspan="2">
+                                    <img src="{% static  'deault_profile_image.png' %}"
+                                         style="width:100px;border-radius:50%;"></td>
+                                {% endif %}
+                            </tr>
+                            <tr align="center">
+                                <td colspan="2" style="color:#49738f;">
+                                    <b>{{current_doctor.Doctor_Clinic.Clinic_Name}}</b>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td align="center" colspan="2">
+                                    <div class="">
+                                        <a class="mr-1 delete-record-link"
+                                           data-toggle="modal" href="#Change_img">
+                                            <button class='button btn-info btn '
+                                                    style="color:white;background-color:#49738f;width:auto;"
+                                                    type="submit">
+                                                <b style="font-size:14px;">
+                                                    Change Profile Image
+                                                </b>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr style="background-color:#49738f;">
+                                <td align="center" colspan="2"><b style="color:white;">Clinic Detail</b></td>
+                            </tr>
+                            <tr align="center">
+                                <td align="right" class="col-6">Clinic Name:</td>
+                                <td align="left" class="col-6">
+                                    <div id="username_frame">
+                                        {{current_doctor.Doctor_Clinic.Clinic_Name}}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="username" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="username_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <input name="username" required style="width:70%;" type="text"
+                                                   value="{{current_doctor.Doctor_Clinic.Clinic_Name}}"/>
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="username_edit"
+                                                   style="height:2vh;"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr align="center">
+                                <td align="right" >Clinic Days:</td>
+                                <td align="left" >
+                                    <div id="clinic_days_frame">
+                                            {% if current_doctor.Doctor_Clinic.Monday%}
+                                            Mon,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Tuesday%}
+                                            Tue,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Wednesday%}
+                                            Wed,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Thursday%}
+                                            Thu,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Friday%}
+                                            Fri,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Saturday%}
+                                            Sat,
+                                            {% endif %}
+                                            {% if current_doctor.Doctor_Clinic.Sunday%}
+                                            Sun
+                                            {% endif %}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="clinic_days" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="clinic_days_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                        <div class="question">
+                                            <label>Select Clinic Days<span
+                                                    style="color:red;margin-left:0">*</span></label>
+                                            <div class="question-answer">
+                                                <div style="float:left;margin-right:50px;">
+                                                    {% if current_doctor.Doctor_Clinic.Monday%}
+                                                    <input checked id="check1_checked" name="Days" type="checkbox" value="Monday"/>
+                                                    <label class="check" for="check1_checked"><span>Monday</span></label>
+
+                                                    {% else %}
+                                                    <input id="check1" name="Days" type="checkbox" value="Monday"/>
+                                                    <label class="check" for="check1" ><span>Monday</span></label>
+                                                    {% endif %}
+                                                </div>
+                                                <div>
+                                                    {% if current_doctor.Doctor_Clinic.Tuesday%}
+                                                    <input id="check2_checked" checked name="Days" type="checkbox" value="Tuesday"/>
+                                                    <label class="check" for="check2_checked"><span>Tuesday</span></label>
+                                                    {% else %}
+                                                    <input id="check2" name="Days" type="checkbox" value="Tuesday"/>
+                                                    <label class="check" for="check2"><span>Tuesday</span></label>
+                                                    {% endif %}
+                                                </div>
+
+                                                <div style="float:left;margin-right:28px;">
+                                                    {% if current_doctor.Doctor_Clinic.Wednesday%}
+                                                    <input id="check3_checked" checked name="Days" type="checkbox" value="Wednesday"/>
+                                                    <label class="check" for="check3_checked"><span>Wednesday</span></label>
+                                                    {% else %}
+                                                    <input id="check3" name="Days" type="checkbox" value="Wednesday"/>
+                                                    <label class="check" for="check3"><span>Wednesday</span></label>
+                                                    {% endif %}
+                                                </div>
+                                                <div>
+                                                     {% if current_doctor.Doctor_Clinic.Thursday%}
+                                                    <input id="check4_checked" checked name="Days" type="checkbox" value="Thursday"/>
+                                                    <label class="check" for="check4_checked"><span>Thursday</span></label>
+                                                    {% else %}
+                                                    <input id="check4" name="Days" type="checkbox" value="Thursday"/>
+                                                    <label class="check" for="check4"><span>Thursday</span></label>
+                                                    {% endif %}
+                                                </div>
+
+                                                <div style="float:left;margin-right:62px;">
+                                                    {% if current_doctor.Doctor_Clinic.Friday%}
+                                                    <input id="check5_checked" checked name="Days" type="checkbox" value="Friday"/>
+                                                    <label class="check" for="check5_checked"><span>Friday</span></label>
+                                                    {% else %}
+                                                    <input id="check5" name="Days" type="checkbox" value="Friday"/>
+                                                    <label class="check" for="check5"><span>Friday</span></label>
+                                                    {% endif %}
+                                                </div>
+                                                <div>
+                                                    {% if current_doctor.Doctor_Clinic.Saturday%}
+                                                    <input id="check6_checked" checked name="Days" type="checkbox" value="Saturday"/>
+                                                    <label class="check" for="check6_checked"><span>Saturday</span></label>
+                                                    {% else %}
+                                                    <input id="check6" name="Days" type="checkbox" value="Saturday"/>
+                                                    <label class="check" for="check_6"><span>Saturday</span></label>
+                                                    {% endif %}
+
+                                                </div>
+                                                <div>
+                                                    {% if current_doctor.Doctor_Clinic.Sunday%}
+                                                    <input id="check7_checked" checked name="Days" type="checkbox" value="Sunday"/>
+                                                    <label class="check" for="check7_checked"><span>Sunday</span></label>
+                                                    {% else %}
+                                                    <input id="check7" name="Days" type="checkbox"
+                                                           value="Sunday"/>
+                                                    <label class="check" for="check7"><span>Sunday</span></label>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="clinic_days_edit"
+                                                   style="height:2vh;"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr align="center">
+                                <td align="right" class="col-6">Clinic Timing:</td>
+                                <td align="left" class="col-6">
+                                    <div id="Clinic_Timing_frame">
+                                        {{current_doctor.Doctor_Clinic.clinic_time_start}}
+                                        To
+                                        {{current_doctor.Doctor_Clinic.clinic_time_end}}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="Clinic_Timing" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="Clinic_Timing_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <input
+                                                    name="Start_time"
+                                                    required
+                                                    style="width:70%;"
+                                                    type="time" value="{{current_doctor.Doctor_Clinic.clinic_time_start}}"/>
+                                            <span style="margin-left:5px;">To</span>
+
+                                            <input
+                                                    name="End_time"
+                                                    required
+                                                    style="width:70%;" type="time"/>
+
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="Clinic_Timing_edit"
+                                                   style="height:2vh;"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td align="right" class="col-6">Doctor Fee:</td>
+                                <td align="left" class="col-6">
+                                    <div id="Doctor_Fee_frame">
+                                        {{current_doctor.Doctor_Clinic.Doctor_Fee}} Rs
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="Doctor_Fee" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="Doctor_Fee_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <input name="Fee" required style="width:70%;" type="text"
+                                                   value="{{current_doctor.Doctor_Clinic.Doctor_Fee}}"/>
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="Doctor_Fee_edit"
+                                                   style="height:2vh;"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">Clinic Address:</td>
+                                <td align="left">
+                                    <div id="Address_frame">
+                                        {{current_doctor.Doctor_Clinic.Location}}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="Address" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="Address_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <textarea name="Address" required rows="4" style="width:70%;">{{current_doctor.Doctor_Clinic.Location}}</textarea>
+                                            <button class="btn btn-outline-success" style="margin-top:-100px;">
+                                                <i class="fas fa-check-circle fa-md-2x" id="Address_edit"
+                                                   style="height:2vh"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr style="background-color:#49738f;">
+                                <td align="center" colspan="2"><b style="color:white;">Contact Information</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right">Phone Number:</td>
+                                <td align="left">
+                                    <div id="Phone_frame">
+                                        +92{{current_doctor.Callnumber}}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="phone" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="Phone_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <input class="no-arrow" maxlength="10" name="phone"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   required
+                                                   style="width:70%;" type="number"
+                                                   value="{{current_doctor.Callnumber}}"/>
+
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="Phone_edit"
+                                                   style="height:2vh"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">Clinic Number:</td>
+                                <td align="left">
+                                    <div id="C_Phone_frame">
+                                        +92{{current_doctor.Doctor_Clinic.Clinic_Number}}
+                                        <button class="btn">
+                                            <i class="far fa-edit fa" id="C_phone" style="color:green;"></i>
+                                        </button>
+                                    </div>
+
+                                    <div id="C_Phone_edit_frame">
+                                        <form action="/updates_clinic_profile/" method="POST">
+                                            {% csrf_token %}
+                                            <input class="no-arrow" maxlength="10" name="C_phone"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   required
+                                                   style="width:70%;" type="number"
+                                                   value="{{current_doctor.Doctor_Clinic.Clinic_Number}}"/>
+
+                                            <button class="btn btn-outline-success">
+                                                <i class="fas fa-check-circle fa-md-2x" id="C_Phone_edit"
+                                                   style="height:2vh"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">E-mail :</td>
+                                <td align="left">{{current_doctor.email}}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <script type="text/javascript">
+                            var targetDiv = document.getElementById("username_edit_frame");
+                            var btn = document.getElementById("username");
+                            var username_frame = document.getElementById("username_frame")
+                            var username_edit = document.getElementById("username_edit")
+
+                            var Doctor_Fee_edit_frame = document.getElementById("Doctor_Fee_edit_frame");
+                            var Doctor_Fee_btn = document.getElementById("Doctor_Fee");
+                            var Doctor_Fee_frame = document.getElementById("Doctor_Fee_frame")
+                            var Doctor_Fee_edit = document.getElementById("Doctor_Fee_edit")
+
+
+                            var clinic_days_edit_frame = document.getElementById("clinic_days_edit_frame");
+                            var clinic_days_btn = document.getElementById("clinic_days");
+                            var clinic_days_frame = document.getElementById("clinic_days_frame")
+                            var clinic_days_edit = document.getElementById("clinic_days_edit")
+
+                            var Clinic_Timing_edit_frame = document.getElementById("Clinic_Timing_edit_frame");
+                            var Clinic_Timing_btn = document.getElementById("Clinic_Timing");
+                            var Clinic_Timing_frame = document.getElementById("Clinic_Timing_frame")
+                            var Clinic_Timing_edit = document.getElementById("Clinic_Timing_edit")
+
+                            var Address_edit_frame = document.getElementById("Address_edit_frame");
+                            var Address_btn = document.getElementById("Address");
+                            var Address_frame = document.getElementById("Address_frame")
+                            var Address_edit = document.getElementById("Address_edit")
+
+
+                            var Phone_edit_frame = document.getElementById("Phone_edit_frame");
+                            var Phone_btn = document.getElementById("phone");
+                            var Phone_frame = document.getElementById("Phone_frame")
+                            var Phone_edit = document.getElementById("Phone_edit")
+
+                            var C_Phone_edit_frame = document.getElementById("C_Phone_edit_frame");
+                            var C_Phone_btn = document.getElementById("C_phone");
+                            var C_Phone_frame = document.getElementById("C_Phone_frame")
+                            var C_Phone_edit = document.getElementById("C_Phone_edit")
+
+
+                             targetDiv.style.display = "none";
+                             Address_edit_frame.style.display = "none";
+                             Doctor_Fee_edit_frame.style.display = "none";
+                             clinic_days_edit_frame.style.display = "none";
+                             Clinic_Timing_edit_frame.style.display = "none";
+                             Phone_edit_frame.style.display = "none";
+                             C_Phone_edit_frame.style.display = "none";
+
+
+                            btn.onclick = function () {
+                                targetDiv.style.display = "block";
+                                username_frame.style.display = "none";
+                            };
+
+                            Doctor_Fee_btn.onclick = function ()
+                            {
+                                Doctor_Fee_edit_frame.style.display = "block";
+                                Doctor_Fee_frame.style.display = "none";
+                            };
+                            Address_btn.onclick = function ()
+                            {
+                                Address_edit_frame.style.display = "block";
+                                Address_frame.style.display = "none";
+                            };
+
+
+                            clinic_days_btn.onclick = function () {
+                                clinic_days_edit_frame.style.display = "block";
+                                clinic_days_frame.style.display = "none";
+
+                            };
+
+                            Clinic_Timing_btn.onclick = function () {
+                              if (Clinic_Timing_edit_frame.style.display !== "none") {
+                                Clinic_Timing_edit_frame.style.display = "none";
+                                Clinic_Timing_frame.style.display = "block";
+
+                              } else {
+                                Clinic_Timing_edit_frame.style.display = "block";
+                                Clinic_Timing_frame.style.display = "block";
+                              }
+                            };
+
+
+                            Phone_btn.onclick = function ()
+                             {
+                                Phone_edit_frame.style.display = "block";
+                                Phone_frame.style.display = "none";
+                            };
+
+                            C_Phone_btn.onclick = function ()
+                            {
+                                C_Phone_edit_frame.style.display = "block";
+                                C_Phone_frame.style.display = "none";
+                            };
+
+
+
+
+
+
+
+
+
+                    </script>
+
+                </section>
+                {% else %}
+                <div class="table-responsive" id="c_Frame">
+                    <table class="table w-100 table-borderless">
+                        <tbody>
+                        <tr align="center">
+                            <td align="center" colspan="2">
+                                Your Clinic is not Exit.
+                                Please Create a Clinic and Appointment Details</br>
+                                <b> start your practice</b>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td align="center" colspan="2">
+                                <div class="">
+                                    <a class="mr-1 delete-record-link">
+                                        <button class='button btn-info btn ' id="C_btn"
+                                                style="color:white;background-color:#49738f;width:auto;" type="submit">
+                                            <b style="font-size:14px;">
+                                                Create Your Clinic
+                                            </b>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-responsive" id="Clinic_form">
+
+                    <!--Add New Clinic Details-->
+                    <div class="col-lg-12 col-xl-12">
+                        <div class="white_box mb_30 " style="position: relative;">
+                            {% if error_message %}
+                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                                 role="alert">
+                                <div class="d-flex alert-danger">
+                                    <div class="toast-body ">
+                                        {{error_message}}
+                                    </div>
+                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                            type="button"></button>
+                                </div>
+                            </div>
+                            {% elif success %}
+                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                                 role="alert">
+                                <div class="d-flex alert-success">
+                                    <div class="toast-body ">
+                                        {{success}}
+                                    </div>
+                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                            type="button"></button>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <br><br>
+                            <h2 class="text-center"><b>Clinic Detail</b></h2>
+                            <div class="testbox">
+                                <form action="/clinic_profile/" autocomplete="on" class="form"
+                                      enctype="multipart/form-data"
+                                      method="POST">
+                                    {% csrf_token %}
+                                    <br/>
+                                    <div class="colums">
+
+                                        <div class="item sa w-100 ">
+                                            <label>Clinic Name: <span>*</span></label>
+                                            <input class="input" name="name" placeholder="Enter Your Clinic Name"
+                                                   required type="text"/>
+                                        </div>
+                                        <div class="item sa w-100" id="location">
+                                            <label for="visit">Clinic Address</label>
+                                            <textarea id="visit" name='Address' rows="3"></textarea>
+                                        </div>
+                                        <div class="item sa " hidden>
+                                            <label>Doctor E-mail Address<span>*</span></label>
+                                            <input class="input" id="email" name="email" placeholder="Email@xyz.com"
+                                                   required type="email" value="{{current_doctor.email}}"/>
+                                        </div>
+                                        <div class="item sa ">
+                                            <label>Appointment Fee: <span>*</span></label>
+                                            <input class="no-arrow"
+                                                   name="Fee"
+                                                   placeholder="Enter Appointment Fee"
+                                                   required type="number"/>
+                                        </div>
+                                        <div class="item sa">
+                                            <label>Clinic Phone Number<span>*</span></label>
+                                            <input class="no-arrow"
+                                                   maxlength="10"
+                                                   name="phone"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   placeholder="Enter Your Clinic/Assisted Number"
+                                                   required type="number"/></div>
+                                        <div class="item sa ">
+                                            <label>Clinic Start Timing: <span>*</span></label>
+                                            <input
+                                                    name="Start_time"
+                                                    placeholder="Enter Appointment Fee"
+                                                    required type="time"/>
+                                        </div>
+                                        <div class="item sa ">
+                                            <label>Clinic End Timing: <span>*</span></label>
+                                            <input
+                                                    name="End_time"
+                                                    placeholder="Enter Appointment Fee"
+                                                    required type="time"/>
+                                        </div>
+                                        <div class="question  checkbox-item border">
+                                            <label>Select Clinic Days<span
+                                                    style="color:red;margin-left:0">*</span></label>
+                                            <div class="question-answer ">
+                                                <div style="float:left;margin-right:50px;">
+                                                    <input id="check_1" name="Days" type="checkbox" value="Monday"/>
+                                                    <label class="check" for="check_1"><span>Monday</span></label>
+                                                </div>
+                                                <div>
+                                                    <input id="check_2" name="Days" type="checkbox" value="Tuesday"/>
+                                                    <label class="check" for="check_2"><span>Tuesday</span></label>
+                                                </div>
+
+                                                <div style="float:left;margin-right:28px;">
+                                                    <input id="check_3" name="Days" type="checkbox" value="Wednesday"/>
+                                                    <label class="check" for="check_3"><span>Wednesday</span></label>
+                                                </div>
+                                                <div>
+                                                    <input id="check_4" name="Days" type="checkbox" value="Thursday"/>
+                                                    <label class="check" for="check_4"><span>Thursday</span></label>
+                                                </div>
+
+                                                <div style="float:left;margin-right:62px;">
+                                                    <input id="check_5" name="Days" type="checkbox" value="Friday"/>
+                                                    <label class="check" for="check_5"><span>Friday</span></label>
+                                                </div>
+                                                <div>
+                                                    <input id="check_6" name="Days" type="checkbox" value="Saturday"/>
+                                                    <label class="check" for="check_6"><span>Saturday</span></label>
+
+                                                </div>
+                                                <div>
+                                                    <input id="check_7" name="Days" type="checkbox"
+                                                           value="Sunday"/>
+                                                    <label class="check" for="check_7"><span>Sunday</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item sa">
+                                            <label>No of Appointments PerDay<span>*</span></label>
+                                            <select name="N_A_PD"
+                                                    required type="text">
+                                                <option value="">No of Appointments PerDay</option>
+                                                <option value="1">1 Person per day</option>
+                                                <option value="2">2 Person per day</option>
+                                                <option value="3">3 Person per day</option>
+                                                <option value="4">4 Person per day</option>
+                                                <option value="5">5 Person per day</option>
+                                                <option value="6">6 Person per day</option>
+                                                <option value="7">7 Person per day</option>
+                                                <option value="8">8 Person per day</option>
+                                                <option value="9">9 Person per day</option>
+                                                <option value="10">10 Person per day</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="btn-block">
+                                        <button class='button btn-info btn' type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                {% endif%}
+            </div>
+        </div>
+    </div>
+
+    <div aria-hidden="true" class="modal" id="Change_img" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                            type="button"></button>
+                </div>
+                <div class="modal-body tab-content">
+                    <h5 class="text-center">Select New Image </h5>
+                    <div class="table-responsive">
+                        <table class="table width:100% align-middle">
+                            <form action="/updates_clinic_profile/" enctype="multipart/form-data"
+                                  method="POST">
+                                {% csrf_token %}
+                                <tr align="center">
+                                    <td><h6 style="color:green">
+                                        <input accept="image/*" name="image" required type="file">
+                                    </h6>
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td>
+                                        <input class="btn btn-info" style="color:white;" type="submit" value="Change"/>
+                                    </td>
+                                </tr>
+                            </form>
+                        </table>
+                        <br/>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+               var Create_Clinic_frame = document.getElementById("c_Frame");
+               var Create_Clinic_btn = document.getElementById("C_btn");
+               var Clinic_form_frame = document.getElementById("Clinic_form")
+
+                    Create_Clinic_frame.style.display = 'block';
+                    Clinic_form_frame.style.display = 'none';
+
+
+                            Create_Clinic_btn.onclick = function () {
+                              if (Clinic_form_frame.style.display !== "none") {
+                                Clinic_form_frame.style.display = "none";
+                                Create_Clinic_frame.style.display = "block";
+
+                              } else {
+                                Clinic_form_frame.style.display = "block";
+                                Create_Clinic_frame.style.display = "none";
+                              }
+                            };
+
+
+
+    </script>
+</section>
+
+
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+</body>

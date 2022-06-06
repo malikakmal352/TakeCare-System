@@ -1,0 +1,423 @@
+{% load static %}
+
+{% include "Doctor_admin_site/Doctor_admin_base.html" %}
+<body class="crm_body_bg">
+<link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
+<style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        html
+         {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent
+         }
+        body {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #202124;
+            text-align: left;
+            background-color: #f7f7f7;
+            /*background-color: rebeccapurple;*/
+            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
+        }
+
+        .H_Blog{
+             overflow:hidden;
+             float:left;
+             height:80vh;
+             width:31%;
+             margin:1%;
+        }
+        .H_btn{
+          width:40%;
+        }
+
+        @media (max-width: 1200px) {
+        .H_Blog{
+                     width:40%;
+                     min-height:50vh;
+                     margin:3%;
+                }
+               .H_btn{
+          width:35%;
+        }
+        }
+
+         @media (max-width: 600px) {
+        .H_Blog{
+                     width:80%;
+                      height:auto;
+                     margin:9%;
+                }
+        }
+
+</style>
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                <span>Dashboard</span>
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Functions</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Appointments<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/Doctor_admin/#examples">View All Appointments </a></li>
+                <li><a href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
+                <li><a href="/Doctor_admin/confirm_today">All confirm Appointments </a></li>
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/clinic_profile/">
+                <i class="fas fa-clinic-medical"></i>
+                <span>Clinic Detail/Profile</span>
+            </a>
+        </li>
+
+
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
+                <i class="fas fa-books-medical"></i>
+                <span>Health Blogs<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a class="active" href="/view_Doctor_blogs/">View all Health Blogs</a></li>
+                <li><a href="/add_new_blog/">ADD New Health Blogs</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-pills"></i>
+                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="#">View All Pharmacies</a></li>
+                <li><a href="#">ADD New pharmacy</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_profile/">
+                <i class="fad fa-address-card"></i>
+                <span>Profile Page</span>
+            </a>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Logout/">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#">
+                                    <img
+                                            alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+
+                            {% if current_doctor.img %}
+                            <img alt="#" src='/media/{{current_doctor.img}}'
+                                 style="width:50px;height:50px;">
+                            {% else %}
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{current_doctor.Doctor_name}}</p>
+                                <h5>{{current_doctor.email}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Doctor_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+                {% if Health_Blog %}
+                <section class="box-shadow-sm  container-lg my-2 py-3">
+                    {% if error %}
+
+                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                         role="alert">
+                        <div class="d-flex alert-danger">
+                            <div class="toast-body ">
+                                {{error}}
+                            </div>
+                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                    {% elif success %}
+                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                         role="alert">
+                        <div class="d-flex alert-success">
+                            <div class="toast-body ">
+                                {{success}}
+                            </div>
+                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% for i in Health_Blog %}
+                    <div class="l-post bg-white mb-0  H_Blog">
+                        <div class="media">
+                            <a class="image-link media-ratio ratio-16-9" href="#">
+                                <span
+                                        class="img bg-cover wp-post-image attachment-bunyad-medium size-bunyad-medium lazyloaded"
+                                        role="img"
+                                        style="background-image: url('/media/{{i.img}}');">
+
+                                </span>
+                            </a>
+                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
+                                    class="category term-color-14"
+                                    href="#"
+                                    rel="category">{{i.Health_blogs_issue}}</a> </span>
+                        </div>
+                        <div class=" p-3 content" style="overflow:hidden; max-height: 30vh;">
+                            <div class="post-meta post-meta-a has-below">
+                                <h2 class="is-title post-title">
+                                    <a href="#">{{i.Main_heading}}</a>
+                                </h2>
+
+                                <div class="post-meta-items meta-below"><span
+                                        class="meta-item post-author"><span class="by">By</span> <a
+                                        title="Posts by {{i.Doctor}}">{{i.Doctor}}</a></span>
+                                    <span
+                                            class="meta-item date">
+                                    <span class="date-link ml-1">
+                                        <time class="post-date">({{i.blog_create_time}})</time>
+                                    </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="excerpt" style="max-height:11vh;">
+                                <p>
+                                    {{i.Health_blogs_Detail}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 p-3 mx-auto">
+                            <a class="delete-record-link"
+                               data-toggle="modal" href="#delete{{i.id}}">
+                                <button class="btn btn-danger H_btn ">
+                                    Delete
+                                </button>
+                            </a>
+                            <a class="updated-record-link"
+                               data-toggle="modal" href="#update{{i.id}}">
+                                <button class="btn btn-success H_btn">
+                                    Edit Blog
+                                </button>
+                            </a>
+                            <a href="/view_Doctor_blogs/{{i.id}}">
+                                <button class="btn btn-outline-success mt-1 bold" style="width:89%;">
+                                    View Details
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- delete for Blog detail -->
+                    <div aria-hidden="true" class="modal" id="delete{{i.id}}" role="dialog" tabindex="-1">
+                        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                            <div class="modal-content text-center">
+                                <div class="modal-header">
+                                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                            type="button" style="background-color:white;color:yellow;"></button>
+                                </div>
+                                <div>
+                                    <h5 class="text-center">Are you sure delete this Health blog </h5>
+                                    <div class="table-responsive">
+                                        <table class="table width:100% align-middle borderless">
+                                            <tbody>
+                                            <tr align="center">
+                                                <td align="center" colspan="2">
+                                                    <form action="/view_Doctor_blogs/" method="post">
+                                                        {% csrf_token%}
+                                                        <h4 style="margin-left:35%;">
+                                                            <input hidden name="blog_id" type="number"
+                                                                   value="{{i.id}}"/>
+                                                            <input hidden name="name" type="text" value="delete_blog"/>
+                                                            <button class="btn btn-danger"
+                                                                    style="font-family:sans-serif;width:40%">
+                                                                Delete
+                                                            </button>
+                                                        </h4>
+                                                    </form>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit for Blog detail -->
+                    <div aria-hidden="true" class="modal" id="update{{i.id}}" role="dialog" tabindex="-1">
+                        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                            <div class="modal-content text-center">
+                                <div class="modal-header">
+                                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                            type="button"></button>
+                                </div>
+                                <div class="modal-body tab-content">
+                                    <h5 class="text-center">Are you sure </h5>
+                                    <p class="text-center">Edit this Health blog </p>
+                                         <div class="table-responsive">
+                                        <table class="table width:100% align-middle borderless">
+                                            <tbody>
+                                            <tr align="center">
+                                                <td align="center" colspan="2">
+                                                    <form action="/Update_health_blog/" method="post">
+                                                        {% csrf_token%}
+                                                        <h4 style="margin-left:35%;">
+                                                            <input hidden name="blog_id" type="number"
+                                                                   value="{{i.id}}"/>
+                                                            <input hidden name="name" type="text" value="Update_blog"/>
+                                                            <button class="btn btn-success" style="font-family:sans-serif;"
+                                                                    type="submit">
+                                                                Update Record
+                                                            </button>
+                                                        </h4>
+                                                    </form>
+                                                </th>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+                </section>
+                {% else %}
+                <div class="table-responsive" id="c_Frame">
+                    <table class="table w-100 table-borderless">
+                        <tbody>
+                        <tr align="center">
+                            <td align="center" colspan="2">
+                                You do not Write any Health blog.
+                                </br>
+                                <b> Please click here to start Writing your Health blog</b>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td align="center" colspan="2">
+                                <div class="">
+                                    <a class="mr-1 delete-record-link" href="/add_new_blog/">
+                                        <button class='button btn-info btn ' id="C_btn"
+                                                style="color:white;background-color:#49738f;width:auto;" type="submit">
+                                            <b style="font-size:14px;">
+                                                Start Writing Health Blog
+                                            </b>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                {% endif%}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+</body>

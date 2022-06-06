@@ -1,0 +1,354 @@
+{% load static %}
+
+{% include "mainheader.html" %}
+<head>
+
+    <style type="text/css">
+    .ta{
+    border-radius:50px;
+    width:60%;
+    padding-left:30px;
+    height:8vh;
+    margin-top:10px;
+    margin-bottom:10px;
+    }
+    .pl-0 {
+        padding-left: 0px;
+    }
+    #myscroll::-webkit-scrollbar {
+        height:10px;
+        width: 4px;
+        border: 1px solid #d5d5d5;
+    }
+    div::-webkit-scrollbar-thumb {
+        border-radius:5px;
+        background-color: #ebf2f9;
+    }
+
+     .horizontal-scroll{overflow-x:auto;}
+
+    .search button{
+        color: #f2f2f2;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    </style>
+
+
+    <!--////////////////////////////////Autocomplete js cdn start//////////////////////////////////////-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+    </script>
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+
+
+    <!--///////////////////////////////Autocomplete js cdn End/////////////////////////////////////////-->
+
+    <style>
+            .no-arrow {
+  -moz-appearance: textfield;
+}
+.no-arrow::-webkit-inner-spin-button {
+  display: none;
+}
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+    </style>
+    <style>
+
+      h5{
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      color: #666;
+      line-height: 22px;
+      }
+
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 10px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999;
+      }
+
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #669999;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #669999;
+      color: #669999;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      .week {
+      display:flex;
+      justfiy-content:space-between;
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums .sa {
+      width:48%;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: relative;
+      color:  #a3c2c2;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid  #669999;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid  #669999;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .flax {
+      display:flex;
+      justify-content:space-around;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+      @media screen and (max-width:600px){
+        .colums .sa {
+             width:96%;
+      }
+      }
+
+
+
+    </style>
+    <link href="https://h7u5d3a4.stackpathcdn.com/assets/images/favicon.png" rel="icon" type="image/png">
+</head>
+
+<body class="stretched no-transition">
+<style type="text/css">
+    @media (min-width: 992px){
+        .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 10px;
+    }
+}
+
+    @media (max-width: 1000px){
+.ta{
+    border-radius:50px;
+    width:70%;
+    padding-left:15px;
+    height:7vh;
+    margin-top:10px;
+    margin-bottom:10px;
+    }
+
+
+    @media (max-width: 500px){
+   .ta{
+    border-radius:50px;
+    width:82%;
+    padding-left:15px;
+    height:7vh;
+    margin-top:10px;
+    margin-bottom:10px;
+    }
+
+</style>
+
+<section class="box-shadow-sm bg-white container-lg my-2 py-2">
+    <table align="center" style="width:100%;">
+        <!-- search bar right align -->
+        <tr>
+            <td align="center">
+                <div class="search">
+                    <form action="/view_specialities/" method="post" style="background-color:#49738f;">
+                        {% csrf_token %}
+
+                        <input class="ta" id="tag" name="search"
+                               placeholder=" Search Doctor Speciality"
+                               type="text">
+                        <input hidden name="name" value="search"/>
+                        <button style="background-color:#49738f;">
+                            <i class="fa fa-search btn-info"
+                               style="font-size: 18px;background-color:#49738f;color:white;">
+                            </i>
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>
+
+<div class="container-lg ">
+
+    <div class="row ">
+        <div class="col-12 p-0">
+            <section class="container bg-white py-2">
+
+                <div class="d-flex justify-content-between">
+                    <h6 class="font-size-sm pt-0 mb-1 text-accent">Best
+                        {% if S_N %}
+                        {{ S_N }}
+                        {% else %}
+                         Doctors
+                        {% endif %}
+                           {% if ci %}
+                              {% for i in ci %}
+                                 in {{ i.Lab_city_name }} | TakeCare.pk
+                              {% endfor %}
+                           {% else %}
+                              in Pakistan | TakeCare.pk
+                           {% endif %}
+                         </h6>
+                    </div>
+                <div>
+                    <nav aria-label="breadcrumb" id="scroll">
+                        <ol class="breadcrumb font-size-sm ">
+                            <li class="breadcrumb-item">
+                                <a class="text-accent" href="/">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <span class="text-accent">
+                                       All Specialities
+                                </span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </div>
+
+        {% for i in All_Speciality %}
+            <div class="col-6 col-lg-3 col-md-4 p-0 mt-2 justify-content-between " style="float: left;">
+            <section class="container bg-white py-2  border text-center"
+                     style="justify-content: space-around;justify-content: space-around;align-content: center;">
+                <a href="/Doctors/{{i.Doctor_Speciality}}">
+                        <img alt="{{i.Doctor_Speciality}} Image"
+                             class="rounded-circle doctor-listing-picture mp-event-listing-doctor-picture" data-height="120"
+                             data-on-error-src="https://h7u5d3a4.stackpathcdn.com/assets/images/doctor-photo-male.png"
+                             data-width="120" height="120"
+                             src='/media/{{i.img}}'
+                             width="120">
+                    </a>
+                <h6>{{i.Doctor_Speciality}}</h6>
+               <p>
+                  {{i.total_doctors}} Doctors
+                </p>
+            </section>
+            </div>
+       {% endfor %}
+
+    </div>
+
+
+<script>
+     $(function () {
+         var availableTags = [
+            {% for i in All_Speciality %}
+                "{{i.Doctor_Speciality}}",
+            {% endfor %}
+          ];
+          $("#tag").autocomplete({
+                 source: availableTags
+             });
+           } );
+
+
+</script>
+
+</body>

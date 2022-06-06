@@ -1,0 +1,182 @@
+{% load static %}
+{% include "mainheader.html" %}
+<style>
+       .card_size{
+          width:32%;
+       }
+      .hcr_img{
+          width: 30%;
+          margin-left:2%;
+         }
+         .ltd{
+          width:60%;
+          margin-left:4%;
+         }
+    @media screen and (min-width:500px)
+    {
+       @media screen and (max-width:990px){
+              .card_size{
+              width:48%;
+       }
+         }
+    }
+    @media screen and (max-width:500px)
+    {
+      .card_size{
+          width:100%;
+       }
+      .hcr_img{
+          width: 90%;
+          margin-left:5%;
+          margin-right:5%;
+          margin-bottom: 4%;
+         }
+       .ltd{
+          width:90%;
+          margin-left:5%;
+          margin-right:5%;
+         }
+  }
+    @media screen and (max-width:790px)
+    {
+
+  }
+
+</style>
+<section  class="box-shadow-md bg-white container-lg  mb-2 mt-2" >
+    {% for i in labs %}
+    <div class="row bg-white padding mb-2">
+        <div class="col-12">
+            <div class="row py-3">
+                <div class="col-md-2 col-4 col-sm-3 text-center">
+                    <img alt="Lab Picture"
+                         class="doctor-image pb-2" src="/media/{{ i.img }}"
+                         style="width: 100%; margin: auto;">
+                </div>
+
+                <div class="col-md-6 col-8 mt-2">
+                    <a class="font-size-md font-weight-bold lab-name" href="/View_list/{{i.id}}"
+                       style="text-decoration: underline;">{{i.Labname}}</a>
+
+                    <p class="mb-0 font-size-sm py-1">
+                        <svg height="13" viewBox="0 0 10.674 13.343" width="10">
+                            <i class="fas fa-map-marker-alt" style="user-select: auto;"></i>
+                        </svg>
+                        {{i.Address}}
+                    </p>
+
+                    <p class="mb-3  font-size-sm py-1 mt-3">
+                        <svg height="13" width="10">
+                            <i class="fas fa-calendar-alt"></i>
+                            Open Today
+                        </svg>
+                    </p>
+
+                    <div class="d-sm-flex  d-none ">
+                        <div class="d-flex col-4 p-0">
+                            <svg class="mt-1 mr-1" height="13.793" viewBox="0 0 14.696 13.793" width="14.696"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>.acccc{fill:#a1a1a1;stroke:#a1a1a1;stroke-width:0.3px;}</style>
+                                </defs>
+                                <g transform="translate(0.152 0.15)">
+                                    <path class="akkk"
+                                          d="M6.3,7.9a3.148,3.148,0,0,1,3.148,3.2.45.45,0,0,0,.561.443,1.35,1.35,0,1,1,.338,2.656H2.7a1.8,1.8,0,1,1,.09-3.6.45.45,0,0,0,.459-.337A3.15,3.15,0,0,1,6.3,7.9Zm4.024,2.7a4.048,4.048,0,0,0-7.844-.891A2.7,2.7,0,0,0,2.7,15.1h7.646a2.249,2.249,0,1,0,0-4.5Z"
+                                          transform="translate(0.002 -1.602)"/>
+                                    <path class="akkk"
+                                          d="M10.009,1.45a.45.45,0,1,0-.9,0v.9a.45.45,0,1,0,.9,0Zm3.367,1.767a.45.45,0,1,0-.636-.636l-.637.636a.45.45,0,1,0,.637.637Zm-7-.636a.45.45,0,1,0-.636.636l.636.637a.45.45,0,0,0,.637-.637Zm1.56,3.035A1.8,1.8,0,1,1,10.9,7.593a4.95,4.95,0,0,1,.464.808A2.7,2.7,0,1,0,7.013,5.5a4.962,4.962,0,0,1,.925.116ZM11.971,9.28a3.157,3.157,0,0,1,1.369.964.45.45,0,0,0,.035-.667l-.636-.636a.45.45,0,0,0-.768.339Zm1.635-3.333a.45.45,0,1,0,0,.9h.9a.45.45,0,1,0,0-.9Z"
+                                          transform="translate(-0.562 -1)"/>
+                                </g>
+                            </svg>
+                            <div>
+                                <label class="my-0">Opening Hours</label>
+                                <p class="my-0 font-size-sm font-weight-bold ml-1">24 Hours</p>
+                            </div>
+                        </div>
+                        <div class="d-flex col-4">
+                            <svg height="16" width="16">
+                                <i class="fal fa-building " style="user-select: auto;"></i>
+                            </svg>
+                            <div style="margin-left:5px;">
+                                <label class="my-0 ml-1">City</label>
+                                <p class="my-0 font-size-sm font-weight-bold ml-1">{{i.city.Lab_city_name}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-sd-6 col-xs-6 col-sm-8 col-10 offset-2">
+                    <a>
+                        <button class="btn btn-outline-info border-info-2px" onclick="location.href='tel:{{i.Callnumber}}'"
+                                style="display:block;width:100% " type="button">Call now
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+
+</section>
+
+<section class="container-xl mb-2    justify-content-evenly"  style="" >
+    {% for i in testlist %}
+    <div class="box-shadow bg-white border mb-2 mt-2   justify-content-evenly  card_size" style="float:left;margin-right:1%;min-height:28vh;">
+        <div class="row justify-content-evenly " style="margin: 15px 20px">
+            <div class=" col-sm-10 hcr_img" >
+                <img alt="Lab Picture"
+                     class="col-10" src="/media/{{ i.laboratory.img }}">
+            </div>
+            <div class=" col-sm-10 ltd">
+                <a style="text-decoration:none;"><l>Test Name: {{i.Test_name}}</l></a><br>
+                <a style="text-decoration:none;"><l>Price: {{i.test_price}}Rs</l></a><br>
+                {% if i.Home_Sample %}
+                 <a style="text-decoration:none;"><l>Home Sampling: Available</l></a>
+                {% else %}
+                  <a style="text-decoration:none;"><l>Home Sampling: Not Available</l></a>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            {% if request.session.email %}
+            <a href="/Booking_form/{{i.id}}"><button class=" btn btn-outline-info mb-2 " style="width:80%; margin-left:10%;"> Book Lab Test</button></a>
+            {% else %}
+            <a class="mr-1"
+               data-toggle="modal" href="#helpline-modal1"><button class=" btn btn-outline-info mb-2 " style="width:80%; margin-left:10%;"> Book Lab Test</button></a>
+            {% endif %}
+        </div>
+        <div>
+
+        </div>
+    </div>
+    {% endfor%}
+
+    <!-- Login Modal -->
+  <div aria-hidden="true" class="modal" id="helpline-modal1" role="dialog" tabindex="-1">
+    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button aria-label="Close" class="btn-close" data-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body tab-content">
+                <p class="text-bold mb-0">For Booking Lab Test</p>
+                <p>Please Login First</p>
+
+                <button  class="mt-2 btn btn-info btn-sm" style="color:white;font-style:bold;"  type="button">
+                    <a href="/Login/" style="color:white;">Login</a>
+                </button>
+                <br/>
+                <button  aria-label="Close" class="mt-2 btn btn-info btn-sm" data-dismiss="modal" style="color:white;font-style:bold;"  type="button">
+                    Close
+                </button>
+                <br>
+            </div>
+            <p class="pb-4">Thanks for you visit</p>
+        </div>
+    </div>
+</div>
+
+</section>

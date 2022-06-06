@@ -1,0 +1,519 @@
+{% load static %}
+
+{% include "Doctor_admin_site/Doctor_admin_base.html" %}
+<body class="crm_body_bg">
+<style>
+
+/*=======================
+ 	Tables
+====================== */
+
+.badge-danger, .bg-danger {
+    background-color: #ef6e6e !important;
+}
+.badge-success, .bg-success {
+    background-color: #3CB371 !important;
+}
+.badge-warning, .bg-warning {
+    color: #fff;
+    background-color: #FFAA2A !important;
+}
+
+
+
+</style>
+
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="mm-active">
+            <a aria-expanded="true" class="active" href="/Doctor_admin/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                <span>Dashboard</span>
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Functions</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-procedures"></i>
+                <span>Appointments<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/Doctor_admin/#examples">View All Appointments </a></li>
+                <li><a  href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
+                <li><a href="/Doctor_admin/confirm_today">All confirm Appointments </a></li>
+
+            </ul>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/clinic_profile/">
+                <i class="fas fa-clinic-medical"></i>
+                <span>Clinic Detail/Profile</span>
+            </a>
+        </li>
+
+
+        <li class="">
+            <a aria-expanded="True" href="#">
+                <i class="fas fa-books-medical"></i>
+                <span>Health Blogs<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/view_Doctor_blogs/">View all Health Blogs</a></li>
+                <li><a class="" href="/add_new_blog/">ADD New Health Blogs</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-pills"></i>
+                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="#">View All Pharmacies</a></li>
+                <li><a href="#">ADD New pharmacy</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Doctor_profile/">
+                <i class="fad fa-address-card"></i>
+                <span>Profile Page</span>
+            </a>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Logout/">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
+<!-- sidebar part end -->
+
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#">
+                                    <img
+                                            alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+
+                            {% if current_doctor.img %}
+                            <img alt="#" src='/media/{{current_doctor.img}}'
+                                 style="width:50px;height:50px;">
+                            {% else %}
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{current_doctor.Doctor_name}}</p>
+                                <h5>{{current_doctor.email}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Doctor_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12">
+                    <div class="single_element">
+                        <div class="quick_activity">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="quick_activity_wrap ">
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon" style="color:skyblue;">
+                                                <i class="fal fa-vials fa-4x"></i>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Appointment_pending}}</span></h3>
+                                                <p style="font-size:14px;">New Appointment Requests</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon">
+                                                <i class="far fa-tint fa-4x" style="color:purple;"></i>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Appointment_conform}}</span></h3>
+                                                <p style="font-size: 15px;">conform Appointment</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon">
+                                                <i class="fas fa-vial fa-4x" style="color:green"></i>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Appointment_today}}</span></h3>
+                                                <p style="font-size: 15px;">Today Appointments</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon">
+                                                <i class="fas fa-diagnoses fa-4x" style="color:blue;"></i>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{total_Appointments}}</span></h3>
+                                                <p style="font-size:14px;">Total Appointments</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--View All appointment Details-->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+
+                        {% if error_message %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-danger">
+                                <div class="toast-body ">
+                                    {{name}} is {{error_message}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% elif success %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{name}} is {{success}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <br><br>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="examples">
+                                <h2 class="text-center"><b>Appointments</b></h2>
+                                <thead>
+                                <tr align="center">
+                                    <th>Patient Name</th>
+                                    <th>Problem detail</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th style="font-size:12px;" >Prescription/ <br>Cancel Reason</th>
+
+                                </tr>
+
+                                </thead>
+                                <tbody>
+                                {% for i in Appointments %}
+                                <tr align="center">
+                                    <td>{{i.Name}}</td>
+
+                                    <td><a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-detail{{i.id}}"
+                                           style="height:38px;width: 55px;margin-right: 10px; ">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                    <td>{{i.Appointment_date}}</td>
+                                    <td>{{i.Time_slot}}</td>
+                                    <td>
+                                        {% if i.Status == "Completed" %}
+                                        <span class="badge badge-success">Completed</span>
+                                        {% elif i.Status == "Pending" %}
+                                        <span class="badge badge-warning">Pending</span>
+                                        {% elif i.Status == "Cancel" %}
+                                        <span class="badge badge-danger">Canceled</span>
+                                        {% elif i.Status == "Accepted" %}
+                                        <span class="badge btn-info">Accepted</span>
+                                        {% endif %}
+
+                                    </td>
+
+                                    <td>
+                                        {% if i.Status == "Completed" %}
+                                        <a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-prescription{{i.id}}"
+                                           style="color:green;margin-right: 70px">
+                                             <i class="fas fa-clipboard-prescription fa-2x"></i>
+                                        </a>
+                                        {% elif i.Status == "Cancel" %}
+                                        <a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-Cancel_Reason{{i.id}}"
+                                           style="color:green;margin-right:50px; ">
+                                            <button class="btn btn-danger">Reason</button>
+                                        </a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+
+                            </table>
+                            {% for i in Appointments%}
+                            <!-- Popup for view detail-->
+                            <div aria-hidden="true" class="modal" id="view-detail{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Appointment Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment ID </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h3 style="color:green">Problem Detail</h3></th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td colspan="2">{{i.Problem_detail}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment Date</h6>
+                                                        </th>
+                                                        <td>{{i.Appointment_date}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment Time</h6>
+                                                        </th>
+                                                        <td>{{i.Time_slot}}</td>
+                                                    </tr>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment Status</h6>
+                                                        </th>
+                                                        <td>
+                                                            {% if i.Status == "Completed" %}
+                                                            <span class="badge badge-success">Completed</span>
+                                                            {% elif i.Status == "Pending" %}
+                                                            <span class="badge badge-warning">Pending</span>
+                                                            {% elif i.Status == "Cancel" %}
+                                                            <span class="badge badge-danger">Canceled</span>
+                                                            {% elif i.Status == "Accepted" %}
+                                                            <span class="badge btn-info">Accepted</span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Popup for view-prescription-->
+                            <div aria-hidden="true" class="modal" id="view-prescription{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 100px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Appointment Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment ID </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h3 style="color:green">Prescription</h3></th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td colspan="2">{{i.Prescription}}</td>
+
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Popup for view-Cancel_Reason-->
+                            <div aria-hidden="true" class="modal" id="view-Cancel_Reason{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 100px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Appointment Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment ID </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h3 style="color:green">Appointment Cancel Reason</h3></th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <td colspan="2">{{i.appointment_cancel_reason}}</td>
+
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div aria-hidden="true" class="modal" id="Change_img" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                            type="button"></button>
+                </div>
+                <div class="modal-body tab-content">
+                    <h5 class="text-center">Select New Image </h5>
+                    <div class="table-responsive">
+                        <table class="table width:100% align-middle">
+                            <form action="/patient_profile_img/" enctype="multipart/form-data"
+                                  method="POST">
+                                {% csrf_token %}
+                                <tr align="center">
+                                    <td><h6 style="color:green">
+                                        <input accept="image/*" name="image" required type="file">
+                                    </h6>
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td>
+                                        <input class="btn btn-info" style="color:white;" type="submit" value="Change"/>
+                                    </td>
+                                </tr>
+                            </form>
+                        </table>
+                        <br/>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- popper js -->
+<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
+<!-- sidebar menu  -->
+<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
+<!-- waypoints js -->
+<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
+
+<!-- counterup js -->
+<script src='{% static "jquery.counterup.min.js.download" %}'></script>
+<!-- swiper slider js -->
+<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
+<!-- custom js -->
+<script src='{% static "custom.js.download" %}'></script>
+
+
+</body>

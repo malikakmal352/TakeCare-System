@@ -1,0 +1,64 @@
+{% load static %}
+{% include "mainheader.html" %}
+<section>
+    <!-- /////////////////////////////////////Slider//////////////////////////////////// -->
+
+    <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleCaptions">
+        <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleCaptions" type="button"></button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
+                    type="button"></button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
+                    type="button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="max-height:75vh;">
+                <img alt="..." class="d-block w-100" src='{% static "1.jpg" %}'>
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h5>First slide label</h5>-->
+<!--                    <p>Some representative placeholder content for the first slide.</p>-->
+<!--                </div>-->
+            </div>
+            <div class="carousel-item" style="max-height:75vh ;">
+                <img alt="..." class="d-block w-100" src='{% static "md.jpg" %}'>
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h5>Second slide label</h5>-->
+<!--                    <p>Some representative placeholder content for the second slide.</p>-->
+<!--                </div>-->
+            </div>
+            <div class="carousel-item" style="max-height:75vh ;">
+                <img alt="..." class="d-block w-100" src='{% static "s3.jpg" %}'>
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions"
+                type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+</section>
+{% include "over_specialist.html"%}
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+923305464761", // WhatsApp number
+            email: "malikakmalmalik30@gmail.com", // Email
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "email,whatsapp,facebook", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+
+</script>

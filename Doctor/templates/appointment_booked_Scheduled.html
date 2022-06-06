@@ -1,0 +1,144 @@
+<html>
+<head>
+    {% include "mainheader.html" %}
+    {% load static %}
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      h5{
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      color: #666;
+      line-height: 22px;
+      }
+
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      .card_body {
+      width: 70%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999;
+      }
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+
+      @media (max-width: 796px) {
+         .card_body {
+             width: 80%;
+             padding:20px
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+       }
+
+       @media (max-width: 500px) {
+         .card_body {
+             width: 100%;
+             padding: 20px;
+             border-radius: 6px;
+             background: #fff;
+             box-shadow: 0 0 8px  #669999;
+           }
+       }
+
+
+    </style>
+
+</head>
+<body>
+<section class="container pt-2">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 bg-white mb-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb pt-2 pb-2">
+                    <li class="breadcrumb-item">
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/view_all_doctors/">
+                            Doctors
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Doctors_by_city/{{Appointment_con_id.Doctor.city}}">
+                            {{Appointment_con_id.Doctor.city}}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Doctors/{{Appointment_con_id.Doctor.Speciality}}/{{Appointment_con_id.Doctor.city}}">
+                          {{Appointment_con_id.Doctor.Speciality}}
+                       </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Book_appointment/{{Appointment_con_id.Doctor.id}}">
+                            Dr.{{Appointment_con_id.Doctor}}
+
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Confirmation</li>
+                </ol>
+            </nav>
+        </div>
+
+
+        <div class="col-12 col-lg-8 bg-white mb-2 pb-3">
+            <div class="card py-3 mt-sm-3 pt-2">
+                <div class="card-body text-center">
+                    <p class="text-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                        </svg>
+                    </p>
+
+                    <h2 class="h4 pb-3 text-success">Your Appointment has been Scheduled</h2>
+                    <p class="font-size-sm mb-2">Our team will contact you in case of any change in appointment details from doctor's end</p>
+
+                    <div class="table-responsive">
+                        <table class="table text-left font-size-sm">
+                            <tbody align="center">
+                            <tr>
+                                    <td>Patient Name</td>
+                                    <td>{{Appointment_con_id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Appointment</td>
+                                    <td>{{Appointment_con_id.Time_slot}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>{{Appointment_con_id.Appointment_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{Appointment_con_id.Doctor.Speciality}}</td>
+                                    <td>Dr.{{Appointment_con_id.Doctor}} </td>
+                                </tr>
+                                <tr>
+                                    <td>Hospital/Clinic</td>
+                                    <td>{{Appointment_con_id.Doctor.Doctor_Clinic}}<br></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
