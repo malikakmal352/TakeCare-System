@@ -1,91 +1,203 @@
 {% load static %}
 
 {% include "mainheader.html" %}
-
 <head>
-    <link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
     <style>
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box
-        }
-
-        html
-         {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: transparent
-         }
-        body {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #202124;
-            text-align: left;
-            background-color: #f7f7f7;
-            /*background-color: rebeccapurple;*/
-            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
-        }
+    .page-banner-area {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+       background-image:url({% static 'Medicine_assets/img/banner/page-banner-4.jpg' %});
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+    .page-banner-area::before {
+      position: absolute;
+      content: "";
+      background: #0e2641;
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
 
     </style>
+
 </head>
 <body>
 
 
-<div class="main-wrap" style="transform: none;">
-
-    <div class="main ts-contain cf right-sidebar">
-        <div class="col-12">
-            <section class="container-lg"
-                     style="justify-content: space-around;justify-content: space-around;align-content: center;">
-                    <article class="l-post bg-white mb-3   grid-base-post grid-post">
-                        <div class="media" style="width:50%;margin-left:20%;">
-                            <a class="image-link media-ratio ratio-16-9">
-                                <span
-                                        class="img bg-cover wp-post-image"
-                                        role="img"
-                                        style="background-image: url('/media/{{Blogs.img}}');">
-
-                                </span>
-                            </a>
-                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
-                                    class="category term-color-14"
-                                    href="/Health_blog/{{Blogs.Health_blogs_issue}}/"
-                                    rel="category">{{Blogs.Health_blogs_issue}}</a> </span>
+<main>
+        <!-- page-banner-area-start -->
+    <div class="page-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page-banner-content text-center">
+                        <h4 class="breadcrumb-title">Blog Details</h4>
+                        <div class="breadcrumb-two">
+                            <nav>
+                                <nav class="breadcrumb-trail breadcrumbs">
+                                    <ul class="breadcrumb-menu">
+                                        <li class="breadcrumb-trail">
+                                            <a href="/"><span>Home</span></a>
+                                        </li>
+                                        <li class="trail-item">
+                                            <span>Blog Details</span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </nav>
                         </div>
-                        <div class=" p-3 content">
-                            <div class="post-meta post-meta-a has-below">
-                                <h1 class="is-title post-title">
-                                    <b style="font-size:30px;">{{Blogs.Main_heading}}</b>
-                                </h1>
-
-                                <div class="post-meta-items meta-below"><span
-                                        class="meta-item post-author"><span class="by">By</span> <a
-                                        title="Posts by {{i.Doctor}}">{{Blogs.Doctor}}</a></span>
-                                    <span
-                                            class="meta-item date">
-                                    <span class="date-link ml-1">
-                                        <time class="post-date">({{Blogs.blog_create_time}})</time>
-                                    </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="excerpt">
-                                <p>
-                                    {{Blogs.Health_blogs_Detail}}
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-            </section>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-</div>
+    <!-- page-banner-area-end -->
+
+        <!-- news-detalis-area-start -->
+        <div class="news-detalis-area mt-30 mb-70">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-10 col-12 col-sm-10">
+                    <div class="news-detalis-content mb-50">
+                        <ul class="blog-meta mb-20">
+                           <li><a href="blog-details.html"><i class="fal fa-eye"></i>100 Views</a></li>
+<!--                           <li><a href="blog-details.html"><i class="fal fa-comments"></i> 30 Comments</a></li>-->
+                           <li><a href="blog-details.html"><i class="fal fa-calendar-alt"></i> {{Blogs.blog_create_time}}</a></li>
+                        </ul>
+                        <div class="news-thumb mt-40">
+                           <img src="/media/{{Blogs.img}}" alt="blog">
+                        </div>
+                        <h2 class="news-title mt-60"><b>{{Blogs.Main_heading}}</b></h2>
+                        <textarea disabled data-width="120" height="100"
+                                  style="outline:none;height:20%;" class="mb-20 w-100">{{Blogs.Health_blogs_Detail}}</textarea>
+                        <div class="news-quote-area mt-55 text-center">
+                           <i class="fas fa-quote-left"></i>
+                           <h5 class="news-quote-title mt-25">Choices to take a holiday and travelling out in this pandemic situation are limited. Why not take a staycation.</h5>
+                           <h6 class="founder-name mt-25">Rosalina D. William</h6>
+                           <span class="founder-title">Founder</span>
+                        </div>
+                        <div class="news-info d-sm-flex align-items-center justify-content-between mt-50 mb-50">
+                           <div class="news-share">
+                              <h6 class="tag-title mb-25">Social Share</h6>
+                              <a href="#"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fab fa-typo3"></i></a>
+                              <a href="#"><i class="fab fa-tumblr"></i></a>
+                              <a href="#"><i class="fal fa-share-alt"></i></a>
+                           </div>
+                        </div>
+                        <div class="news-navigation pt-50 pb-40">
+                           <div class="changes-info">
+                              <span><a href="blog-details.html">Prev Post</a></span>
+                              <h6 class="changes-info-title"><a href="blog-details.html">Tips On Minimalist</a></h6>
+                           </div>
+                           <div class="changes-info text-md-right">
+                              <span><a href="blog-details.html">Next Post</a></span>
+                              <h6 class="changes-info-title"><a href="blog-details.html">Less Is More</a></h6>
+                           </div>
+                        </div>
+                        <div class="news-author mt-60">
+                            {% if Blogs.Doctor.img %}
+                           <img src="/media/{{Blogs.Doctor.img}}" alt="" class="img-fluid">
+                            {% elif Blogs.Doctor.Gender == 'Female'%}
+                            <img src='{% static "female_doctor_dp.jpg" %}' alt="" class="img-fluid">
+                            {% else %}
+                            <img src='{% static "male_doctor_dp.jpg" %}' alt="" class="img-fluid">
+                            {% endif %}
+
+                           <div class="news-author-info">
+                              <span>Written by</span>
+                              <h6 class="author-title">Dr.{{Blogs.Doctor}}</h6>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation is enougn for today. quis nostrud exercitation is enougn for.</p>
+                           </div>
+                        </div>
+                        <div class="post-comments mt-60">
+                           <h6 class="post-comment-title mb-40">03 Comments</h6>
+                           <div class="latest-comments">
+                                 <ul>
+                                    <li>
+                                       <div class="comments-box">
+                                             <div class="comments-avatar">
+                                                <img src="assets/img/blog/p-author-1.jpg" alt="">
+                                             </div>
+                                             <div class="comments-text">
+                                                <div class="avatar">
+                                                   <h6 class="avatar-name">Rosalina Kelian</h6>
+                                                   <a href="#" class="comment-reply"><i class="fal fa-share"></i>Reply</a>
+                                                </div>
+                                                <span class="post-meta"><i class="fal fa-calendar-alt"></i> October 26, 2020</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                             </div>
+                                       </div>
+                                    </li>
+                                    <li class="children">
+                                       <div class="comments-box">
+                                             <div class="comments-avatar">
+                                                <img src="assets/img/blog/p-author-2.jpg" alt="">
+                                             </div>
+                                             <div class="comments-text">
+                                                <div class="avatar">
+                                                   <h6 class="avatar-name">Iqbal Hossain</h6>
+                                                   <a href="#" class="comment-reply"><i class="fal fa-share"></i>Reply</a>
+                                                </div>
+                                                <span class="post-meta"><i class="fal fa-calendar-alt"></i> October 26, 2020</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco..</p>
+                                             </div>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="comments-box">
+                                             <div class="comments-avatar">
+                                                <img src="assets/img/blog/p-author-3.jpg" alt="">
+                                             </div>
+                                             <div class="comments-text">
+                                                <div class="avatar">
+                                                   <h6 class="avatar-name">Arista Williamson</h6>
+                                                   <a href="#" class="comment-reply"><i class="fal fa-share"></i>Reply</a>
+                                                </div>
+                                                <span class="post-meta"><i class="fal fa-calendar-alt"></i> October 26, 2020</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo re magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                             </div>
+                                       </div>
+                                    </li>
+                                 </ul>
+                           </div>
+                        </div>
+                        <div class="post-comment-form mt-20">
+                           <h4 class="post-comment-form-title mb-40">Post Comment</h4>
+                           <form action="#">
+                               <div class="input-field">
+                                   <i class="fal fa-pencil-alt"></i>
+                                   <textarea required name="comment" id="comment" placeholder="Type your comments...."></textarea>
+                               </div>
+                               <div class="input-field">
+                                   <i class="fal fa-user"></i>
+                                   <input type="text" required placeholder="Type your name....">
+                               </div>
+                               <div class="input-field">
+                                   <i class="fal fa-envelope"></i>
+                                   <input type="text"  readonly placeholder="Type your email....">
+                               </div>
+                               <button class="post-comment shutter-btn"><i class="fal fa-comments"></i>Post
+                                   Comment</button>
+                           </form>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- news-detalis-area-end  -->
+
+    </main>
 
 </body>

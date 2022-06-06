@@ -1294,7 +1294,8 @@ def blog_detail(request, id, Health_blogs_issue):
     labcity = Labcity.objects.all()
     Customer = Patient.objects.all()
     Blogs = Health_blogs.objects.get(id=id, Health_blogs_issue=Health_blogs_issue)
-    print(Blogs)
+    Blogs_next = Health_blogs.objects.last()
+    print(Blogs, '\n', Blogs_next)
     Data = {'Customer': Customer, 'labcity': labcity, 'Blogs': Blogs}
     return render(request, 'Blog_detail.html', Data)
 
