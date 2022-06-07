@@ -6,20 +6,6 @@
 {% include "mainheader.html" %}
 <html dir="ltr" lang="en">
 <head>
-    <link href="{% static 'Medicine_assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon">
-    <!-- CSS here -->
-    <link href="{% static 'Medicine_assets/css/meanmenu.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/owl-carousel.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/swiper-bundle.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/backtotop.css'%}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/ui-range-slider.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/magnific-popup.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/nice-select.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/flaticon/flaticon.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/font-awesome-pro.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/default.css' %}" rel="stylesheet">
-    <link href="{% static 'Medicine_assets/css/style.css' %}" rel="stylesheet">
 
     <style>
         @media screen and (max-width: 600px) {
@@ -48,8 +34,8 @@
                             <div class="product__details-thumb">
                                 <div class="tab-content" id="productThumbContent">
                                     <div class="tab-pane fade show active" id="thumbOne" role="tabpanel" aria-labelledby="thumbOne-tab">
-                                        <div class="w-100">
-                                            <img alt="product" class="product_img"  src="/media/{{ i.img }}">
+                                        <div class="">
+                                            <img alt="product" class="product_img col-lg-10 col-md-10"  src="/media/{{ i.img }}">
                                         </div>
                                     </div>
                                   </div>

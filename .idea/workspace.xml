@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="first commit">
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add requirement.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Lab_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Lab_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Y2Mate.is - Aladdin movie mastering Sanjay Dutt Anita full HD30 March 2022-vL4tv2j9ABg-480p-1652988198177.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654544000052</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add requirement.txt">
+      <created>1654545299266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654545299266</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add requirement.txt">
+      <created>1654545358358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654545358358</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,7 +141,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="add requirement.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add requirement.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

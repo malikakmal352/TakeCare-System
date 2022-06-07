@@ -19,7 +19,7 @@
     <style>
 
   body{
-          background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url({% static "dteam.jpg" %});
+          background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({% static "dteam.jpg" %});
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
@@ -33,7 +33,7 @@
     height: 5vh;
     border-bottom: solid white 2px;
     width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
 
   select{
@@ -52,7 +52,7 @@
 
   }
   .container{
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.0);
     width: 35%;
     height:auto;
     box-shadow: 10px;
@@ -68,7 +68,12 @@
 	backdrop-filter: blur(5px);
     /*top: 20vh;*/
   }
-
+    lable{
+        color:white;
+    }
+    textarea{
+        color:white;
+    }
     @media screen and (max-width: 1100px) {
          .container
            {
@@ -97,22 +102,35 @@
                     margin-top: 6vh;
                     margin-left: 7%;
                 }
+                  .feild input{
+                        height: 8vh;
+                      }
+                select{
+                    height: 11vh;
+                  }
 
                   }
 
                @media screen and (max-width: 560px) {
                     .container{
-                    width:96% ;
+                    width:98% ;
                     height: auto;
                     margin-top: 6vh;
-                    margin-left: 2%;
+                    margin-left: 1%;
                 }
-
+                select{
+                    height: 9vh;
                   }
 
 
-
-
+                  }
+               @media screen and (max-width: 420px) {
+                    .container{
+                    width:100% ;
+                    height: auto;
+                    margin-top: 1vh;
+                }
+                  }
     </style>
 </head>
 
@@ -134,20 +152,30 @@
             </div>
     {% endif %}
     <div class="feild">
+        <lable>Fullname: </lable>
         <input name="fullname" placeholder="Fullname" type="text" value="{{Value.fullname}}">
+        <lable>E-mail Address: </lable>
         <input name="email" placeholder="Email" required type="email" value="{{Value.email}}">
+
+        <lable>Password: </lable>
         <input name="password" placeholder="Password" required type="password" value="{{Value.password}}">
+
+        <lable>Comford Password: </lable>
         <input name="C_password" placeholder="Comford Password" required type="password" value="">
+
+        <lable>Moblie Number: </lable>
         <input name="Mn" placeholder="Phone Number" type="tel" value="{{Value.phone}}">
-        <select class="form-select form-select-md mb-3" name="city" style="width:100%;">
-            <option selected value="No-cities">Select your city</option>
+        <select class="form-select form-select-md mb-3" name="city" style="width:100%;" required>
+            <option value="">Select your city</option>
             <option value="Islamabad">Islamabad</option>
             <option value="Lahore">Lahore</option>
             <option value="Rawalpindi">Rawalpindi</option>
             <option value="Multan">Multan</option>
             <option value="Karachi">Karachi</option>
         </select>
-        <textarea name="address" placeholder="Enter your Address" required style="width:100%;height:25vh;"></textarea>
+
+        <lable>Your Address(optional) : </lable>
+        <textarea name="address" placeholder="Enter your Address" style="width:100%;height:25vh;"></textarea>
         <!--            <input type="text" name="gender" placeholder="Gender">-->
 
     </div>
