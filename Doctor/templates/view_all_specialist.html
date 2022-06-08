@@ -888,6 +888,35 @@ border-color:#014e78
                 </div>
             </div>
             {% endfor %}
+            <div class="basic-pagination text-center pt-30 pb-30">
+                        <nav>
+                            <ul>
+                       <span class="step-links">
+                            {% if Doctor.has_previous %}
+                            <a href="?page=1">
+                                <button class="btn btn-outline-warning">&laquo; first</button>
+                            </a>
+                            <a href="?page={{ Doctor.previous_page_number }}">
+                                    <button class="btn btn-outline-warning">previous</button>
+                                </a>
+                            {% endif %}
+                            <span class="current">
+                                Page {{ Doctor.number }} of {{ Doctor.paginator.num_pages }}.
+                            </span>
+
+                            {% if Doctor.has_next %}
+                                <a href="?page={{ Doctor.next_page_number }}">
+                                    <button class="btn btn-outline-warning">next</button>
+                                </a>
+                                <a href="?page={{ Doctor.paginator.num_pages }}">
+                                    <button class="btn btn-outline-warning">last &raquo;</button>
+                                </a>
+                            {% endif %}
+                        </span>
+                            </ul>
+                        </nav>
+                    </div>
+
         </div>
 
         <div class="table-responsive " id="all_Female_doctors">
@@ -1200,6 +1229,7 @@ border-color:#014e78
             </div>
             {% endif %}
             {% endfor %}
+
         </div>
 
         <div class="table-responsive" id="all_Male_doctors">
@@ -1524,7 +1554,6 @@ border-color:#014e78
                         <i class="fas fa-circle" style="color:lightgreen;"></i>
                         <span class="mx-1 font-size-xs text-success">Available Today</span>
                     </div>
-
                 </div>
                 <div class="col-md-2 col-4 ga-event-listing-doctor-photo text-center d-md-block">
                     {% if i.img %}
@@ -1559,7 +1588,6 @@ border-color:#014e78
                     {% endif %}
                 </div>
 
-
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
                     <a href="#"><h2
                             class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
@@ -1582,7 +1610,7 @@ border-color:#014e78
 
                     <!--        Satisfaction-->
                     <div class="row col-12 d-sm-flex">
-                        <div class="mx-auto col-6 col-md-6 fon pr-0">
+                        <div class="mx-auto col-sm-6  col-10 col-md-6 fon pr-0">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="17.109" viewBox="0 0 17.109 17.109" width="17.109"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -1598,7 +1626,7 @@ border-color:#014e78
                             </div>
                             <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
                         </div>
-                        <div class="mx-auto col-6 col-sm-6 col-md-6">
+                        <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -1616,7 +1644,7 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Experience</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
+                            <p class="font-size-sm " style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
                         </div>
                     </div>
                 </div>
@@ -1628,7 +1656,6 @@ border-color:#014e78
                        data-toggle="modal"
                        href="#helpline-modal{{i.id}}"
                        style="border-radius: 8px;">View Profile</a>
-
                     {% if i.Doctor_Clinic %}
                     {% if request.session.email %}
                     <a class="btn btn-primary btn-block mb-2 d-sm-block d-none"
@@ -1639,7 +1666,7 @@ border-color:#014e78
                        data-toggle="modal" href="#helpline-modal1"
                        style="border-radius: 8px;">Book Appointment</a>
                     {% endif %}
-                    {% endif%}
+                    {% endif %}
                 </div>
 
 
@@ -1649,59 +1676,6 @@ border-color:#014e78
                         <div class="col-12">
                             <div class="d-flex horizontal-scroll smart-bar">
 
-                                <div class=" row bg-white padding mx-1 col-md-5 col-lg-4 col-10 mb-3">
-                                    <div>
-                                        <a href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                        </a>
-                                        <div class="card-body ga-event-online-card-click p-2 mt-1"
-                                             style="box-shadow: 1px 1px 2px white, 0 0 10px #D3D3D3, 0 0 5px #D3D3D3">
-
-                                            <div class="d-flex"><a
-                                                    href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                <div>
-                                                    <i class="fad fa-video" style="color:green;"></i>
-                                                </div>
-                                            </a>
-                                                <div class="mt-1 mx-2 w-100"><a
-                                                        href="#">
-                                                    <p class="product-title font-size-xs mb-0  h3">Video
-                                                        Consultation</p>
-                                                    <p class="product-meta d-block font-size-xs  mb-0">Audio/Video</p>
-                                                    <div class="d-flex">
-                                                        <label class="font-weight-bold">Fee: </label>
-                                                        <p class="font-size-sm mx-2 mb-0">
-                                                        <span
-                                                                style="text-decoration: line-through; font-size: 14px;color:#333333;">Rs. 3,000</span>
-                                                            <span style="text-decoration: none ;font-size: 14px; font-weight: bold; color: #00C683;">
-                                                            Rs. 2,800
-                                                        </span>
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Days: </label>
-                                                        <p class="mx-2 font-size-sm text-dark mb-0">Mon, Tue, Wed, Thu,
-                                                            Fri</p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Timing: </label>
-                                                        <p class="mx-2 font-size-sm text-dark">03:00 PM - 05:00 PM</p>
-                                                    </div>
-                                                </a>
-                                                    <div class="col-12 p-0"><a
-                                                            href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                    </a>
-                                                        <a class="btn btn-outline-primary btn-block col-10 mx-auto"
-                                                           href="#"
-                                                           style="border-radius: 5px; margin-top: 10px;">Consult
-                                                            Online</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {% if i.Doctor_Clinic %}
                                 <div class="mx-1 col-md-5 col-lg-4 col-10 mb-3">
                                     <a href="#"></a>
@@ -1804,12 +1778,11 @@ border-color:#014e78
                                href="#helpline-modal{{i.id}}"
                                style="border-radius: 8px;">View Profile</a>
                         </div>
-
                         {% if i.Doctor_Clinic %}
                         {% if request.session.email %}
                         <div class="col-md-10 col-12 mx-auto mt-2">
                             <a class="btn btn-primary btn-block mb-2"
-                               href="https://www.marham.pk/doctors/sialkot/psychiatrist/dr-junaid-rasool/callcenter#booking"
+                               href="/Book_appointment/{{i.id}}/"
                                style="border-radius: 5px;">Book Appointment</a>
                         </div>
                         {% else %}
@@ -1831,14 +1804,13 @@ border-color:#014e78
         <div class="table-responsive" id="fee(High to low)">
 
             {% for i in F_H_to_l %}
-            {% if i.Doctor_Clinic %}
+               {% if i.Doctor_Clinic %}
             <div class="row bg-white mb-2 box-shadow-sm doctor-card  py-2" style="margin:10px;">
                 <div class="col-12 py-2 d-lg-block d-none">
                     <div class="d-sm-block d-none d-flex" style="float:right; ">
                         <i class="fas fa-circle" style="color:lightgreen;"></i>
                         <span class="mx-1 font-size-xs text-success">Available Today</span>
                     </div>
-
                 </div>
                 <div class="col-md-2 col-4 ga-event-listing-doctor-photo text-center d-md-block">
                     {% if i.img %}
@@ -1873,7 +1845,6 @@ border-color:#014e78
                     {% endif %}
                 </div>
 
-
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
                     <a href="#"><h2
                             class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
@@ -1896,7 +1867,7 @@ border-color:#014e78
 
                     <!--        Satisfaction-->
                     <div class="row col-12 d-sm-flex">
-                        <div class="mx-auto col-6 col-md-6 fon pr-0">
+                        <div class="mx-auto col-sm-6  col-10 col-md-6 fon pr-0">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="17.109" viewBox="0 0 17.109 17.109" width="17.109"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -1912,7 +1883,7 @@ border-color:#014e78
                             </div>
                             <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
                         </div>
-                        <div class="mx-auto col-6 col-sm-6 col-md-6">
+                        <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -1930,7 +1901,7 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Experience</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
+                            <p class="font-size-sm " style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
                         </div>
                     </div>
                 </div>
@@ -1942,7 +1913,6 @@ border-color:#014e78
                        data-toggle="modal"
                        href="#helpline-modal{{i.id}}"
                        style="border-radius: 8px;">View Profile</a>
-
                     {% if i.Doctor_Clinic %}
                     {% if request.session.email %}
                     <a class="btn btn-primary btn-block mb-2 d-sm-block d-none"
@@ -1963,59 +1933,6 @@ border-color:#014e78
                         <div class="col-12">
                             <div class="d-flex horizontal-scroll smart-bar">
 
-                                <div class=" row bg-white padding mx-1 col-md-5 col-lg-4 col-10 mb-3">
-                                    <div>
-                                        <a href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                        </a>
-                                        <div class="card-body ga-event-online-card-click p-2 mt-1"
-                                             style="box-shadow: 1px 1px 2px white, 0 0 10px #D3D3D3, 0 0 5px #D3D3D3">
-
-                                            <div class="d-flex"><a
-                                                    href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                <div>
-                                                    <i class="fad fa-video" style="color:green;"></i>
-                                                </div>
-                                            </a>
-                                                <div class="mt-1 mx-2 w-100"><a
-                                                        href="#">
-                                                    <p class="product-title font-size-xs mb-0  h3">Video
-                                                        Consultation</p>
-                                                    <p class="product-meta d-block font-size-xs  mb-0">Audio/Video</p>
-                                                    <div class="d-flex">
-                                                        <label class="font-weight-bold">Fee: </label>
-                                                        <p class="font-size-sm mx-2 mb-0">
-                                                        <span
-                                                                style="text-decoration: line-through; font-size: 14px;color:#333333;">Rs. 3,000</span>
-                                                            <span style="text-decoration: none ;font-size: 14px; font-weight: bold; color: #00C683;">
-                                                            Rs. 2,800
-                                                        </span>
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Days: </label>
-                                                        <p class="mx-2 font-size-sm text-dark mb-0">Mon, Tue, Wed, Thu,
-                                                            Fri</p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Timing: </label>
-                                                        <p class="mx-2 font-size-sm text-dark">03:00 PM - 05:00 PM</p>
-                                                    </div>
-                                                </a>
-                                                    <div class="col-12 p-0"><a
-                                                            href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                    </a>
-                                                        <a class="btn btn-outline-primary btn-block col-10 mx-auto"
-                                                           href="#"
-                                                           style="border-radius: 5px; margin-top: 10px;">Consult
-                                                            Online</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {% if i.Doctor_Clinic %}
                                 <div class="mx-1 col-md-5 col-lg-4 col-10 mb-3">
                                     <a href="#"></a>
@@ -2122,7 +2039,7 @@ border-color:#014e78
                         {% if request.session.email %}
                         <div class="col-md-10 col-12 mx-auto mt-2">
                             <a class="btn btn-primary btn-block mb-2"
-                               href="https://www.marham.pk/doctors/sialkot/psychiatrist/dr-junaid-rasool/callcenter#booking"
+                               href="/Book_appointment/{{i.id}}/"
                                style="border-radius: 5px;">Book Appointment</a>
                         </div>
                         {% else %}
@@ -2145,13 +2062,13 @@ border-color:#014e78
         <div class="table-responsive" id="High_Doctor_experience">
 
             {% for i in Doctor_experience %}
+   {% if i.Doctor_Clinic %}
             <div class="row bg-white mb-2 box-shadow-sm doctor-card  py-2" style="margin:10px;">
                 <div class="col-12 py-2 d-lg-block d-none">
                     <div class="d-sm-block d-none d-flex" style="float:right; ">
                         <i class="fas fa-circle" style="color:lightgreen;"></i>
                         <span class="mx-1 font-size-xs text-success">Available Today</span>
                     </div>
-
                 </div>
                 <div class="col-md-2 col-4 ga-event-listing-doctor-photo text-center d-md-block">
                     {% if i.img %}
@@ -2186,7 +2103,6 @@ border-color:#014e78
                     {% endif %}
                 </div>
 
-
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
                     <a href="#"><h2
                             class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
@@ -2209,7 +2125,7 @@ border-color:#014e78
 
                     <!--        Satisfaction-->
                     <div class="row col-12 d-sm-flex">
-                        <div class="mx-auto col-6 col-md-6 fon pr-0">
+                        <div class="mx-auto col-sm-6  col-10 col-md-6 fon pr-0">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="17.109" viewBox="0 0 17.109 17.109" width="17.109"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -2225,7 +2141,7 @@ border-color:#014e78
                             </div>
                             <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
                         </div>
-                        <div class="mx-auto col-6 col-sm-6 col-md-6">
+                        <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -2243,7 +2159,7 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Experience</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
+                            <p class="font-size-sm " style="margin-left: 22px;"><b>{{i.Experience}} year(s)</b></p>
                         </div>
                     </div>
                 </div>
@@ -2255,7 +2171,6 @@ border-color:#014e78
                        data-toggle="modal"
                        href="#helpline-modal{{i.id}}"
                        style="border-radius: 8px;">View Profile</a>
-
                     {% if i.Doctor_Clinic %}
                     {% if request.session.email %}
                     <a class="btn btn-primary btn-block mb-2 d-sm-block d-none"
@@ -2276,59 +2191,6 @@ border-color:#014e78
                         <div class="col-12">
                             <div class="d-flex horizontal-scroll smart-bar">
 
-                                <div class=" row bg-white padding mx-1 col-md-5 col-lg-4 col-10 mb-3">
-                                    <div>
-                                        <a href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                        </a>
-                                        <div class="card-body ga-event-online-card-click p-2 mt-1"
-                                             style="box-shadow: 1px 1px 2px white, 0 0 10px #D3D3D3, 0 0 5px #D3D3D3">
-
-                                            <div class="d-flex"><a
-                                                    href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                <div>
-                                                    <i class="fad fa-video" style="color:green;"></i>
-                                                </div>
-                                            </a>
-                                                <div class="mt-1 mx-2 w-100"><a
-                                                        href="#">
-                                                    <p class="product-title font-size-xs mb-0  h3">Video
-                                                        Consultation</p>
-                                                    <p class="product-meta d-block font-size-xs  mb-0">Audio/Video</p>
-                                                    <div class="d-flex">
-                                                        <label class="font-weight-bold">Fee: </label>
-                                                        <p class="font-size-sm mx-2 mb-0">
-                                                        <span
-                                                                style="text-decoration: line-through; font-size: 14px;color:#333333;">Rs. 3,000</span>
-                                                            <span style="text-decoration: none ;font-size: 14px; font-weight: bold; color: #00C683;">
-                                                            Rs. 2,800
-                                                        </span>
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Days: </label>
-                                                        <p class="mx-2 font-size-sm text-dark mb-0">Mon, Tue, Wed, Thu,
-                                                            Fri</p>
-                                                    </div>
-
-                                                    <div class="d-flex" style="margin-top: -6px;">
-                                                        <label class="font-weight-bold">Timing: </label>
-                                                        <p class="mx-2 font-size-sm text-dark">03:00 PM - 05:00 PM</p>
-                                                    </div>
-                                                </a>
-                                                    <div class="col-12 p-0"><a
-                                                            href="https://www.marham.pk/online-consultation/request?id=9&amp;d_id=5124#booking">
-                                                    </a>
-                                                        <a class="btn btn-outline-primary btn-block col-10 mx-auto"
-                                                           href="#"
-                                                           style="border-radius: 5px; margin-top: 10px;">Consult
-                                                            Online</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {% if i.Doctor_Clinic %}
                                 <div class="mx-1 col-md-5 col-lg-4 col-10 mb-3">
                                     <a href="#"></a>
@@ -2435,7 +2297,7 @@ border-color:#014e78
                         {% if request.session.email %}
                         <div class="col-md-10 col-12 mx-auto mt-2">
                             <a class="btn btn-primary btn-block mb-2"
-                               href="https://www.marham.pk/doctors/sialkot/psychiatrist/dr-junaid-rasool/callcenter#booking"
+                               href="/Book_appointment/{{i.id}}/"
                                style="border-radius: 5px;">Book Appointment</a>
                         </div>
                         {% else %}
@@ -2450,45 +2312,20 @@ border-color:#014e78
 
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
 
-        <section>
-            <div class="row bg-midsky">
-                <div class="col-12 pt-2 pb-2 custom-filter horizontal-scroll smart-bar ">
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/abbottabad/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Abbottabad</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/hyderabad/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Hyderabad</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/islamabad/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Islamabad</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/karachi/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Karachi</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/lahore/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Lahore</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/multan/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Multan</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/peshawar/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Peshawar</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/quetta/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Quetta</a>
-                    <a class="font-size-sm" href="https://www.marham.pk/doctors/rawalpindi/psychiatrist"
-                       style="margin-right: 35px; text-decoration: underline; text-align:right">Psychiatrist in
-                        Rawalpindi</a>
-                </div>
-            </div>
-        </section>
+
 
         <script type="text/javascript">
+              document.getElementById('all_doctors').style.display = "block";
+              document.getElementById('all_Female_doctors').style.display = "none";
+              document.getElementById('all_Male_doctors').style.display = "none";
+              document.getElementById('fee(low to High)').style.display = "none";
+              document.getElementById('fee(High to low)').style.display = "none";
+              document.getElementById('High_Doctor_experience').style.display = "none";
               function showDiv(select)
               {
                     if(select.value==0)
@@ -2587,7 +2424,6 @@ border-color:#014e78
 
 
         </style>
-
 
     </div>
 

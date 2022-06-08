@@ -127,9 +127,13 @@ def view_all_doctors(request):
     All_Speciality = Special.objects.all().order_by('Doctor_Speciality')
     doctor_clinic = Clinic.objects.all()
     labcity = Labcity.objects.all()
-    Doctor = Doctors.objects.filter(is_Active=True)
-    All_Doctor = Doctors.objects.filter(is_Active=True)
 
+    Doctor_list = Doctors.objects.filter(is_Active=True)
+    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+    page_number = request.GET.get('page')
+    Doctor = paginator.get_page(page_number)
+
+    All_Doctor = Doctors.objects.filter(is_Active=True)
     Doctor_experience = Doctors.objects.filter(is_Active=True).order_by('-Experience')
     F_l_to_H = Doctors.objects.filter(is_Active=True).order_by('Doctor_Clinic__Doctor_Fee')
     F_H_to_l = Doctors.objects.filter(is_Active=True).order_by('-Doctor_Clinic__Doctor_Fee')
@@ -158,157 +162,259 @@ def view_all_doctors(request):
             if city == 'all':
                 if Specialist == 'all':
                     if Range == 'all':
-                        Doctor = Doctors.objects.filter(is_Active=True)
+                        Doctor_list = Doctors.objects.filter(is_Active=True)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                     elif Range == '0-100':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100))
+                        Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(0, 100),
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '100-500':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500))
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(100, 500))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(100, 500),
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '500-1000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000))
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(500, 1000))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(500, 1000),
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '1000-2000':
                         Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '2000-3000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000))
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(2000, 1000))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '3000-5000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000))
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(3000, 5000))
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
                                                                    is_Active=True).order_by('-Experience')
                 elif Specialist != 'all':
                     if Range == 'all':
-                        Doctor = Doctors.objects.filter(is_Active=True, Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True, Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                     elif Range == '0-100':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(0, 100),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '100-500':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(100, 500),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
+
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(100, 500),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '500-1000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(500, 1000),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(500, 1000),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '1000-2000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '2000-3000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     elif Range == '3000-5000':
-                        Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
-                                                        Speciality=Specialist)
+                        Doctor_list = Doctors.objects.filter(is_Active=True,
+                                                             Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
+                                                             Speciality=Specialist)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
                                                                    Speciality=Specialist,
                                                                    is_Active=True).order_by('-Experience')
                     else:
-                        Doctor = Doctors.objects.filter(Speciality=Specialist, is_Active=True)
-                        print(Doctor, 'jhjjhj hjhh\n\n')
+                        Doctor_list = Doctors.objects.filter(Speciality=Specialist, is_Active=True)
+                        paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                        page_number = request.GET.get('page')
+                        Doctor = paginator.get_page(page_number)
                         Doctor_experience = Doctors.objects.filter(Speciality=Specialist, is_Active=True).order_by(
                             '-Experience')
 
             elif Specialist == 'all':
 
                 if Range == 'all':
-                    Doctor = Doctors.objects.filter(city__startswith=city, is_Active=True)
+                    Doctor_list = Doctors.objects.filter(city__startswith=city, is_Active=True)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(city__startswith=city, is_Active=True).order_by(
                         '-Experience')
                 elif Range == '0-100':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(0, 100),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '100-500':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(100, 500),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '500-1000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(500, 1000),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '1000-2000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '2000-3000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '3000-5000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
-                                                    city__startswith=city)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
+                                                         city__startswith=city)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
                                                                city__startswith=city,
                                                                is_Active=True).order_by('-Experience')
-
-
             else:
                 if Range == 'all':
-                    Doctor = Doctors.objects.filter(city__startswith=city, Speciality=Specialist, is_Active=True)
+                    Doctor_list = Doctors.objects.filter(city__startswith=city, Speciality=Specialist, is_Active=True)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '0-100':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
-                                                    city__startswith=city, Speciality=Specialist, )
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(0, 100),
+                                                         city__startswith=city, Speciality=Specialist, )
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(0, 100),
                                                                city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '100-500':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500),
-                                                    city__startswith=city, Speciality=Specialist)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(100, 500),
+                                                         city__startswith=city, Speciality=Specialist)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(100, 500),
                                                                city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '500-1000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000),
-                                                    city__startswith=city, Speciality=Specialist)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(500, 1000),
+                                                         city__startswith=city, Speciality=Specialist)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(500, 1000),
                                                                city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '1000-2000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
-                                                    city__startswith=city, Speciality=Specialist)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
+                                                         city__startswith=city, Speciality=Specialist)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(1000, 2000),
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '2000-3000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
-                                                    city__startswith=city, Speciality=Specialist)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
+                                                         city__startswith=city, Speciality=Specialist)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(2000, 1000),
                                                                city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')
                 elif Range == '3000-5000':
-                    Doctor = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
-                                                    city__startswith=city, Speciality=Specialist)
+                    Doctor_list = Doctors.objects.filter(is_Active=True, Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
+                                                         city__startswith=city, Speciality=Specialist)
+                    paginator = Paginator(Doctor_list, 5)  # Show 5 contacts per page.
+                    page_number = request.GET.get('page')
+                    Doctor = paginator.get_page(page_number)
                     Doctor_experience = Doctors.objects.filter(Doctor_Clinic__Doctor_Fee__range=(3000, 5000),
                                                                city__startswith=city, Speciality=Specialist,
                                                                is_Active=True).order_by('-Experience')

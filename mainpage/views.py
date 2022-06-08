@@ -469,3 +469,14 @@ def ForgetPassword(request):
     return render(request, 'forget-password.html')
 
 # ##################################################### Forget Password Email Sent End  ##############################
+
+
+# def page_not_found_view(request):
+
+
+# custom not found url page for improve security
+def not_found(request, exception):
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.all()
+    Data = {'labcity': labcity}
+    return render(request, "page_not_found.html", Data)

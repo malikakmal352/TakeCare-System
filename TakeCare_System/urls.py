@@ -199,5 +199,14 @@ urlpatterns = [
 
 ]
 
+# handler404 = "mainpage.views.page_not_found_view"
+
+handler404 = 'mainpage.views.not_found'
+
+# handler404 = 'mainpage.views.error_404'
+# # handler500 = 'mainpage.views.error_500'
+# handler403 = 'mainpage.views.error_403'
+# handler400 = 'mainpage.views.error_400'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
