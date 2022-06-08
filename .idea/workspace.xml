@@ -1,64 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="update Login forms">
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/CSS/TeamCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/CSS/loginPopup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/CSS/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/Footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/overservices.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/page_not_found.html" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/static/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/view_all_specialist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/view_all_specialist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/slider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/DoctorTipCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/aboutus.css" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/CSS/overservices.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/CSS/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/CSS/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/dengage_sdk.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/intlTelInput.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/jquery.rateyo.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/jquery.toast.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/moeena-baig-dietitian-nutritionist-lahore-61_80X80.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/tiny-slider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/book time slot_files/utils.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/css/material-design-iconic-font.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/css/material-design-iconic-font.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-700.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/roboto-slab/roboto-slab-v7-latin-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vendor/jquery/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654591738454</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit">
+      <created>1654698932662</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654698932662</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,7 +166,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="add requirement.txt" />
     <MESSAGE value="update Login forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Login forms" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
