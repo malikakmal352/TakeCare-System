@@ -10,9 +10,11 @@ from future.backports.datetime import timedelta
 from Laboratory.models.Labcity import Labcity
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from Pharmacy_Store.models.Add_Medicine import Add_New_Medicine
+from Pharmacy_Store.models.Medicine_Order import order
 
 from mainpage.Sent_Email import send_forget_password_mail_Pharmacy
 from Pharmacy_Store.Middleware.Phy_auth import Phy_middleware, Phy_login_check
+from mainpage.Middleware.Patient_auth import Patient_middleware
 
 # Create your views here.
 from mainpage.models.Patient import Patient
@@ -47,7 +49,8 @@ def Pharmacies(request, id):
             labs = Pharmacy.objects.filter(city=s)
 
             data = {'labs': labs, 'ci': ci, 'labcity': labcity,
-                    'all_Medicine': all_Medicine, 'labcitys': labcitys, 'Test_name': Test_name, 'Customer': Customer}
+                    'all_Medicine': all_Medicine, 'labcitys': labcitys,
+                    'Test_name': Test_name, 'Customer': Customer}
             return render(request, "index.html", data)
 
         elif Test_name:
@@ -159,14 +162,11 @@ def Medicine_search(request):
                     }
             return render(request, 'Search_via_test_name.html', data)
 
-    data = {'labs': labs,
-            'labcity': labcity,
-            'all_lab': all_lab,
-            'labcitys': labcitys,
-            'Test_name': Test_name,
-            'Customer': Customer}
+    data = {'labs': labs, 'labcity': labcity,
+            'all_Medicine': all_Medicine, 'labcitys': labcitys,
+            'Test_name': Test_name, 'Customer': Customer}
 
-    return Labs(request, 400)
+    return Pharmacies(request, 400)
 
 
 # ///////////////////////////////////////Pharmacy admin Login ////////////////////////////////////////////////////////
@@ -240,6 +240,29 @@ def Create_password_Pharmacy(request, token):
     except Exception as e:
         print(e)
     return render(request, 'Link_experiy.html', context)
+
+
+# ///////////////////////////////////////Medicine Order Placing+Tracking  ////////////////////////////////////////////////////////
+@Patient_middleware
+def Tracking_Order(request):
+    pa = request.session.get('id')
+    labcity = Labcity.objects.all()
+    Track_order = order.objects.filter(Customer=pa).order_by('-id')
+    Customer = Patient.objects.filter(id=pa)
+    Data = {"Customer": Customer, 'labcity': labcity,
+            'Track_order': Track_order}
+    return render(request, "Tracking_Order.html", Data)
+
+
+def Cancel_order(request):
+    if request.method == 'POST':
+        data = request.POST
+        id = data.get('id')
+        order_Cancel = order.objects.get(id=id)
+        order_Cancel.status = 'Cancelled'
+        order_Cancel.save()
+
+    return redirect(Tracking_Order)
 
 
 # ////////////////////////////Functions Related  Pharmacy Admin Dashboard+profile page start///////////////////////////

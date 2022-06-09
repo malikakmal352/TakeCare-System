@@ -45,7 +45,7 @@ from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doc
 from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy, ForgetPassword_Pharmacy,\
     ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list,\
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
-    Medicine_details
+    Medicine_details, Tracking_Order, Cancel_order
 
 
 urlpatterns = [
@@ -140,6 +140,9 @@ urlpatterns = [
 
     path('Pharmacies/<int:id>', Pharmacies, name='Pharmacies_card_page'),
     path("Medicine_details/<int:id>", Medicine_details, name="Medicine_details"),
+
+    path("Tracking Order/", Tracking_Order, name="Tracking_Order"),
+    path("Cancel Order/", Cancel_order, name="Cancel_order"),
 
     # ////////////////////////////////// URLS for Patient End//////////////////////////////////////////////
 

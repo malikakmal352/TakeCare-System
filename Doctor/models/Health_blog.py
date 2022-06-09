@@ -1,6 +1,6 @@
 from django.db import models
 # from django.forms import forms
-from datetime import datetime
+from django.utils import timezone
 from Doctor.models.ADD_Docror import Doctors
 
 
@@ -13,7 +13,7 @@ class Health_blogs(models.Model):
     Main_heading = models.CharField(max_length=200, blank=True)
     Health_blogs_Detail = models.TextField()
     # Related_to_Speciality = models.CharField(max_length=200)
-    blog_create_time = models.DateTimeField(default=datetime.now())
+    blog_create_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.Main_heading

@@ -1,0 +1,145 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+<head>
+        <style>
+    .page-banner-area {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+       background-image:url({% static 'Medicine_assets/img/banner/page-banner-4.jpg' %});
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+    .page-banner-area::before {
+      position: absolute;
+      content: "";
+      background: #0e2641;
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    </style>
+
+</head>
+<body>
+<!-- header-start -->
+{% include "mainheader.html" %}
+
+
+<main>
+    <!-- page-banner-area-start -->
+    <div class="page-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page-banner-content text-center">
+                        <h4 class="breadcrumb-title">Your Orders</h4>
+                        <div class="breadcrumb-two">
+                            <nav>
+                                <nav class="breadcrumb-trail breadcrumbs">
+                                    <ul class="breadcrumb-menu">
+                                        <li class="breadcrumb-trail">
+                                            <a href="/"><span>Home</span></a>
+                                        </li>
+                                        <li class="trail-item">
+                                            <span>Your Orders</span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page-banner-area-end -->
+
+    <!-- cart-area-start -->
+    <section class="cart-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="/Cancel Order/" method="POST">
+                        {% csrf_token %}
+                        <div class="table-content table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="product-thumbnail">Images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="product-price">Unit Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in Track_order %}
+                                 <tr>
+                                    <td class="product-thumbnail">
+                                        <a href="#">
+                                            <img alt="" src="/media/{{ i.Medicine.img }}">
+                                        </a>
+                                    </td>
+
+                                    <td class="product-name"><a href="shop-details.html">{{ i.Medicine}}</a></td>
+                                    <td class="product-price"><span class="amount">Rs {{ i.Medicine.Medicine_price }}</span></td>
+                                    <td class="product-quantity">
+                                        {{i.quantity}}
+<!--                                        <div class="cart-plus-minus"><input type="text" value="1">-->
+<!--                                            <div class="dec qtybutton">-</div>-->
+<!--                                            <div class="inc qtybutton">+</div>-->
+<!--                                        </div>-->
+                                    </td>
+                                    <td class="product-subtotal"><span class="amount">{{i.Total_price}} RS</span></td>
+                                    <td class="Order_Status">
+                                     {% if i.status == 'Pending' %}
+                                     <h5 style="color:yellow;">{{i.status}}..</h5>
+                                     <input hidden value="{{i.id}}" type="number" name="id">
+                                      <input class="btn btn-outline-danger" type="submit" value="Cancel"/>
+
+                                     {% elif i.status == 'Out for delivery' %}
+                                        <h5 style="color:brown;">{{i.status}}</h5>
+                                     {% elif i.status == 'Conform' %}
+                                        <h5 style="color:green;">{{i.status}}</h5>
+                                     {% elif i.status == 'Delivered' %}
+                                        <h5 style="color:green;">{{i.status}}</h5>
+                                     {% else %}
+                                         <h5 style="color:red;">{{i.status}}</h5>
+                                     {% endif %}
+                                     </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cart-area-end -->
+
+</main>
+
+<!-- footer-start -->
+{% include 'Footer.html'%}
+<!-- footer-end -->
+
+<!-- JS  Related to Change quantity of Product here -->
+<script src="{% static 'Medicine_assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/magnific-popup.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/nice-select.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/wow.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/imagesloaded-pkgd.js' %}"></script>
+<script src="{% static 'Medicine_assets/js/main.js' %}"></script>
+</body>
+</html>

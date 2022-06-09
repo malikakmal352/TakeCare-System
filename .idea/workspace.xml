@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Preview Pdf function">
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/migrations/0002_alter_health_blogs_blog_create_time.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/models/Health_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/Health_blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0002_alter_add_new_medicine_expiry_alert_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -31,7 +46,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/TakeCare project stepwise/TakeCare_Eshop(store=95%,tips=100%,D_dash = 30%,P_dash = 50%, Appointment = 05%)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -42,6 +57,7 @@
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Pharmacy_Store\templates" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
     </key>
   </component>
@@ -147,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654780668858</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Preview Pdf function">
+      <created>1654781263663</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654781263663</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
