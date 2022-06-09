@@ -1,294 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/static/img/takecare_logo-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/takecare_logo-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/2+arrow-down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/3+arrow-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/Quiz 2(352-FBAS-BSIT4_F18).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/madical_reports.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/takecare_logo-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/img/takecare_logo-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/TakeCare System.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/medical_Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/medical_Record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Preview Pdf function">
       <change beforePath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/pythonProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/K_Tech/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/K_Tech/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/K_Tech/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/K_Tech/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/K_Tech/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0002_auto_20211205_2051.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0003_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0004_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0005_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0006_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0007_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/0008_alter_order_date_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Add_to_cart.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Brand.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Category_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Customer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Products.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/Shipping_Address.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/models/order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Gmap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/Product_slider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/aboutus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/addcart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/mainHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/productview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/templates/slider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Mainpage/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/alejandro-escamilla-N7XodRrbzS0-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/austin-poon-JO_S6ewBqAk-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/lauren-mancke-aOC7TSLb1o8-unsplash_9EERWmG.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/s4_yoQalQu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/s5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Media/Products/s6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/DoctorTipCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/TeamCard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/aboutus.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/loginPopup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/CSS/navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/JS/cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/final_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/2+arrow-down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/3+arrow-up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/ktech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/s4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/s5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/s6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/s7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/s8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/config.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/fonts/slick.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/fonts/slick.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/fonts/slick.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick-theme.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick-theme.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/static/slick/slick.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/DoctorTipCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/TeamCard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/aboutus.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/loginPopup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/CSS/navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/JS/cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/autocomplete.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/changelists.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/nav_sidebar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/responsive_rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/vendor/select2/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/vendor/select2/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/css/widgets.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/fonts/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/fonts/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/calendar-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-addlink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-alert.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-calendar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-changelink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-clock.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-deletelink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-no.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-unknown-alt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-unknown.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-viewlink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/icon-yes.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/inline-delete.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/selector-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/sorting-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/tooltag-add.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/img/tooltag-arrowright.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/SelectBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/SelectFilter2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/autocomplete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/cancel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/change_form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/collapse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/inlines.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/jquery.init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/nav_sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/popup_response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/prepopulate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/prepopulate_init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/urlify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/select2.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/final_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/2+arrow-down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/3+arrow-up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/ktech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/s4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/s5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/s6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/s7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/s8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/config.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/fonts/slick.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/fonts/slick.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/fonts/slick.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick-theme.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick-theme.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../K-Tech-Solutions-main/staticfiles/slick/slick.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../agile pricipal.PNG" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654703387894</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Preview Pdf function">
+      <created>1654780668858</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654780668858</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +167,8 @@
     <MESSAGE value="add requirement.txt" />
     <MESSAGE value="update Login forms" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Preview Pdf function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preview Pdf function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
