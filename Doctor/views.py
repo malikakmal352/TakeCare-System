@@ -7,6 +7,8 @@ import uuid
 from datetime import *
 import time
 from django.contrib import messages
+
+from Doctor.models.save_reports import Save_Medical_Reports
 from Laboratory.models.Labcity import Labcity
 from Laboratory.models.Samplest import Samplest
 from Laboratory.models.add_lab import Lab
@@ -21,10 +23,12 @@ from Doctor.models.Clinic import Clinic
 from Doctor.models.All_Specialist import Special
 from Doctor.models.Health_blog import Health_blogs
 from Doctor.models.appointments import Appointment
+from Doctor.models.save_reports import Save_Medical_Reports
 from Doctor.Middleware.Doctor_auth import Doctor_middleware, Doctor_login_check
 
 
 # Create your views here.
+
 
 
 def Doctor_request_form(request):

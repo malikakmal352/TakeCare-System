@@ -142,11 +142,17 @@
                 <p><i class="fas fa-user-md" style="color:green;margin-right:10px;"></i>{{j.Doctor_name}}</p>
                 <P><i class="fas fa-calendar-check" style="color:green;margin-right:10px;"></i>{{j.Date}}</P>
             </div>
-            <a
-                    class="btn col-10 btn-outline-danger mb-3 mx-auto"
+                <a class="btn col-12 col-sm-10 btn-outline-danger mb-3 mx-auto"
                     href="/view report detail/{{j.id}}/">
                 View Report Details
             </a>
+                <a class="btn col-12 col-sm-10 col-lg-5 btn-outline-danger mb-3 mx-auto"
+                    href="{{j.Reports.url}}">
+                    View Report
+                 </a>
+                <a class="btn col-12 col-sm-10 col-lg-5 btn-outline-danger mb-3 mx-auto float:left;"
+                    download href="{{j.Reports.url}}/">Download
+                </a>
         </div>
         {% endfor %}
         <div class="col-12 row  mt-5 box-shadow-sm mx-auto">
