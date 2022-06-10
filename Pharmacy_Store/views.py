@@ -242,7 +242,59 @@ def Create_password_Pharmacy(request, token):
     return render(request, 'Link_experiy.html', context)
 
 
-# ///////////////////////////////////////Medicine Order Placing+Tracking  ////////////////////////////////////////////////////////
+# ///////////////////////////////////////Medicine Order Placing+Tracking+Cancel  ////////////////////////////////////////////////////////
+def Medicine_order_form(request):
+    pa = request.session.get('id')
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.filter(id=pa)
+    if pa:
+        if request.method == 'POST':
+            data = request.POST
+            id = data.get('id')
+            order_medicine = Add_New_Medicine.objects.filter(id=id).order_by('-id')
+            Data = {"Customer": Customer, 'labcity': labcity,
+                    'order_medicine': order_medicine}
+            return render(request, "Medicine_Order_Form.html", Data)
+    else:
+        messages.error(request, "Place Login First For Order Medicine")
+        return render(request, 'Login.html', {"message": messages})
+
+
+def Order_Confirmed(request):
+    pa = request.session.get('id')
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.filter(id=pa)
+    if pa:
+        if request.method == 'POST':
+            data = request.POST
+            Medicine_id = data.get('Medicine_id')
+            Medicine = Add_New_Medicine.objects.get(id=Medicine_id)
+            Customer_id = Patient.objects.get(id=pa)
+            Pharmacy_id = data.get('Pharmacy_id')
+            Pharmacy_id = Pharmacy.objects.get(id=Pharmacy_id)
+            Quantity = data.get('quantity')
+            Quantity = int(Quantity)
+            price = Medicine.Medicine_price
+            Total_price = price * Quantity
+            Address = data.get('address')
+            Phone = data.get('phone')
+
+            print(Medicine_id, Customer_id, Pharmacy_id, Quantity, price, Total_price, Address, Phone)
+            ADD_Order = order(Medicine=Medicine, Customer=Customer_id,
+                              Pharmacy=Pharmacy_id, quantity=Quantity,
+                              price=price, Total_price=Total_price,
+                              Address=Address, phone=Phone).save()
+            # id = data.get('id')
+            Medicine = Add_New_Medicine.objects.get(id=Medicine_id)
+            # Data = {"Customer": Customer, 'labcity': labcity,
+            #         'order_medicine': order_medicine}
+            messages.error(request, "Your Order is Placed")
+            return redirect(Tracking_Order)
+    else:
+        messages.error(request, "Place Login First For Order Medicine")
+        return render(request, 'Login.html', {"message": messages})
+
+
 @Patient_middleware
 def Tracking_Order(request):
     pa = request.session.get('id')
@@ -250,7 +302,7 @@ def Tracking_Order(request):
     Track_order = order.objects.filter(Customer=pa).order_by('-id')
     Customer = Patient.objects.filter(id=pa)
     Data = {"Customer": Customer, 'labcity': labcity,
-            'Track_order': Track_order}
+            'Track_order': Track_order, "message": messages}
     return render(request, "Tracking_Order.html", Data)
 
 

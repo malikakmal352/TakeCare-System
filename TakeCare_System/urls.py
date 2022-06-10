@@ -32,9 +32,8 @@ from mainpage.views import mainindex, Login, Signup, Logout, ForgetPassword, Cha
 from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admin, ForgetPassword_Admin, \
     view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
     Laboratory_del, update_Laboratory, Admin_profile, Admin_profile_img, updates_admin_profile, view_N_D, \
-    all_Register_doctor, Status_doctor, Add_new_Doctor, ADD_New_Pharmacy, view_Pharmacy_list, Status_Pharmacy,\
+    all_Register_doctor, Status_doctor, Add_new_Doctor, ADD_New_Pharmacy, view_Pharmacy_list, Status_Pharmacy, \
     Pharmacy_del, Update_Pharmacy
-
 
 from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doctor, Doctor_request_form, \
     Create_password_doctor, view_all_doctors, Doctors_Special, Doctors_Special_in_city, Doctors_in_city, \
@@ -42,11 +41,10 @@ from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doc
     Health_blog, add_new_blog, view_Doctor_blogs, Update_health_blog, blog_detail, view_Full_Doctor_blogs, \
     blog_via_issue, New_Appointment_Requests, Confirm_appointments, Book_appointment, appointment_booked_Scheduled
 
-from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy, ForgetPassword_Pharmacy,\
-    ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list,\
+from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy, ForgetPassword_Pharmacy, \
+    ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list, \
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
-    Medicine_details, Tracking_Order, Cancel_order
-
+    Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -140,6 +138,8 @@ urlpatterns = [
 
     path('Pharmacies/<int:id>', Pharmacies, name='Pharmacies_card_page'),
     path("Medicine_details/<int:id>", Medicine_details, name="Medicine_details"),
+    path('Order Medicine Form/', Medicine_order_form, name="Medicine_order_form"),
+    path('Order Confirmed/', Order_Confirmed, name="Order_Confirmed"),
 
     path("Tracking Order/", Tracking_Order, name="Tracking_Order"),
     path("Cancel Order/", Cancel_order, name="Cancel_order"),

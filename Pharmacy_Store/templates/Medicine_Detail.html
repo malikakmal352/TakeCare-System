@@ -44,8 +44,8 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="product-stock mb-15">
-                                <form action="/Order Booking Form/" method="POST" class="d-block d-sm-none">
-                                    <input type="text" value="{{i.id}}" hidden/>
+                                <form action="/Order Medicine Form/" method="POST" class="d-block d-sm-none">
+                                    <input name="id" hidden value="{{i.id}}"/>
                                     <input type="submit" value="Buy Now" class="btn btn-info button"
                                            style="color:white;">
                                 </form>
@@ -68,8 +68,9 @@
 
                             </div>
                             <div class="product-stock mb-15">
-                                <form action="/Order Booking Form/" method="POST" class="d-none d-sm-block">
-                                    <input type="text" value="{{i.id}}" hidden/>
+                                <form action="/Order Medicine Form/" method="POST" class="d-none d-sm-block">
+                                   {% csrf_token %}
+                                    <input name="id" hidden value="{{i.id}}"/>
                                     <input type="submit" value="Buy Now" class="btn btn-info button"
                                            style="color:white;">
                                 </form>

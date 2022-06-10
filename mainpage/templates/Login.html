@@ -127,6 +127,7 @@
 
 
 
+
     </style>
 </head>
 <body>
@@ -134,6 +135,20 @@
     <h1 style="text-align: center;color: white;"><b>Login Form</b></h1>
     <form action="/Login/" method="POST">
         {% csrf_token %}
+        {% if messages %}
+        {% for message in messages %}
+        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+             role="alert">
+            <div class="d-flex alert-success">
+                <div class="toast-body ">
+                    {{ message }}
+                </div>
+                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                        type="button"></button>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% if error %}
 
         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
@@ -148,7 +163,7 @@
         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
             <div class="d-flex alert-success">
                 <div class="toast-body ">
-                  {{success}}
+                    {{success}}
                 </div>
                 <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
             </div>
@@ -156,7 +171,7 @@
         {% endif %}
         <table border="0" width="100%">
             <tr>
-                <td class="lb" ><label><b style="color:white;">E-mail</b></label></td>
+                <td class="lb"><label><b style="color:white;">E-mail</b></label></td>
                 <td>
                     <div class="feild"><input id="email" name="email" placeholder="E-mail....." required
                                               type="email">
@@ -174,11 +189,11 @@
 
             <tr align="center">
                 <td colspan="2">
-                    <input name="submit"
-                           class="btn btn-danger"
-               style="border-radius: 30px;margin-top: 20px;padding: 8px 25px;font-size:20px;"
-               type="submit"
-               value="Login">
+                    <input class="btn btn-danger"
+                           name="submit"
+                           style="border-radius: 30px;margin-top: 20px;padding: 8px 25px;font-size:20px;"
+                           type="submit"
+                           value="Login">
                 </td>
             </tr>
         </table>

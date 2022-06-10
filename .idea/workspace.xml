@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Preview Pdf function">
-      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Order_Form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/order-bg2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/migrations/0002_alter_health_blogs_blog_create_time.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/models/Health_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/Health_blog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0002_alter_add_new_medicine_expiry_alert_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/Footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/about/ab-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/about/ab-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/about/about-b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/about/c-icon-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/author/author-sm-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/blog-thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/incen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/news-author.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/p-author-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sm-b2-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/blog/sponsor-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/app_android.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/app_ios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/brand/brand-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/cart/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/cart/shop-p-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/cart/shop-p-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/logo/logo-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/logo/logo1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/payment/payment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/nav/product-nav-big-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/sm-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/product/tp-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/Quiz 2(352-FBAS-BSIT4_F18).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Movices/2022 New South Indian Released Full Hindi Dubbed Action Movie New Latest So.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Movices/Action Sci-Fi Movie 2020 - Equilibrium (2002) Full Movie HD- Best Action.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Movices/Tiger Shroff s Latest 2022 Action Hindi Full Movie in 4K UHD Nawazuddin Sid.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Movices/Y2Mate.is - Aladdin movie mastering Sanjay Dutt Anita full HD30 March 2022-vL4tv2j9ABg-480p-1652988198177.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Movices/Y2Mate.is - LATEST HOLLYWOOD MOVIE HD HINDI DUBBED SCIENCE FICTION ACTION H.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,14 +120,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="F:/TakeCare project stepwise/TakeCare_Eshop(store=95%,tips=100%,D_dash = 30%,P_dash = 50%, Appointment = 05%)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/img" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\staticfiles" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -170,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654781263663</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add order Tracking">
+      <created>1654814805440</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654814805440</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,7 +272,8 @@
     <MESSAGE value="update Login forms" />
     <MESSAGE value="commit" />
     <MESSAGE value="Preview Pdf function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preview Pdf function" />
+    <MESSAGE value="add order Tracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="add order Tracking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

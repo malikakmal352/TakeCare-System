@@ -357,10 +357,14 @@ border-color:#014e78
                             </div>
                         </div>
                         <div class="product__add-cart-s text-center">
+                            <form action="/Order Medicine Form/" method="POST">
+                                {% csrf_token %}
+                                <input name="id" hidden value="{{i.id}}"/>
                             <button class="cart-btn d-flex mb-10 align-items-center justify-content-center w-100"
-                                    type="button">
+                                    type="submit">
                                 Buy Now
                             </button>
+                            </form>
                             <a
                                     data-toggle="modal" href="/Medicine_details/{{i.id}}">
                             </a>
