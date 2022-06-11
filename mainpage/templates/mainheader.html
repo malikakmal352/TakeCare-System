@@ -1,4 +1,5 @@
 {% load static %}
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -367,7 +368,7 @@
 <!-- ///////////////////////////////////////Header_Start////////////////////////////////////////////// -->
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;">
     <div class="container-fluid mx-auto">
-        <a class="img" href="/"><img class="h_logo" src='{% static "img/takecare_logo-1.png" %}'></a>
+        <a class="img" href="/"><img class="h_logo" src='{% static "takecare_logo-1.png" %}'></a>
         <div class="header__bottom-left d-flex d-lg-none">
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="side-menu-btn offcanvas-toggle-btn d-lg-none"
@@ -385,10 +386,10 @@
         <!--        </div>-->
 
 
-        <div class="navbar-brand mr-2 order-lg-2 align-items-center d-lg-none log" style="min-width: 150px">
+        <div class="navbar-brand mr-2 order-lg-2 align-items-center d-none log d-sm-block d-lg-none" style="min-width: 150px">
             <div class="d-flex">
                 <a href="/">
-                    <img alt="TakeCare.pk Logo" class="w-100" src='{% static "final_logo.png" %}' style="height:70px;"/>
+                    <img alt="TakeCare.pk Logo" style="width:22%;margin-left:30%;" src='{% static "takecare_logo-1.png" %}'/>
                 </a>
             </div>
         </div>
@@ -925,20 +926,6 @@
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="product.html">New Arrivals <i class="far fa-angle-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="product.html">Home Appliances</a></li>
-                                    <li><a href="product.html">Technology</a>
-                                        <ul class="submenu">
-                                            <li><a href="product.html">Storage Devices</a></li>
-                                            <li><a href="product.html">Monitors</a></li>
-                                            <li><a href="product.html">Laptops</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="product.html">Office Equipments</a></li>
-                                </ul>
-                            </li>
                             <li><a href="/Health_blog/">
                                 <l>Health Tips</l>
                             </a></li>
@@ -991,7 +978,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
                 <a href="index.html">
-                    <img alt="logo" src="{% static 'Medicine_assets/img/logo/logo-white.png' %}">
+                    <img alt="logo" style="width:40%;margin-left:30%;" src="{% static 'logo-2.png' %}">
                 </a>
             </div>
             <div class="mobile-menu fix"></div>
