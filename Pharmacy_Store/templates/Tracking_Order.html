@@ -95,6 +95,7 @@
                                     <th class="product-price">Unit Price</th>
                                     <th class="product-quantity">Quantity</th>
                                     <th class="product-subtotal">Total</th>
+                                    <th class="product-subtotal">Payment</th>
                                     <th class="product-remove">Status</th>
                                 </tr>
                                 </thead>
@@ -118,6 +119,13 @@
                                         <!--                                        </div>-->
                                     </td>
                                     <td class="product-subtotal"><span class="amount">{{i.Total_price}} RS</span></td>
+                                    <td class="Order_Status">
+                                        {% if i.payment == 'Paid' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% else %}
+                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        {% endif %}
+                                    </td>
                                     <td class="Order_Status">
                                         {% if i.status == 'Pending' %}
                                         <h5 class="badge" style="background-color:yellow;">{{i.status}}..</h5>

@@ -30,9 +30,9 @@
         </li>
         <li class="">
             <a aria-expanded="false" href="#">
-                <i style="color:green;" class="fas fa-cart-plus"></i>
+                <i class="fas fa-cart-plus" style="color:green;"></i>
                 <span>Orders<i class="fal fa-chevron-down"
-                                      style="float: right;"></i></span>
+                               style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_new_Orders/">View All New Orders</a></li>
@@ -44,9 +44,9 @@
         </li>
         <li class="">
             <a aria-expanded="false" href="#">
-                <i style="color:green;" class="fas fa-engine-warning"></i>
+                <i class="fas fa-engine-warning" style="color:green;"></i>
                 <span style="font-size:14px;">Medicine Expiry Alert<i class="fal fa-chevron-down"
-                                                                        style="float: right;"></i></span>
+                                                                      style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_Expiry Medicine/">View All Expiry Medicine</a></li>
@@ -57,9 +57,9 @@
 
         <li class="">
             <a aria-expanded="false" href="#">
-                <i style="color:green;" class="far fa-capsules"></i>
+                <i class="far fa-capsules" style="color:green;"></i>
                 <span style="font-size:14px;">Products/Medicines<i class="fal fa-chevron-down"
-                                                                        style="float: right;"></i></span>
+                                                                   style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_Medicine/">View All Medicine</a></li>
@@ -68,9 +68,9 @@
         </li>
         <li class="">
             <a aria-expanded="false" href="#">
-                <i style="color:green;" class="fad fa-biking-mountain"></i>
+                <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Local Rider<i class="fal fa-chevron-down"
-                                                                        style="float: right;"></i></span>
+                                                            style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_samplest/">View All your Rider</a></li>
@@ -171,7 +171,7 @@
                                             <div class="icon">
                                                 <img alt="" src='{% static "Order_pending.png" %}'>
 
-<!--                                                <i class="fas fa-vial fa-4x" style="color:bisque"></i>-->
+                                                <!--                                                <i class="fas fa-vial fa-4x" style="color:bisque"></i>-->
                                             </div>
                                             <div class="count_content">
                                                 <h3><span class="counter">{{Pending_order_count}}</span></h3>
@@ -201,13 +201,14 @@
                         <div class="quick_activity">
                             <div style="width:100%;background-color:#49738f;padding-top:3px;padding-bottom:2px ">
                                 <h3 style="color:white;text-align:center;"><b>Medicine Expiry Alert System</b></h3>
-                            </div><br>
+                            </div>
+                            <br>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="quick_activity_wrap ">
                                         <div class="single_quick_activity d-flex">
                                             <div class="icon">
-                                                <i style="color:yellow;" class="fad fa-radiation fa-4x"></i>
+                                                <i class="fad fa-radiation fa-4x" style="color:yellow;"></i>
                                             </div>
                                             <div class="count_content">
                                                 <h3><span class="">{{Expiring_Soon_Medicine}}</span></h3>
@@ -216,7 +217,7 @@
                                         </div>
                                         <div class="single_quick_activity d-flex">
                                             <div class="icon">
-                                                <i style="color:red;" class="fas fa-skull-crossbones fa-4x"></i>
+                                                <i class="fas fa-skull-crossbones fa-4x" style="color:red;"></i>
                                             </div>
                                             <div class="count_content">
                                                 <h3><span class="">{{Expired_Medicine_count}}</span></h3>
@@ -270,450 +271,440 @@
 
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
-                         <div class="table-responsive" id="table_sub_2">
-                            <table class="table table-bordered table-hover" align="center" id="examples"
-                            style="font-family:sans-serif;font-size:13px;">
-                            {% if error_message %}
-                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                                 role="alert">
-                                <div class="d-flex alert-danger">
-                                    <div class="toast-body ">
-                                        {{error_message}}
-                                    </div>
-                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                            type="button"></button>
-                                </div>
-                            </div>
-                            {% elif success %}
-                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                                 role="alert">
-                                <div class="d-flex alert-success">
-                                    <div class="toast-body ">
-                                        {{success}}
-                                    </div>
-                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                            type="button"></button>
-                                </div>
-                            </div>
-                            {% endif %}
-
-                            <br><br>
-
-                            <thead>
-                            <tr align="center">
-                                <th colspan="10"><h2>Today Test Appointments</h2></th>
-                            </tr>
-                            </thead>
-                            <thead>
-                            <tr align="center">
-                                <th scope="col">#</th>
-                                <th scope="col">Patient Name</th>
-                                <th scope="col">Book Test</th>
-                                <th scope="col">Test ID</th>
-                                <th scope="col">Test Date</th>
-                                <th scope="col">Test Type</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Assign to Samplest</th>
-                                <th scope="col">Payment</th>
-                                <th scope="col">View Detail</th>
-                            </thead>
-                            <tbody>
-                            {% for i in Test_conform_booking_today %}
-                            {% if i.status != "Pending" and i.status != "Dispatch" %}
-
-                            <tr align="center">
-                                <td scope="row">{{forloop.counter}}</td>
-                                <td>{{i.Patient_Name}}</td>
-                                <td>{{i.Book_Test.Test_name}}</td>
-                                <td>{{i.id}}</td>
-                                <td>
-                                    {{i.Test_date}}
-                                </td>
-                                <td>
-                                    {{i.Test_Type}}
-                                </td>
-
-                                <td>
-
-                                    {% if i.status == 'Sample Collected'%}
-                                    {{i.status}}<br>
-                                    <a class="mr-1 delete-record-link"
-                                       data-toggle="modal" href="#upload_report{{i.id}}">
-                                        <button class="btn-success btn mt-2" type="button">Upload Report</button>
-                                    </a>
-                                    {% elif i.status == 'Conform'%}
-                                    {{i.status}}<br>
-                                    <a class="mr-5 Change-Samplest-link"
-                                       data-toggle="modal" href="#Samplest_Collected{{i.id}}">
-                                        <button class="  btn-dark btn mt-2 " type="button">Sample Collected</button>
-                                    </a>
-                                    {% elif i.status == 'Test Report'%}
-                                    <p class="btn btn-success">Completed</p>
-                                    {% endif %}
-                                </td>
-
-                                <td align="center">
-
-                                    {{i.Samplest.name}}<br>
-                                    {% if i.Samplest.name and i.status != 'Test Report'%}
-                                    <a class="mr-5 Change-Samplest-link"
-                                       data-toggle="modal" href="#Change_Samplest{{i.id}}">
-                                        <button class="  btn-success btn mt-2 " type="button">Change Samplest</button>
-                                    </a>
-                                    {% endif %}
-                                </td>
-                                <td>
-
-                                    {% if i.payment == 'Pending' %}
-                                    <b>{{i.payment}}..</b><br>
-                                    <a class="mr-1 delete-record-link"
-                                       data-toggle="modal" href="#Payment_received{{i.id}}">
-                                        <button class="btn-warning btn mt-2" type="button">Received</button>
-                                    </a>
-                                    {% else %}
-                                    <h3 class="badge bg-success text-wrap btn " style="border-radius: 30px;">
-                                        {{i.payment}}</h3>
-                                    {% endif %}
-
-                                </td>
-                                <td><a class="mr-1 helpline-number-link"
-                                       data-toggle="modal" href="#view-details{{i.id}}"
-                                       style="height:38px;width: 55px;">
-                                    <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
-                                </a></td>
-                            </tr>
-                            {% endif %}
-                            {% endfor %}
-
-                            </tbody>
-
-                        </table>
-                         </div>
-                        {% for i in Test_conform_booking_today %}
-                        <div aria-hidden="true" class="modal" id="view-details{{i.id}}" role="dialog"
-                             tabindex="-1">
-                            <div class="modal-dialog p-3" role="document" style="margin-top: 30px;">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                        <div class="table-responsive">
+                            <table align="center" class="table table-bordered table-hover"
+                                   style="font-family:sans-serif;font-size:13px;">
+                                {% if error_message %}
+                                <div aria-atomic="true" aria-live="assertive"
+                                     class="toast  show align-items-center w-100"
+                                     role="alert">
+                                    <div class="d-flex alert-danger">
+                                        <div class="toast-body ">
+                                            {{error_message}}
+                                        </div>
+                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
                                                 type="button"></button>
                                     </div>
-                                    <div class="modal-body tab-content">
-                                        <h5 class="text-center">Lab Test Booking Details</h5>
-                                        <div class="table-responsive">
-                                            <table class="table width:100% align-middle">
-                                                <tbody>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Patient Name </h6>
-                                                    </th>
-                                                    <th class="col-6"><h6 style="color:green">
-                                                        {{i.Patient_Name}} </h6>
-                                                    </th>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Phone No</h6>
-                                                    </th>
-                                                    <td>0{{i.Phone}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Price</h6></th>
-                                                    <td>{{i.Book_Test.test_price}}/- Rs only</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Status</h6></th>
-                                                    <td>{{i.status}}</td>
-                                                </tr>
-                                                {% if i.Test_Type == "Lab Visit" %}
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Type</h6>
-                                                    </th>
-                                                    <td>Lab Visit</td>
-                                                </tr>
-                                                {% else %}
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Type</h6>
-                                                    </th>
-                                                    <td>Home Sampling</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Patient Address</h6>
-                                                    </th>
-                                                    <td>{{i.Address}}</td>
-                                                </tr>
-                                                {% endif %}
-
-
-                                                </tbody>
-                                            </table>
-                                            <br/>
-                                        </div>
-                                        <br/>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div aria-hidden="true" class="modal" id="Change_Samplest{{i.id}}" role="dialog"
-                             tabindex="-1">
-                            <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                {% elif success %}
+                                <div aria-atomic="true" aria-live="assertive"
+                                     class="toast  show align-items-center w-100"
+                                     role="alert">
+                                    <div class="d-flex alert-success">
+                                        <div class="toast-body ">
+                                            {{success}}
+                                        </div>
+                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
                                                 type="button"></button>
                                     </div>
-                                    <div class="modal-body tab-content">
-                                        <h5 class="text-center">Are you sure </h5>
-                                        <p class="text-center">Change This Test Samplest</p>
-                                        <div class="table-responsive">
-                                            <table class="table width:100% align-middle">
-                                                <tbody>
-
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                    </th>
-                                                    <td>{{i.Patient_Name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                    </th>
-                                                    <td>{{i.Book_Test.Test_name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th colspan="2">
-                                                        {% if i.Test_Type == 'home sample'%}
-                                                        <h4>
-                                                            <form action="/lab_admin/"
-                                                                  method="POST">
-                                                                {% csrf_token %}
-
-                                                                <input hidden name="name" type="text"
-                                                                       value="conform"/>
-                                                                <input hidden name="id" type="text"
-                                                                       value="{{i.id}}"/>
-
-                                                                <label>Please Select Sample Who can Take
-                                                                    Sample</label>
-                                                                <select aria-label="Default select example"
-                                                                        class="form-select" name="Select_samplest"
-                                                                        required>
-                                                                    {% for i in samplest%}
-                                                                    {% if i.is_Active == True %}
-                                                                    <option value="{{i.name}}">
-                                                                        {{i.name}}
-                                                                    </option>
-                                                                    {% endif %}
-                                                                    {% endfor %}
-                                                                </select>
-                                                                <button class="btn btn-success"
-                                                                        style="font-family:sans-serif;"
-                                                                        type="submit">
-                                                                    Conform this Appointment
-                                                                </button>
-                                                            </form>
-                                                        </h4>
-                                                        {% else %}
-                                                        <h4>
-                                                            <form action="/lab_admin/"
-                                                                  method="POST">
-                                                                {% csrf_token %}
-
-                                                                <input hidden name="name" type="text"
-                                                                       value="conform"/>
-                                                                <input hidden name="id" type="number" value="{{i.id}}"/>
-                                                                <select aria-label="Default select example"
-                                                                        class="form-select"
-                                                                        hidden name="Select_samplest">
-                                                                    <option selected value="no_select"> no_select
-                                                                    </option>
-                                                                </select>
-                                                                <button class="btn btn-success"
-                                                                        style="font-family:sans-serif;"
-                                                                        type="submit">
-                                                                    Conform this Appointment
-                                                                </button>
-                                                            </form>
-                                                        </h4>
-
-                                                        {% endif %}
-                                                    </th>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                            <br/>
-                                        </div>
-                                        <br/>
-                                    </div>
                                 </div>
-                            </div>
+                                {% endif %}
+
+                                <br><br>
+
+                                <thead>
+                                <tr align="center">
+                                    <th colspan="10"><h2>New Medicine Orders</h2></th>
+                                </tr>
+                                </thead>
+
+                            </table>
                         </div>
 
-                        <div aria-hidden="true" class="modal" id="Samplest_Collected{{i.id}}" role="dialog"
-                             tabindex="-1">
-                            <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                type="button"></button>
-                                    </div>
-                                    <div class="modal-body tab-content">
-                                        <h5 class="text-center">Are you sure </h5>
-                                        <p class="text-center">Test Samplest is Collected</p>
-                                        <div class="table-responsive">
-                                            <table class="table width:100% align-middle">
-                                                <tbody>
-
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                    </th>
-                                                    <td>{{i.Patient_Name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                    </th>
-                                                    <td>{{i.Book_Test.Test_name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th colspan="2">
-                                                        <h4>
-                                                            <form action="/lab_admin/"
-                                                                  method="POST">
-                                                                {% csrf_token %}
-
-                                                                <input hidden name="name" type="text"
-                                                                       value="Samplest_Collected"/>
-                                                                <input hidden name="id" type="text"
-                                                                       value="{{i.id}}"/>
-
-                                                                <button class="btn btn-success"
-                                                                        style="font-family:sans-serif;"
-                                                                        type="submit">
-                                                                    Samplest is Collected
-                                                                </button>
-                                                            </form>
-                                                        </h4>
-
-                                                    </th>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                            <br/>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div aria-hidden="true" class="modal" id="upload_report{{i.id}}" role="dialog"
-                             tabindex="-1">
-                            <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                type="button"></button>
-                                    </div>
-                                    <div class="modal-body tab-content">
-                                        <h5 class="text-center">Upload Test Report </h5>
-                                        <div class="table-responsive">
-                                            <table class="table width:100% align-middle">
-                                                <form action="/lab_admin/" enctype="multipart/form-data"
-                                                      method="POST">
-                                                    {% csrf_token %}
-                                                    <tr align="center">
-                                                        <td align="center"><h6 style="color:green">
-                                                            <input accept=".pdf,.doc" name="image" required
-                                                                   type="file">
-                                                            <input hidden name="id" type="text" value="{{i.id}}"/>
-                                                            <input hidden name="name" type="text" value="test_id"/>
-                                                        </h6>
-                                                        </td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <td>
-                                                            <input class="btn btn-info" style="color:white;"
-                                                                   type="submit" value="Upload Report"/>
-                                                        </td>
-                                                    </tr>
-                                                </form>
-                                            </table>
-                                            <br/>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div aria-hidden="true" class="modal" id="Payment_received{{i.id}}" role="dialog"
-                             tabindex="-1">
-                            <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                type="button"></button>
-                                    </div>
-                                    <div class="modal-body tab-content">
-                                        <h5 class="text-center">Are you sure </h5>
-                                        <p class="text-center">You Received Payment</p>
-                                        <div class="table-responsive">
-                                            <table class="table width:100% align-middle">
-                                                <tbody>
-
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                    </th>
-                                                    <td>{{i.Patient_Name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                    </th>
-                                                    <td>{{i.Book_Test.Test_name}}</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th class="col-6"><h6 style="color:green">Payment</h6>
-                                                    </th>
-                                                    <td>{{i.Book_Test.test_price}}/- Rs only</td>
-                                                </tr>
-                                                <tr align="center">
-                                                    <th colspan="2">
-                                                        <h4>
-                                                            <form action="/lab_admin/"
-                                                                  method="POST">
-                                                                {% csrf_token %}
-
-                                                                <input hidden name="name" type="text"
-                                                                       value="Payment_received"/>
-                                                                <input hidden name="id" type="text"
-                                                                       value="{{i.id}}"/>
-
-                                                                <button class="btn btn-success"
-                                                                        style="font-family:sans-serif;"
-                                                                        type="submit">
-                                                                    Test Payment is received
-                                                                </button>
-                                                            </form>
-                                                        </h4>
-
-                                                    </th>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                            <br/>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {% endfor %}
                     </div>
                 </div>
 
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="examples">
+                                <h2 class="text-center"><b>New Medicine Orders</b></h2>
+                                <thead>
+                                <tr align="center">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Images</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Assign to Rider</th>
+                                    <th scope="col">View Detail</th>
+                                </thead>
+                                <tbody>
+                                {% for i in All_Orders %}
+                                <tr align="center">
+                                    <td scope="row">{{forloop.counter}}</td>
+                                    <td><img alt="" src="/media/{{ i.Medicine.img }}" style="width:50px;"></td>
+                                    <td>{{ i.Medicine}}</td>
+                                    <td>Rs {{ i.Medicine.Medicine_price }}</td>
+                                    <td>
+                                        {{i.quantity}}
+                                    </td>
+                                    <td>
+                                        {{i.Total_price}} RS
+                                    </td>
+
+                                    <td class="Order_Status">
+                                        {% if i.status == 'Pending' %}
+                                        <form action="/order_cancel_confirm/" method="POST">
+                                            {% csrf_token %}
+                                            <input hidden name="id" type="number" value="{{i.id}}">
+                                            <input hidden name="action" type="text" value="confirm">
+                                            <input class="btn btn-outline-success" type="submit" value="Confirm"/>
+                                        </form>
+                                        <form action="/order_cancel_confirm/" method="POST">
+                                            {% csrf_token %}
+                                            <input hidden name="id" type="number" value="{{i.id}}">
+                                            <input hidden name="action"  value="cancel">
+                                            <input hidden name="id" type="number" value="{{i.id}}">
+                                            <input class="btn btn-outline-danger" type="submit" value="Cancel"/>
+                                        </form>
+
+                                        {% elif i.status == 'Out for delivery' %}
+                                        <h5 class="badge" style="background-color:brown;">{{i.status}}</h5>
+                                        {% elif i.status == 'Conform' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% elif i.status == 'Delivered' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% else %}
+                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        {% endif %}
+                                    </td>
+                                    <td align="center">
+
+                                        {{i.Samplest.name}}<br>
+                                        {% if i.Samplest.name and i.status != 'Test Report'%}
+                                        <a class="mr-5 Change-Samplest-link"
+                                           data-toggle="modal" href="#Change_Samplest{{i.id}}">
+                                            <button class="  btn-success btn mt-2 " type="button">Change Samplest
+                                            </button>
+                                        </a>
+                                        {% endif %}
+                                    </td>
+                                    <td><a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-details{{i.id}}"
+                                           style="height:38px;width: 55px;">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+
+                            </table>
+                            {% for i in All_Orders %}
+                            <div aria-hidden="true" class="modal" id="view-details{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 30px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Medicine Order Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Customer Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Customer.name}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Medicine}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Quantity</h6>
+                                                        </th>
+                                                        <th class="col-6"><h6>
+                                                            {{i.quantity}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Total Price</h6></th>
+                                                        <td>{{i.Total_price}}/- Rs only</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6></th>
+                                                        <td>{{i.status}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6">
+                                                            <h6 style="color:green">Payment</h6>
+                                                        </th>
+                                                        <td align="center">
+                                                            {% if i.payment == 'Paid' %}
+                                                            <h5 class="badge" style="background-color:green;">
+                                                                {{i.payment}}
+                                                            </h5>
+                                                            {% else %}
+                                                            <h5 class="badge" style="background-color:red;">
+                                                                {{i.payment}}</h5>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Address</h6>
+                                                        </th>
+                                                        <td>{{i.Address}}</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Change_Samplest{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">Change This Test Samplest</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Patient_Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.Test_name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            {% if i.Test_Type == 'home sample'%}
+                                                            <h4>
+                                                                <form action="/lab_admin/"
+                                                                      method="POST">
+                                                                    {% csrf_token %}
+
+                                                                    <input hidden name="name" type="text"
+                                                                           value="conform"/>
+                                                                    <input hidden name="id" type="text"
+                                                                           value="{{i.id}}"/>
+
+                                                                    <label>Please Select Sample Who can Take
+                                                                        Sample</label>
+                                                                    <select aria-label="Default select example"
+                                                                            class="form-select" name="Select_samplest"
+                                                                            required>
+                                                                        {% for i in samplest%}
+                                                                        {% if i.is_Active == True %}
+                                                                        <option value="{{i.name}}">
+                                                                            {{i.name}}
+                                                                        </option>
+                                                                        {% endif %}
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;"
+                                                                            type="submit">
+                                                                        Conform this Appointment
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+                                                            {% else %}
+                                                            <h4>
+                                                                <form action="/lab_admin/"
+                                                                      method="POST">
+                                                                    {% csrf_token %}
+
+                                                                    <input hidden name="name" type="text"
+                                                                           value="conform"/>
+                                                                    <input hidden name="id" type="number"
+                                                                           value="{{i.id}}"/>
+                                                                    <select aria-label="Default select example"
+                                                                            class="form-select"
+                                                                            hidden name="Select_samplest">
+                                                                        <option selected value="no_select"> no_select
+                                                                        </option>
+                                                                    </select>
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;"
+                                                                            type="submit">
+                                                                        Conform this Appointment
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+
+                                                            {% endif %}
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Samplest_Collected{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">Test Samplest is Collected</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Patient_Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.Test_name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/lab_admin/"
+                                                                      method="POST">
+                                                                    {% csrf_token %}
+
+                                                                    <input hidden name="name" type="text"
+                                                                           value="Samplest_Collected"/>
+                                                                    <input hidden name="id" type="text"
+                                                                           value="{{i.id}}"/>
+
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;"
+                                                                            type="submit">
+                                                                        Samplest is Collected
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Payment_received{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">You Received Payment</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Patient_Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.Test_name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Payment</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.test_price}}/- Rs only</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/lab_admin/"
+                                                                      method="POST">
+                                                                    {% csrf_token %}
+
+                                                                    <input hidden name="name" type="text"
+                                                                           value="Payment_received"/>
+                                                                    <input hidden name="id" type="text"
+                                                                           value="{{i.id}}"/>
+
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;"
+                                                                            type="submit">
+                                                                        Test Payment is received
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
 
 
             </div>

@@ -44,7 +44,7 @@ from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doc
 from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy, ForgetPassword_Pharmacy, \
     ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list, \
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
-    Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed
+    Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -175,6 +175,8 @@ urlpatterns = [
     path("Update Medicine/", update_Medicine, name="update_Medicine"),
     path("View_all_Expiry Medicine/", view_Expired_Medicine_list, name="view_Expired_Medicine_list"),
     path("View Expiring Soon/", view_Expiry_Soon_Medicine_list, name="view_Expiry_Soon_Medicine_list"),
+
+    path('order_cancel_confirm/', order_cancel_confirm, name='order_cancel_confirm'),
 
     # ////////////////////////////////// URLS for Pharmacy Admin End//////////////////////////////////////////////
 

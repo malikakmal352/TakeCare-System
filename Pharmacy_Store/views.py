@@ -338,11 +338,11 @@ def Phy_admin(request):
     Pending_order_count = order.objects.filter(Pharmacy=Py, status='Pending').count()
     Complete_order_count = order.objects.filter(Pharmacy=Py, status='Delivered').count()
 
-
     print(month, year, Expiring_Soon_Medicine)
     Current_pharmacy = Pharmacy.objects.get(id=Py)
 
     all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=False).order_by('-id')
+    All_Orders = order.objects.filter(Pharmacy=Py)
     for i in all_Medicine:
         if w > i.Medicine_Expiry_date:
             if not i.is_Expired:
@@ -359,7 +359,8 @@ def Phy_admin(request):
             "Expiring_Soon_Medicine": Expiring_Soon_Medicine,
             "Total_order_count": Total_order_count,
             'Pending_order_count': Pending_order_count,
-            'Complete_order_count': Complete_order_count}
+            'Complete_order_count': Complete_order_count,
+            'All_Orders': All_Orders}
     return render(request, "Pharmacy_Admin/Phy_admin.html", data)
 
 
@@ -608,6 +609,27 @@ def update_Medicine(request):
     all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=False).order_by('-id')
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine, 'success': success}
     return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
+
+
+@Phy_middleware
+def order_cancel_confirm(request):
+    if request.method == 'POST':
+        Data = request.POST
+        name = Data.get('action')
+        id = Data.get('id')
+        if name == 'cancel':
+            order_Cancel = order.objects.get(id=id)
+            order_Cancel.status = 'Cancelled'
+            order_Cancel.is_Cancel = True
+            order_Cancel.save()
+            messages.error(request, "Medicine Order is Cancel Successfully")
+        else:
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Conform'
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Confirm Successfully")
+
+    return redirect("/Phy_admin/#examples")
 
 
 # //////////////////////////Functions Related Medicine_list Add_New/Edit/Delete End///////////////////////////////////////////
