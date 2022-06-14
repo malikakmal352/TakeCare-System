@@ -312,6 +312,7 @@ def Cancel_order(request):
         id = data.get('id')
         order_Cancel = order.objects.get(id=id)
         order_Cancel.status = 'Cancelled'
+        order_Cancel.is_Cancel = True
         order_Cancel.save()
 
     return redirect(Tracking_Order)
@@ -333,6 +334,10 @@ def Phy_admin(request):
     Expired_Medicine_count = Add_New_Medicine.objects.filter(Pharmacy=Py, is_Expired=True, status="Active").count()
     Expiring_Soon_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, is_Expired=False, status="Active",
                                                              Expiry_Alert_Date__lt=w).count()
+    Total_order_count = order.objects.filter(Pharmacy=Py, is_Cancel=False).count()
+    Pending_order_count = order.objects.filter(Pharmacy=Py, status='Pending').count()
+    Complete_order_count = order.objects.filter(Pharmacy=Py, status='Delivered').count()
+
 
     print(month, year, Expiring_Soon_Medicine)
     Current_pharmacy = Pharmacy.objects.get(id=Py)
@@ -351,7 +356,10 @@ def Phy_admin(request):
 
     data = {"Current_pharmacy": Current_pharmacy, "Total_medicines": Total_medicines,
             "Expired_Medicine_count": Expired_Medicine_count,
-            "Expiring_Soon_Medicine": Expiring_Soon_Medicine}
+            "Expiring_Soon_Medicine": Expiring_Soon_Medicine,
+            "Total_order_count": Total_order_count,
+            'Pending_order_count': Pending_order_count,
+            'Complete_order_count': Complete_order_count}
     return render(request, "Pharmacy_Admin/Phy_admin.html", data)
 
 

@@ -5,6 +5,7 @@ from Pharmacy_Store.models.Add_Medicine import Add_New_Medicine
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from mainpage.models.Patient import Patient
 
+
 class order(models.Model):
     STATUS = (
         ('Pending', 'Pending'),
@@ -29,6 +30,7 @@ class order(models.Model):
     order_date = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=200, null=True, choices=STATUS, default='Pending')
     product_status = models.BooleanField(default=True)
+    is_Cancel = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Medicine.Medicine_name

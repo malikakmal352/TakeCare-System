@@ -310,6 +310,7 @@ def Save_Records_confirmation(request, message):
 
 
 @Patient_middleware
+# @login_required(login_url='/Login/')
 def Patient_Setting(request):
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
@@ -350,6 +351,7 @@ def Patient_Setting(request):
 
 
 @Patient_middleware
+# @login_required(login_url='/Login/')
 def Change_patient_profile_img(request):
     pa = request.session.get('id')
     Customer = Patient.objects.get(id=pa)
