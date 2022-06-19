@@ -20,6 +20,7 @@ from mainpage.models.Patient import Patient
 from Systemadmin.models.Super_Admin import SuperAdmin
 from Doctor.models.All_Specialist import Special
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
+from Doctor.models.ADD_Docror import Doctors
 
 
 @Admin_middleware
@@ -30,14 +31,17 @@ def Super_admin(request):
     Doctors_request_count = Doctor_request.objects.all().count()
     Pharmacy_count = Pharmacy.objects.all().count()
     current_lab = SuperAdmin.objects.get()
+    Doctor = Doctors.objects.all().order_by('-id')
+
     lb = request.session.get('admin_id')
     current_admin = SuperAdmin.objects.filter(id=lb)
 
     data = {'all_pat': all_pat, 'Total_labs': Total_labs,
             'current_lab': current_lab, 'current_admin': current_admin,
             'Doctors_count': Doctors_count, "Pharmacy_count": Pharmacy_count,
-            'Doctors_request_count': Doctors_request_count}
+            'Doctors_request_count': Doctors_request_count, 'Doctor': Doctor}
     return render(request, "admin_dashboard.html", data)
+
 
 @Admin_login_check
 def SuperAdmin_Login(request):
@@ -465,6 +469,7 @@ def Add_new_Doctor(request):
             "current_admin": current_admin, 'All_Speciality': All_Speciality}
     return render(request, "Doctors_functions/Add_new_doctor.html", Data)
 
+
 # /////////////////////////Functions Related Doctor Add_New/Edit/Delete/active/deactivate End/////////////////////////
 
 # /////////////////////////Functions Related Laboratory Add_New/Edit/Delete/active/deactivate Start/////////////////////////
@@ -700,6 +705,7 @@ def ADD_New_Pharmacy(request):
             "current_admin": current_admin}
     return render(request, "Pharmacy_fuctions/Add_New_Pharmacy.html", Data)
 
+
 @Admin_middleware
 def view_Pharmacy_list(request):
     current_lab = SuperAdmin.objects.get()
@@ -741,6 +747,7 @@ def Status_Pharmacy(request):
 
     # return redirect(lab_admin)
 
+
 @Admin_middleware
 def Pharmacy_del(request):
     error_message = None
@@ -767,6 +774,7 @@ def Pharmacy_del(request):
     Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
             'all_Pharmacy': all_Pharmacy, "current_admin": current_admin}
     return render(request, "Pharmacy_fuctions/view_all_Pharmacy.html", Data)
+
 
 def Update_Pharmacy(request, id):
     error_message = None
@@ -812,7 +820,6 @@ def Update_Pharmacy(request, id):
         Update_Phy.Note = Note
         Update_Phy.city = city
         Update_Phy.save()
-
 
         success = name + "Record is Updated Successfully"
         Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
