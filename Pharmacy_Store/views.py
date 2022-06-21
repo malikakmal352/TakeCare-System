@@ -636,10 +636,13 @@ def order_cancel_confirm(request):
 def cart_add(request, id):
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
-    cart = Cart(request)
-    product = Add_New_Medicine.objects.get(id=id)
-    cart.add(product=product)
-    return redirect("cart_detail")
+    if Customer:
+        cart = Cart(request)
+        product = Add_New_Medicine.objects.get(id=id)
+        cart.add(product=product, pa=pa)
+        return redirect("cart_detail")
+    return redirect('/Login?next=/Carts/cart_add/')
+
 
 
 # @login_required(login_url="/users/login")
@@ -652,19 +655,25 @@ def item_clear(request, id):
 
 # @login_required(login_url="/users/login")
 def item_increment(request, id):
-    cart = Cart(request)
-    product = Add_New_Medicine.objects.get(id=id)
-    cart.add(product=product)
-    return redirect("cart_detail")
-
+    pa = request.session.get('id')
+    Customer = Patient.objects.filter(id=pa)
+    if Customer:
+        cart = Cart(request)
+        product = Add_New_Medicine.objects.get(id=id)
+        cart.add(product=product, pa=pa)
+        return redirect("cart_detail")
+    return redirect('/Login?next=/Carts/cart_detail/')
 
 # @login_required(login_url="/users/login")
 def item_decrement(request, id):
-    cart = Cart(request)
-    product = Add_New_Medicine.objects.get(id=id)
-    cart.decrement(product=product)
-    return redirect("cart_detail")
-
+    pa = request.session.get('id')
+    Customer = Patient.objects.filter(id=pa)
+    if Customer:
+        cart = Cart(request)
+        product = Add_New_Medicine.objects.get(id=id)
+        cart.add(product=product, pa=pa)
+        return redirect("cart_detail")
+    return redirect('/Login?next=/Carts/cart_detail/')
 
 def cart_clear(request):
     cart = Cart(request)
