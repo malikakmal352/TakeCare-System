@@ -18,7 +18,8 @@ from mainpage.Middleware.Patient_auth import Patient_middleware
 
 # Create your views here.
 from mainpage.models.Patient import Patient
-
+from django.contrib.auth.decorators import login_required
+from cart.cart import Cart
 
 def Pharmacies(request, id):
     labcity = Labcity.objects.all()
@@ -631,6 +632,56 @@ def order_cancel_confirm(request):
 
     return redirect("/Phy_admin/#examples")
 
+
+def cart_add(request, id):
+    pa = request.session.get('id')
+    Customer = Patient.objects.filter(id=pa)
+    cart = Cart(request)
+    product = Add_New_Medicine.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+# @login_required(login_url="/users/login")
+def item_clear(request, id):
+    cart = Cart(request)
+    product = Add_New_Medicine.objects.get(id=id)
+    cart.remove(product)
+    return redirect("cart_detail")
+
+
+# @login_required(login_url="/users/login")
+def item_increment(request, id):
+    cart = Cart(request)
+    product = Add_New_Medicine.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+# @login_required(login_url="/users/login")
+def item_decrement(request, id):
+    cart = Cart(request)
+    product = Add_New_Medicine.objects.get(id=id)
+    cart.decrement(product=product)
+    return redirect("cart_detail")
+
+
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect("cart_detail")
+
+# @login_required(login_url="/Login/")
+def cart_detail(request):
+    pa = request.session.get('id')
+    Customer = Patient.objects.filter(id=pa)
+    if Customer:
+        labcity = Labcity.objects.all()
+        Customer = Patient.objects.filter(id=pa)
+        Data = {"Customer": Customer, 'labcity': labcity,
+                "message": messages}
+        return render(request, "Carts.html", Data)
+    return redirect('/Login?next=/Carts/cart-detail/')
 
 # //////////////////////////Functions Related Medicine_list Add_New/Edit/Delete End///////////////////////////////////////////
 

@@ -44,7 +44,8 @@ from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doc
 from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy, ForgetPassword_Pharmacy, \
     ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list, \
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
-    Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm
+    Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm, \
+    cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -140,6 +141,14 @@ urlpatterns = [
     path("Medicine_details/<int:id>", Medicine_details, name="Medicine_details"),
     path('Order Medicine Form/', Medicine_order_form, name="Medicine_order_form"),
     path('Order Confirmed/', Order_Confirmed, name="Order_Confirmed"),
+
+    # path('Add to Carts/', carts, name='Add to Carts'),
+    path('Carts/add/<int:id>/', cart_add, name='cart_add'),
+    path('Carts/item_clear/<int:id>/', item_clear, name='item_clear'),
+    path('Carts/item_increment/<int:id>/', item_increment, name='item_increment'),
+    path('Carts/item_decrement/<int:id>/', item_decrement, name='item_decrement'),
+    path('Carts/cart_clear/', cart_clear, name='cart_clear'),
+    path('Carts/cart-detail/', cart_detail, name='cart_detail'),
 
     path("Tracking Order/", Tracking_Order, name="Tracking_Order"),
     path("Cancel Order/", Cancel_order, name="Cancel_order"),
