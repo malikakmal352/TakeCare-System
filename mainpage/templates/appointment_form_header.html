@@ -390,12 +390,12 @@
 <!-- ///////////////////////////////////////Header_Start////////////////////////////////////////////// -->
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;">
     <div class="container-fluid mx-auto">
-        <a class="img" href="/"><img class="h_logo" src='{% static "final_logo.png" %}'></a>
+        <a class="img" href="/"><img class="h_logo" src='{% static "logo/takecare_logo-1.PNG" %}'></a>
         <div class="header__bottom-left d-flex d-lg-none">
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="side-menu-btn offcanvas-toggle-btn d-lg-none"
                     data-bs-toggle="collapse" style="background-color: white;border: none;" type="button">
-                <span class="navbar-toggler-icon " ></span>
+                <span class="navbar-toggler-icon "></span>
 
             </button>
         </div>
@@ -408,15 +408,32 @@
         <!--        </div>-->
 
 
-        <div class="navbar-brand mr-2 order-lg-2 align-items-center d-lg-none log" style="min-width: 150px">
+        <div class="navbar-brand mr-2 order-lg-2 align-items-center d-none log d-sm-block d-lg-none"
+             style="min-width: 150px">
             <div class="d-flex">
                 <a href="/">
-                    <img alt="TakeCare.pk Logo" class="w-100" src='{% static "final_logo.png" %}' style="height:70px;"/>
+                    <img alt="TakeCare.pk Logo" src='{% static "logo/takecare_logo-1.PNG" %}'
+                         style="width:22%;margin-left:30%;"/>
                 </a>
             </div>
         </div>
 
         <div class="d-flex align-items-center order-lg-3">
+            <div class="header-action d-block d-sm-none">
+                <div class="block-cart action">
+                            <a class="icon-link" href="/Carts/cart-detail/#id"
+                               style="float:left;color:black;margin-top:10px;">
+                                <b>
+                                    <i class="fas fa-cart-plus fa-2x" style="color:#49738f;"></i>
+
+                                </b>
+                                <span style="background-color:#49738f;" class="count">
+                                    <b style="color:white;">{{request.session.cart.keys|length}}</b>
+                                </span>
+                            </a>
+                        </div>
+            </div>
+
             <a class="mr-1 helpline-number-link btn btn-info btn-sm"
                data-toggle="modal" href="#helpline-modal" style="height:38px;width: 55px;margin-right: 10px; "
                title="TakeCare Helpline Button">
@@ -445,8 +462,9 @@
                         <a href="/Patient_Setting/">My Profile
                             <i class="fal fa-user"></i></a>
                         <a href="/Patient_Setting/">Settings
-
                             <i class="fal fa-user-cog"></i></a>
+                        <a href="/Tracking Order/">Track My Orders
+                            <i class="fas fa-box-check"></i></a>
                         <a href="/Medical Records/">My Medical Records
                             <i class="fas fa-books-medical"></i></a>
                         <a href="/Logout/">Log Out
@@ -813,15 +831,33 @@
 
             <ul class="navbar-nav">
 
-                <!--              <li class="nav-item" style="margin-left:10px;">-->
-                <!--                    <a class="nav-link"  href="/Cart" style="color:black;margin-top:10px;">-->
-                <!--                        <i class="fas fa-cart-plus fa-2x"></i><b style="margin-left: -15px;">-->
-                <!--                        {% if request.session.email %}-->
-                <!--                         <span  class="badge btn-info">{{request.session.cart}}</span></b></a>-->
-                <!--                        {% else %}-->
-                <!--                        <span  class="badge btn-info">{{request.session.cart.keys|length}}</span></b></a>-->
-                <!--                        {% endif %}-->
-                <!--                </li>-->
+                <li class="nav-item" style="margin-left:10px;margin-right:10px;">
+                    <div class="header-action d-none d-sm-block">
+
+                        <div class="block-cart action">
+                            <a class="icon-link" href="/Carts/cart-detail/#id"
+                               style="float:left;color:black;margin-top:10px;">
+                                <b>
+                                    <i class="fas fa-cart-plus fa-2x" style="color:#49738f;"></i>
+
+                                </b>
+                                <span style="background-color:#49738f;" class="count">
+                                    <b style="color:white;">{{request.session.cart.keys|length}}</b>
+                                </span>
+                            </a>
+                        </div>
+<!--                        <a class="icon-link" href="/Carts/cart-detail/#id"-->
+<!--                           style="float:left;color:black;margin-top:10px;">-->
+<!--                            <b style="margin-left: -15px;">-->
+<!--                        <span class="badge btn-info">-->
+<!--                            <b style="color:white;">{{request.session.cart.keys|length}}</b>-->
+<!--                        </span>-->
+<!--                            </b>-->
+<!--                        </a>-->
+                    </div>
+                </li>
+
+
                 <li class="nav-item form-inline my-2 my-lg-0">
                     {% if request.session.email %}
 
