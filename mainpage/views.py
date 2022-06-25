@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.contrib.auth.hashers import check_password, make_password
-from django.contrib.messages import success
 from django.shortcuts import render, redirect
 from django.utils.timezone import now
 
@@ -159,12 +158,19 @@ def Login(request):
 
 def Logout(request):
     Phy_id = request.session.get('Phy_id')
-    # if Phy_id:
-    #     request.session.get('Phy_id').clear()
-    #     request.session.get('Phy_email').clear()
-    # else:
-
-    request.session.clear()
+    Customer_id = request.session.get('id')
+    if Phy_id:
+        request.session['Phy_id'] = None
+        request.session.get['Phy_email'] = None
+    elif Customer_id:
+        request.session['id'] = None
+        request.session['email'] = None
+        request.session['phone'] = None
+        request.session['Address'] = None
+        request.session['fullname'] = None
+        request.session['city'] = None
+    else:
+        request.session.clear()
     return redirect(mainindex)
 
 
@@ -469,6 +475,7 @@ def ForgetPassword(request):
     except Exception as e:
         print(e)
     return render(request, 'forget-password.html')
+
 
 # ##################################################### Forget Password Email Sent End  ##############################
 

@@ -29,6 +29,8 @@
 
 
 
+
+
     </style>
 </head>
 
@@ -83,22 +85,25 @@
                                 {% for key,value in request.session.cart.items %}
                                 <tr id="id{{value.id}}">
                                     <td class="product-thumbnail">
-                                        <a href="shop-details.html">
-                                            <img alt="" src="{{value.image}}"></a>
+                                        <img alt="" src="{{value.image}}" style="max-width:50%;">
                                     </td>
                                     <td class="product-name"><a href="shop-details.html">{{value.name}}</a></td>
                                     <td class="product-price"><span class="amount">{{value.price}}Rs</span></td>
                                     <td class="product-quantity">
-                                        <div class="row w-100">
+                                        <div class="row col-12" style="width:100%;min-width:100px;">
                                             <div class="col-4">
                                                 {% if value.quantity != 1%}
-                                                <a class="text-center" href="{% url 'item_decrement' value.product_id %}#id{{value.id}}">
+                                                <a class="text-center"
+                                                   href="{% url 'item_decrement' value.product_id %}#id{{value.id}}">
                                                     <b>-</b>
                                                 </a>
                                                 {% endif %}
                                             </div>
-                                            <div class="col-4">
-                                                    <input class="form-control border-0 text-center" disabled value="{{value.quantity}}"/>
+                                            <div class="col-4 pt-2" style="background-color:gray;border-radius:25%;">
+                                                <h6>{{value.quantity}}</h6>
+                                                <!--                                                    <input class=" border-0 text-center"-->
+                                                <!--                                                           style="float:left;padding:0;margin:0;"-->
+                                                <!--                                                           disabled value="{{value.quantity}}"/>-->
                                             </div>
                                             <div class="col-4">
                                                 <a class="text-center"
@@ -115,7 +120,7 @@
                                     </td>
                                     <td class="product-remove">
                                         <a href="{% url 'item_clear' value.product_id %}">
-                                           <i class="fa fa-times"></i>
+                                            <i class="fa fa-times"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -123,20 +128,19 @@
                                 </tbody>
                             </table>
                         </div>
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="coupon-all">
-                                    <div class="coupon">
-                                        <input class="input-text" id="coupon_code" name="coupon_code"
+                                    <div class="col-12 col-sm-8" style="float:left;margin-top:0px;">
+                                        <input class="input-text col-5 col-sm-5" id="coupon_code" name="coupon_code"
                                                placeholder="Coupon code"
-                                               type="text" value="">
-                                        <button class="tp-btn-h1" name="apply_coupon" type="submit">Apply
+                                               type="text" value="" style="float:left;">
+                                        <a class=" btn btn-info p-3 col-6 col-sm-5" style="color:white;" name="apply_coupon" type="submit">Apply
                                             coupon
-                                        </button>
+                                        </a>
                                     </div>
-                                    <div class="coupon2">
-                                        <a class="tp-btn-h1" href="{% url 'cart_clear' %}">Clear carts</a>
+                                    <div class="coupon col-12 col-sm-3" style="float:right;">
+                                        <a class="btn-info p-3 col-12 text-center" style="color:white;float:right;" href="{% url 'cart_clear' %}">Clear carts</a>
                                     </div>
                                 </div>
                             </div>
@@ -146,10 +150,23 @@
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
                                     <ul class="mb-20">
-                                        <li>Subtotal <span>$250.00</span></li>
-                                        <li>Total <span>$250.00</span></li>
+                                        <h5 class="text-center" style="margin-top:10px">
+                                            <span style="color:green">
+                                               Free Delivery on <b style="color:red;">500+</b> Order
+                                            </span>
+                                        </h5>
+                                        <li>Total Items<span>{{request.session.cart.keys|length}} Items</span></li>
+                                        {% if cart_total_amount > 500 %}
+                                         <li>Delivery Charges<span style="color:green">Free Delivery</span></li>
+                                        {% else %}
+                                          <li>Delivery Charges<span style="color:red">50 Rs</span></li>
+                                        {% endif %}
+                                        <li>Total<span>
+                                            {{cart_total_amount}} Rs
+                                        </span>
+                                        </li>
+                                        <a class=" btn btn-info p-3 col-12" style="color:white;" href="/Carts_Checkout">Proceed to checkout</a>
                                     </ul>
-                                    <a class="tp-btn-h1" href="checkout.html">Proceed to checkout</a>
                                 </div>
                             </div>
                         </div>

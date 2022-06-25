@@ -25,6 +25,7 @@ class Add_New_Medicine(models.Model):
     Pharmacy = models.ForeignKey(Pharmacy, on_delete=models.CASCADE, default='')
     Medicine_packaging = models.CharField(max_length=200, null=True, choices=Medicine_Packaging,
                                           default='Blister packs')
+    packing_cost = models.PositiveIntegerField(default=0)
     Description = models.TextField(default='', blank=True, null=True)
     status = models.CharField(max_length=200, choices=Status, default='Active')
     is_Expired = models.BooleanField(default=False)

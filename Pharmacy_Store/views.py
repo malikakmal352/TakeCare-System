@@ -245,6 +245,7 @@ def Create_password_Pharmacy(request, token):
 
 
 # ///////////////////////////////////////Medicine Order Placing+Tracking+Cancel  ////////////////////////////////////////////////////////
+@Phy_login_check
 def Medicine_order_form(request):
     pa = request.session.get('id')
     labcity = Labcity.objects.all()
@@ -261,7 +262,7 @@ def Medicine_order_form(request):
         messages.error(request, "Place Login First For Order Medicine")
         return render(request, 'Login.html', {"message": messages})
 
-
+@Phy_login_check
 def Order_Confirmed(request):
     pa = request.session.get('id')
     labcity = Labcity.objects.all()
@@ -307,7 +308,7 @@ def Tracking_Order(request):
             'Track_order': Track_order, "message": messages}
     return render(request, "Tracking_Order.html", Data)
 
-
+@Patient_middleware
 def Cancel_order(request):
     if request.method == 'POST':
         data = request.POST
@@ -481,6 +482,8 @@ def add_new_Medicine(request):
         Expiry_Date = Data.get("Expiry_Date")
         Medicine_type = Data.get('Medicine_type')
         Total_Stock = Data.get("Stock")
+        Description = Data.get('Description')
+        Packing_cost = Data.get('packing_cost')
         date_time_obj = datetime.strptime(Expiry_Date, '%Y-%m-%d')
 
         # print(name, Price, Total_Stock, Medicine_type, Expiry_Date)
@@ -490,7 +493,8 @@ def add_new_Medicine(request):
                                             Pharmacy=Current_pharmacy, Total_Stock=Total_Stock,
                                             Medicine_Expiry_date=Expiry_Date, img=image,
                                             Medicine_packaging=Medicine_type,
-                                            Expiry_Alert_Date=Expiry_Alert_Date
+                                            Expiry_Alert_Date=Expiry_Alert_Date,
+                                            Description=Description, packing_cost=Packing_cost
                                             )
         add_New_Medicine.save()
         messages.error(request, name + " New Medicine is Added Sucessfully")
@@ -667,8 +671,9 @@ def item_increment(request, id):
 def item_decrement(request, id):
     cart = Cart(request)
     product = Add_New_Medicine.objects.get(id=id)
-    cart.add(product=product)
+    cart.decrement(product=product)
     return redirect("cart_detail")
+
 
 
 def cart_clear(request):
@@ -691,6 +696,16 @@ def cart_detail(request):
         Data = {'labcity': labcity, "message": messages}
         return render(request, "Carts.html", Data)
 
+@Patient_middleware
+def Checkout(request):
+    pa = request.session.get('id')
+    Customer = Patient.objects.filter(id=pa)
+    labcity = Labcity.objects.all()
+    if Customer:
+        Customer = Patient.objects.filter(id=pa)
+        Data = {"Customer": Customer, 'labcity': labcity,
+                "message": messages}
+        return render(request, 'Checkout.html', Data)
 
 # //////////////////////////Functions Related Medicine_list Add_New/Edit/Delete End///////////////////////////////////////////
 

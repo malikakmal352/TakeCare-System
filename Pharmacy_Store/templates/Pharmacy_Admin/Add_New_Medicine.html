@@ -204,6 +204,10 @@
                                         <label for="phone">Medicine Price<span>*</span></label>
                                         <input class="no-arrow" id="phone" name="Price" required type="number"/>
                                     </div>
+                                    <div class="item sa">
+                                        <label for="Packing_cost">Medicine Packing Cost<span>*</span></label>
+                                        <input class="Packing_cost" id="Packing_cost" name="Packing_cost" required type="number"/>
+                                    </div>
                                     <div class="item sa ">
                                         <label for="Date">Pick Medicine Expiry Date<span>*</span></label>
                                         <input aria-required="true" id="Date" min="{% now '20y-m-d'%}"
@@ -239,6 +243,11 @@
                                     </div>
 
                                 </div>
+                                <div class="item w-100">
+                                    <label for="visit">Medicine Detail</label>
+                                    <textarea id="visit" name='Description' rows="5"></textarea>
+                                </div>
+
                                 <div class="btn-block">
                                     <button class='button btn-info btn' type="submit">Add Medicine</button>
                                 </div>
