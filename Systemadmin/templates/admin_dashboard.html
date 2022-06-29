@@ -1,78 +1,14 @@
-<!DOCTYPE html>
+{% extends "Admin_site/admin_header.html" %}
 {% load static %}
 
-<html lang="zxx">
-<head>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-
-    <!-- Bootstrap CSS -->
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
-
-    <!-- Font Awsome CND -->
-    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
-
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <!-- Required meta tags -->
-
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Hospital</title>
-
-    <!-- themefy CSS -->
-    <link href='{% static "./Hospital_files/themify-icons.css" %}' rel="stylesheet">
-    <!-- swiper slider CSS -->
-    <link href='{% static "./Hospital_files/swiper.min.css" %}' rel="stylesheet">
-    <!-- select2 CSS -->
-    <link href='{% static "./Hospital_files/select2.min.css" %}' rel="stylesheet">
-    <!-- select2 CSS -->
-    <link href='{% static "./Hospital_files/nice-select.css" %}' rel="stylesheet">
-    <!-- owl carousel CSS -->
-    <link href='{% static "./Hospital_files/owl.carousel.css" %}' rel="stylesheet">
-    <!-- gijgo css -->
-    <link href='{% static "./Hospital_files/gijgo.min.css" %}' rel="stylesheet">
-
-    <!-- text editor css -->
-    <link href='{% static "./Hospital_files/summernote-bs4.css" %}' rel="stylesheet">
-    <!-- morris css -->
-    <link href='{% static "./Hospital_files/morris.css" %}' rel="stylesheet">
-    <!-- metarial icon css -->
-    <link href='{% static "./Hospital_files/material-icons.css" %}' rel="stylesheet">
-
-    <!-- menu css  -->
-    <link href='{% static "./Hospital_files/metisMenu.css" %}' rel="stylesheet">
-    <!-- style CSS -->
-    <link href='{% static "./Hospital_files/style.css" %}' rel="stylesheet">
-    <link href='{% static "./Hospital_files/default.css" %}' id="colorSkinCSS" rel="stylesheet">
-
-
-    <!--////////////////////////////////Autocomplete js cdn start//////////////////////////////////////-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
-    </script>
-
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
-          type="text/css"/>
-
-
-    <!--///////////////////////////////Autocomplete js cdn End/////////////////////////////////////////-->
-
-
-</head>
-<body class="crm_body_bg">
-
+{% block content %}
 
 <!-- main content part here -->
 <!-- sidebar  -->
 <!-- sidebar part here -->
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
-        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <a href="#"><img alt="" src="{% static './logo/takecare_logo-1.PNG' %}"></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="fal fa-times"></i>
         </div>
@@ -140,7 +76,6 @@
 <!-- sidebar part end -->
 
 <!--/ sidebar  -->
-
 
 <section class="main_content dashboard_part">
     <!-- menu  -->
@@ -335,41 +270,4 @@
 
 <!-- footer  -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script crossorigin="anonymous"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- jquery slim -->
-
-<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
-        crossorigin="anonymous"></script>
-<!-- popper js -->
-<script src='{% static "./Hospital_files/popper.min.js.download" %}'></script>
-<!-- sidebar menu  -->
-<script src='{% static "./Hospital_files/metisMenu.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "./Hospital_files/jquery.waypoints.min.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "./Hospital_files/Chart.min.js.download" %}'></script>
-<!-- counterup js -->
-<script src='{% static "./Hospital_files/jquery.counterup.min.js.download" %}'></script>
-<!-- swiper slider js -->
-<script src='{% static "./Hospital_files/swiper.min.js.download" %}'></script>
-<!-- nice select -->
-<script src='{% static  "./Hospital_files/jquery.nice-select.min.js.download" %}'></script>
-<!-- owl carousel -->
-<script src='{% static  "./Hospital_files/owl.carousel.min.js.download" %}'></script>
-
-<!-- tag input -->
-<script src='{% static "./Hospital_files/tagsinput.js.download" %}'></script>
-<!-- text editor js -->
-<script src='{% static "./Hospital_files/summernote-bs4.js.download" %}'></script>
-
-
-<!-- custom js -->
-<script src='{% static "./Hospital_files/custom.js.download" %}'></script>
-
-</body>
-</html>
+{% endblock %}

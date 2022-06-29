@@ -1820,6 +1820,12 @@ def view_Doctor_blogs(request):
     # print(lb)
     current_doctor = Doctors.objects.get(id=lb)
     Health_Blog = Health_blogs.objects.filter(Doctor=current_doctor)
+
+    Blogs = Health_blogs.objects.filter(Doctor=current_doctor)
+    paginator = Paginator(Blogs, 6)  # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     if request.method == 'POST':
         Data = request.POST
         name = Data.get("name")
@@ -1849,7 +1855,7 @@ def view_Doctor_blogs(request):
         else:
             error_message = "Health Blog is already Deleted."
     Data = {"current_doctor": current_doctor, 'error': error_message,
-            'success': success, "Health_Blog": Health_Blog}
+            'success': success, "Health_Blog": Health_Blog, 'page_obj': page_obj}
     return render(request, "Doctor_admin_site/View_all_your_blogs.html", Data)
 
 

@@ -1,27 +1,7 @@
+{% extends "Admin_site/admin_header.html" %}
 {% load static %}
 
-{% include "Doctor_admin_site/Doctor_admin_base.html" %}
-<body class="crm_body_bg">
-<style>
-
-/*=======================
- 	Tables
-====================== */
-
-.badge-danger, .bg-danger {
-    background-color: #ef6e6e !important;
-}
-.badge-success, .bg-success {
-    background-color: #3CB371 !important;
-}
-.badge-warning, .bg-warning {
-    color: #fff;
-    background-color: #FFAA2A !important;
-}
-
-
-
-</style>
+{% block content %}
 
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
@@ -500,20 +480,4 @@
 
 </section>
 
-
-<!-- popper js -->
-<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
-<!-- sidebar menu  -->
-<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
-
-<!-- counterup js -->
-<script src='{% static "jquery.counterup.min.js.download" %}'></script>
-<!-- swiper slider js -->
-<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
-<!-- custom js -->
-<script src='{% static "custom.js.download" %}'></script>
-
-
-</body>
+{% endblock %}

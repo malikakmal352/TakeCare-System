@@ -1,11 +1,7 @@
-<!--Add_New_Patient-->
-
-
-{% include "Admin_site/admin_header.html" %}
-
+{% extends "Admin_site/admin_header.html" %}
 {% load static %}
 
-<body class="crm_body_bg">
+{% block content %}
 
 
 <nav class="sidebar">
@@ -263,52 +259,4 @@
 
 </section>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script crossorigin="anonymous"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- jquery slim -->
-<!--<script crossorigin="anonymous"-->
-<!--        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="-->
-<!--        src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>-->
-
-<!--<script src="https://code.jquery.com/jquery-3.6.0.slim.js"-->
-<!--        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="-->
-<!--        crossorigin="anonymous"></script>-->
-<!-- popper js -->
-<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
-<!-- sidebar menu  -->
-<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
-<!-- waypoints js -->
-<!--<script src='{% static "Hospital_files/Chart.min.js.download" %}'></script>-->
-<!-- counterup js -->
-<script src='{% static "jquery.counterup.min.js.download" %}'></script>
-<!-- swiper slider js -->
-<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
-<!-- nice select -->
-<script src='{% static  "Hospital_files/jquery.nice-select.min.js.download" %}'></script>
-<!-- owl carousel -->
-<script src='{% static  "Hospital_files/owl.carousel.min.js.download" %}'></script>
-
-<!-- tag input -->
-<script src='{% static "Hospital_files/tagsinput.js.download" %}'></script>
-<!-- text editor js -->
-<script src='{% static "Hospital_files/summernote-bs4.js.download" %}'></script>
-
-
-<!-- custom js -->
-<script src='{% static "custom.js.download" %}'></script>
-
-
-</body>
+{% endblock %}

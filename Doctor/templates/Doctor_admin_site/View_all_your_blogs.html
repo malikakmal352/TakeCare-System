@@ -1,65 +1,877 @@
+{% extends "Admin_site/admin_header.html" %}
 {% load static %}
 
-{% include "Doctor_admin_site/Doctor_admin_base.html" %}
-<body class="crm_body_bg">
-<link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
+{% block content %}
 <style>
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box
-        }
+    .single-smblog {
+  position: relative;
+}
+.single-smblog .blog-image {
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.single-smblog .blog-image img {
+  transition: all 0.5s ease;
+}
+.single-smblog .blog-image-2 img {
+  border-radius: 20px;
+}
+.single-smblog:hover .blog-image img {
+  transform: scale(1.1);
+}
 
-        html
-         {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: transparent
-         }
-        body {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #202124;
-            text-align: left;
-            background-color: #f7f7f7;
-            /*background-color: rebeccapurple;*/
-            font: 400 16px/1.7777777778 Open sans, system-ui, -apple-system, sans-serif
-        }
+.smblog-content {
+  padding: 20px;
+  background: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.smblog-content h6 {
+  font-size: 15px;
+  line-height: 1.34;
+  margin-bottom: 0;
+}
+.smblog-content h6:hover {
+  color: #16bcdc;
+}
+.smblog-content span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
+  display: inline-block;
+}
+.smblog-content span a {
+  color: #16bcdc;
+}
+.smblog-content p {
+  line-height: 20px;
+}
+.smblog-content .smblog-foot {
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+}
+.smblog-content .smblog-foot .post-readmore a {
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+  color: #222;
+}
+.smblog-content .smblog-foot .post-readmore a:hover {
+  color: #16bcdc;
+}
+.smblog-content .smblog-foot .post-date a {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.2;
+  display: inline-block;
+}
+.smblog-content .smblog-foot .post-date a:hover {
+  color: #16bcdc;
+}
 
-        .H_Blog{
-             overflow:hidden;
-             float:left;
-             height:80vh;
-             width:31%;
-             margin:1%;
-        }
-        .H_btn{
-          width:40%;
-        }
+.smblog-content-2 {
+  padding: 0;
+  padding-top: 20px;
+}
 
-        @media (max-width: 1200px) {
-        .H_Blog{
-                     width:40%;
-                     min-height:50vh;
-                     margin:3%;
-                }
-               .H_btn{
-          width:35%;
-        }
-        }
+.smblog-content-3 {
+  border: 1px solid #e5e5e5;
+}
+.smblog-content-3 h6 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+.smblog-content-3 h6:hover {
+  color: #fcbe00;
+}
+.smblog-content-3 span a {
+  color: #fcbe00;
+}
+.smblog-content-3 .smblog-foot .post-date a:hover {
+  color: #fcbe00;
+}
+.smblog-content-3 .smblog-foot .post-readmore a:hover {
+  color: #fcbe00;
+}
 
-         @media (max-width: 600px) {
-        .H_Blog{
-                     width:80%;
-                      height:auto;
-                     margin:9%;
-                }
-        }
+.blog-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.blog-tag a {
+  padding: 4px 12px;
+  display: inline-block;
+  background: #16bcdc;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.blog-tag-2 a {
+  background: #fcbe00;
+  color: #222;
+}
+
+.widget {
+  padding: 35px 38px;
+  border: 2px solid #f3f3f3;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .widget {
+    padding: 35px 25px;
+  }
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f3f3f3;
+  padding-bottom: 16px;
+  line-height: 1;
+}
+
+.featured-author p {
+  padding: 0 20px;
+}
+
+.featured-author h6 {
+  font-size: 18px;
+  line-height: 46px;
+  margin-bottom: 0;
+}
+
+.featured-author-social li {
+  display: inline-block;
+}
+.featured-author-social li a {
+  font-size: 14px;
+  color: #222;
+  display: inline-block;
+  margin: 0 10px;
+}
+.featured-author-social li a:hover {
+  color: #fcbe00;
+}
+
+.n-sidebar-search {
+  position: relative;
+}
+
+.n-sidebar-search input {
+  padding-left: 30px;
+  padding-right: 80px;
+  background: #f5f5f5;
+  height: 60px;
+  width: 100%;
+  border: 0;
+  outline: none;
+}
+
+.n-sidebar-search input::placeholder {
+  color: #999;
+}
+
+.n-sidebar-search a {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: #fcbe00;
+  color: #ffffff;
+  font-size: 14px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.feed-content h6 {
+  font-size: 16px;
+  line-height: 22px;
+}
+.feed-content h6:hover {
+  color: #fcbe00;
+}
+
+.feed-number img {
+  margin-right: 20px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+@media (max-width: 575px) {
+  .feed-number img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.feed-date {
+  font-size: 14px;
+  color: #222;
+}
+.feed-date i {
+  margin-right: 5px;
+}
+
+.n-sidebar-feed ul li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f3f3f3;
+  padding-top: 30px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .n-sidebar-feed ul li {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 575px) {
+  .n-sidebar-feed ul li {
+    display: block;
+  }
+}
+.n-sidebar-feed ul li:first-child {
+  padding-top: 0;
+}
+.n-sidebar-feed ul li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.single-category {
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  padding: 0 80px 0 30px;
+  line-height: 50px;
+  background: #f8f8f8;
+  display: inline-block;
+  transition: all 0.5s ease-out 0s;
+  color: #222;
+}
+
+.category-number {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  font-size: 14px;
+  background: #efefef;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 50px;
+  text-align: center;
+  color: #222;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.n-sidebar-categories li:hover .category-number {
+  background: #fcbe00;
+  color: #ffffff;
+}
+
+.single-tag {
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #f4f4f4;
+  padding: 0 25px;
+}
+
+.dktags a {
+  background: #f4f4f4;
+  color: #222;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 21px;
+  padding-bottom: 10px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  text-transform: capitalize;
+  border: 0;
+  transition: 0.3s;
+}
+.dktags a:hover {
+  background: #fcbe00;
+  color: #ffffff;
+}
+
+.sponsor-img {
+  position: relative;
+}
+.sponsor-img img {
+  width: 100%;
+}
+
+.ad-width {
+  width: 150px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  display: inline-block;
+  line-height: 60px;
+  background: #fcbe00;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.news-detalis-content {
+  padding: 50px;
+  padding-top: 40px;
+  border: 2px solid #f3f3f3;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .news-detalis-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 575px) {
+  .news-detalis-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.news-detalis-content-2 {
+  border-top: 0;
+  padding: 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .news-detalis-content-2 {
+    padding: 20px;
+  }
+}
+
+.news-thumb img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.blog-meta {
+  list-style: none;
+  padding: 0;
+}
+.blog-meta li {
+  display: inline-block;
+  margin-right: 55px;
+  position: relative;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .blog-meta li {
+    margin-right: 35px;
+  }
+}
+.blog-meta li::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: #666;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .blog-meta li::before {
+    right: -23px;
+  }
+}
+.blog-meta li:last-child::before {
+  display: none;
+}
+.blog-meta li a {
+  font-size: 14px;
+  color: #222;
+}
+.blog-meta li a i {
+  margin-right: 10px;
+}
+.blog-meta li a:hover {
+  color: #fcbe00;
+}
+
+.news-title {
+  font-size: 35px;
+  line-height: 35px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .news-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .news-title {
+    font-size: 27px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .news-title {
+    font-size: 23px;
+  }
+}
+@media (max-width: 575px) {
+  .news-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.news-title-2 {
+  border-top: 1px solid #f3f3f3;
+}
+
+.blog-inner {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .blog-inner {
+    align-items: flex-start;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .blog-inner {
+    display: block;
+    text-align: left;
+  }
+}
+.blog-inner img {
+  margin-right: 30px;
+  width: 190px;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .blog-inner img {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
+.blog-inner p {
+  line-height: 26px;
+  margin-bottom: 0;
+}
+
+.news-quote-title {
+  font-size: 28px;
+  line-height: 38px;
+}
+
+.news-quote-area {
+  border: 2px solid #f3f3f3;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+  padding: 50px;
+}
+@media (max-width: 575px) {
+  .news-quote-area {
+    padding: 10px;
+  }
+}
+.news-quote-area i {
+  height: 60px;
+  width: 60px;
+  background: #fcbe00;
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+.founder-name {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.founder-title {
+  font-size: 14px;
+  line-height: 15px;
+  color: #222;
+  display: block;
+}
+
+.tag-title {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.news-tag a {
+  font-size: 12px;
+  line-height: 20px;
+  color: #222;
+  margin-right: 10px;
+  padding: 5px 30px;
+  border-radius: 30px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.news-tag a:hover {
+  background: #fcbe00;
+  color: #ffffff;
+  border-color: #fcbe00;
+}
+
+.news-share {
+  text-align: right;
+}
+@media (max-width: 575px) {
+  .news-share {
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+.news-share a {
+  color: #b9b9b9;
+  font-size: 20px;
+  margin-right: 30px;
+  transition: 0.3s;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .news-share a {
+    margin-right: 10px;
+  }
+}
+.news-share a:last-child {
+  margin-right: 0;
+}
+.news-share a:hover .fa-facebook-f {
+  color: #166FE5;
+}
+.news-share a:hover .fa-twitter {
+  color: #55ADEE;
+}
+.news-share a:hover .fa-typo3 {
+  color: #FF8700;
+}
+.news-share a:hover .fa-tumblr {
+  color: #000;
+}
+.news-share a:hover .fa-share-alt {
+  color: #247FFF;
+}
+
+.news-navigation {
+  border-top: 1px solid #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+}
+@media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px) {
+  .news-navigation {
+    display: block;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .news-navigation-icon {
+    margin-bottom: 15px;
+  }
+}
+
+.changes-info span {
+  font-size: 14px;
+  line-height: 26px;
+  color: #222;
+  display: block;
+}
+.changes-info span:hover {
+  color: #fcbe00;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .changes-info {
+    margin-bottom: 15px;
+  }
+}
+
+.changes-info-title {
+  font-size: 28px;
+  line-height: 50px;
+}
+.changes-info-title:hover {
+  color: #fcbe00;
+}
+
+.news-navigation-icon i {
+  font-size: 50px;
+  line-height: 50px;
+  color: #fcbe00;
+}
+
+.news-author {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border: 2px solid #f3f3f3;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .news-author {
+    align-items: flex-start;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .news-author {
+    padding: 15px;
+    display: block;
+  }
+}
+.news-author img {
+  margin-right: 40px;
+  width: 200px;
+  height: 180px;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .news-author img {
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+.news-author span {
+  font-size: 12px;
+  line-height: 26px;
+  color: #222;
+  display: block;
+}
+.news-author p {
+  margin-bottom: 0;
+}
+
+.author-title {
+  font-size: 36px;
+  line-height: 45px;
+}
+@media (max-width: 575px) {
+  .author-title {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .author-title {
+    font-size: 30px;
+  }
+}
+
+.post-comment-title {
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.comments-box {
+  display: flex;
+}
+@media (max-width: 575px) {
+  .comments-box {
+    display: block;
+  }
+}
+
+.comments-avatar {
+  margin-right: 30px;
+}
+
+.comments-text {
+  overflow: hidden;
+  border-bottom: 1px solid #f1f0f7;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.avatar-name {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 0;
+}
+@media (max-width: 575px) {
+  .avatar-name {
+    font-size: 16px;
+  }
+}
+
+.children {
+  padding-left: 135px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .children {
+    padding-left: 50px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .children {
+    padding-left: 0;
+  }
+}
+
+.comments-box .post-meta {
+  color: #222;
+  font-size: 14px;
+  line-height: 26px;
+  display: block;
+}
+.comments-box .post-meta i {
+  margin-right: 10px;
+}
+
+.comment-reply {
+  padding: 5px 25px;
+  border: 2px solid #f3f3f3;
+  font-size: 14px;
+  color: #222;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+@media (max-width: 575px) {
+  .comment-reply {
+    padding: 10px 15px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+}
+.comment-reply i {
+  margin-right: 5px;
+  transform: rotateY(-190deg);
+}
+.comment-reply:hover {
+  background: #fcbe00;
+  border-color: #fcbe00;
+  color: #ffffff;
+}
+
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 575px) {
+  .avatar {
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+}
+
+.post-comment-form-title {
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.post-comment-form form {
+  border: 2px solid #f3f3f3;
+  padding: 50px;
+}
+@media (max-width: 575px) {
+  .post-comment-form form {
+    border: none;
+    padding: 0;
+  }
+}
+
+.post-comment-form form textarea {
+  height: 150px;
+  padding: 20px 30px;
+  background: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+  resize: none;
+  outline: none;
+  transition: 0.3s;
+}
+.post-comment-form form textarea:focus {
+  border: 1px solid #fcbe00;
+}
+
+.post-comment-form form textarea::placeholder {
+  color: #999999;
+}
+
+.post-comment-form form .input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.post-comment-form form .input-field i {
+  font-size: 14px;
+  color: #fcbe00;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  background: #ffffff;
+}
+
+.post-comment-form form input {
+  height: 60px;
+  width: 100%;
+  background: #ffffff;
+  padding: 0 30px;
+  font-size: 14px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);
+  outline: none;
+  transition: 0.3s;
+}
+.post-comment-form form input:focus {
+  border: 1px solid #fcbe00;
+}
+
+.post-comment-form form input::placeholder {
+  color: #999999;
+}
+
+.post-comment {
+  width: 200px;
+  height: 60px;
+  background: #222;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 16px;
+  border: 0;
+  margin-top: 10px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.post-comment i {
+  margin-right: 10px;
+}
+.post-comment:hover {
+  background: #fcbe00;
+  color: #ffffff;
+  border-color: #fcbe00;
+}
+
 
 </style>
+<link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
 
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
@@ -196,178 +1008,220 @@
     <!--/ menu  -->
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
+
             <div class="row justify-content-center">
                 {% if Health_Blog %}
-                <section class="box-shadow-sm  container-lg my-2 py-3">
-                    {% if error %}
-
-                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                         role="alert">
-                        <div class="d-flex alert-danger">
-                            <div class="toast-body ">
-                                {{error}}
-                            </div>
-                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                    type="button"></button>
+                {% if error %}
+                <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                     role="alert">
+                    <div class="d-flex alert-danger">
+                        <div class="toast-body ">
+                            {{error}}
                         </div>
+                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                type="button"></button>
                     </div>
-                    {% elif success %}
-                    <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                         role="alert">
-                        <div class="d-flex alert-success">
-                            <div class="toast-body ">
-                                {{success}}
-                            </div>
-                            <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                    type="button"></button>
+                </div>
+                {% elif success %}
+                <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                     role="alert">
+                    <div class="d-flex alert-success">
+                        <div class="toast-body ">
+                            {{success}}
                         </div>
+                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                type="button"></button>
                     </div>
-                    {% endif %}
-                    {% for i in Health_Blog %}
-                    <div class="l-post bg-white mb-0  H_Blog">
-                        <div class="media">
-                            <a class="image-link media-ratio ratio-16-9" href="#">
-                                <span
-                                        class="img bg-cover wp-post-image attachment-bunyad-medium size-bunyad-medium lazyloaded"
-                                        role="img"
-                                        style="background-image: url('/media/{{i.img}}');">
+                </div>
+                {% endif %}
 
-                                </span>
-                            </a>
-                            <span class="cat-labels cat-labels-overlay c-overlay p-bot-left"> <a
-                                    class="category term-color-14"
-                                    href="#"
-                                    rel="category">{{i.Health_blogs_issue}}</a> </span>
-                        </div>
-                        <div class=" p-3 content" style="overflow:hidden; max-height: 30vh;">
-                            <div class="post-meta post-meta-a has-below">
-                                <h2 class="is-title post-title">
-                                    <a href="#">{{i.Main_heading}}</a>
-                                </h2>
-
-                                <div class="post-meta-items meta-below"><span
-                                        class="meta-item post-author"><span class="by">By</span> <a
-                                        title="Posts by {{i.Doctor}}">{{i.Doctor}}</a></span>
-                                    <span
-                                            class="meta-item date">
-                                    <span class="date-link ml-1">
-                                        <time class="post-date">({{i.blog_create_time}})</time>
-                                    </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="excerpt" style="max-height:11vh;">
-                                <p>
-                                    {{i.Health_blogs_Detail}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 p-3 mx-auto">
-                            <a class="delete-record-link"
-                               data-toggle="modal" href="#delete{{i.id}}">
-                                <button class="btn btn-danger H_btn ">
-                                    Delete
-                                </button>
-                            </a>
-                            <a class="updated-record-link"
-                               data-toggle="modal" href="#update{{i.id}}">
-                                <button class="btn btn-success H_btn">
-                                    Edit Blog
-                                </button>
-                            </a>
-                            <a href="/view_Doctor_blogs/{{i.id}}">
-                                <button class="btn btn-outline-success mt-1 bold" style="width:89%;">
-                                    View Details
-                                </button>
-                            </a>
-                        </div>
-
-                    </div>
-                    <!-- delete for Blog detail -->
-                    <div aria-hidden="true" class="modal" id="delete{{i.id}}" role="dialog" tabindex="-1">
-                        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
-                            <div class="modal-content text-center">
-                                <div class="modal-header">
-                                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                            type="button" style="background-color:white;color:yellow;"></button>
-                                </div>
-                                <div>
-                                    <h5 class="text-center">Are you sure delete this Health blog </h5>
-                                    <div class="table-responsive">
-                                        <table class="table width:100% align-middle borderless">
-                                            <tbody>
-                                            <tr align="center">
-                                                <td align="center" colspan="2">
-                                                    <form action="/view_Doctor_blogs/" method="post">
-                                                        {% csrf_token%}
-                                                        <h4 style="margin-left:35%;">
-                                                            <input hidden name="blog_id" type="number"
-                                                                   value="{{i.id}}"/>
-                                                            <input hidden name="name" type="text" value="delete_blog"/>
-                                                            <button class="btn btn-danger"
-                                                                    style="font-family:sans-serif;width:40%">
-                                                                Delete
-                                                            </button>
-                                                        </h4>
-                                                    </form>
-                                                </td>
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                        <br/>
+                <div class="l-post  mb-0  H_Blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    {% for i in page_obj %}
+                                    <div class="col-xl-4 col-sm-6 col-10 bg-white">
+                                        <div class="single-smblog mb-30" style="background-color:white;">
+                                            <div class="smblog-thum">
+                                                <div class="blog-image w-img">
+                                                    <a href="/view_Doctor_blogs/{{i.id}}">
+                                                        <img alt="" src="/media/{{i.img}}" style="height:200px;"></a>
+                                                </div>
+                                                <div class="blog-tag blog-tag-2">
+                                                    <a href="/view_Doctor_blogs/{{i.id}}">
+                                                        {{i.Health_blogs_issue}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="smblog-content smblog-content-3">
+                                                <h6><a href="/view_Doctor_blogs/{{i.id}}">
+                                                    {{i.Main_heading}}
+                                                </a>
+                                                </h6>
+                                                <p style="height:100px;overflow:hidden;">
+                                                    {{i.Health_blogs_Detail}} ...</p>
+                                                <div class="smblog-foot pt-15">
+                                                    <div class="post-readmore">
+                                                        <a href="/view_Doctor_blogs/{{i.id}}"> Read
+                                                            More <span
+                                                                    class="icon"></span></a>
+                                                    </div>
+                                                    <div class="post-date">
+                                                        <a href="//view_Doctor_blogs/{{i.id}}">
+                                                            {{i.blog_create_time}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <a class="delete-record-link col-5"
+                                                   data-toggle="modal" href="#delete{{i.id}}">
+                                                    <button class="btn btn-danger H_btn col-5 text-center">
+                                                        Delete
+                                                    </button>
+                                                </a>
+                                                <a class="updated-record-link "
+                                                   data-toggle="modal" href="#update{{i.id}}">
+                                                    <button class="btn btn-success H_btn col-6">
+                                                        Edit Blog
+                                                    </button>
+                                                </a>
+                                                <a href="/view_Doctor_blogs/{{i.id}}">
+                                                    <button class="btn btn-outline-success mt-1 bold col-12"
+                                                            style="text-align: center">
+                                                        View Details
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="basic-pagination text-center pt-30 pb-30">
+
+                                    <nav>
+                                        <ul>
+                                       <span class="step-links">
+                                            {% if page_obj.has_previous %}
+                                            <a href="?page=1">
+                                                <button class="btn btn-outline-warning">&laquo; first</button>
+                                            </a>
+                                            <a href="?page={{ page_obj.previous_page_number }}">
+                                                    <button class="btn btn-outline-warning">previous</button>
+                                                </a>
+                                            {% endif %}
+                                            <span class="current">
+                                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                            </span>
+
+                                            {% if page_obj.has_next %}
+                                                <a href="?page={{ page_obj.next_page_number }}">
+                                                    <button class="btn btn-outline-warning">next</button>
+                                                </a>
+                                                <a href="?page={{ page_obj.paginator.num_pages }}">
+                                                    <button class="btn btn-outline-warning">last &raquo;</button>
+                                                </a>
+                                            {% endif %}
+                                        </span>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- news-detalis-area-end  -->
+                </div>
+
+                {% for i in Health_Blog %}
+                <!-- delete for Blog detail -->
+                <div aria-hidden="true" class="modal" id="delete{{i.id}}" role="dialog" tabindex="-1">
+                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                        style="background-color:white;color:yellow;" type="button"></button>
+                            </div>
+                            <div>
+                                <h5 class="text-center">Are you sure delete this Health blog </h5>
+                                <div class="table-responsive">
+                                    <table class="table width:100% align-middle borderless">
+                                        <tbody>
+                                        <tr align="center">
+                                            <td align="center" colspan="2">
+                                                <form action="/view_Doctor_blogs/" method="post">
+                                                    {% csrf_token%}
+                                                    <h4 style="margin-left:35%;">
+                                                        <input hidden name="blog_id" type="number"
+                                                               value="{{i.id}}"/>
+                                                        <input hidden name="name" type="text" value="delete_blog"/>
+                                                        <button class="btn btn-danger"
+                                                                style="font-family:sans-serif;width:40%">
+                                                            Delete
+                                                        </button>
+                                                    </h4>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
                                     <br/>
                                 </div>
+                                <br/>
                             </div>
                         </div>
                     </div>
-                    <!-- Edit for Blog detail -->
-                    <div aria-hidden="true" class="modal" id="update{{i.id}}" role="dialog" tabindex="-1">
-                        <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
-                            <div class="modal-content text-center">
-                                <div class="modal-header">
-                                    <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                            type="button"></button>
-                                </div>
-                                <div class="modal-body tab-content">
-                                    <h5 class="text-center">Are you sure </h5>
-                                    <p class="text-center">Edit this Health blog </p>
-                                         <div class="table-responsive">
-                                        <table class="table width:100% align-middle borderless">
-                                            <tbody>
-                                            <tr align="center">
-                                                <td align="center" colspan="2">
-                                                    <form action="/Update_health_blog/" method="post">
-                                                        {% csrf_token%}
-                                                        <h4 style="margin-left:35%;">
-                                                            <input hidden name="blog_id" type="number"
-                                                                   value="{{i.id}}"/>
-                                                            <input hidden name="name" type="text" value="Update_blog"/>
-                                                            <button class="btn btn-success" style="font-family:sans-serif;"
-                                                                    type="submit">
-                                                                Update Record
-                                                            </button>
-                                                        </h4>
-                                                    </form>
-                                                </th>
-                                            </tr>
+                </div>
+                <!-- Edit for Blog detail -->
+                <div aria-hidden="true" class="modal" id="update{{i.id}}" role="dialog" tabindex="-1">
+                    <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                        type="button"></button>
+                            </div>
+                            <div class="modal-body tab-content">
+                                <h5 class="text-center">Are you sure </h5>
+                                <p class="text-center">Edit this Health blog </p>
+                                <div class="table-responsive">
+                                    <table class="table width:100% align-middle borderless">
+                                        <tbody>
+                                        <tr align="center">
+                                            <td align="center" colspan="2">
+                                                <form action="/Update_health_blog/" method="post">
+                                                    {% csrf_token%}
+                                                    <h4 style="margin-left:35%;">
+                                                        <input hidden name="blog_id" type="number"
+                                                               value="{{i.id}}"/>
+                                                        <input hidden name="name" type="text" value="Update_blog"/>
+                                                        <button class="btn btn-success" style="font-family:sans-serif;"
+                                                                type="submit">
+                                                            Update Record
+                                                        </button>
+                                                    </h4>
+                                                </form>
+                                            </th>
+                                        </tr>
 
-                                            </tbody>
-                                        </table>
-                                        <br/>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                     <br/>
                                 </div>
+                                <br/>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
 
 
-
-                </section>
                 {% else %}
                 <div class="table-responsive" id="c_Frame">
                     <table class="table w-100 table-borderless">
@@ -401,23 +1255,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
-
-<!-- popper js -->
-<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
-<!-- sidebar menu  -->
-<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
-
-<!-- counterup js -->
-<script src='{% static "jquery.counterup.min.js.download" %}'></script>
-<!-- swiper slider js -->
-<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
-<!-- custom js -->
-<script src='{% static "custom.js.download" %}'></script>
-
-
-</body>
+{% endblock %}
