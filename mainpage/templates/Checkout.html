@@ -288,12 +288,12 @@
         <!-- checkout-area-start -->
         <section class="checkout-area pb-85">
             <div class="container">
-                <form action="/Order Confirmed/" autocomplete="on" method="POST">
+                <form action="/Order Confirmed by Carts/" autocomplete="on" method="POST">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="checkbox-form">
                                 <div class="row">
-                                    <form action="/Order Confirmed/" autocomplete="on" method="POST">
+                                    <form action="/Order Confirmed by Carts/" autocomplete="on" method="POST">
                                         {% csrf_token %}
                                         <h3 class="text-center">Shipment & Billing Detail</h3>
                                         <div class="colums">
@@ -324,15 +324,8 @@
 <!--                                                <input id="labname" name="labname" required type="text"-->
 <!--                                                       value="{{i.id}}"/>-->
 <!--                                            </div>-->
-<!--                                            <div class="item sa d-none">-->
-<!--                                                <label for="Medicine_id">Medicine id<span>*</span></label>-->
-<!--                                                <input id="Medicine_id" name="Medicine_id" required value="{{i.id}}"/>-->
-<!--                                            </div>-->
-<!--                                            <div class="item sa d-none">-->
-<!--                                                <label for="Pharmacy_id">Pharmacy id<span>*</span></label>-->
-<!--                                                <input id="Pharmacy_id" name="Pharmacy_id" required-->
-<!--                                                       value="{{i.Pharmacy.id}}"/>-->
-<!--                                            </div>-->
+
+
 
                                         </div>
                                         <div class="item">
@@ -381,6 +374,21 @@
                                                 </span>
                                             </td>
                                         </tr>
+                                         <div class="item sa d-none">
+                                                <label for="Medicine_id">Medicine id<span>*</span></label>
+                                                <input id="Medicine_id" name="Medicine_id"
+                                                       required value="{{value.product_id}}"/>
+                                         </div>
+                                         <div class="item sa d-none">
+                                                <label for="quantity">Quantity<span>*</span></label>
+                                                <input id="quantity" name="quantity"
+                                                       required value="{{value.quantity}}"/>
+                                         </div>
+                                         <div class="item sa d-none">
+                                                <label for="Pharmacy_id">Pharmacy id<span>*</span></label>
+                                                <input id="Pharmacy_id" name="Pharmacy_id" required
+                                                       value="{{value.Pharmacy_id}}"/>
+                                         </div>
                                         {% endfor %}
                                         </tbody>
                                         <tfoot>

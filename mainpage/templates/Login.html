@@ -89,14 +89,6 @@
                     margin-top: 12vh;
                     margin-left: 15%;
                 }
-                .lb{
-                   display:none;
-                  }
-                  .feild input{
-                    height: 7vh;
-                    margin-bottom: 14px;
-
-                  }
 
 
                   }
@@ -129,6 +121,67 @@
 
 
     </style>
+        <style>
+.form {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 15px;
+}
+.form__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  color: #adffff;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: solid white 2px;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 1.25rem;
+  /* Change border when input focus*/
+}
+.form__input:hover {
+  border-color: #adffff;
+  color:white;
+  border-radius: 0.5rem;
+
+}
+
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: #adffff;
+  font:bold;
+  outline:none;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: transparent;
+}
+
+/*
+1. When the input is in the focus state
+reduce the size of the label and move upwards
+
+2. Keep label state when content is in input field
+*/
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+  top: -1rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+
+
+    </style>
+
 </head>
 <body>
 <div class="container p-4 ">
@@ -171,22 +224,26 @@
         {% endif %}
         <table border="0" width="100%">
             <tr>
-                <td class="lb"><label><b style="color:white;">E-mail</b></label></td>
                 <td>
-                    <div class="feild"><input id="email" name="email" placeholder="E-mail....." required
-                                              type="email">
+                    <div class="form">
+                        <input class="form__input" id="email" name="email" placeholder=" "
+                               required type="email">
+                        <label class="form__label" for="email"><b>E-mail</b></label>
                     </div>
+                </td>
             </tr>
             <tr>
-                <td class="lb"><label><b style="color:white;">Password</b></label></td>
                 <td>
-                    <div class="feild"><input id="password" name="password" placeholder="Password" required
-                                              type="password"></div>
+                    <div class="form">
+                        <input class="form__input" id="password" name="password" placeholder="Password" required
+                               type="password">
+                        <label class="form__label" for="password"><b>Password</b></label>
+                    </div>
+                </td>
             </tr>
             <tr align="right">
                 <td colspan="2"><a href="/forget-password/"><b class="F_password"> Forget Password</b></a></td>
             </tr>
-
             <tr align="center">
                 <td colspan="2">
                     <input class="btn btn-danger"

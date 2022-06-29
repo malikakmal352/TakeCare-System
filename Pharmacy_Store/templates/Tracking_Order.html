@@ -108,7 +108,7 @@
                                         </a>
                                     </td>
 
-                                    <td class="product-name"><a href="shop-details.html">{{ i.Medicine}}</a></td>
+                                    <td class="product-name"><a href="#">{{ i.Medicine}}</a></td>
                                     <td class="product-price"><span
                                             class="amount">Rs {{ i.Medicine.Medicine_price }}</span></td>
                                     <td class="product-quantity">
@@ -121,9 +121,9 @@
                                     <td class="product-subtotal"><span class="amount">{{i.Total_price}} RS</span></td>
                                     <td class="Order_Status">
                                         {% if i.payment == 'Paid' %}
-                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        <h5 class="badge" style="background-color:green;">Paid</h5>
                                         {% else %}
-                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        <h5 class="badge" style="background-color:red;">Padding..</h5>
                                         {% endif %}
                                     </td>
                                     <td class="Order_Status">

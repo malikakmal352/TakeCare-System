@@ -59,7 +59,7 @@ def SuperAdmin_Login(request):
         if Admin:
             for i in Admin:
                 request.session['admin_id'] = i.id
-                fa = request.session['admin_email'] = i.email
+                request.session['admin_email'] = i.email
                 return redirect(Super_admin)
         else:
             error_message = "Email or Password Invalid......"

@@ -1,306 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add to Cart">
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/Checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FYP.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../../FYP.rar" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add to Cart delivery charges">
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CSS/login_form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TakeCare SuperAdmin.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/Superuser.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/release/TakeCare SuperAdmin.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/release/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/java/com/example/takecaresuperadmin/ConnectionReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/java/com/example/takecaresuperadmin/luncher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/drawable-v24/bism.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/drawable-v24/takecare_log.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/drawable/wifi_no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/layout/activity_luncher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/layout/alert_dialog_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/templates/medical_Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/medical_Record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/models/Add_Medicine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Add_Medicine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Lab_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Lab_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Carts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Carts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/TakeCare_Eshop.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Eshop/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Eshop/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Eshop/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Eshop/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Eshop/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/migrations/0002_auto_20210828_2354.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/migrations/0003_doctortips_city.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/models/Doctor_tip_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/FullTipView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/TipView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/Tipheader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/Tipindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/TipsForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/templates/updateTip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/HealthTips/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Benazepril_hydrochloride_Lotensin__10gm.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Benazepril_hydrochloride_Lotensin__5gm.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Disprin_300mg.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Fosinopril_sodium_Monopril_10gm.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Perindopril_Aceon_15gm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Puritans_Pride_Vitamin_D3_250_mcg_10000_IU_-_200_Softgels.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/Quinapril_hydrochloride_Accupril.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/penadol.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/penadol_extra.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/Products/uscleBlaze_MB-VITE_Multivitamin_60_tablets.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctor/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctor/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctor/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/2_ujUS11W.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/4_Qpn0jP7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/4_UBtjcfw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/4_pshSZ7q.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/5_Y0mRUmb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/5_Zhczt4A.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/5_gQTEPXb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/Media/doctortips/5_kjWFoay.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/models/Doctor_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/TeammembersCards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/aboutus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/mainfooter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/mainheader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/mainindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/overservices.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/slider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/templates/tip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/mainpage/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/Background2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/CSS/DoctorTipCards.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/CSS/TeamCard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/CSS/aboutus.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/CSS/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/CSS/loginPopup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/Team members/membar 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/Team members/membar 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/Team members/membar3.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/ab.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/da.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/da1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/da2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/dteam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/dteam2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/ent.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/js/home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/logo1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/md.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/ns.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/p.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/ps.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/s3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/fonts/slick.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/fonts/slick.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/fonts/slick.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/fonts/slick.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/slick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/static/slick/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/Middleware/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/Middleware/auth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/0002_auto_20210829_1802.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/0003_remove_product_save.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/0004_product_save.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/0005_alter_product_save.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/Category_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/Doctor_orders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/Patient_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/orders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/models/product_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/Cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/mainstoreheader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/order.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/productcards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templates/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/templatetags/cart_filter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare_Eshop(store=90%,tips=100%)/store/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/about-appointment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/about-doctor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/about-patient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/about-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/accordions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/add-appointment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/add-doctor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/add-patient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/add-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/add-room.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/appointments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/blank-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/cards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts/css/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts/js/jquery.flot.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts/js/jquery.flot.time.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts/js/morris.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/charts/js/raphael-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/green.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/jquery-jvectormap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/css/themify-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/datatable/dataTables.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/datatable/dataTables.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/datatable/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/doctors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/edit-appointment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/edit-doctor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/edit-patient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/edit-room.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/font-awesome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfont3e6e.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfont3e6e.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfont3e6e.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfont3e6e.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfont3e6e.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/fontawesome-webfontd41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/themify9f24.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/themify9f24.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/themify9f24.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/themify9f24.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/fonts/themifyd41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/forms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/card-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/card-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/doctor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/fav.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/logo-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/slide1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/slide2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/slide3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/user1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/user2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/images/user3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/invoice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom-datatables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom-flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom-gmap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom-morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom-vector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/jquery-jvectormap-world-mill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/jquery-jvectormap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/jquery.vmap.india.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/jquery.vmap.usa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/modernizr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/lists.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/map-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/map-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/modals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/notifications-alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/patients.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/payments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/pricing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/progress-bars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/rooms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/sign-up.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/themify.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proclinic/Horizontal/typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/senser_project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/Middleware/Auth_User.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/Middleware/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/SignUp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/css/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/js/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/js/home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/templates/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/Senser_store/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/doct_login 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/doct_login.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/dteam2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/js/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/js/home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../senser_project/static/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dukamarket/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../dukamarket/checkout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -557,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655930000774</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add to Cart delivery charges">
+      <created>1656170978947</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656170978948</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -584,7 +336,9 @@
     <MESSAGE value="pharmacy order_confirm or cancel btn" />
     <MESSAGE value="add image" />
     <MESSAGE value="add to Cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="add to Cart" />
+    <MESSAGE value="add delivery charges" />
+    <MESSAGE value="add to Cart delivery charges" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to Cart delivery charges" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -45,7 +45,8 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list, \
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
     Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm, \
-    cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout
+    cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts,\
+    View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -150,6 +151,7 @@ urlpatterns = [
     path('Carts/cart_clear/', cart_clear, name='cart_clear'),
     path('Carts/cart-detail/', cart_detail, name='cart_detail'),
     path('Carts_Checkout/', Checkout, name="Checkout_carts"),
+    path('Order Confirmed by Carts/', Order_Confirmed_by_Carts, name="Order_Confirmed_by_Carts"),
 
     path("Tracking Order/", Tracking_Order, name="Tracking_Order"),
     path("Cancel Order/", Cancel_order, name="Cancel_order"),
@@ -185,6 +187,10 @@ urlpatterns = [
     path("Update Medicine/", update_Medicine, name="update_Medicine"),
     path("View_all_Expiry Medicine/", view_Expired_Medicine_list, name="view_Expired_Medicine_list"),
     path("View Expiring Soon/", view_Expiry_Soon_Medicine_list, name="view_Expiry_Soon_Medicine_list"),
+
+    path("Phy_admin/View_all_new_Orders/", View_all_new_Orders, name="View_all_new_Orders"),
+    path("Phy_admin/view_all_comfirm_Orders/", view_all_comfirm_Orders, name="view_all_comfirm_Orders"),
+    path('Phy_admin/view complete orders/', view_all_complete_Orders, name="view_all_complete_Orders"),
 
     path('order_cancel_confirm/', order_cancel_confirm, name='order_cancel_confirm'),
 

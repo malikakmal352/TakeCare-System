@@ -132,12 +132,14 @@
                             <div class="col-12">
                                 <div class="coupon-all">
                                     <div class="col-12 col-sm-8" style="float:left;margin-top:0px;">
+                                        <form method="GET" >
                                         <input class="input-text col-5 col-sm-5" id="coupon_code" name="coupon_code"
-                                               placeholder="Coupon code"
+                                               placeholder="Coupon code" required
                                                type="text" value="" style="float:left;">
-                                        <a class=" btn btn-info p-3 col-6 col-sm-5" style="color:white;" name="apply_coupon" type="submit">Apply
+                                        <button class=" btn btn-info p-3 col-6 col-sm-5" type="submit" style="color:white;" name="apply_coupon" type="submit">Apply
                                             coupon
-                                        </a>
+                                        </button>
+                                        </form>
                                     </div>
                                     <div class="coupon col-12 col-sm-3" style="float:right;">
                                         <a class="btn-info p-3 col-12 text-center" style="color:white;float:right;" href="{% url 'cart_clear' %}">Clear carts</a>

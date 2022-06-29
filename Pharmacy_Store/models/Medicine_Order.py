@@ -21,7 +21,7 @@ class order(models.Model):
     Medicine = models.ForeignKey(Add_New_Medicine, on_delete=models.CASCADE)
     Customer = models.ForeignKey(Patient, on_delete=models.CASCADE, blank=True, default=1)
     Pharmacy = models.ForeignKey(Pharmacy, on_delete=models.CASCADE, default='')
-    quantity = models.IntegerField(default=1)
+    quantity = models.IntegerField()
     price = models.IntegerField()
     Total_price = models.IntegerField()
     Address = models.CharField(max_length=300, blank=True, default='')

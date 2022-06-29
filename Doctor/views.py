@@ -1436,7 +1436,7 @@ def Doctor_Login(request):
                 error_message = email + " is Deactivated by the TakeCare Team"
             for i in Doctor:
                 request.session['doctor_id'] = i.id
-                fa = request.session['doctor_email'] = i.email
+                request.session['doctor_email'] = i.email
                 success_message = 'Login Successfully'
                 return redirect(Doctor_admin)
         else:

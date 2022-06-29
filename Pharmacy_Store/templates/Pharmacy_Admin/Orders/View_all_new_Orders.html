@@ -28,14 +28,14 @@
         <li class="side_menu_title">
             <span>Function</span>
         </li>
-        <li class="">
-            <a aria-expanded="false" href="#">
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
                 <i class="fas fa-cart-plus" style="color:green;"></i>
                 <span>Orders<i class="fal fa-chevron-down"
                                style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="/Phy_admin/View_all_new_Orders/">View All New Orders</a></li>
+            <ul class="mm-collapse">
+                <li><a class="active" href="/Phy_admin/View_all_new_Orders/">View All New Orders</a></li>
                 <li><a href="/Phy_admin/view_all_comfirm_Orders/">View Conform Order</a></li>
                 <li><a href="/Phy_admin/#table_sub_2">View Today Orders</a></li>
                 <li><a href="/Phy_admin/view complete orders/">View Complete Orders</a></li>
@@ -140,180 +140,6 @@
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
-
-                <div class="col-lg-12">
-                    <div class="single_element">
-                        <div class="quick_activity">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="quick_activity_wrap ">
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon" style="color:firebrick;">
-                                                <i class="fad fa-shopping-cart fa-4x"></i>
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="counter">{{Total_order_count}}</span></h3>
-                                                <p style="font-size:14px;">Total Orders</p>
-                                                <p style="font-size:10px">(Except Cancel Orders)</p>
-
-                                            </div>
-                                        </div>
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon">
-                                                <i class="fad fa-box-full fa-4x" style="color:rebeccapurple"></i>
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="counter">{{Complete_order_count}}</span></h3>
-                                                <p>Complete Orders</p>
-                                            </div>
-                                        </div>
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon">
-                                                <img alt="" src='{% static "Order_pending.png" %}'>
-
-                                                <!--                                                <i class="fas fa-vial fa-4x" style="color:bisque"></i>-->
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="counter">{{Pending_order_count}}</span></h3>
-                                                <p style="font-size: 14px;">Pending Orders</p>
-                                            </div>
-                                        </div>
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon" style="color:green;">
-                                                <i class="fad fa-capsules fa-4x"></i>
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="counter">{{Total_medicines}}</span></h3>
-                                                <p style="font-size:14px;">Total Medicine</p>
-                                                <p style="font-size:10px">(Except Expired )</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-12">
-                    <div class="single_element">
-                        <div class="quick_activity">
-                            <div style="width:100%;background-color:#49738f;padding-top:3px;padding-bottom:2px ">
-                                <h3 style="color:white;text-align:center;"><b>Medicine Expiry Alert System</b></h3>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="quick_activity_wrap ">
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon">
-                                                <i class="fad fa-radiation fa-4x" style="color:yellow;"></i>
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="">{{Expiring_Soon_Medicine}}</span></h3>
-                                                <p style="font-size:14px;">Medicine Expiring Soon</p>
-                                            </div>
-                                        </div>
-                                        <div class="single_quick_activity d-flex">
-                                            <div class="icon">
-                                                <i class="fas fa-skull-crossbones fa-4x" style="color:red;"></i>
-                                            </div>
-                                            <div class="count_content">
-                                                <h3><span class="">{{Expired_Medicine_count}}</span></h3>
-                                                <p style="font-size:14px;">Expired Medicine</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12 col-xl-12">
-                    <div class="white_box mb_30 " style="position: relative;">
-                        <div class="box_header border_bottom_1px  ">
-                            <div class="main-title">
-                                <h3 class="mb_25">Lab Test Booking Survey</h3>
-                            </div>
-                        </div>
-
-                        <div class="income_servay">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_today}}</span></h3>
-                                        <p>Today's Booking</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_mouth}}</span></h3>
-                                        <p>This Month's Booking</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_year}}</span></h3>
-                                        <p>This Year's Booking</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <div class="col-lg-12 col-xl-12">
-                    <div class="white_box mb_30 " style="position: relative;">
-                        <div class="table-responsive">
-                            <table align="center" class="table table-bordered table-hover"
-                                   style="font-family:sans-serif;font-size:13px;">
-                                {% if error_message %}
-                                <div aria-atomic="true" aria-live="assertive"
-                                     class="toast  show align-items-center w-100"
-                                     role="alert">
-                                    <div class="d-flex alert-danger">
-                                        <div class="toast-body ">
-                                            {{error_message}}
-                                        </div>
-                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                                type="button"></button>
-                                    </div>
-                                </div>
-                                {% elif success %}
-                                <div aria-atomic="true" aria-live="assertive"
-                                     class="toast  show align-items-center w-100"
-                                     role="alert">
-                                    <div class="d-flex alert-success">
-                                        <div class="toast-body ">
-                                            {{success}}
-                                        </div>
-                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                                type="button"></button>
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                <br><br>
-
-                                <thead>
-                                <tr align="center">
-                                    <th colspan="10"><h2>New Medicine Orders</h2></th>
-                                </tr>
-                                </thead>
-
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
 

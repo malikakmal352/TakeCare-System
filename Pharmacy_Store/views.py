@@ -245,7 +245,7 @@ def Create_password_Pharmacy(request, token):
 
 
 # ///////////////////////////////////////Medicine Order Placing+Tracking+Cancel  ////////////////////////////////////////////////////////
-@Phy_login_check
+@Patient_middleware
 def Medicine_order_form(request):
     pa = request.session.get('id')
     labcity = Labcity.objects.all()
@@ -262,7 +262,8 @@ def Medicine_order_form(request):
         messages.error(request, "Place Login First For Order Medicine")
         return render(request, 'Login.html', {"message": messages})
 
-@Phy_login_check
+
+@Patient_middleware
 def Order_Confirmed(request):
     pa = request.session.get('id')
     labcity = Labcity.objects.all()
@@ -282,16 +283,56 @@ def Order_Confirmed(request):
             Address = data.get('address')
             Phone = data.get('phone')
 
-            print(Medicine_id, Customer_id, Pharmacy_id, Quantity, price, Total_price, Address, Phone)
             ADD_Order = order(Medicine=Medicine, Customer=Customer_id,
                               Pharmacy=Pharmacy_id, quantity=Quantity,
                               price=price, Total_price=Total_price,
-                              Address=Address, phone=Phone).save()
-            # id = data.get('id')
+                              Address=Address, phone=Phone)
+            ADD_Order.save()
             Medicine = Add_New_Medicine.objects.get(id=Medicine_id)
+            Medicine.Total_Stock = Medicine.Total_Stock - int(Quantity)
+            Medicine.save()
+            messages.error(request, "Your Order is Placed")
+            return redirect(Tracking_Order)
+    else:
+        messages.error(request, "Place Login First For Order Medicine")
+        return render(request, 'Login.html', {"message": messages})
+
+
+@Patient_middleware
+def Order_Confirmed_by_Carts(request):
+    pa = request.session.get('id')
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.filter(id=pa)
+    if pa:
+        if request.method == 'POST':
+            data = request.POST
+            Customer_id = Patient.objects.get(id=pa)
+            Address = data.get('address')
+            Phone = data.get('phone')
+            for key, value in request.session['cart'].items():
+                Medicine_id = value['product_id']
+                Medicine = Add_New_Medicine.objects.get(id=Medicine_id)
+                Pharmacy_id = value['Pharmacy_id']
+                Pharmacy_id = Pharmacy.objects.get(id=Pharmacy_id)
+                Quantity = value['quantity']
+                Quantity = int(Quantity)
+                price = Medicine.Medicine_price
+                Total_price = price * Quantity
+
+                # print(Medicine_id, Customer_id, Pharmacy_id, Quantity, price, Total_price, Address, Phone)
+                ADD_Order = order(Medicine=Medicine, Customer=Customer_id,
+                                  Pharmacy=Pharmacy_id, quantity=Quantity,
+                                  price=price, Total_price=Total_price,
+                                  Address=Address, phone=Phone).save()
+                Medicine = Add_New_Medicine.objects.get(id=Medicine_id)
+                Medicine.Total_Stock = Medicine.Total_Stock - int(Quantity)
+                Medicine.save()
             # Data = {"Customer": Customer, 'labcity': labcity,
             #         'order_medicine': order_medicine}
+            cart = Cart(request)
+            cart.clear()
             messages.error(request, "Your Order is Placed")
+            messages.error(request, "Medicine Order is Placed Successfully")
             return redirect(Tracking_Order)
     else:
         messages.error(request, "Place Login First For Order Medicine")
@@ -308,16 +349,21 @@ def Tracking_Order(request):
             'Track_order': Track_order, "message": messages}
     return render(request, "Tracking_Order.html", Data)
 
+
 @Patient_middleware
 def Cancel_order(request):
     if request.method == 'POST':
         data = request.POST
         id = data.get('id')
+
         order_Cancel = order.objects.get(id=id)
+        Quantity = order_Cancel.quantity
         order_Cancel.status = 'Cancelled'
         order_Cancel.is_Cancel = True
         order_Cancel.save()
-
+        Medicine = Add_New_Medicine.objects.get(id=order_Cancel.Medicine.id)
+        Medicine.Total_Stock = Medicine.Total_Stock + int(Quantity)
+        Medicine.save()
     return redirect(Tracking_Order)
 
 
@@ -483,7 +529,6 @@ def add_new_Medicine(request):
         Medicine_type = Data.get('Medicine_type')
         Total_Stock = Data.get("Stock")
         Description = Data.get('Description')
-        Packing_cost = Data.get('packing_cost')
         date_time_obj = datetime.strptime(Expiry_Date, '%Y-%m-%d')
 
         # print(name, Price, Total_Stock, Medicine_type, Expiry_Date)
@@ -494,7 +539,7 @@ def add_new_Medicine(request):
                                             Medicine_Expiry_date=Expiry_Date, img=image,
                                             Medicine_packaging=Medicine_type,
                                             Expiry_Alert_Date=Expiry_Alert_Date,
-                                            Description=Description, packing_cost=Packing_cost
+                                            Description=Description
                                             )
         add_New_Medicine.save()
         messages.error(request, name + " New Medicine is Added Sucessfully")
@@ -616,6 +661,33 @@ def update_Medicine(request):
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine, 'success': success}
     return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
 
+@Phy_middleware
+def View_all_new_Orders(request):
+    Py = request.session.get('Phy_id')
+    Current_pharmacy = Pharmacy.objects.get(id=Py)
+    All_Orders = order.objects.filter(Pharmacy=Py, status='Pending')
+    data = {"Current_pharmacy": Current_pharmacy,
+            'All_Orders': All_Orders}
+    return render(request, "Pharmacy_Admin/Orders/View_all_new_Orders.html", data)
+
+@Phy_middleware
+def view_all_comfirm_Orders(request):
+    Py = request.session.get('Phy_id')
+    Current_pharmacy = Pharmacy.objects.get(id=Py)
+    All_Orders = order.objects.filter(Pharmacy=Py, status='Conform')
+    data = {"Current_pharmacy": Current_pharmacy,
+            'All_Orders': All_Orders}
+    return render(request, "Pharmacy_Admin/Orders/view_all_comfirm_Orders.html", data)
+
+@Phy_middleware
+def view_all_complete_Orders(request):
+    Py = request.session.get('Phy_id')
+    Current_pharmacy = Pharmacy.objects.get(id=Py)
+    All_Orders = order.objects.filter(Pharmacy=Py, status='Delivered')
+    data = {"Current_pharmacy": Current_pharmacy,
+            'All_Orders': All_Orders}
+    return render(request, "Pharmacy_Admin/Orders/view_complete_orders.html", data)
+
 
 @Phy_middleware
 def order_cancel_confirm(request):
@@ -626,8 +698,12 @@ def order_cancel_confirm(request):
         if name == 'cancel':
             order_Cancel = order.objects.get(id=id)
             order_Cancel.status = 'Cancelled'
+            Quantity = order_Cancel.quantity
             order_Cancel.is_Cancel = True
             order_Cancel.save()
+            Medicine = Add_New_Medicine.objects.get(id=order_Cancel.Medicine.id)
+            Medicine.Total_Stock = Medicine.Total_Stock + int(Quantity)
+            Medicine.save()
             messages.error(request, "Medicine Order is Cancel Successfully")
         else:
             order_Confirm = order.objects.get(id=id)
@@ -675,7 +751,6 @@ def item_decrement(request, id):
     return redirect("cart_detail")
 
 
-
 def cart_clear(request):
     cart = Cart(request)
     cart.clear()
@@ -696,6 +771,7 @@ def cart_detail(request):
         Data = {'labcity': labcity, "message": messages}
         return render(request, "Carts.html", Data)
 
+
 @Patient_middleware
 def Checkout(request):
     pa = request.session.get('id')
@@ -706,6 +782,7 @@ def Checkout(request):
         Data = {"Customer": Customer, 'labcity': labcity,
                 "message": messages}
         return render(request, 'Checkout.html', Data)
+
 
 # //////////////////////////Functions Related Medicine_list Add_New/Edit/Delete End///////////////////////////////////////////
 
