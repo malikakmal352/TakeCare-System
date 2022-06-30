@@ -261,14 +261,20 @@
             </div>
             <div class="item sa">
                 <label>City<span>*</span></label>
-                <input class="input" list="City" name="city"
-                       placeholder="Enter Your City" required type="text"
-                       value="{{request.session.city}}"/>
-                <datalist id="City">
-                    {% for i in labcity %}
-                    <option value="{{i.Lab_city_name}}">
+
+                 <select class="form-select form-select-md mb-3" name="city" required style="width:100%;">
+                    <option value="">Select Your City</option>
+                        {% for i in labcity %}
+                     <option value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
                         {% endfor %}
-                </datalist>
+
+                </select>
+<!--                <input class="input" list="City" -->
+<!--                       placeholder="Enter " required type="text"-->
+<!--                       value="{{request.session.city}}"/>-->
+<!--                <datalist id="City">-->
+<!--                 -->
+<!--                </datalist>-->
             </div>
             <div class="item sa">
                 <label>Select Quantity<span>*</span></label>

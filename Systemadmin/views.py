@@ -644,6 +644,7 @@ def update_Laboratory(request, id):
 def ADD_New_Pharmacy(request):
     lb = request.session.get('admin_id')
     current_admin = SuperAdmin.objects.filter(id=lb)
+
     error_message = None
     success = None
     current_lab = SuperAdmin.objects.get()
@@ -656,7 +657,6 @@ def ADD_New_Pharmacy(request):
         City = Data.get('city')
         Pharmacy_Address = Data.get('Pharmacy_Address')
         Notes = Data.get('Address')
-        city = Labcity.objects.get(Lab_city_name=City)
 
         Is_Exit = Pharmacy.objects.filter(email=email)
         Is_Phone_number_Exit = Pharmacy.objects.filter(Callnumber=Callnumber)
@@ -686,7 +686,7 @@ def ADD_New_Pharmacy(request):
             return render(request, "Pharmacy_fuctions/Add_New_Pharmacy.html", Data)
         token = str(uuid.uuid4())
         Add_new_pharmacy = Pharmacy(Pharmacy_name=Pharmacy_name, email=email,
-                                    Callnumber=Callnumber, city=city,
+                                    Callnumber=Callnumber, city=City,
                                     Address=Pharmacy_Address,
                                     forget_password_token=token)
 

@@ -156,16 +156,17 @@
                     <div class="white_box mb_30 " style="position: relative;">
 
 
-
                         {% for message in messages %}
 
-                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
                             <div class="d-flex alert-success">
                                 <div class="toast-body ">
                                     {{ message }}
                                     <h1>message</h1>
                                 </div>
-                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
                             </div>
                         </div>
                         {% endfor %}
@@ -195,55 +196,56 @@
                                         <label>Phone Number<span>*</span></label>
                                         <input class="no-arrow"
                                                maxlength="10"
-                                               placeholder="0333-xxxxxxx"
                                                name="phone"
-                                               value = "{{Callnumber}}"
                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                               required type="number"/>
+                                               placeholder="0333-xxxxxxx"
+                                               required
+                                               type="number" value="{{Callnumber}}"/>
                                     </div>
 
                                     <div class="item sa">
                                         <label>City<span>*</span></label>
-                                        <input class="input" list="City" name="city"
-                                               placeholder="Enter Your City" required type="text" value="{{City}}"/>
-                                        <datalist id="City">
+
+                                        <select class="form-select form-select-md mb-3"
+                                                name="city" required>
+                                            <option value="">Select Your City</option>
                                             {% for i in all_city %}
-                                            <option value="{{i.Lab_city_name}}">
-                                                {% endfor %}
-                                        </datalist>
+                                            <option value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
+                                            {% endfor %}
+
+                                        </select>
                                     </div>
 
                                     <div class="item sa w-100">
                                         <label>Pharmacy Address<span>*</span></label>
-                                        <input id="PMID_number" name="Pharmacy_Address"
-                                               value="{{Pharmacy_Address}}"
-                                               placeholder="Pharmacy Address" required maxlength="200"
-                                               type="text"/>
+                                        <textarea id="PMID_number" maxlength="200"
+                                                  name="Pharmacy_Address" placeholder="Pharmacy Address" required rows="4"
+                                                  type="text">{{Pharmacy_Address}}</textarea>
                                     </div>
 
 
-<!--                                    <div class="question">-->
-<!--                                        <label>Select Gender<span style="color:red;margin-left:0">*</span></label>-->
-<!--                                        <div class="question-answer">-->
+                                    <!--                                    <div class="question">-->
+                                    <!--                                        <label>Select Gender<span style="color:red;margin-left:0">*</span></label>-->
+                                    <!--                                        <div class="question-answer">-->
 
-<!--                                            <div>-->
-<!--                                                <input id="Male" name="gender" required type="radio" value="Male"/>-->
-<!--                                                <label class="radio" for="Male"><span>Male</span></label>-->
-<!--                                            </div>-->
-<!--                                            <div>-->
-<!--                                                <input value="Female" id="Female"-->
-<!--                                                       name="gender" required type="radio"/>-->
-<!--                                                <label class="radio" for="Female"><span>Female</span></label>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                            <div>-->
+                                    <!--                                                <input id="Male" name="gender" required type="radio" value="Male"/>-->
+                                    <!--                                                <label class="radio" for="Male"><span>Male</span></label>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            <div>-->
+                                    <!--                                                <input value="Female" id="Female"-->
+                                    <!--                                                       name="gender" required type="radio"/>-->
+                                    <!--                                                <label class="radio" for="Female"><span>Female</span></label>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
 
                                 </div>
 
                                 <div class="item" id="address">
                                     <label for="visit">Something About Pharmacy (Optional)</label>
-                                    <textarea id="visit" name='Address' rows="5"
-                                              placeholder="Write Something About Pharmacy">{{Notes}}</textarea>
+                                    <textarea id="visit" name='Address' placeholder="Write Something About Pharmacy"
+                                              rows="5">{{Notes}}</textarea>
                                 </div>
                                 <div class="btn-block">
                                     <button class='button btn-info btn' type="submit">Submit</button>
