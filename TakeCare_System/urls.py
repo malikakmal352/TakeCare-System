@@ -27,7 +27,7 @@ from TakeCare_System import settings
 
 from mainpage.views import mainindex, Login, Signup, Logout, ForgetPassword, ChangePassword, Patient_Setting, \
     Change_patient_profile_img, updates_patient_profile, Save_Records, Add_new_Reports, view_report_detail, \
-    Update_Reports, Save_Records_confirmation, about_us
+    Update_Reports, Save_Records_confirmation, About_us, Contact_us
 
 from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admin, ForgetPassword_Admin, \
     view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
@@ -50,7 +50,8 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("about us/", about_us, name="about us"),
+    path("about us/", About_us, name="About us"),
+    path('Contact_us/', Contact_us, name="Contact_us"),
 
     # ////////////////////////////////// URLS for Super Admin start//////////////////////////////////////////////
     path("Super_admin/", Super_admin, name="Super_admin"),

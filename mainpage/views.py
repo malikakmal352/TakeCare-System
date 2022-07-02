@@ -23,9 +23,18 @@ import uuid
 
 
 # Create your views here.
-def about_us(request):
-    Data = {}
+def About_us(request):
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.all()
+    Data = {'labcity': labcity, 'Customer': Customer}
     return render(request, 'about.html', Data)
+
+
+def Contact_us(request):
+    labcity = Labcity.objects.all()
+    Customer = Patient.objects.all()
+    Data = {'labcity': labcity, 'Customer': Customer}
+    return render(request, 'Contact_Us.html', Data)
 
 
 @Lab_login_check

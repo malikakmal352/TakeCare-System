@@ -1,65 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="update all admin panels">
-      <change afterPath="$PROJECT_DIR$/Rider/models/Rider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/MyApplication/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/release/app-release(v 1.01).apk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/java/com/example/takecaresuperadmin/No_Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/java/com/example/takecaresuperadmin/No_internet_page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/java/com/example/takecaresuperadmin/callBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/TakeCareSuperAdmin/app/src/main/res/layout/activity_no_internet_page.xml" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Add rider app">
+      <change afterPath="$PROJECT_DIR$/mainpage/templates/Contact_Us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Islamabad.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Karachi.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Multan.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location5.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Team members/Supervisor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/Contact_us.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/migrations/0002_order_is_cancel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/migrations/0002_alter_patient_options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/migrations/0003_alter_patient_options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/overservices.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/overservices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/common/extend.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/common/fonts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/common/global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/common/minxi.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/common/variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/layouts/main.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/layouts/responsive.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare SuperAdmin.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pdf_preview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-9.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +74,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TakeCare-System-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../E-Farming-Store-main" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -111,13 +85,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Team members" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img\location" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Preloaders" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\logo" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\staticfiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage\templates" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Slider_images" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Pharmacy_Store\templates" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
@@ -344,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656586238832</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add rider app">
+      <created>1656754375473</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1656754375473</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +358,8 @@
     <MESSAGE value="Add to cart checkout + login form updated" />
     <MESSAGE value="add preloader, update doctor blog site, rearrange all admin panels" />
     <MESSAGE value="update all admin panels" />
-    <option name="LAST_COMMIT_MESSAGE" value="update all admin panels" />
+    <MESSAGE value="Add rider app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rider app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
