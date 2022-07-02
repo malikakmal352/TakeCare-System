@@ -3,6 +3,9 @@
 
 {% block content %}
 
+
+<!-- sidebar  -->
+<!-- sidebar part here -->
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
         <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
@@ -41,8 +44,8 @@
                 <i class="fas fa-user-md"></i>
                 <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a  href="/all_Register_doctor/">View All Doctors</a></li>
+            <ul class="mm-collapse">
+                <li><a href="/all_Register_doctor/">View All Doctors</a></li>
                 <li><a href="/view_N_D/">New Doctor Request</a></li>
                 <li><a href="/add_new_doctor/">ADD New Doctor</a></li>
             </ul>
@@ -52,30 +55,30 @@
                 <i class="fas fa-pills"></i>
                 <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="#">View All Pharmacies</a></li>
-                <li><a href=/ADD_New_Pharmacy/">ADD New pharmacy</a></li>
+            <ul class="mm-collapse">
+                <li><a href="/View ALL Pharmacy/">View All Pharmacies</a></li>
+                <li><a href="/ADD_New_Pharmacy/">ADD New pharmacy</a></li>
             </ul>
         </li>
-        <li class="mm-active">
-            <a aria-expanded="True" href="#">
+        <li class="">
+            <a aria-expanded="false" href="#">
                 <i class="fal fa-vial"></i>
                 <span>Laboratories<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse">
                 <li><a href="/View_all_labs/">View All Laboratories</a></li>
-                <li><a class="active" href="/add_new_Laboratory/">ADD New Laboratory</a></li>
+                <li><a href="/add_new_Laboratory/">ADD New Laboratory</a></li>
             </ul>
         </li>
-        <li class="">
-            <a aria-expanded="false" href="#">
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
                 <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Rider<i class="fal fa-chevron-down"
-                                                            style="float: right;"></i></span>
+                                                      style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
+            <ul class="mm-collapse">
+                <li><a class="active" href="/add_new_Rider/">ADD New Rider</a></li>
                 <li><a href="/View_all_Rider/">View All your Rider</a></li>
-                <li><a href="/add_new_Rider/">ADD New Rider</a></li>
             </ul>
         </li>
 
@@ -130,14 +133,11 @@
                             </li>
                         </div>
                         <div class="profile_info">
-
-                            {% for i in current_admin %}
-                            {% if i.img %}
+                            {% if current_lab.img %}
                             <img alt="#" src='/media/{{current_lab.img}}'>
                             {% else %}
                             <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="max-width:40px;"></a>
                             {% endif %}
-                            {% endfor %}
                             <div class="profile_info_iner">
                                 <p>{{current_lab.Username}}</p>
                                 <h5>{{current_lab.email}}</h5>
@@ -156,17 +156,31 @@
             </div>
         </div>
     </div>
-
     <!--/ menu  -->
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
 
-                <!--Add New Patient Details-->
+
+                <!--View All Test Details-->
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
 
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
 
+                        {% endif %}
                         {% if error_message %}
                         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
                              role="alert">
@@ -192,27 +206,31 @@
                         {% endif %}
 
                         <br><br>
-                        <h2 class="text-center">Update/Edit the  Laboratory Record</h2>
+                        <h2 class="text-center">Add New Rider</h2>
                         <div class="testbox">
-                            {% for i in Update_Laboratory %}
-                            <form action="/update_Laboratory/{{i.id}}" autocomplete="on" class="form"
+                            <form action="/add_new_Rider/" autocomplete="on" class="form"
                                   enctype="multipart/form-data"
                                   method="POST">
                                 {% csrf_token %}
                                 <br/>
                                 <div class="colums">
-                                    <div hidden class="item sa  ">
-                                        <input type="text" value="{{i.id}}"  name="id" hidden/>
-                                    </div>
 
                                     <div class="item sa ">
-                                        <label>Laboratory Name<span>*</span></label>
-                                        <input name="name" required type="text" value="{{i.Labname}}"/>
+                                        <label>Rider Name<span>*</span></label>
+                                        <input name="name" required type="text" value="{{value.Name}}"/>
                                     </div>
                                     <div class="item sa ">
-                                        <label>Laboratory E-mail Address<span>*</span></label>
-                                        <input name="email" placeholder="Enter E-mail" required type="email"
-                                         value="{{i.email}}"/>
+                                        <label>Rider CNIC<span>*</span></label>
+                                        <input class="no-arrow"
+                                               maxlength="13"
+                                               minlength="13"
+                                               placeholder="1234xxxxxxxxx"
+                                               value="{{value.CNIC}}"
+                                               name="CNIC" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required type="number"/>
+                                    </div>
+                                    <div class="item sa ">
+                                        <label>Password<span>*</span></label>
+                                        <input name="password" required type="password"/>
                                     </div>
 
                                     <div class="item sa">
@@ -221,31 +239,40 @@
                                                maxlength="10"
                                                name="phone"
                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                               required type="number" value="0{{i.Callnumber}}"/></div>
+                                               placeholder="0333-xxxxxxx"
+                                               required
+                                               type="number" value="{{value.Callnumber}}"/>
+                                    </div>
 
                                     <div class="item sa">
                                         <label>City<span>*</span></label>
-                                        <input list="City" name="City" placeholder="Enter Laboratory/End-User City"
-                                               required value="{{i.city}}"/>
-                                        <datalist id="City">
+
+                                        <select class="form-select form-select-md mb-3"
+                                                name="city" required >
+                                            <option value="">Select Your City</option>
                                             {% for i in all_city %}
-                                            <option value="{{i.Lab_city_name}}">
-                                                {% endfor %}
-                                        </datalist>
+                                            <h1>trt1</h1>
+                                            {% if i.Lab_city_name == value.City %}
+                                            <h3>trt2</h3>
+                                            <option selected value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
+                                            {% endif %}
+                                            <option value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
+                                            {% endfor %}
+
+                                        </select>
                                     </div>
 
-                                </div>
+                                    <div class="item sa">
+                                        <label>insert Rider Image<span>*</span></label>
+                                        <input accept="image/*" name="image" required type="file"/>
+                                    </div>
 
-                                <div class="item" id="address">
-                                    <label for="visit">Laboratory Address</label>
-                                    <textarea id="visit" name='Address' rows="5" >{{i.Address}}</textarea>
+
                                 </div>
                                 <div class="btn-block">
                                     <button class='button btn-info btn' type="submit">Submit</button>
                                 </div>
                             </form>
-                            {% endfor %}
-
                         </div>
 
                     </div>

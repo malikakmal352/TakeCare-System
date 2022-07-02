@@ -33,7 +33,7 @@ from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admi
     view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
     Laboratory_del, update_Laboratory, Admin_profile, Admin_profile_img, updates_admin_profile, view_N_D, \
     all_Register_doctor, Status_doctor, Add_new_Doctor, ADD_New_Pharmacy, view_Pharmacy_list, Status_Pharmacy, \
-    Pharmacy_del, Update_Pharmacy
+    Pharmacy_del, Update_Pharmacy, add_new_Rider, view_Rider_list, Status_Rider
 
 from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doctor, Doctor_request_form, \
     Create_password_doctor, view_all_doctors, Doctors_Special, Doctors_Special_in_city, Doctors_in_city, \
@@ -81,6 +81,11 @@ urlpatterns = [
     path("Status_Pharmacy/", Status_Pharmacy, name="Status_Pharmacy"),
     path("Pharmacy_del/", Pharmacy_del, name="Pharmacy_del"),
     path("Update_Pharmacy/<int:id>/", Update_Pharmacy, name="Update_Pharmacy"),
+
+    path('add_new_Rider/', add_new_Rider, name="add_new_Rider"),
+    path('View_all_Rider/', view_Rider_list, name="view_Rider_list"),
+    path('Status_Rider/', Status_Rider, name="Status_Rider"),
+
     # ////////////////////////////////// URLS for Super Admin END//////////////////////////////////////////////
 
     path('', mainindex, name='home'),
@@ -107,6 +112,7 @@ urlpatterns = [
     path("view_all_comfirm_booking/", view_all_comfirm_booking, name="view_all_comfirm_booking"),
     path("View_all_new_booking/", View_all_new_booking, name="View_all_new_booking"),
     path("view_test_list/", view_test_list, name="view_test_list"),
+
     # ////////////////////////////////// URLS for Laboratory END//////////////////////////////////////////////
 
     # ////////////////////////////////// URLS for Patient Start//////////////////////////////////////////////

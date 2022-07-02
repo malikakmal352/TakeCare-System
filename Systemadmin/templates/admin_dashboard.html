@@ -44,7 +44,7 @@
                 <i class="fas fa-user-md"></i>
                 <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" >
+            <ul class="mm-collapse">
                 <li><a href="/all_Register_doctor/">View All Doctors</a></li>
                 <li><a href="/view_N_D/">New Doctor Request</a></li>
                 <li><a href="/add_new_doctor/">ADD New Doctor</a></li>
@@ -71,6 +71,18 @@
                 <li><a href="/add_new_Laboratory/">ADD New Laboratory</a></li>
             </ul>
         </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fad fa-biking-mountain" style="color:green;"></i>
+                <span style="font-size:14px;">Local Rider<i class="fal fa-chevron-down"
+                                                            style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse" style="height: 0px;">
+                <li><a href="/View_all_Rider/">View All your Rider</a></li>
+                <li><a href="/add_new_Rider/">ADD New Rider</a></li>
+            </ul>
+        </li>
+
     </ul>
 </nav>
 <!-- sidebar part end -->
@@ -106,6 +118,7 @@
                                       } );
 
 
+
                                     </script>
 
                                 </div>
@@ -123,7 +136,7 @@
                             </li>
                         </div>
                         <div class="profile_info">
-                         {% for i in current_admin %}
+                            {% for i in current_admin %}
                             {% if i.img %}
                             <img alt="#" src='/media/{{current_lab.img}}'>
                             {% else %}
@@ -235,7 +248,7 @@
                                                 {% if i.Gender == 'Female'%}
                                                 <img alt="" src='{% static "female_doctor_dp.jpg" %}'>
                                                 {% else %}
-                                                  <img alt="" src='{% static "male_doctor_dp.jpg" %}'>
+                                                <img alt="" src='{% static "male_doctor_dp.jpg" %}'>
                                                 {% endif %}
                                                 {% endif %}
                                             </div>

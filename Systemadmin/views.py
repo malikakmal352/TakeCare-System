@@ -21,6 +21,7 @@ from Systemadmin.models.Super_Admin import SuperAdmin
 from Doctor.models.All_Specialist import Special
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from Doctor.models.ADD_Docror import Doctors
+from Rider.models.Rider import Rider
 
 
 @Admin_middleware
@@ -699,6 +700,8 @@ def ADD_New_Pharmacy(request):
 
         success = Pharmacy_name + 'is now part of over Pharmacy Team'
         Pharmacy_Create_FirstPassword_Sent_mail_doctor(email, Pharmacy_name, token)
+        messages.error(request, City + ' is not valid, Please Enter/Select Valid Option ')
+        return redirect(ADD_New_Pharmacy)
 
     Data = {"current_lab": current_lab, 'error_message': error_message,
             'success': success, "all_city": all_city,
@@ -832,6 +835,90 @@ def Update_Pharmacy(request, id):
 
 
 # /////////////////////////Functions Related Pharmacy Add_New/Edit/Delete/active/deactivate End/////////////////////////
+@Admin_middleware
+def add_new_Rider(request):
+    error_message = None
+    success = None
+    lb = request.session.get('admin_id')
+    current_lab = SuperAdmin.objects.get(id=lb)
+    all_Pharmacy = Pharmacy.objects.all().order_by('-id')
+    all_city = Labcity.objects.all()
+
+    if request.method == 'POST':
+        Data = request.POST
+        name = Data.get('name')
+        CNIC = Data.get('CNIC')
+        Callnumber = Data.get('phone')
+        City = Data.get('city')
+        password = Data.get('password')
+        img = request.FILES.get('image')
+
+        Is_Exit = Rider.objects.filter(CNIC=CNIC)
+        if Is_Exit:
+            error_message = " This CNIC is already exit"
+            Data = {"current_lab": current_lab, 'error_message': error_message,
+                    'success': success, 'name': CNIC, 'all_city': all_city}
+            return render(request, "Rider_functions/Add_New_Rider.html", Data)
+        elif len(CNIC) < 13:
+            error_message = " This CNIC must be 13 digits"
+            value = {
+                'Name': name,
+                'CNIC': CNIC,
+                'Callnumber': Callnumber,
+                'City,': City,
+                # 'gender': gender
+            }
+            Data = {"current_lab": current_lab, 'error_message': error_message,
+                    'success': success, 'name': CNIC, 'value': value, 'all_city': all_city}
+            return render(request, "Rider_functions/Add_New_Rider.html", Data)
+
+        Add_new_Rider = Rider(name=name, Callnumber=Callnumber, CNIC=CNIC, password=password,
+                              img=img, is_Active=True, Rider_city=City)
+        Add_new_Rider.save()
+        success = "New Rider is Added Sucessfully"
+        messages.error(request, 'New Rider is Added Sucessfully')
+        return redirect(add_new_Rider)
+
+    Data = {"current_lab": current_lab, 'error_message': error_message,
+            'success': success, 'all_city': all_city}
+    return render(request, "Rider_functions/Add_New_Rider.html", Data)
+
+
+@Admin_middleware
+def view_Rider_list(request):
+    lb = request.session.get('admin_id')
+    current_lab = SuperAdmin.objects.get(id=lb)
+    all_Rider = Rider.objects.all().order_by('-id')
+    Data = {"current_lab": current_lab, 'all_Rider': all_Rider}
+    return render(request, "Rider_functions/View_all_Riders.html", Data)
+
+
+@Admin_middleware
+def Status_Rider(request):
+    if request.method == 'POST':
+        Data = request.POST
+        name = Data.get('name')
+        id = Data.get('id')
+        # Update_Rider = Rider.objects.filter(id=id)
+        Update_Rider = Rider.objects.get(id=id)
+
+        if Update_Rider.is_Active:
+            Update_Rider.is_Active = False
+            messages.error(request, name + ' is Deactivated Sucessfully')
+        else:
+            Update_Rider.is_Active = True
+        Update_Rider.save()
+        messages.error(request, name + 'Rider is Activated Sucessfully')
+    return redirect(view_Rider_list)
+    #
+    # Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success}
+    # return render(request, "View_all_patients.html", Data)
+
+
+# /////////////////////////Functions Related Rider Add_New/Edit/Delete/active/deactivate Start/////////////////////////
+
+
+# /////////////////////////Functions Related Rider Add_New/Edit/Delete/active/deactivate End/////////////////////////
 
 # ///////////////////////////////////////Forget Password Email Sent ////////////////////////////////////////////////////
 

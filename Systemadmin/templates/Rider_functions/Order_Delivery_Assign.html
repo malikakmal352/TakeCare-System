@@ -3,6 +3,9 @@
 
 {% block content %}
 
+
+<!-- sidebar  -->
+<!-- sidebar part here -->
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
         <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
@@ -36,15 +39,15 @@
                 <li><a href="/add_new_Patient/">ADD New Patient</a></li>
             </ul>
         </li>
-        <li class="mm-active">
-            <a aria-expanded="True" href="#">
+        <li class="">
+            <a aria-expanded="false" href="#">
                 <i class="fas fa-user-md"></i>
                 <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse">
-                <li><a  href="/all_Register_doctor/">View All Doctors</a></li>
-                <li><a class="active" href="/view_N_D/">New Doctor Request</a></li>
-                <li><a class="active" href="/add_new_doctor/">ADD New Doctor</a></li>
+                <li><a href="/all_Register_doctor/">View All Doctors</a></li>
+                <li><a href="/view_N_D/">New Doctor Request</a></li>
+                <li><a href="/add_new_doctor/">ADD New Doctor</a></li>
             </ul>
         </li>
         <li class="">
@@ -52,8 +55,8 @@
                 <i class="fas fa-pills"></i>
                 <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="#">View All Pharmacies</a></li>
+            <ul class="mm-collapse">
+                <li><a href="/View ALL Pharmacy/">View All Pharmacies</a></li>
                 <li><a href="/ADD_New_Pharmacy/">ADD New pharmacy</a></li>
             </ul>
         </li>
@@ -67,17 +70,18 @@
                 <li><a href="/add_new_Laboratory/">ADD New Laboratory</a></li>
             </ul>
         </li>
-        <li class="">
-            <a aria-expanded="false" href="#">
+        <li class="mm-active">
+            <a aria-expanded="True" href="#">
                 <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Rider<i class="fal fa-chevron-down"
-                                                            style="float: right;"></i></span>
+                                                      style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="/View_all_Rider/">View All your Rider</a></li>
+            <ul class="mm-collapse">
                 <li><a href="/add_new_Rider/">ADD New Rider</a></li>
+                <li><a class="active" href="/View_all_Rider/">View All your Rider</a></li>
             </ul>
         </li>
+
 
     </ul>
 </nav>
@@ -129,17 +133,16 @@
                             </li>
                         </div>
                         <div class="profile_info">
-
-                            {% if i.img %}
+                            {% if current_lab.img %}
                             <img alt="#" src='/media/{{current_lab.img}}'>
                             {% else %}
-                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="width:40px;"></a>
+                            <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="max-width:40px;"></a>
                             {% endif %}
                             <div class="profile_info_iner">
                                 <p>{{current_lab.Username}}</p>
                                 <h5>{{current_lab.email}}</h5>
                                 <div class="profile_info_details">
-                                    <a href="/Admin_profile/">My Profile
+                                    <a href="/Lab_profile/">My Profile
                                         <i class="fal fa-user"></i></a>
                                     <!--                                    <a href="#">Settings-->
                                     <!--                                        <i class="fal fa-user-cog"></i></a>-->
@@ -153,17 +156,17 @@
             </div>
         </div>
     </div>
-
     <!--/ menu  -->
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
+
                 <!--View All Register Patients Details-->
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
 
                         <div class="table-responsive">
-                            <h2 align="center">View All New Doctor Requests</h2>
+                            <h2 align="center">View All Register Patients/Users</h2>
                             {% if error_message %}
                             <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
                                  role="alert">
@@ -189,82 +192,66 @@
                             {% endif %}
 
                             <br><br>
+
                             <table class="table table-bordered table-hover" id="examples">
                                 <thead>
                                 <tr align="center">
                                     <th scope="col">#</th>
-                                    <th scope="col">Doctor Name</th>
-                                    <th scope="col">Speciality</th>
-                                    <th scope="col">PMID Number</th>
+                                    <th scope="col">Rider Name</th>
+                                    <th scope="col">CNIC</th>
                                     <th scope="col">Call</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-<!--                                    <th scope="col">View Detail</th>-->
-
+                                    <th scope="col">View Detail</th>
+                                    <th scope="col">Deliver Orders</th>
+                                    <th scope="col">Active/Deactivate</th>
 
                                 </tr>
                                 </thead>
                                 <tbody align="center">
-<!--                                <select class="form-select w-auto" id="sub_confirm" name="Select_samplest"-->
-<!--                                        onchange="showSub(this)" required>-->
-<!--                                    <option selected value="0">All</option>-->
-<!--                                    <option value="1">Accepted Requests</option>-->
-<!--                                    <option value="2">Rejected Requests</option>-->
-<!--                                    <option value="3">Padding Requests</option>-->
-
-<!--                                </select>-->
-                                {% for i in all_new_doctor_request %}
-
-
-                                <div id="all">
-                                {% if i.Status != 'Accepted'%}
-
+                                {% for i in all_Rider %}
                                 <tr>
                                     <th scope="row">{{forloop.counter}}</th>
-                                    <td>{{i.Doctor_name}}</td>
-                                    <td>{{i.Speciality}}</td>
-                                    <td>{{i.Doctor_PMID_number}}
+                                    <td>{{i.name}}</td>
+                                    <td>{{i.CNIC}}</td>
                                     <td>
                                         <button class="btn btn-info" onclick="location.href='tel:0{{i.Callnumber}}'"
                                                 style="border:2px solid;color:white; " type="button">Call now
                                         </button>
                                     </td>
-                                    <td> {% if i.Status == 'Pending'%}
-                                        <b class="btn btn-warning" style="border-radius:30px;">{{i.Status}}</b>
-                                        {%elif i.Status == 'Accepted'%}
-                                        <b class="btn btn-success" style="border-radius:30px;">{{i.Status}}</b>
-                                        {% else %}
-                                        <b class="btn btn-danger" style="border-radius:30px;">{{i.Status}}</b>
-                                        {% endif %}
-                                    </td>
+                                    <td><a class="mr-1 View-record-details-link"
+                                           data-toggle="modal" href="#view-detail_Rider{{i.id}}"
+                                           style="height:38px;width: 55px;">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                    <td>{{i.assign_task}}</td>
                                     <td>
-                                        {% if i.Status == 'Pending'%}
-                                        <a class="mr-5 Accept-link"
-                                           data-toggle="modal" href="#Accept{{i.id}}">
-                                            <button class="  btn-success btn mt-2 " type="button">Accept</button>
-                                        </a>
-                                        <a class="mr-1 delete-record-link"
-                                           data-toggle="modal" href="#Rejected{{i.id}}">
-                                            <button class="btn-danger btn mt-2" type="button">Rejected</button>
-                                        </a>
-                                        {% elif i.Status == 'Rejected' %}
-                                        <a class="mr-5 Accept-link"
-                                           data-toggle="modal" href="#Accept{{i.id}}">
-                                            <button class="  btn-warning btn mt-2 " type="button">Review Request</button>
-                                        </a>
+                                        {% if i.is_Active %}
+                                        <label class="switchs">
+                                            <a class="mr-1 helpline-number-link"
+                                               data-toggle="modal" href="#Deactivate_Rider{{i.id}}">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </a>
+                                        </label>
+                                        {% else %}
+                                        <label class="switchs">
+                                            <a class="mr-1 helpline-number-link"
+                                               data-toggle="modal" href="#Active_Rider{{i.id}}"> <input checked
+                                                                                                           type="checkbox">
+                                                <span class="slider round"></span>
+                                            </a>
+                                        </label>
                                         {% endif %}
                                     </td>
+
                                 </tr>
-                                 {% endif %}
-                                </div>
 
                                 {% endfor %}
 
                                 </tbody>
                             </table>
-                            {% for i in all_new_doctor_request %}
-                             <!-- Cancel Test Booking -->
-                            <div aria-hidden="true" class="modal" id="Rejected{{i.id}}" role="dialog"
+                            {% for i in all_Rider %}
+                            <!-- Popup for view detail-->
+                            <div aria-hidden="true" class="modal" id="view-detail_Rider{{i.id}}" role="dialog"
                                  tabindex="-1">
                                 <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
                                     <div class="modal-content text-center">
@@ -273,49 +260,102 @@
                                                     type="button"></button>
                                         </div>
                                         <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure Cancel This Test Request </h5>
+                                            <h5 class="text-center">Register Rider Details</h5>
                                             <div class="table-responsive">
                                                 <table class="table width:100% align-middle">
                                                     <tbody>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Doctor Name</h6>
+                                                        <th class="col-6" colspan="2"><img src="/media/{{ i.img }}"
+                                                                                           style="height:10vh;">
                                                         </th>
-                                                        <td>Dr.{{i.Doctor_name}}</td>
+
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">email</h6>
+                                                        <th class="col-6"><h6 style="color:green">Rider Name </h6>
                                                         </th>
-                                                        <td>{{i.email}}</td>
+                                                        <th class="col-6"><h6 style="color:green">{{i.name}} </h6>
+                                                        </th>
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Speciality</h6>
+                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
                                                         </th>
-                                                        <td>{{i.Speciality}}</td>
+                                                        <td>{{i.CNIC}}</td>
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">PMID Number</h6>
+                                                        <th class="col-6"><h6 style="color:green">Phone No</h6></th>
+                                                        <td>0{{i.Callnumber}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Rider City</h6></th>
+                                                        <td>{{i.Rider_city}}</td>
+                                                    </tr>
+                                                    {% if i.is_Active %}
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6>
                                                         </th>
-                                                        <td>{{i.Doctor_PMID_number}}</td>
+                                                        <td>Activate</td>
+                                                    </tr>
+                                                    {% else %}
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6>
+                                                        </th>
+                                                        <td>Deactivate</td>
+                                                    </tr>
+                                                    {% endif %}
+
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Active_Patients-->
+                            <div aria-hidden="true" class="modal" id="Active_Rider{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">Active this Rider</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Rider Name</h6>
+                                                        </th>
+                                                        <td>{{i.name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
+                                                        </th>
+                                                        <td>{{i.CNIC}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Rider City</h6>
+                                                        </th>
+                                                        <td>{{i.Rider_city}}</td>
                                                     </tr>
                                                     <tr align="center">
                                                         <th colspan="2">
                                                             <h4>
-                                                                <form action="/view_N_D/"
-                                                                      method="POST">
+                                                                <form action="/Status_Rider/" method="post">
                                                                     {% csrf_token %}
                                                                     <input hidden name="name" type="text"
-                                                                           value="cancel"/>
-                                                                    <input hidden name="Dname"
-                                                                           type="text" value="{{i.name}}"/>
-                                                                    <input hidden name="email" type="email"
-                                                                           value="{{i.email}}"/>
+                                                                           value="{{i.name}}"/>
                                                                     <input hidden name="id" type="number"
                                                                            value="{{i.id}}"/>
-
-                                                                    <button class="btn btn-danger"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Cancel This Test Doctor Request
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;">
+                                                                        Activate
                                                                     </button>
                                                                 </form>
                                                             </h4>
@@ -331,10 +371,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Conform Lab Test Booking -->
-                            <div aria-hidden="true" class="modal" id="Accept{{i.id}}" role="dialog"
+                            <!-- Deactivate_Patients-->
+                            <div aria-hidden="true" class="modal" id="Deactivate_Rider{{i.id}}" role="dialog"
                                  tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
                                     <div class="modal-content text-center">
                                         <div class="modal-header">
                                             <button aria-label="Close" class="btn-close" data-dismiss="modal"
@@ -342,53 +382,40 @@
                                         </div>
                                         <div class="modal-body tab-content">
                                             <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Conform This Test Appointment</p>
+                                            <p class="text-center">Deactivate this Rider</p>
                                             <div class="table-responsive">
                                                 <table class="table width:100% align-middle">
-                                                   <tbody>
+                                                    <tbody>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Doctor Name</h6>
+                                                        <th class="col-6"><h6 style="color:green">Rider Name</h6>
                                                         </th>
-                                                        <td>Dr.{{i.Doctor_name}}</td>
+                                                        <td>{{i.name}}</td>
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">email</h6>
+                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
                                                         </th>
-                                                        <td>{{i.email}}</td>
+                                                        <td>{{i.CNIC}}</td>
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Speciality</h6>
+                                                        <th class="col-6"><h6 style="color:green">Rider City</h6>
                                                         </th>
-                                                        <td>{{i.Speciality}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">PMID Number</h6>
-                                                        </th>
-                                                        <td>{{i.Doctor_PMID_number}}</td>
+                                                        <td>{{i.Rider_city}}</td>
                                                     </tr>
                                                     <tr align="center">
                                                         <th colspan="2">
                                                             <h4>
-                                                                <form action="/view_N_D/"
-                                                                      method="POST">
+                                                                <form action="/Status_Rider/" method="post">
                                                                     {% csrf_token %}
                                                                     <input hidden name="name" type="text"
-                                                                           value="accept"/>
-                                                                    <input hidden name="Dname"
-                                                                           type="text" value="{{i.name}}"/>
-                                                                    <input hidden name="email" type="email"
-                                                                           value="{{i.email}}"/>
+                                                                           value="{{i.name}}"/>
                                                                     <input hidden name="id" type="number"
                                                                            value="{{i.id}}"/>
-
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Accepted this Doctor Request
+                                                                    <button class="btn btn-danger"
+                                                                            style="font-family:sans-serif;">
+                                                                        Deactivate
                                                                     </button>
                                                                 </form>
                                                             </h4>
-
                                                         </th>
                                                     </tr>
 
@@ -407,10 +434,55 @@
 
                     </div>
                 </div>
+
+                <!--View All Test Details-->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% endif %}
+                        {% if error_message %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-danger">
+                                <div class="toast-body ">
+                                    {{error_message}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% elif success %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{success}}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 
 </section>
 
