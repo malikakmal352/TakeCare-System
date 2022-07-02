@@ -34,7 +34,7 @@ def Pharmacies(request, id):
     all_Medicine = paginator.get_page(page_number)
 
     # book_Test = Book_Test.objects.all()
-    w = datetime.date(now())
+    # w = datetime.date(now())
 
     if request.method == 'POST':
         ser = request.POST.get('search')
@@ -705,6 +705,24 @@ def order_cancel_confirm(request):
             Medicine.Total_Stock = Medicine.Total_Stock + int(Quantity)
             Medicine.save()
             messages.error(request, "Medicine Order is Cancel Successfully")
+        elif name == 'confirm_Rider':
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Conform'
+            order_Confirm.Delivery_by = 'By_Rider'
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Confirm Successfully and Sent Rider Request\n"
+                                    " Rider will pick Medicine from shop within 30 minutes ")
+        elif name == 'Out For Delivery':
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Out for delivery'
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Out For Delivery Now")
+        elif name == 'Delivered':
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Delivered'
+            order_Confirm.payment = 'Paid'
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Delivery and Receive Cash")
         else:
             order_Confirm = order.objects.get(id=id)
             order_Confirm.status = 'Conform'

@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Add rider app">
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/Contact_Us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Islamabad.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Karachi.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/Multan.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/location/location5.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Team members/Supervisor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/Contact_us.jpg" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="create Contact And About_us Pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Medicine_assets/img/banner/banner-9.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +37,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Pharmacy_Store/views.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/cart/cart.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2ACCKG5EjBYTtRwY3gm7azAdwq3" />
@@ -326,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656754375473</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="create Contact And About_us Pages">
+      <created>1656764722866</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1656764722866</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +344,8 @@
     <MESSAGE value="add preloader, update doctor blog site, rearrange all admin panels" />
     <MESSAGE value="update all admin panels" />
     <MESSAGE value="Add rider app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add rider app" />
+    <MESSAGE value="create Contact And About_us Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Contact And About_us Pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

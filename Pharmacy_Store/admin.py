@@ -16,7 +16,7 @@ class New_MedicineView(admin.ModelAdmin):
 
 
 class Medicine_Order_View(admin.ModelAdmin):
-    list_display = ["Customer", "Medicine", "quantity", "Total_price", "order_date", "status", "id"]
+    list_display = ["Customer", "Medicine", "quantity", "Total_price", "order_date", "Delivery_by","status", "id"]
 
 
 admin.site.register(Pharmacy, PharmacyView)
