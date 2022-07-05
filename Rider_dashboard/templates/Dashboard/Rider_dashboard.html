@@ -1,0 +1,678 @@
+{% extends "Admin_site/admin_header.html" %}
+{% load static %}
+
+{% block content %}
+<!-- sidebar  -->
+<!-- sidebar part here -->
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="mm-active">
+            <a aria-expanded="false" class="active" href="/Rider Dashboard/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                Dashboard
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Function</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-cart-plus" style="color:green;"></i>
+                <span>Delivery History</span>
+            </a>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Rider Profile</span>
+            </a>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="#">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Log Out</span>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>
+<!-- sidebar part end -->
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+
+                                <!--                                <div class="search_field">-->
+                                <!--                                    <input id="tag" placeholder="Search here..." type="text">-->
+                                <!--                                </div>-->
+
+                                <!--                                <button type="submit"><img alt="" src=' {% static "Hospital_files/icon_search.svg" %}'>-->
+                                <!--                                </button>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#"> <img
+                                        alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+                            {% if Current_Rider.img %}
+                            <img alt="#" src='/media/{{Current_Rider.img}}'>
+                            {% else %}
+                            <img alt="" src="{% static 'pharmacy_profile.jfif' %}">
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{Current_Rider.name}}</p>
+                                <h5>{{Current_Rider.Rider_city}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Rider_profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12">
+                    <div class="single_element">
+                        <div class="quick_activity">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="quick_activity_wrap ">
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon" style="color:firebrick;">
+                                                <i class="fad fa-truck-container fa-4x"></i>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Total_Deliveries_count}}</span></h3>
+                                                <p style="font-size:14px;">Total Deliveries Assign</p>
+                                                <p style="font-size:10px">(Today only)</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon">
+                                                <img alt="" src='{% static "Order_pending.png" %}'>
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Pick_order_count}}</span></h3>
+                                                <p style="font-size: 14px;">Order Pick From Shop</p>
+                                            </div>
+                                        </div>
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon" style="color:green;">
+                                                <img alt="" src='{% static "Medicine_assets/img/Cash_ON _Del.png" %}'>
+
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Total_medicines_Deliver}}</span></h3>
+                                                <p style="font-size:14px;">Total Order Delivered</p>
+                                                <p style="font-size:10px">(Rider Received Cash)</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon">
+                                                <i class="fad fa-box-full fa-4x" style="color:rebeccapurple"></i>
+                                            </div>
+
+                                             <div class="count_content">
+                                                <h3><span class="counter">{{Complete_Deliveries_count}}</span></h3>
+                                                <p style="font-size:14px;">Today Complete Deliveries</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="table-responsive" id="table_sub_2">
+                            <table class="table table-bordered table-hover" id="examples">
+                                <h2 class="text-center"><b>New Medicine Orders</b></h2>
+                                <thead>
+                                <tr align="center">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Images</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Rider Request</th>
+                                    <th scope="col">View Detail</th>
+                                </thead>
+                                <tbody>
+                                {% for i in All_Orders %}
+                                {% if i.status != 'Delivered' %}
+                                <tr align="center">
+                                    <td scope="row">{{i.id}}</td>
+                                    <td><img alt="" src="/media/{{ i.Medicine.img }}" style="width:50px;"></td>
+                                    <td>{{ i.Medicine}}</td>
+                                    <td>Rs {{ i.Medicine.Medicine_price }}</td>
+                                    <td>
+                                        {{i.quantity}}
+                                    </td>
+
+                                    <td class="Order_Status">
+                                        {% if i.Delivery_by == 'By_Rider' %}
+                                        {% if i.status == 'Pending' %}
+                                        <h5 class="badge" style="background-color:Yellow;">{{i.status}}</h5>
+                                        {% elif i.status == 'Out for delivery' %}
+                                        <h5 class="badge" style="background-color:brown;">{{i.status}}</h5>
+                                        {% elif i.status == 'Conform' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% elif i.status == 'Delivered' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% else %}
+                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        {% endif %}
+                                        {% else %}
+                                        {% if i.status == 'Pending' %}
+                                        <h5 class="badge" style="background-color:Yellow;">{{i.status}}</h5>
+                                        {% elif i.status == 'Out for delivery' %}
+                                        <h5 class="badge" style="background-color:brown;">{{i.status}}</h5>
+                                        {% elif i.status == 'Conform' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% elif i.status == 'Delivered' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% else %}
+                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        {% endif %}
+                                        {% endif %}
+                                    </td>
+
+                                    <td  align="center">
+                                        {% if i.Delivery_by == 'By_Rider' %}
+                                             {% if i.Rider_Request_status == 'Completed' %}
+                                               <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
+                                            {% elif i.Rider_Request_status == 'Cancelled' %}
+                                           <button class="badge btn-success w-100 mb-2" data-toggle="modal"
+                                               href="#Self_Delivery{{i.id}}">Self Delivery</button>
+                                            <button class=" btn-danger badge" data-toggle="modal"
+                                               href="#Cancel{{i.id}}">Cancel</button>
+                                            {% else %}
+                                              <h6>On Rider Delivery this option is
+                                                  <span style="color:red;">Disabled</span>
+                                              </h6>
+                                            {% endif %}
+                                        {% else %}
+                                            {% if i.status == 'Pending' %}
+                                            <a class="btn btn-outline-success" data-toggle="modal"
+                                               href="#Confirm{{i.id}}">Confirm</a>
+                                            <a class="btn btn-danger" data-toggle="modal"
+                                               href="#Cancel{{i.id}}">Cancel</a>
+                                            {% elif i.status == 'Out for delivery' %}
+                                              <button class="badge btn-success" data-toggle="modal"
+                                               href="#Delivered{{i.id}}" >Cash Received</button>
+                                            {% elif i.status == 'Conform' %}
+                                            <button class="badge btn-danger" data-toggle="modal"
+                                               href="#Out_for_delivery{{i.id}}" style="background-color:brown; ">
+                                                Out for delivery</button>
+                                            {% elif i.status == 'Delivered' %}
+                                            <h5 class="badge" style="background-color:green;">Completed</h5>
+                                            {% else %}
+                                            <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                            {% endif %}
+                                        {% endif %}
+                                    </td>
+                                    <td align="center">
+                                        {% if i.Delivery_by == 'By_Rider' %}
+                                              {% if i.Rider_Request_status == 'Assign a Rider' %}
+                                                 {{i.Rider}}
+                                              {% elif i.Rider_Request_status == 'Cancelled' %}
+                                               <h5 class="badge" style="background-color:Yellow;">{{i.Rider_Request_status}}..</h5>
+                                               <p>{{i.Rider_Request_Reject_Reason}}</p>
+                                              {% elif i.Rider_Request_status == 'Pending' %}
+                                               <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
+                                            {% endif %}
+                                        {% else %}
+                                         {% if i.status != 'Pending' %}
+                                             {% if i.status != 'Cancelled' %}
+                                                <p>Deliver By Self</p>
+                                             {% endif %}
+                                         {% endif %}
+                                        {% endif %}
+                                    </td>
+                                    <td><a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-details{{i.id}}"
+                                           style="height:38px;width: 55px;">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                </tbody>
+
+                            </table>
+                            {% for i in All_Orders %}
+                            <div aria-hidden="true" class="modal" id="view-details{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Medicine Order Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Customer Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Customer.name}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Medicine}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Quantity</h6>
+                                                        </th>
+                                                        <th class="col-6"><h6>
+                                                            {{i.quantity}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Total Price</h6></th>
+                                                        <td>{{i.Total_price}}/- Rs only</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6></th>
+                                                        <td>{{i.status}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6">
+                                                            <h6 style="color:green">Payment</h6>
+                                                        </th>
+                                                        <td align="center">
+                                                            {% if i.payment == 'Paid' %}
+                                                            <h5 class="badge" style="background-color:green;">
+                                                                {{i.payment}}
+                                                            </h5>
+                                                            {% else %}
+                                                            <h5 class="badge" style="background-color:red;">
+                                                                {{i.payment}}</h5>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Address</h6>
+                                                        </th>
+                                                        <td>{{i.Address}}</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Confirm{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Confirm Medicine Order</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h6 style="color:green">Deliver By Self</h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" type="text"
+                                                                       value="confirm">
+                                                                <input class="btn btn-outline-success" type="submit"
+                                                                       value="Confirm"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h6 style="color:green">
+                                                                <b>By Rider Request</b><br>
+                                                                <p>( 5% Charge By Rider)</p>
+                                                            </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" type="text"
+                                                                       value="confirm_Rider">
+                                                                <input class="btn btn-outline-success" type="submit"
+                                                                       value="Rider Request"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Self_Delivery{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you Sure</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h6 style="color:green">Deliver Order By Self</h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" type="text"
+                                                                       value="By_Self">
+                                                                <input class="btn btn-outline-success" type="submit"
+                                                                       value="Deliver Order By Self"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Cancel{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure Cancel this Order</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name</h6>
+                                                        </th>
+                                                        <td>{{i.Medicine}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" value="cancel">
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input class="btn btn-outline-danger" type="submit"
+                                                                       value="Cancel"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Out_for_delivery{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure Cancel this Order</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name</h6>
+                                                        </th>
+                                                        <td>{{i.Medicine}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" value="Out For Delivery">
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input class="btn btn-outline-danger"
+                                                                       style="color:brown" type="submit"
+                                                                       value="Out For Delivery"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Delivered{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 100px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">You Received Payment</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name</h6>
+                                                        </th>
+                                                        <td>{{i.Medicine}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" value="Delivered">
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input class="btn btn-outline-success"
+                                                                       type="submit" value="Cash Received"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div aria-hidden="true" class="modal" id="Payment_received{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">You Received Payment</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Patient_Name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.Test_name}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Payment</h6>
+                                                        </th>
+                                                        <td>{{i.Book_Test.test_price}}/- Rs only</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <h4>
+                                                                <form action="/lab_admin/"
+                                                                      method="POST">
+                                                                    {% csrf_token %}
+
+                                                                    <input hidden name="name" type="text"
+                                                                           value="Payment_received"/>
+                                                                    <input hidden name="id" type="text"
+                                                                           value="{{i.id}}"/>
+
+                                                                    <button class="btn btn-success"
+                                                                            style="font-family:sans-serif;"
+                                                                            type="submit">
+                                                                        Test Payment is received
+                                                                    </button>
+                                                                </form>
+                                                            </h4>
+
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

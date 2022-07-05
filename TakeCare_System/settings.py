@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Laboratory',
     'Doctor',
     'Pharmacy_Store',
+    'Rider_dashboard',
     'Rider',
     'cart',
 ]

@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Order Confirm and Delivery By Pharmacy">
-      <change afterPath="$PROJECT_DIR$/Rider/Middleware/Rider_auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider/Middleware/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider/templates/Rider_Login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/Cash_ON _Del.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/Rider_bg.jpg" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Add rider">
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/Middleware/Rider_auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/Middleware/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/models/Rider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Rider_Login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Medicine_Order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -67,7 +56,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Medicine_assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Rider_dashboard" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -78,11 +67,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider_dashboard" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Team members" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img\location" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider\templates" />
@@ -334,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656783590539</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add rider">
+      <created>1657009828794</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1657009828794</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +365,8 @@
     <MESSAGE value="Add rider app" />
     <MESSAGE value="create Contact And About_us Pages" />
     <MESSAGE value="Order Confirm and Delivery By Pharmacy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order Confirm and Delivery By Pharmacy" />
+    <MESSAGE value="Add rider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

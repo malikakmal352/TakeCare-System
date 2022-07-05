@@ -4,7 +4,7 @@ from django.db import models
 from Pharmacy_Store.models.Add_Medicine import Add_New_Medicine
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from mainpage.models.Patient import Patient
-from Rider.models.Rider import Rider
+from Rider_dashboard.models.Rider import Rider
 
 
 class order(models.Model):

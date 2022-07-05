@@ -48,7 +48,7 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts, \
     View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
 
-from Rider.views import Rider_Login, Rider_Dashboard
+from Rider_dashboard.views import Rider_Login, Rider_Dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
