@@ -226,7 +226,8 @@
                                                minlength="13"
                                                placeholder="1234xxxxxxxxx"
                                                value="{{value.CNIC}}"
-                                               name="CNIC" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required type="number"/>
+                                               name="CNIC"
+                                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required type="number"/>
                                     </div>
                                     <div class="item sa ">
                                         <label>Password<span>*</span></label>
@@ -253,7 +254,6 @@
                                             {% for i in all_city %}
                                             <h1>trt1</h1>
                                             {% if i.Lab_city_name == value.City %}
-                                            <h3>trt2</h3>
                                             <option selected value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>
                                             {% endif %}
                                             <option value="{{i.Lab_city_name}}">{{i.Lab_city_name}}</option>

@@ -72,7 +72,7 @@
             <a aria-expanded="false" href="#">
                 <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Rider<i class="fal fa-chevron-down"
-                                                            style="float: right;"></i></span>
+                                                      style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_Rider/">View All your Rider</a></li>
@@ -136,7 +136,8 @@
                             {% else %}
                             <a><img alt="#" src="{% static  'deault_profile_image.png' %}" style="max-width:40px;"></a>
                             {% endif %}
-                            {% endfor %}                            <div class="profile_info_iner">
+                            {% endfor %}
+                            <div class="profile_info_iner">
                                 <p>{{current_lab.Username}}</p>
                                 <h5>{{current_lab.email}}</h5>
                                 <div class="profile_info_details">
@@ -215,17 +216,21 @@
                                         <label>Phone Number<span>*</span></label>
                                         <input class="no-arrow"
                                                maxlength="10"
-                                               name="phone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required type="number"/></div>
+                                               name="phone"
+                                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                               required type="number"/></div>
 
                                     <div class="item sa">
                                         <label>City<span>*</span></label>
-                                        <input list="City" name="City" placeholder="Enter Patient/End-User City"
-                                               required/>
-                                        <datalist id="City">
+                                        <select class="form-select form-select-md mb-3"
+                                                name="city" required>
+                                            <option value="">Select User City</option>
                                             {% for i in all_city %}
                                             <option value="{{i.Lab_city_name}}">
+                                                {{i.Lab_city_name}}
+                                            </option>
                                             {% endfor %}
-                                        </datalist>
+                                        </select>
                                     </div>
 
                                 </div>

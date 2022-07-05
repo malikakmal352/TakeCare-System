@@ -237,17 +237,17 @@
 
                                     <td align="center">
                                         {% if i.Delivery_by == 'By_Rider' %}
-                                        {% if i.Rider %}
-                                        {{i.Rider}}
+                                              {% if i.Rider_Request_status == 'Assign a Rider' %}
+                                                 {{i.Rider}}
+                                              {% else %}
+                                            <h5 class="badge" style="background-color:Yellow;">{{i.Rider_Request_status}}..</h5>
+                                            {% endif %}
                                         {% else %}
-                                        <h5 class="badge" style="background-color:Yellow;">Padding..</h5>
-                                        {% endif %}
-                                        {% else %}
-                                        {% if i.status != 'Pending' or 'Cancelled' %}
-                                        {% if i.status != 'Cancelled' %}
-                                        <p>Deliver By Self</p>
-                                        {% endif %}
-                                        {% endif %}
+                                         {% if i.status != 'Pending' %}
+                                             {% if i.status != 'Cancelled' %}
+                                                <p>Deliver By Self</p>
+                                             {% endif %}
+                                         {% endif %}
                                         {% endif %}
                                     </td>
                                     <td><a class="mr-1 helpline-number-link"
@@ -508,160 +508,6 @@
                                                                 <input class="btn btn-outline-success"
                                                                        type="submit" value="Cash Received"/>
                                                             </form>
-                                                        </th>
-                                                    </tr>
-
-                                                    </tbody>
-                                                </table>
-                                                <br/>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div aria-hidden="true" class="modal" id="Change_Samplest{{i.id}}" role="dialog"
-                                 tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                    <div class="modal-content text-center">
-                                        <div class="modal-header">
-                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                    type="button"></button>
-                                        </div>
-                                        <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Change This Test Samplest</p>
-                                            <div class="table-responsive">
-                                                <table class="table width:100% align-middle">
-                                                    <tbody>
-
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                        </th>
-                                                        <td>{{i.Patient_Name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                        </th>
-                                                        <td>{{i.Book_Test.Test_name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th colspan="2">
-                                                            {% if i.Test_Type == 'home sample'%}
-                                                            <h4>
-                                                                <form action="/lab_admin/"
-                                                                      method="POST">
-                                                                    {% csrf_token %}
-
-                                                                    <input hidden name="name" type="text"
-                                                                           value="conform"/>
-                                                                    <input hidden name="id" type="text"
-                                                                           value="{{i.id}}"/>
-
-                                                                    <label>Please Select Sample Who can Take
-                                                                        Sample</label>
-                                                                    <select aria-label="Default select example"
-                                                                            class="form-select" name="Select_samplest"
-                                                                            required>
-                                                                        {% for i in samplest%}
-                                                                        {% if i.is_Active == True %}
-                                                                        <option value="{{i.name}}">
-                                                                            {{i.name}}
-                                                                        </option>
-                                                                        {% endif %}
-                                                                        {% endfor %}
-                                                                    </select>
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Conform this Appointment
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-                                                            {% else %}
-                                                            <h4>
-                                                                <form action="/lab_admin/"
-                                                                      method="POST">
-                                                                    {% csrf_token %}
-
-                                                                    <input hidden name="name" type="text"
-                                                                           value="conform"/>
-                                                                    <input hidden name="id" type="number"
-                                                                           value="{{i.id}}"/>
-                                                                    <select aria-label="Default select example"
-                                                                            class="form-select"
-                                                                            hidden name="Select_samplest">
-                                                                        <option selected value="no_select"> no_select
-                                                                        </option>
-                                                                    </select>
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Conform this Appointment
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-
-                                                            {% endif %}
-                                                        </th>
-                                                    </tr>
-
-                                                    </tbody>
-                                                </table>
-                                                <br/>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div aria-hidden="true" class="modal" id="Samplest_Collected{{i.id}}" role="dialog"
-                                 tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                    <div class="modal-content text-center">
-                                        <div class="modal-header">
-                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                    type="button"></button>
-                                        </div>
-                                        <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Test Samplest is Collected</p>
-                                            <div class="table-responsive">
-                                                <table class="table width:100% align-middle">
-                                                    <tbody>
-
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                        </th>
-                                                        <td>{{i.Patient_Name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                        </th>
-                                                        <td>{{i.Book_Test.Test_name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th colspan="2">
-                                                            <h4>
-                                                                <form action="/lab_admin/"
-                                                                      method="POST">
-                                                                    {% csrf_token %}
-
-                                                                    <input hidden name="name" type="text"
-                                                                           value="Samplest_Collected"/>
-                                                                    <input hidden name="id" type="text"
-                                                                           value="{{i.id}}"/>
-
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Samplest is Collected
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-
                                                         </th>
                                                     </tr>
 

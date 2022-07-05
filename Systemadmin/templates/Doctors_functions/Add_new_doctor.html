@@ -71,7 +71,7 @@
             <a aria-expanded="false" href="#">
                 <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Rider<i class="fal fa-chevron-down"
-                                                            style="float: right;"></i></span>
+                                                      style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_Rider/">View All your Rider</a></li>
@@ -222,13 +222,15 @@
 
                                     <div class="item sa">
                                         <label>City<span>*</span></label>
-                                        <input class="input" list="City" name="city"
-                                               placeholder="Enter Your City" required type="text"/>
-                                        <datalist id="City">
+                                        <select class="form-select form-select-md mb-3"
+                                                name="city" required>
+                                            <option value="">Select Your City</option>
                                             {% for i in all_city %}
                                             <option value="{{i.Lab_city_name}}">
-                                                {% endfor %}
-                                        </datalist>
+                                                {{i.Lab_city_name}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
 
                                     <div class="item sa">
@@ -260,8 +262,8 @@
                                                 <label class="radio" for="Male"><span>Male</span></label>
                                             </div>
                                             <div>
-                                                <input value="Female" id="Female"
-                                                       name="gender" required type="radio"/>
+                                                <input id="Female" name="gender"
+                                                       required type="radio" value="Female"/>
                                                 <label class="radio" for="Female"><span>Female</span></label>
                                             </div>
                                         </div>

@@ -42,7 +42,7 @@
                 <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
-                <li><a  href="/all_Register_doctor/">View All Doctors</a></li>
+                <li><a href="/all_Register_doctor/">View All Doctors</a></li>
                 <li><a href="/view_N_D/">New Doctor Request</a></li>
                 <li><a href="/add_new_doctor/">ADD New Doctor</a></li>
             </ul>
@@ -71,7 +71,7 @@
             <a aria-expanded="false" href="#">
                 <i class="fad fa-biking-mountain" style="color:green;"></i>
                 <span style="font-size:14px;">Rider<i class="fal fa-chevron-down"
-                                                            style="float: right;"></i></span>
+                                                      style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse" style="height: 0px;">
                 <li><a href="/View_all_Rider/">View All your Rider</a></li>
@@ -221,13 +221,15 @@
 
                                     <div class="item sa">
                                         <label>City<span>*</span></label>
-                                        <input list="City" name="City" placeholder="Enter Laboratory/End-User City"
-                                               required/>
-                                        <datalist id="City">
+                                        <select class="form-select form-select-md mb-3"
+                                                name="city" required>
+                                            <option value="">Select Your City</option>
                                             {% for i in all_city %}
                                             <option value="{{i.Lab_city_name}}">
-                                                {% endfor %}
-                                        </datalist>
+                                                {{i.Lab_city_name}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
 
                                 </div>

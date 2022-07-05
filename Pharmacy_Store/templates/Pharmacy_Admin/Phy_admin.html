@@ -321,7 +321,7 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <div class="table-responsive">
+                        <div class="table-responsive" id="table_sub_2">
                             <table class="table table-bordered table-hover" id="examples">
                                 <h2 class="text-center"><b>New Medicine Orders</b></h2>
                                 <thead>
@@ -340,7 +340,7 @@
                                 {% for i in All_Orders %}
                                 {% if i.status != 'Delivered' %}
                                 <tr align="center">
-                                    <td scope="row">{{forloop.counter}}</td>
+                                    <td scope="row">{{i.id}}</td>
                                     <td><img alt="" src="/media/{{ i.Medicine.img }}" style="width:50px;"></td>
                                     <td>{{ i.Medicine}}</td>
                                     <td>Rs {{ i.Medicine.Medicine_price }}</td>
@@ -376,13 +376,15 @@
                                         {% endif %}
                                     </td>
 
-                                    <td>
+                                    <td  align="center">
                                         {% if i.Delivery_by == 'By_Rider' %}
-                                             {% if i.status == 'Pending' %}
-                                            <a class="btn btn-success button" data-toggle="modal"
-                                               href="#Confirm{{i.id}}">Confirm</a>
-                                            <a class="btn btn-danger button" data-toggle="modal"
-                                               href="#Cancel{{i.id}}">Cancel</a>
+                                             {% if i.Rider_Request_status == 'Completed' %}
+                                               <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
+                                            {% elif i.Rider_Request_status == 'Cancelled' %}
+                                           <button class="badge btn-success w-100 mb-2" data-toggle="modal"
+                                               href="#Self_Delivery{{i.id}}">Self Delivery</button>
+                                            <button class=" btn-danger badge" data-toggle="modal"
+                                               href="#Cancel{{i.id}}">Cancel</button>
                                             {% else %}
                                               <h6>On Rider Delivery this option is
                                                   <span style="color:red;">Disabled</span>
@@ -408,16 +410,18 @@
                                             {% endif %}
                                         {% endif %}
                                     </td>
-
                                     <td align="center">
                                         {% if i.Delivery_by == 'By_Rider' %}
-                                              {% if i.Rider %}
+                                              {% if i.Rider_Request_status == 'Assign a Rider' %}
                                                  {{i.Rider}}
-                                              {% else %}
-                                            <h5 class="badge" style="background-color:Yellow;">Padding..</h5>
+                                              {% elif i.Rider_Request_status == 'Cancelled' %}
+                                               <h5 class="badge" style="background-color:Yellow;">{{i.Rider_Request_status}}..</h5>
+                                               <p>{{i.Rider_Request_Reject_Reason}}</p>
+                                              {% elif i.Rider_Request_status == 'Pending' %}
+                                               <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
                                             {% endif %}
                                         {% else %}
-                                         {% if i.status != 'Pending' or 'Cancelled' %}
+                                         {% if i.status != 'Pending' %}
                                              {% if i.status != 'Cancelled' %}
                                                 <p>Deliver By Self</p>
                                              {% endif %}
@@ -438,7 +442,7 @@
                             {% for i in All_Orders %}
                             <div aria-hidden="true" class="modal" id="view-details{{i.id}}" role="dialog"
                                  tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 30px;">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
                                     <div class="modal-content text-center">
                                         <div class="modal-header">
                                             <button aria-label="Close" class="btn-close" data-dismiss="modal"
@@ -569,6 +573,44 @@
                                 </div>
                             </div>
 
+                            <div aria-hidden="true" class="modal" id="Self_Delivery{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you Sure</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th colspan="2"><h6 style="color:green">Deliver Order By Self</h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/order_cancel_confirm/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" type="text"
+                                                                       value="By_Self">
+                                                                <input class="btn btn-outline-success" type="submit"
+                                                                       value="Deliver Order By Self"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div aria-hidden="true" class="modal" id="Cancel{{i.id}}" role="dialog" tabindex="-1">
                                 <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
                                     <div class="modal-content text-center">
@@ -683,102 +725,6 @@
                                                                 <input class="btn btn-outline-success"
                                                                        type="submit" value="Cash Received"/>
                                                             </form>
-                                                        </th>
-                                                    </tr>
-
-                                                    </tbody>
-                                                </table>
-                                                <br/>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div aria-hidden="true" class="modal" id="Change_Samplest{{i.id}}" role="dialog"
-                                 tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
-                                    <div class="modal-content text-center">
-                                        <div class="modal-header">
-                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
-                                                    type="button"></button>
-                                        </div>
-                                        <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Change This Test Samplest</p>
-                                            <div class="table-responsive">
-                                                <table class="table width:100% align-middle">
-                                                    <tbody>
-
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
-                                                        </th>
-                                                        <td>{{i.Patient_Name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Test Name</h6>
-                                                        </th>
-                                                        <td>{{i.Book_Test.Test_name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th colspan="2">
-                                                            {% if i.Test_Type == 'home sample'%}
-                                                            <h4>
-                                                                <form action="/lab_admin/"
-                                                                      method="POST">
-                                                                    {% csrf_token %}
-
-                                                                    <input hidden name="name" type="text"
-                                                                           value="conform"/>
-                                                                    <input hidden name="id" type="text"
-                                                                           value="{{i.id}}"/>
-
-                                                                    <label>Please Select Sample Who can Take
-                                                                        Sample</label>
-                                                                    <select aria-label="Default select example"
-                                                                            class="form-select" name="Select_samplest"
-                                                                            required>
-                                                                        {% for i in samplest%}
-                                                                        {% if i.is_Active == True %}
-                                                                        <option value="{{i.name}}">
-                                                                            {{i.name}}
-                                                                        </option>
-                                                                        {% endif %}
-                                                                        {% endfor %}
-                                                                    </select>
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Conform this Appointment
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-                                                            {% else %}
-                                                            <h4>
-                                                                <form action="/lab_admin/"
-                                                                      method="POST">
-                                                                    {% csrf_token %}
-
-                                                                    <input hidden name="name" type="text"
-                                                                           value="conform"/>
-                                                                    <input hidden name="id" type="number"
-                                                                           value="{{i.id}}"/>
-                                                                    <select aria-label="Default select example"
-                                                                            class="form-select"
-                                                                            hidden name="Select_samplest">
-                                                                        <option selected value="no_select"> no_select
-                                                                        </option>
-                                                                    </select>
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;"
-                                                                            type="submit">
-                                                                        Conform this Appointment
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-
-                                                            {% endif %}
                                                         </th>
                                                     </tr>
 

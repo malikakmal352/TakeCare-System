@@ -20,6 +20,7 @@ from mainpage.models.Patient import Patient
 from Systemadmin.models.Super_Admin import SuperAdmin
 from Doctor.models.All_Specialist import Special
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
+from Pharmacy_Store.models.Medicine_Order import order
 from Doctor.models.ADD_Docror import Doctors
 from Rider.models.Rider import Rider
 
@@ -31,6 +32,8 @@ def Super_admin(request):
     Doctors_count = Doctors.objects.all().count()
     Doctors_request_count = Doctor_request.objects.all().count()
     Pharmacy_count = Pharmacy.objects.all().count()
+    Rider_count = Rider.objects.all().count()
+    Rider_Request_count = order.objects.filter(Delivery_by='By_Rider', Rider_Request_status='Pending').count()
     current_lab = SuperAdmin.objects.get()
     Doctor = Doctors.objects.all().order_by('-id')
 
@@ -40,7 +43,8 @@ def Super_admin(request):
     data = {'all_pat': all_pat, 'Total_labs': Total_labs,
             'current_lab': current_lab, 'current_admin': current_admin,
             'Doctors_count': Doctors_count, "Pharmacy_count": Pharmacy_count,
-            'Doctors_request_count': Doctors_request_count, 'Doctor': Doctor}
+            'Doctors_request_count': Doctors_request_count, 'Doctor': Doctor,
+            'Rider_count': Rider_count, 'Rider_Request_count': Rider_Request_count}
     return render(request, "admin_dashboard.html", data)
 
 
@@ -891,6 +895,40 @@ def view_Rider_list(request):
     all_Rider = Rider.objects.all().order_by('-id')
     Data = {"current_lab": current_lab, 'all_Rider': all_Rider}
     return render(request, "Rider_functions/View_all_Riders.html", Data)
+
+
+@Admin_middleware
+def view_New_Rider_Requests(request):
+    lb = request.session.get('admin_id')
+    current_lab = SuperAdmin.objects.get(id=lb)
+    Rider_Request_count = order.objects.filter(Delivery_by='By_Rider', Rider_Request_status='Pending')
+    all_Rider_Request = order.objects.filter(Delivery_by='By_Rider')
+    all_Rider = Rider.objects.all()
+
+    if request.method == 'POST':
+        Data = request.POST
+        name = Data.get('action')
+        id = Data.get('id')
+        if name == 'Reject':
+            Reason = Data.get('Reason')
+            Rider_Request_Reject = order.objects.get(id=id)
+            Rider_Request_Reject.Rider_Request_status = 'Cancelled'
+            Rider_Request_Reject.Rider_Request_Reject_Reason = Reason
+            Rider_Request_Reject.save()
+            messages.error(request, "Rider Request is Rejected Successfully")
+        elif name == 'Assign':
+            rider = Data.get('Rider')
+            Rider_Assign = order.objects.get(id=id)
+            Rider_Assign.Rider_Request_status = 'Assign a Rider'
+            Assign_Rider = Rider.objects.get(id=rider)
+
+            Rider_Assign.Rider = Assign_Rider
+            Rider_Assign.save()
+            messages.error(request, "Rider is Assign Successfully")
+        return redirect(view_New_Rider_Requests)
+    Data = {"current_lab": current_lab, 'all_Rider': all_Rider,
+            'all_Rider_Request': all_Rider_Request}
+    return render(request, "Rider_functions/Order_Delivery_Assign.html", Data)
 
 
 @Admin_middleware

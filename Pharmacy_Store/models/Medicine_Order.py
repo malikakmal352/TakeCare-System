@@ -26,11 +26,20 @@ class order(models.Model):
         ("Unpaid", "Unpaid"),
         ("Paid", "Paid"),
     )
+    Rider_Request = (
+        ("Assign a Rider", "Assign a Rider"),
+        ('Pending', 'Pending'),
+        ('Cancelled', 'Cancelled'),
+        ('Completed', 'Completed'),
+    )
+
     Medicine = models.ForeignKey(Add_New_Medicine, on_delete=models.CASCADE)
     Customer = models.ForeignKey(Patient, on_delete=models.CASCADE, blank=True, default=1)
     Pharmacy = models.ForeignKey(Pharmacy, on_delete=models.CASCADE, default='')
     Delivery_by = models.CharField(max_length=200, null=True, choices=del_by, default='Self')
     Rider = models.ForeignKey(Rider, null=True, on_delete=models.CASCADE, blank=True, default="")
+    Rider_Request_status = models.CharField(max_length=50, choices=Rider_Request, default='Pending')
+    Rider_Request_Reject_Reason = models.CharField(max_length=200, default='Rider is not Available')
     quantity = models.IntegerField()
     price = models.IntegerField()
     Total_price = models.IntegerField()

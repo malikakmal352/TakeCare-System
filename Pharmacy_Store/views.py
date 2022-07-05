@@ -712,6 +712,12 @@ def order_cancel_confirm(request):
             order_Confirm.save()
             messages.error(request, "Medicine Order is Confirm Successfully and Sent Rider Request\n"
                                     " Rider will pick Medicine from shop within 30 minutes ")
+        elif name == 'By_Self':
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Conform'
+            order_Confirm.Delivery_by = 'Self'
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Confirm Successfully")
         elif name == 'Out For Delivery':
             order_Confirm = order.objects.get(id=id)
             order_Confirm.status = 'Out for delivery'

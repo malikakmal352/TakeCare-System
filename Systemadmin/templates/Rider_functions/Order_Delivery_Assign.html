@@ -78,7 +78,8 @@
             </a>
             <ul class="mm-collapse">
                 <li><a href="/add_new_Rider/">ADD New Rider</a></li>
-                <li><a class="active" href="/View_all_Rider/">View All your Rider</a></li>
+                <li><a href="/View_all_Rider/">View All your Rider</a></li>
+                <li><a class="active" href="/Rider_Request/">View Rider Request</a></li>
             </ul>
         </li>
 
@@ -166,90 +167,72 @@
                     <div class="white_box mb_30 " style="position: relative;">
 
                         <div class="table-responsive">
-                            <h2 align="center">View All Register Patients/Users</h2>
-                            {% if error_message %}
-                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                                 role="alert">
-                                <div class="d-flex alert-danger">
-                                    <div class="toast-body ">
-                                        {{error_message}}
-                                    </div>
-                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                            type="button"></button>
-                                </div>
-                            </div>
-                            {% elif success %}
+                            <h2 align="center">View All New Rider Request</h2>
+                            {% if messages %}
+                            {% for message in messages %}
                             <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
                                  role="alert">
                                 <div class="d-flex alert-success">
                                     <div class="toast-body ">
-                                        {{success}}
+                                        {{ message }}
                                     </div>
                                     <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
                                             type="button"></button>
                                 </div>
                             </div>
+                            {% endfor %}
                             {% endif %}
-
                             <br><br>
 
                             <table class="table table-bordered table-hover" id="examples">
                                 <thead>
                                 <tr align="center">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Rider Name</th>
-                                    <th scope="col">CNIC</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Pharmacy</th>
                                     <th scope="col">Call</th>
+                                    <th scope="col">Order</th>
+                                    <th scope="col">Delivery Address</th>
+                                    <th scope="col">Rider Request</th>
                                     <th scope="col">View Detail</th>
-                                    <th scope="col">Deliver Orders</th>
-                                    <th scope="col">Active/Deactivate</th>
-
                                 </tr>
                                 </thead>
                                 <tbody align="center">
-                                {% for i in all_Rider %}
+                                {% for i in all_Rider_Request %}
+                                {% if i.Rider_Request_status != 'Cancelled' and  i.Rider_Request_status != 'Completed' %}
                                 <tr>
-                                    <th scope="row">{{forloop.counter}}</th>
-                                    <td>{{i.name}}</td>
-                                    <td>{{i.CNIC}}</td>
+                                    <th scope="row">{{i.id}}</th>
+                                    <td>{{i.Pharmacy}}</td>
                                     <td>
-                                        <button class="btn btn-info" onclick="location.href='tel:0{{i.Callnumber}}'"
-                                                style="border:2px solid;color:white; " type="button">Call now
+                                        <button class="btn btn-info"
+                                                onclick="location.href='tel:0{{i.Pharmacy.Callnumber}}'"
+                                                style="color:white;font-size:15px;" type="button">Call now
                                         </button>
+                                    </td>
+                                    <td>{{i.Medicine}}</td>
+                                    <td>{{i.Address}}</td>
+                                    <td>
+                                        {% if i.Rider %}
+                                        {{i.Rider}}
+                                        {% else %}
+                                        <a class="btn badge btn-success button" data-toggle="modal"
+                                           href="#Confirm{{i.id}}">Assign Rider</a>
+                                        <a class="btn badge btn-danger button" data-toggle="modal"
+                                           href="#Cancel{{i.id}}"
+                                           style="margin-top:15px">Reject</a>
+                                        {% endif %}
                                     </td>
                                     <td><a class="mr-1 View-record-details-link"
                                            data-toggle="modal" href="#view-detail_Rider{{i.id}}"
                                            style="height:38px;width: 55px;">
                                         <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
                                     </a></td>
-                                    <td>{{i.assign_task}}</td>
-                                    <td>
-                                        {% if i.is_Active %}
-                                        <label class="switchs">
-                                            <a class="mr-1 helpline-number-link"
-                                               data-toggle="modal" href="#Deactivate_Rider{{i.id}}">
-                                                <input type="checkbox">
-                                                <span class="slider round"></span>
-                                            </a>
-                                        </label>
-                                        {% else %}
-                                        <label class="switchs">
-                                            <a class="mr-1 helpline-number-link"
-                                               data-toggle="modal" href="#Active_Rider{{i.id}}"> <input checked
-                                                                                                           type="checkbox">
-                                                <span class="slider round"></span>
-                                            </a>
-                                        </label>
-                                        {% endif %}
-                                    </td>
-
                                 </tr>
-
+                                {% endif %}
                                 {% endfor %}
 
                                 </tbody>
                             </table>
-                            {% for i in all_Rider %}
+                            {% for i in all_Rider_Request %}
                             <!-- Popup for view detail-->
                             <div aria-hidden="true" class="modal" id="view-detail_Rider{{i.id}}" role="dialog"
                                  tabindex="-1">
@@ -313,55 +296,44 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Active_Patients-->
-                            <div aria-hidden="true" class="modal" id="Active_Rider{{i.id}}" role="dialog"
-                                 tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 50px;">
+                            <!-- Assign a Rider-->
+                            <div aria-hidden="true" class="modal" id="Confirm{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
                                     <div class="modal-content text-center">
                                         <div class="modal-header">
                                             <button aria-label="Close" class="btn-close" data-dismiss="modal"
                                                     type="button"></button>
                                         </div>
                                         <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Active this Rider</p>
+                                            <h5 class="text-center">Assign a Rider</h5>
                                             <div class="table-responsive">
                                                 <table class="table width:100% align-middle">
                                                     <tbody>
-
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider Name</h6>
+                                                        <th colspan="2"><h6 style="color:green">Rider Pick Order from Shop And Deliver it</h6>
                                                         </th>
-                                                        <td>{{i.name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
-                                                        </th>
-                                                        <td>{{i.CNIC}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider City</h6>
-                                                        </th>
-                                                        <td>{{i.Rider_city}}</td>
                                                     </tr>
                                                     <tr align="center">
                                                         <th colspan="2">
-                                                            <h4>
-                                                                <form action="/Status_Rider/" method="post">
-                                                                    {% csrf_token %}
-                                                                    <input hidden name="name" type="text"
-                                                                           value="{{i.name}}"/>
-                                                                    <input hidden name="id" type="number"
-                                                                           value="{{i.id}}"/>
-                                                                    <button class="btn btn-success"
-                                                                            style="font-family:sans-serif;">
-                                                                        Activate
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
-                                                        </th>
-                                                    </tr>
+                                                            <form action="/Rider_Request/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" type="text"
+                                                                       value="Assign">
+                                                                <select class="form-select form-select-md mb-3"
+                                                                        name="Rider" required>
+                                                                    <option value="">Select a Rider for Delivery </option>
+                                                                    {% for j in all_Rider %}
+                                                                    <option value="{{j.id}}">
+                                                                        <p>{{j.name}}</p>
+                                                                    </option>
+                                                                    {% endfor %}
+                                                                </select>
 
+                                                                <input class="btn btn-outline-success" type="submit"
+                                                                       value="Assign a Rider"/>
+                                                            </form>
+                                                        </th>
                                                     </tbody>
                                                 </table>
                                                 <br/>
@@ -371,51 +343,48 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Deactivate_Patients-->
-                            <div aria-hidden="true" class="modal" id="Deactivate_Rider{{i.id}}" role="dialog"
-                                 tabindex="-1">
-                                <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+
+                            <div aria-hidden="true" class="modal" id="Cancel{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
                                     <div class="modal-content text-center">
                                         <div class="modal-header">
                                             <button aria-label="Close" class="btn-close" data-dismiss="modal"
                                                     type="button"></button>
                                         </div>
                                         <div class="modal-body tab-content">
-                                            <h5 class="text-center">Are you sure </h5>
-                                            <p class="text-center">Deactivate this Rider</p>
+                                            <h5 class="text-center">Are you sure Cancel this Rider Request</h5>
                                             <div class="table-responsive">
                                                 <table class="table width:100% align-middle">
                                                     <tbody>
+
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider Name</h6>
+                                                        <th class="col-6"><h6 style="color:green">Pharmacy Name</h6>
                                                         </th>
-                                                        <td>{{i.name}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
-                                                        </th>
-                                                        <td>{{i.CNIC}}</td>
-                                                    </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider City</h6>
-                                                        </th>
-                                                        <td>{{i.Rider_city}}</td>
+                                                        <td>{{i.Pharmacy}}</td>
                                                     </tr>
                                                     <tr align="center">
                                                         <th colspan="2">
-                                                            <h4>
-                                                                <form action="/Status_Rider/" method="post">
-                                                                    {% csrf_token %}
-                                                                    <input hidden name="name" type="text"
-                                                                           value="{{i.name}}"/>
-                                                                    <input hidden name="id" type="number"
-                                                                           value="{{i.id}}"/>
-                                                                    <button class="btn btn-danger"
-                                                                            style="font-family:sans-serif;">
-                                                                        Deactivate
-                                                                    </button>
-                                                                </form>
-                                                            </h4>
+                                                            <form action="/Rider_Request/" method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" value="Reject">
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <select class="form-select form-select-md mb-3"
+                                                                        name="Reason" required>
+                                                                    <option value="">Select Rider Request Cancel Reason</option>
+                                                                    <option value="Rider is not Available">
+                                                                        Rider is not Available
+                                                                    </option>
+                                                                    <option value="Order is from Other City.So Submit it on Branch ">
+                                                                        Order is from Other City.So Submit it on Branch
+                                                                    </option>
+                                                                    <option value="Other">
+                                                                           Other
+                                                                    </option>
+                                                                </select>
+                                                                    <input class="btn btn-outline-danger" type="submit"
+                                                                           value="Reject Rider Request"/>
+                                                            </form>
                                                         </th>
                                                     </tr>
 
@@ -431,52 +400,6 @@
 
                             {% endfor %}
                         </div>
-
-                    </div>
-                </div>
-
-                <!--View All Test Details-->
-                <div class="col-lg-12 col-xl-12">
-                    <div class="white_box mb_30 " style="position: relative;">
-
-                        {% if messages %}
-                        {% for message in messages %}
-                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                             role="alert">
-                            <div class="d-flex alert-success">
-                                <div class="toast-body ">
-                                    {{ message }}
-                                </div>
-                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                        type="button"></button>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                        {% endif %}
-                        {% if error_message %}
-                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                             role="alert">
-                            <div class="d-flex alert-danger">
-                                <div class="toast-body ">
-                                    {{error_message}}
-                                </div>
-                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                        type="button"></button>
-                            </div>
-                        </div>
-                        {% elif success %}
-                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                             role="alert">
-                            <div class="d-flex alert-success">
-                                <div class="toast-body ">
-                                    {{success}}
-                                </div>
-                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                        type="button"></button>
-                            </div>
-                        </div>
-                        {% endif %}
 
                     </div>
                 </div>

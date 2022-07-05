@@ -33,7 +33,7 @@ from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admi
     view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
     Laboratory_del, update_Laboratory, Admin_profile, Admin_profile_img, updates_admin_profile, view_N_D, \
     all_Register_doctor, Status_doctor, Add_new_Doctor, ADD_New_Pharmacy, view_Pharmacy_list, Status_Pharmacy, \
-    Pharmacy_del, Update_Pharmacy, add_new_Rider, view_Rider_list, Status_Rider
+    Pharmacy_del, Update_Pharmacy, add_new_Rider, view_Rider_list, Status_Rider, view_New_Rider_Requests
 
 from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doctor, Doctor_request_form, \
     Create_password_doctor, view_all_doctors, Doctors_Special, Doctors_Special_in_city, Doctors_in_city, \
@@ -45,8 +45,10 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     ChangePassword_Pharmacy, Phy_profile, updates_Phy_profile, Phy_profile_img, add_new_Medicine, view_Medicine_list, \
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
     Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm, \
-    cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts,\
+    cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts, \
     View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
+
+from Rider.views import Rider_Login, Rider_Dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -86,6 +88,7 @@ urlpatterns = [
     path('add_new_Rider/', add_new_Rider, name="add_new_Rider"),
     path('View_all_Rider/', view_Rider_list, name="view_Rider_list"),
     path('Status_Rider/', Status_Rider, name="Status_Rider"),
+    path("Rider_Request/", view_New_Rider_Requests, name="Rider_Request"),
 
     # ////////////////////////////////// URLS for Super Admin END//////////////////////////////////////////////
 
@@ -202,6 +205,12 @@ urlpatterns = [
     path('order_cancel_confirm/', order_cancel_confirm, name='order_cancel_confirm'),
 
     # ////////////////////////////////// URLS for Pharmacy Admin End//////////////////////////////////////////////
+
+    # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
+
+    path("Rider_Login/", Rider_Login, name="Rider_Login"),
+    path("Rider_Dashboard/", Rider_Dashboard, name="Rider_Dashboard"),
+    # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
     path('register/', Signup),
     path('Login/', Login, name='login'),
