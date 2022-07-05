@@ -22,7 +22,7 @@ from Doctor.models.All_Specialist import Special
 from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from Pharmacy_Store.models.Medicine_Order import order
 from Doctor.models.ADD_Docror import Doctors
-from Rider.models.Rider import Rider
+from Rider_dashboard.models.Rider import Rider
 
 
 @Admin_middleware

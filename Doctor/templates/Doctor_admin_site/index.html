@@ -5,7 +5,7 @@
 
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
-        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <a href="#"><img alt="" src="{% static './logo/takecare_logo-1.PNG' %}"></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="fal fa-times"></i>
         </div>
@@ -33,7 +33,7 @@
             </a>
             <ul class="mm-collapse">
                 <li><a href="/Doctor_admin/#examples">View All Appointments </a></li>
-                <li><a  href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
+                <li><a href="/Doctor_admin/New_appointment_requests/">Appointment Requests</a></li>
                 <li><a href="/Doctor_admin/confirm_today">All confirm Appointments </a></li>
 
             </ul>
@@ -45,26 +45,14 @@
             </a>
         </li>
 
-
         <li class="">
-            <a aria-expanded="True" href="#">
+            <a aria-expanded="false" href="#">
                 <i class="fas fa-books-medical"></i>
                 <span>Health Blogs<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse">
                 <li><a href="/view_Doctor_blogs/">View all Health Blogs</a></li>
-                <li><a class="" href="/add_new_blog/">ADD New Health Blogs</a></li>
-            </ul>
-        </li>
-
-        <li class="">
-            <a aria-expanded="false" href="#">
-                <i class="fas fa-pills"></i>
-                <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
-            </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="#">View All Pharmacies</a></li>
-                <li><a href="#">ADD New pharmacy</a></li>
+                <li><a href="/add_new_blog/">ADD New Health Blogs</a></li>
             </ul>
         </li>
 
