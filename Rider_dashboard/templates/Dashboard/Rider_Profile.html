@@ -7,7 +7,7 @@
 <!-- sidebar part here -->
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
-        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <a href="#"><img alt="" src="{% static './logo/takecare_logo-1.PNG' %}"></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="fal fa-times"></i>
         </div>
@@ -17,7 +17,7 @@
             <span>Dashboard</span>
         </li>
         <li class="">
-            <a aria-expanded="false"  href="/Phy_admin/">
+            <a aria-expanded="false" href="/Rider Dashboard/">
                 <!-- <i class="fas fa-th"></i> -->
                 <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
                 Dashboard
@@ -30,45 +30,37 @@
         </li>
         <li class="">
             <a aria-expanded="false" href="#">
-                <i style="color:green;" class="fas fa-cart-plus"></i>
+                <i class="fas fa-cart-plus" style="color:green;"></i>
                 <span>Orders<i class="fal fa-chevron-down"
-                                      style="float: right;"></i></span>
+                               style="float: right;"></i></span>
             </a>
             <ul class="mm-collapse">
-                <li><a href="/Phy_admin/View_all_new_booking/">View All New Orders</a></li>
-                <li><a href="/Phy_admin/view_all_comfirm_booking/">View Conform Order</a></li>
-                <li><a href="/Phy_admin/#table_sub_2">View Today Orders</a></li>
-                <li><a href="/Phy_admin/lab_admin/#table_sub_2">View Complete Orders</a></li>
+                <li><a href="/Rider_Dashboard/#table_sub_2">View Today Orders</a></li>
+                <li><a href="/Rider_Dashboard/view_all_pending_Orders/">All Pending Orders</a></li>
+                <li><a href="/Rider_Dashboard/view complete orders/">View Complete Orders</a></li>
+                <li><a href="/Rider_Dashboard/Delivery orders History/">View Orders Delivery History</a></li>
 
             </ul>
+        </li>
+
+        <li class="mm-active">
+            <a aria-expanded="True" class="active" href="/Rider_Dashboard/Rider_Profile/">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Rider Profile</span>
+            </a>
         </li>
         <li class="">
-            <a aria-expanded="false" href="#">
-                <i style="color:green;" class="fas fa-engine-warning"></i>
-                <span style="font-size:14px;">Medicine Expiry Alert<i class="fal fa-chevron-down"
-                                                                        style="float: right;"></i></span>
+            <a aria-expanded="false" href="/Logout/">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Log Out</span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="/View_all_samplest/">View All Expiry Medicine</a></li>
-                <li><a href="/add_new_Samplest/">Expiring Soon</a></li>
-            </ul>
         </li>
 
 
-        <li class="">
-            <a aria-expanded="false" href="#">
-                <i style="color:green;" class="far fa-capsules"></i>
-                <span style="font-size:14px;">Products/Medicines<i class="fal fa-chevron-down"
-                                                                        style="float: right;"></i></span>
-            </a>
-            <ul class="mm-collapse" style="height: 0px;">
-                <li><a href="/View_all_samplest/">View All Medicine</a></li>
-                <li><a href="/add_new_Samplest/">ADD New Medicine</a></li>
-            </ul>
-        </li>
     </ul>
 </nav>
 <!-- sidebar part end -->
+
 <section class="main_content dashboard_part">
     <!-- menu  -->
     <div class="container-fluid no-gutters">
@@ -100,16 +92,16 @@
                             </li>
                         </div>
                         <div class="profile_info">
-                            {% if Current_pharmacy.img %}
-                            <img alt="#" src='/media/{{Current_pharmacy.img}}'>
+                            {% if Current_Rider.img %}
+                            <img alt="#" src='/media/{{Current_Rider.img}}'>
                             {% else %}
                             <img alt="" src="{% static 'pharmacy_profile.jfif' %}">
                             {% endif %}
                             <div class="profile_info_iner">
-                                <p>{{Current_pharmacy.Pharmacy_name}}</p>
-                                <h5>{{Current_pharmacy.city}}</h5>
+                                <p>{{Current_Rider.name}}</p>
+                                <h5>{{Current_Rider.Rider_city}}</h5>
                                 <div class="profile_info_details">
-                                    <a href="/Phy_profile/">My Profile
+                                    <a href="/Rider_Dashboard/Rider_Profile/">My Profile
                                         <i class="fal fa-user"></i></a>
                                     <!--                                    <a href="#">Settings-->
                                     <!--                                        <i class="fal fa-user-cog"></i></a>-->
@@ -129,42 +121,31 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
-                        {% if error %}
-                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                             role="alert">
-                            <div class="d-flex alert-danger">
-                                <div class="toast-body ">
-                                    {{error}}
-                                </div>
-                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                        type="button"></button>
-                            </div>
-                        </div>
-                        {% elif success %}
+                        {% if messages %}
+                        {% for message in messages %}
                         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
                              role="alert">
                             <div class="d-flex alert-success">
                                 <div class="toast-body ">
-                                    {{success}}
+                                    {{ message }}
                                 </div>
                                 <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
                                         type="button"></button>
                             </div>
                         </div>
+                        {% endfor %}
                         {% endif %}
-
-                        {% for i in phy_profile %}
                         <div class="table-responsive">
                             <table class="table w-100 table-borderless">
                                 <tbody>
                                 <tr align="center">
-                                    {% if i.img %}
-                                    <td colspan="2"><img src="/media/{{ i.img }}"
+                                    {% if Current_Rider.img %}
+                                    <td colspan="2"><img src="/media/{{ Current_Rider.img }}"
                                                          style="width:150px;border-radius:50%;height:150px;"></td>
                                     {% else %}
                                     <td colspan="2">
                                         <img alt="" src="{% static 'pharmacy_profile.jfif' %}"
-                                                         style="width:100px;border-radius:50%;"></td>
+                                             style="width:100px;border-radius:50%;"></td>
                                     {% endif %}
                                 </tr>
                                 <tr align="center">
@@ -172,7 +153,8 @@
                                         <div class="btn-block">
                                             <a class="mr-1 delete-record-link"
                                                data-toggle="modal" href="#Change_lab_img">
-                                                <button class='button btn' style="background-color:#49738f;color:white;width:200px"
+                                                <button class='button btn'
+                                                        style="background-color:#49738f;color:white;width:200px"
                                                         type="submit">
                                                     <b>Change Profile Image</b></button>
                                             </a>
@@ -186,20 +168,20 @@
                                     <td align="center" colspan="2"><b style="color:white;">Personal Detail</b></td>
                                 </tr>
                                 <tr align="center">
-                                    <td align="right" class="col-6">Pharmacy Name:</td>
+                                    <td align="right" class="col-6">Rider Name:</td>
                                     <td align="left" class="col-6">
                                         <div id="username_frame">
-                                            {{i.Pharmacy_name}}
+                                            {{Current_Rider.name}}
                                             <button class="btn">
                                                 <i class="far fa-edit fa" id="username" style="color:green;"></i>
                                             </button>
                                         </div>
 
                                         <div id="username_edit_frame">
-                                            <form action="/updates_Phy_profile/" method="POST">
+                                            <form action="/Rider_Dashboard/updates_Rider_profile/" method="POST">
                                                 {% csrf_token %}
                                                 <input name="username" required style="width:70%;" type="text"
-                                                       value="{{i.Labname}}"/>
+                                                       value="{{Current_Rider.name}}"/>
                                                 <button class="btn btn-outline-success">
                                                     <i class="fas fa-check-circle fa-md-2x" id="username_edit"
                                                        style="height:2vh;"></i>
@@ -208,26 +190,27 @@
                                         </div>
                                 </tr>
                                 <tr>
-                                    <td align="right">Email Address:</td>
-                                    <td align="left">{{i.email}}</td>
+                                    <td align="right">Rider CNIC:</td>
+                                    <td align="left">{{Current_Rider.CNIC}}</td>
                                 </tr>
                                 <tr>
                                     <td align="right">Phone Number:</td>
                                     <td align="left">
                                         <div id="Phone_frame">
-                                            +92{{i.Callnumber}}
-                                        <button class="btn">
-                                            <i class="far fa-edit fa" id="phone" style="color:green;"></i>
-                                        </button>
+                                            +92{{Current_Rider.Callnumber}}
+                                            <button class="btn">
+                                                <i class="far fa-edit fa" id="phone" style="color:green;"></i>
+                                            </button>
                                         </div>
 
                                         <div id="Phone_edit_frame">
-                                            <form action="/updates_Phy_profile/" method="POST">
+                                            <form action="/Rider_Dashboard/updates_Rider_profile/" method="POST">
                                                 {% csrf_token %}
-                                                <input name="phone"  required style="width:70%;"  type="number"
-                                                       value="{{i.Callnumber}}"
-                                                       class="no-arrow" maxlength="10"
-                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                                                <input class="no-arrow" maxlength="10" name="phone"
+                                                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                       required
+                                                       style="width:70%;" type="number"
+                                                       value="{{Current_Rider.Callnumber}}"/>
 
                                                 <button class="btn btn-outline-success">
                                                     <i class="fas fa-check-circle fa-md-2x" id="Phone_edit"
@@ -240,10 +223,14 @@
 
                                 </tr>
                                 <tr>
-                                    <td align="right">Pharmacy Address:</td>
+                                    <td align="right">Total Order Delivered:</td>
+                                    <td align="left">{{Current_Rider.assign_task}}</td>
+                                </tr>
+                                <tr hidden>
+                                    <td align="right">Total Order Delivery:</td>
                                     <td align="left">
                                         <div id="Address_frame">
-                                            {{i.Address}}
+                                            {{Current_Rider.Address}}
                                             <button class="btn">
                                                 <i class="far fa-edit fa" id="Address" style="color:green;"></i>
                                             </button>
@@ -252,7 +239,7 @@
                                         <div id="Address_edit_frame">
                                             <form action="/updates_Phy_profile/" method="POST">
                                                 {% csrf_token %}
-                                                <textarea name="Address" required style="width:70%;" rows="4">{{i.Address}}
+                                                <textarea name="Address" required rows="4" style="width:70%;">{{i.Address}}
                                                 </textarea>
                                                 <button class="btn btn-outline-success" style="margin-top:-100px;">
                                                     <i class="fas fa-check-circle fa-md-2x" id="Address_edit"
@@ -271,7 +258,7 @@
                                     <td align="center" colspan="2"><b style="color:white;">Change Password</b></td>
                                 </tr>
 
-                                <form action="/Phy_profile/" method="POST">
+                                <form action="/Rider_Dashboard/Rider_Profile/" method="POST">
                                     {% csrf_token %}
                                     <tr>
                                         <td align="right">
@@ -304,7 +291,8 @@
                                     <tr>
                                         <td align="center" colspan="2">
                                             <div class="btn-block">
-                                                <button class='button  btn' style="background-color:#49738f;width:200px;"
+                                                <button class='button  btn'
+                                                        style="background-color:#49738f;width:200px;"
                                                         type="submit"><b
                                                         style="color:white;">Change
                                                     Password</b></button>
@@ -316,7 +304,6 @@
                             </table>
                         </div>
 
-                        {% endfor %}
                         <script type="text/javascript">
                             var targetDiv = document.getElementById("username_edit_frame");
                             var btn = document.getElementById("username");
@@ -377,6 +364,8 @@
 
 
 
+
+
                         </script>
 
                     </div>
@@ -397,7 +386,8 @@
                     <h5 class="text-center">Select New Image </h5>
                     <div class="table-responsive">
                         <table class="table width:100% align-middle">
-                            <form action="/Phy_profile_img/" enctype="multipart/form-data"
+                            <form action="/Rider_Dashboard/Rider_profile_img/"
+                                  enctype="multipart/form-data"
                                   method="POST">
                                 {% csrf_token %}
                                 <tr align="center">

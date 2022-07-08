@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="Solve Rider Module Problem">
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add logo image in admin sites">
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Doctor_profile_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Doctor_profile_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Update_health_blog_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Update_health_blog_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/add_new_health_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/add_new_health_blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Lab_admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Lab_admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Samplest_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Samplest_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Test_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Test_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_new_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_new_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_samplest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_samplest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_all_confirm_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_all_confirm_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_test_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657055408968</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add logo image in admin sites">
+      <created>1657058878715</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657058878715</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -414,7 +392,8 @@
     <MESSAGE value="Order Confirm and Delivery By Pharmacy" />
     <MESSAGE value="Add rider" />
     <MESSAGE value="Solve Rider Module Problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solve Rider Module Problem" />
+    <MESSAGE value="add logo image in admin sites" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logo image in admin sites" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

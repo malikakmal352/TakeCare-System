@@ -48,7 +48,8 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts, \
     View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
 
-from Rider_dashboard.views import Rider_Login, Rider_Dashboard
+from Rider_dashboard.views import Rider_Login, Rider_Dashboard, Rider_delivery, View_Complete_Deliveries, \
+    View_Pending_Deliveries, Rider_profile, Rider_profile_img, updates_Rider_profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -210,6 +211,13 @@ urlpatterns = [
 
     path("Rider_Login/", Rider_Login, name="Rider_Login"),
     path("Rider_Dashboard/", Rider_Dashboard, name="Rider_Dashboard"),
+    path("Rider_Dashboard/Rider_delivery/", Rider_delivery, name="Rider_delivery"),
+    path("Rider_Dashboard/view complete orders/", View_Complete_Deliveries, name="View_Complete_Deliveries"),
+    path("Rider_Dashboard/view_all_pending_Orders/", View_Pending_Deliveries, name="View_Pending_Deliveries"),
+
+    path("Rider_Dashboard/Rider_Profile/", Rider_profile, name="Rider_profile"),
+    path('Rider_Dashboard/Rider_profile_img/', Rider_profile_img, name="Rider_profile_img"),
+    path("Rider_Dashboard/updates_Rider_profile/", updates_Rider_profile, name="updates_Rider_profile"),
     # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
     path('register/', Signup),

@@ -167,6 +167,7 @@ def Login(request):
 
 def Logout(request):
     Phy_id = request.session.get('Phy_id')
+    Rider_id = request.session.get('Rid_id')
     lab_id = request.session.get('lab_email')
     Doctor_email = request.session.get('doctor_email')
     Customer_id = request.session.get('id')
@@ -190,6 +191,9 @@ def Logout(request):
         request.session['lab_id'] = None
         request.session['lab_email'] = None
         return redirect('Laboratory Login')
+    elif Rider_id:
+        request.session['lab_id'] = None
+        return redirect(mainindex)
     elif Doctor_email:
         request.session['doctor_id'] = None
         request.session['Doctor_email'] = None

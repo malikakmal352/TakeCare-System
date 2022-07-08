@@ -1,0 +1,259 @@
+{% extends "Admin_site/admin_header.html" %}
+{% load static %}
+
+{% block content %}
+<!-- sidebar  -->
+<!-- sidebar part here -->
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a href="#"><img alt="" src="{% static './Hospital_files/logo.png' %}"></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="fal fa-times"></i>
+        </div>
+    </div>
+    <ul class="metismenu" id="sidebar_menu">
+        <li class="side_menu_title">
+            <span>Dashboard</span>
+        </li>
+        <li class="">
+            <a aria-expanded="false"  href="/Rider Dashboard/">
+                <!-- <i class="fas fa-th"></i> -->
+                <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
+                Dashboard
+            </a>
+
+        </li>
+
+        <li class="side_menu_title">
+            <span>Function</span>
+        </li>
+        <li class="mm-active">
+            <a aria-expanded="false" href="#">
+                <i class="fas fa-cart-plus" style="color:green;"></i>
+                <span>Orders<i class="fal fa-chevron-down"
+                               style="float: right;"></i></span>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href="/Rider_Dashboard/#table_sub_2">View Today Orders</a></li>
+                <li><a href="/Rider_Dashboard/view_all_pending_Orders/">All Pending Orders</a></li>
+                <li><a class="active" href="/Rider_Dashboard/view complete orders/">View Complete Orders</a></li>
+                <li><a href="/Rider_Dashboard/Delivery orders History/">View Orders Delivery History</a></li>
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a aria-expanded="false" href="/Rider_Dashboard/Rider_Profile/">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Rider Profile</span>
+            </a>
+        </li>
+        <li class="">
+            <a aria-expanded="false" href="/Logout/">
+                <i class="far fa-capsules" style="color:green;"></i>
+                <span style="font-size:14px;">Log Out</span>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>
+<!-- sidebar part end -->
+<section class="main_content dashboard_part">
+    <!-- menu  -->
+    <div class="container-fluid no-gutters">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <div class="serach_field-area">
+                        <div class="search_inner">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+
+                                <!--                                <div class="search_field">-->
+                                <!--                                    <input id="tag" placeholder="Search here..." type="text">-->
+                                <!--                                </div>-->
+
+                                <!--                                <button type="submit"><img alt="" src=' {% static "Hospital_files/icon_search.svg" %}'>-->
+                                <!--                                </button>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a href="#"> <img
+                                        alt="" src='{% static "./Hospital_files/bell.svg" %}'> </a>
+                            </li>
+                        </div>
+                        <div class="profile_info">
+                            {% if Current_Rider.img %}
+                            <img alt="#" src='/media/{{Current_Rider.img}}'>
+                            {% else %}
+                            <img alt="" src="{% static 'pharmacy_profile.jfif' %}">
+                            {% endif %}
+                            <div class="profile_info_iner">
+                                <p>{{Current_Rider.name}}</p>
+                                <h5>{{Current_Rider.Rider_city}}</h5>
+                                <div class="profile_info_details">
+                                    <a href="/Rider_Dashboard/Rider_Profile/">My Profile
+                                        <i class="fal fa-user"></i></a>
+                                    <!--                                    <a href="#">Settings-->
+                                    <!--                                        <i class="fal fa-user-cog"></i></a>-->
+                                    <a href="/Logout/">Log Out
+                                        <i class="fal fa-sign-out"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ menu  -->
+    <div class="main_content_iner ">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12 col-xl-12">
+                    <div class="white_box mb_30 " style="position: relative;">
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="table-responsive" id="table_sub_2">
+                            <table class="table table-bordered table-hover" id="examples">
+                                <h2 class="text-center"><b>Assign Orders Details</b></h2>
+                                <thead>
+                                <tr align="center">
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Order</th>
+                                    <th scope="col">Pharmacy</th>
+                                    <th scope="col">Customer Address</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">View Detail</th>
+                                </thead>
+                                <tbody>
+                                {% for i in Assign_Orders %}
+                                {% if i.Rider_Request_status == 'Completed' %}
+                                <tr align="center">
+                                    <td scope="row">{{i.id}}</td>
+                                    <td>{{ i.Medicine}}</td>
+                                    <td>{{i.Pharmacy.Address}}</td>
+                                    <td>{{ i.Address}}</td>
+                                    <td>{{i.Total_price}} Rs</td>
+                                    <td class="Order_Status">
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                    </td>
+                                    <td><a class="mr-1 helpline-number-link"
+                                           data-toggle="modal" href="#view-details{{i.id}}"
+                                           style="height:38px;width: 55px;">
+                                        <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
+                                    </a></td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {% for i in Assign_Orders %}
+                    <div aria-hidden="true" class="modal" id="view-details{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 10px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Medicine Order Details</h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Customer Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Customer.name}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name </h6>
+                                                        </th>
+                                                        <th class="col-6"><h6 style="color:green">
+                                                            {{i.Medicine}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Quantity</h6>
+                                                        </th>
+                                                        <th class="col-6"><h6>
+                                                            {{i.quantity}} </h6>
+                                                        </th>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Total Price</h6></th>
+                                                        <td>{{i.Total_price}}/- Rs only</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Status</h6></th>
+                                                        <td>{{i.status}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6">
+                                                            <h6 style="color:green">Payment</h6>
+                                                        </th>
+                                                        <td align="center">
+                                                            {% if i.payment == 'Paid' %}
+                                                            <h5 class="badge" style="background-color:green;">
+                                                                {{i.payment}}
+                                                            </h5>
+                                                            {% else %}
+                                                            <h5 class="badge" style="background-color:red;">
+                                                                {{i.payment}}</h5>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Address</h6>
+                                                        </th>
+                                                        <td>{{i.Address}}</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
