@@ -3,10 +3,9 @@ from django.shortcuts import render, redirect
 from Laboratory.models.Labcity import Labcity
 from Rider_dashboard.models.Rider import Rider
 from Pharmacy_Store.models.Medicine_Order import order
-from django.utils.timezone import now
-from datetime import datetime
+# from django.utils.timezone import now
+# from datetime import datetime
 from django.contrib import messages
-
 from Rider_dashboard.Middleware.Rider_auth import Rider_middleware, Rider_login_check
 
 
@@ -24,7 +23,7 @@ def Rider_Login(request):
         # # Validations
         rider = Rider.objects.filter(CNIC=email, password=password)
         Rider_active = Rider.objects.filter(CNIC=email, password=password, is_Active=True)
-        error_message = None
+        # error_message = None
 
     if rider:
         if not Rider_active:
@@ -39,6 +38,7 @@ def Rider_Login(request):
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Rider_Login.html', Data)
 
+
 @Rider_middleware
 def Rider_Dashboard(request):
     Rd = request.session.get('Rid_id')
@@ -49,19 +49,26 @@ def Rider_Dashboard(request):
     Total_medicines_Deliver = order.objects.filter(Rider=Current_Rider, status="Rider Received Payment").count()
     Complete_Deliveries_count = order.objects.filter(Rider=Current_Rider, status="Delivered",
                                                      Rider_Request_status='Completed').count()
+    Pending_Deliveries_count = order.objects.filter(Rider=Current_Rider, status="Conform",
+                                                    Rider_Request_status='Assign a Rider').count()
+    Total_Dispatch_Deliver = order.objects.filter(Rider=Current_Rider, Rider_Request_status='Cancelled').count()
     Assign_Orders = order.objects.filter(Rider=Current_Rider)
     Data = {"Current_Rider": Current_Rider, "Pick_order_count": Pick_order_count,
             "Total_Deliveries_count": Total_Deliveries_count,
             "Complete_Deliveries_count": Complete_Deliveries_count,
             "Total_medicines_Deliver": Total_medicines_Deliver,
+            "Total_Dispatch_Deliver": Total_Dispatch_Deliver,
+            "Pending_Deliveries_count": Pending_Deliveries_count,
             'Assign_Orders': Assign_Orders}
     return render(request, "Dashboard/Rider_dashboard.html", Data)
+
 
 @Rider_middleware
 def Rider_delivery(request):
     if request.method == 'POST':
         Data = request.POST
         name = Data.get('action')
+        Reason = Data.get('Reason')
         id = Data.get('id')
         if name == 'Out For Delivery':
             order_Confirm = order.objects.get(id=id)
@@ -75,6 +82,13 @@ def Rider_delivery(request):
             order_Confirm.payment = 'Paid'
             order_Confirm.save()
             messages.error(request, "Medicine Order is Delivery and Receive Cash")
+        elif name == 'Dispatch':
+            order_Confirm = order.objects.get(id=id)
+            order_Confirm.status = 'Dispatch'
+            order_Confirm.Rider_Request_status = 'Cancelled'
+            order_Confirm.Rider_Request_Reject_Reason = Reason
+            order_Confirm.save()
+            messages.error(request, "Medicine Order is Dispatch")
         else:
             order_Confirm = order.objects.get(id=id)
             order_Confirm.status = 'Conform'
@@ -82,23 +96,37 @@ def Rider_delivery(request):
             messages.error(request, "Medicine Order is Confirm Successfully")
     return redirect("/Rider_Dashboard/#table_sub_2")
 
+
 @Rider_middleware
 def View_Complete_Deliveries(request):
     Rd = request.session.get('Rid_id')
     Current_Rider = Rider.objects.get(id=Rd)
-    Assign_Orders = order.objects.filter(Rider=Current_Rider)
+    Assign_Orders = order.objects.filter(Rider=Current_Rider, Rider_Request_status='Completed')
     Data = {"Current_Rider": Current_Rider,
             'Assign_Orders': Assign_Orders}
-    return render(request, "Dashboard/View_Complete_Rider_Orders.html", Data)\
+    return render(request, "Dashboard/View_Complete_Rider_Orders.html", Data)
+
 
 @Rider_middleware
 def View_Pending_Deliveries(request):
     Rd = request.session.get('Rid_id')
     Current_Rider = Rider.objects.get(id=Rd)
-    Assign_Orders = order.objects.filter(Rider=Current_Rider, status='Conform')
+    Assign_Orders = order.objects.filter(Rider=Current_Rider)
     Data = {"Current_Rider": Current_Rider,
             'Assign_Orders': Assign_Orders}
     return render(request, "Dashboard/View_Pending_Deliveries.html", Data)
+
+
+@Rider_middleware
+def Deliveries_History(request):
+    Rd = request.session.get('Rid_id')
+    Current_Rider = Rider.objects.get(id=Rd)
+    Assign_Orders = order.objects.filter(Rider=Current_Rider)
+    Data = {"Current_Rider": Current_Rider,
+            'Assign_Orders': Assign_Orders}
+    return render(request, "Dashboard/View_Rider_History.html", Data)
+
+
 # ////////////////////////////Functions Related  Rider Admin Dashboard+profile page start///////////////////////////
 
 

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add logo image in admin sites">
-      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add rider profile + view Complete, Pending and Assign orders">
+      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/pending_order_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/Dispatch_Cancel_order.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rider_dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Rider_dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Medicine_assets/img" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -64,9 +66,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider_dashboard" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider_dashboard" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Team members" />
     </key>
@@ -355,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657058878715</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add rider profile + view Complete, Pending and Assign orders">
+      <created>1657316810159</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657316810159</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,7 +402,8 @@
     <MESSAGE value="Add rider" />
     <MESSAGE value="Solve Rider Module Problem" />
     <MESSAGE value="add logo image in admin sites" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logo image in admin sites" />
+    <MESSAGE value="add rider profile + view Complete, Pending and Assign orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rider profile + view Complete, Pending and Assign orders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

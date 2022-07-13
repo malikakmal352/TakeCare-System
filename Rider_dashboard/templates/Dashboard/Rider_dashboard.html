@@ -157,6 +157,28 @@
                                             </div>
                                         </div>
                                         <div class="single_quick_activity d-flex">
+                                            <div class="icon" style="color:green;">
+                                                <img alt="" src='{% static "img/Dispatch_Cancel_order.png" %}'>
+
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Total_Dispatch_Deliver}}</span></h3>
+                                                <p style="font-size:14px;">Dispatch/Cancel Deliveries</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="single_quick_activity d-flex">
+                                            <div class="icon" style="color:green;">
+                                                <img alt="" src='{% static "Medicine_assets/img/pending_order_icon.png" %}'>
+
+                                            </div>
+                                            <div class="count_content">
+                                                <h3><span class="counter">{{Pending_Deliveries_count}}</span></h3>
+                                                <p style="font-size:14px;">Pending Deliveries</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="single_quick_activity d-flex">
                                             <div class="icon">
                                                 <i class="fad fa-box-full fa-4x" style="color:rebeccapurple"></i>
                                             </div>
@@ -236,6 +258,9 @@
                                         {% if i.status == 'Out for delivery' %}
                                         <button class="badge btn-success" data-toggle="modal"
                                                 href="#Delivered{{i.id}}">Cash Received
+                                        </button><br>
+                                        <button class="badge btn-danger" data-toggle="modal"
+                                                href="#Dispatch{{i.id}}">Dispatch
                                         </button>
                                         {% elif i.status == 'Conform' %}
                                         <button class="badge btn-danger" data-toggle="modal"
@@ -244,8 +269,11 @@
                                         </button>
                                         {% elif i.status == 'Delivered' %}
                                         <h5 class="badge" style="background-color:green;">Completed</h5>
-                                        {% else %}
+                                        {% elif i.status == 'Cancelled' %}
                                         <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        <h6>{{i.Rider_Request_Reject_Reason}}</h6>
+                                        {% else %}
+                                        <h6>{{i.Rider_Request_Reject_Reason}}</h6>
                                         {% endif %}
                                     </td>
                                     <td><a class="mr-1 helpline-number-link"
@@ -261,7 +289,7 @@
                             </table>
                             {% for i in Assign_Orders %}
 
-                            <div aria-hidden="true" class="modal" id="Dispatch{i.id}}" role="dialog" tabindex="-1">
+                            <div aria-hidden="true" class="modal" id="Dispatch{{i.id}}" role="dialog" tabindex="-1">
                                 <div class="modal-dialog p-3" role="document" style="margin-top: 130px;">
                                     <div class="modal-content text-center">
                                         <div class="modal-header">
@@ -285,18 +313,18 @@
                                                                   method="POST">
                                                                 {% csrf_token %}
                                                                 <input hidden name="id" type="number" value="{{i.id}}">
-                                                                <input hidden name="action" value="cancel">
+                                                                <input hidden name="action" value="Dispatch">
                                                                 <input hidden name="id" type="number" value="{{i.id}}">
                                                                 <select class="form-select form-select-md mb-3"
                                                                         name="Reason" required>
                                                                     <option value="">Select Order Dispatch Reason
                                                                         Reason
                                                                     </option>
-                                                                    <option value="Rider is not Available">
-                                                                        Rider is not Available
+                                                                    <option value="Customer Address is incorrect">
+                                                                        Customer Address is incorrect
                                                                     </option>
-                                                                    <option value="Order is from Other City.So Submit it on Branch ">
-                                                                        Order is from Other City.So Submit it on Branch
+                                                                    <option value="Rider is not Available">
+                                                                        Customer Not Pickup Phone
                                                                     </option>
                                                                     <option value="Other">
                                                                         Other

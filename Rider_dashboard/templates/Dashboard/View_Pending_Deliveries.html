@@ -16,7 +16,7 @@
             <span>Dashboard</span>
         </li>
         <li class="">
-            <a aria-expanded="false"  href="/Rider Dashboard/">
+            <a aria-expanded="false"  href="/Rider_Dashboard/">
                 <!-- <i class="fas fa-th"></i> -->
                 <img alt="" src='{% static "./Hospital_files/1.svg" %}'>
                 Dashboard
@@ -137,7 +137,7 @@
                         {% endif %}
                         <div class="table-responsive" id="table_sub_2">
                             <table class="table table-bordered table-hover" id="examples">
-                                <h2 class="text-center"><b>Assign Orders Details</b></h2>
+                                <h2 class="text-center"><b>All Pending Orders</b></h2>
                                 <thead>
                                 <tr align="center">
                                     <th scope="col">ID</th>
@@ -151,6 +151,7 @@
                                 </thead>
                                 <tbody>
                                 {% for i in Assign_Orders %}
+                                {% if i.Rider_Request_status != 'Cancelled' and i.Rider_Request_status != 'Completed' %}
                                 <tr align="center">
                                     <td scope="row">{{i.id}}</td>
                                     <td>{{ i.Medicine}}</td>
@@ -197,6 +198,7 @@
                                         <img alt="" src='{% static  "view-details.png" %}' style="width:30px;">
                                     </a></td>
                                 </tr>
+                                {% endif %}
                                 {% endfor %}
                                 </tbody>
                             </table>
@@ -321,6 +323,51 @@
                                     </div>
                                 </div>
                             </div>
+
+                    <div aria-hidden="true" class="modal" id="Delivered{{i.id}}" role="dialog"
+                                 tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 100px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Are you sure </h5>
+                                            <p class="text-center">You Received Payment</p>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name</h6>
+                                                        </th>
+                                                        <td>{{i.Medicine}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/Rider_Dashboard/Rider_delivery/"
+                                                                  method="POST">
+                                                                {% csrf_token %}
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input hidden name="action" value="Delivered">
+                                                                <input hidden name="id" type="number" value="{{i.id}}">
+                                                                <input class="btn btn-outline-success"
+                                                                       type="submit" value="Cash Received"/>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
 
                     {% endfor %}
                 </div>

@@ -49,7 +49,7 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
 
 from Rider_dashboard.views import Rider_Login, Rider_Dashboard, Rider_delivery, View_Complete_Deliveries, \
-    View_Pending_Deliveries, Rider_profile, Rider_profile_img, updates_Rider_profile
+    View_Pending_Deliveries, Rider_profile, Rider_profile_img, updates_Rider_profile, Deliveries_History
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -214,6 +214,7 @@ urlpatterns = [
     path("Rider_Dashboard/Rider_delivery/", Rider_delivery, name="Rider_delivery"),
     path("Rider_Dashboard/view complete orders/", View_Complete_Deliveries, name="View_Complete_Deliveries"),
     path("Rider_Dashboard/view_all_pending_Orders/", View_Pending_Deliveries, name="View_Pending_Deliveries"),
+    path("Rider_Dashboard/Delivery orders History/", Deliveries_History, name="Deliveries_History"),
 
     path("Rider_Dashboard/Rider_Profile/", Rider_profile, name="Rider_profile"),
     path('Rider_Dashboard/Rider_profile_img/', Rider_profile_img, name="Rider_profile_img"),

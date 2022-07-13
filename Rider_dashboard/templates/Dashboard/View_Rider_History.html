@@ -36,14 +36,14 @@
             <ul class="mm-collapse">
                 <li><a href="/Rider_Dashboard/#table_sub_2">View Today Orders</a></li>
                 <li><a href="/Rider_Dashboard/view_all_pending_Orders/">All Pending Orders</a></li>
-                <li><a class="active" href="/Rider_Dashboard/view complete orders/">View Complete Orders</a></li>
-                <li><a href="/Rider_Dashboard/Delivery orders History/">View Orders Delivery History</a></li>
+                <li><a href="/Rider_Dashboard/view complete orders/">View Complete Orders</a></li>
+                <li><a class="active"  href="/Rider_Dashboard/Delivery orders History/">View Orders Delivery History</a></li>
 
             </ul>
         </li>
 
         <li class="">
-            <a aria-expanded="false" href="/Rider_Dashboard/Rider_Profile/">
+            <a aria-expanded="false"  href="/Rider_Dashboard/Rider_Profile/">
                 <i class="far fa-capsules" style="color:green;"></i>
                 <span style="font-size:14px;">Rider Profile</span>
             </a>
@@ -137,7 +137,7 @@
                         {% endif %}
                         <div class="table-responsive" id="table_sub_2">
                             <table class="table table-bordered table-hover" id="examples">
-                                <h2 class="text-center"><b>View All Deliver Orders</b></h2>
+                                <h2 class="text-center"><b>View All Delivery History</b></h2>
                                 <thead>
                                 <tr align="center">
                                     <th scope="col">ID</th>
@@ -157,7 +157,21 @@
                                     <td>{{ i.Address}}</td>
                                     <td>{{i.Total_price}} Rs</td>
                                     <td class="Order_Status">
+                                        {% if i.status == 'Pending' %}
+                                        <h5 class="badge" style="background-color:Yellow;">{{i.status}}</h5>
+                                        {% elif i.status == 'Out for delivery' %}
+                                        <h5 class="badge" style="background-color:brown;">{{i.status}}</h5>
+                                        {% elif i.status == 'Conform' %}
                                         <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% elif i.status == 'Rider Received Payment' %}
+                                        <h5 class="badge" style="background-color:Purple;">
+                                            Rider Received Cash
+                                        </h5>
+                                        {% elif i.status == 'Delivered' %}
+                                        <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                        {% else %}
+                                        <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
+                                        {% endif %}
                                     </td>
                                     <td><a class="mr-1 helpline-number-link"
                                            data-toggle="modal" href="#view-details{{i.id}}"

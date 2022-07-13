@@ -222,87 +222,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12 col-xl-12">
-                    <div class="white_box mb_30 " style="position: relative;">
-                        <div class="box_header border_bottom_1px  ">
-                            <div class="main-title">
-                                <h3 class="mb_25">Lab Test Booking Survey</h3>
-                            </div>
-                        </div>
-
-                        <div class="income_servay">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_today}}</span></h3>
-                                        <p>Today's Booking</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_mouth}}</span></h3>
-                                        <p>This Month's Booking</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="count_content">
-                                        <h3><span class="counter">{{Test_year}}</span></h3>
-                                        <p>This Year's Booking</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <div class="col-lg-12 col-xl-12">
-                    <div class="white_box mb_30 " style="position: relative;">
-                        <div class="table-responsive">
-                            <table align="center" class="table table-bordered table-hover"
-                                   style="font-family:sans-serif;font-size:13px;">
-                                {% if error_message %}
-                                <div aria-atomic="true" aria-live="assertive"
-                                     class="toast  show align-items-center w-100"
-                                     role="alert">
-                                    <div class="d-flex alert-danger">
-                                        <div class="toast-body ">
-                                            {{error_message}}
-                                        </div>
-                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                                type="button"></button>
-                                    </div>
-                                </div>
-                                {% elif success %}
-                                <div aria-atomic="true" aria-live="assertive"
-                                     class="toast  show align-items-center w-100"
-                                     role="alert">
-                                    <div class="d-flex alert-success">
-                                        <div class="toast-body ">
-                                            {{success}}
-                                        </div>
-                                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                                type="button"></button>
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                <br><br>
-
-                                <thead>
-                                <tr align="center">
-                                    <th colspan="10"><h2>New Medicine Orders</h2></th>
-                                </tr>
-                                </thead>
-
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
@@ -378,13 +297,17 @@
 
                                     <td  align="center">
                                         {% if i.Delivery_by == 'By_Rider' %}
-                                             {% if i.Rider_Request_status == 'Completed' %}
-                                               <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
-                                            {% elif i.Rider_Request_status == 'Cancelled' %}
+                                             {% if i.Rider_Request_status == 'Completed'%}
+                                             <h5 class="badge" style="background-color:green;">{{i.status}}</h5>
+                                            {% elif i.Rider_Request_status == 'Cancelled' and i.status == 'Conform' %}
                                            <button class="badge btn-success w-100 mb-2" data-toggle="modal"
                                                href="#Self_Delivery{{i.id}}">Self Delivery</button>
                                             <button class=" btn-danger badge" data-toggle="modal"
                                                href="#Cancel{{i.id}}">Cancel</button>
+                                          {% elif i.Rider_Request_status == 'Cancelled' and i.status == 'Dispatch' %}
+                                            <h6 style="font-size:12px;">{{i.Rider_Request_Reject_Reason}}</h6>
+                                            {% elif i.Rider_Request_status == 'Cancelled' and i.status == 'Cancelled' %}
+                                             <h5 class="badge" style="background-color:red;">{{i.status}}</h5>
                                             {% else %}
                                               <h6>On Rider Delivery this option is
                                                   <span style="color:red;">Disabled</span>
@@ -414,11 +337,14 @@
                                         {% if i.Delivery_by == 'By_Rider' %}
                                               {% if i.Rider_Request_status == 'Assign a Rider' %}
                                                  {{i.Rider}}
-                                              {% elif i.Rider_Request_status == 'Cancelled' %}
-                                               <h5 class="badge" style="background-color:Yellow;">{{i.Rider_Request_status}}..</h5>
-                                               <p>{{i.Rider_Request_Reject_Reason}}</p>
+                                              {% elif i.Rider_Request_status == 'Cancelled' and i.status != 'Dispatch' %}
+                                               <h6>{{i.Rider}}</h6>
+                                              {% elif i.Rider_Request_status == 'Cancelled' and i.status == 'Dispatch' %}
+                                               <h6>Rider is Dispatch Order</h6>
                                               {% elif i.Rider_Request_status == 'Pending' %}
                                                <h6>Rider Request is Sent<br>Rider will allocate within 30 min</h6>
+                                              {% else %}
+                                              <p></p>
                                             {% endif %}
                                         {% else %}
                                          {% if i.status != 'Pending' %}
@@ -800,7 +726,6 @@
                                     </div>
                                 </div>
                             </div>
-
 
                             {% endfor %}
                         </div>
