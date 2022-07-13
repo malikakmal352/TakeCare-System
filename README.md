@@ -26,7 +26,8 @@
 - Multipal Complain/Contact System 
 - Keep your Medical Records
 - Lab Test booking
-- Buy Medicine Store 
+- Buy Medicine Store
+- Add to Cart
 - Medicine expiry alert system
 - Cash on Delerivy
 - Order Tracking System
@@ -37,18 +38,23 @@
     - 2.	Laboratory
     - 3.	Pharmacy
     - 4.	Doctor
+    - 5. Rider
 - E-mail Verification System for all new register users
 
  
   #                            ----------- Project UI Screen Shots -------------
   
-  #                       ------------------------ Home Page-------------------------
+  #                               ------------- Home Page-------------
   
-                                                  # Desptop View
+                                              # Desptop View
                        
  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_desktop3.JPG?raw=true)
- 
-                                                  # Mobile View
+  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_desktop2.JPG?raw=true)
+
+ # Helpline
+  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/Help_line.JPG?raw=true)
+
+                                              # Mobile View
  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_mobile1.JPG?raw=true)
  
 
