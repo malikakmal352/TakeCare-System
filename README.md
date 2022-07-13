@@ -46,15 +46,14 @@
   
   #                               ------------- Home Page-------------
   
-                                              # Desptop View
+                                                 # Desptop View
                        
  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_desktop3.JPG?raw=true)
-  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_desktop2.JPG?raw=true)
 
  # Helpline
   ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/Help_line.JPG?raw=true)
 
-                                              # Mobile View
+                                                 # Mobile View
  ![homepage](https://github.com/malikakmal352/TakeCare-System/blob/master/Screenshort/home_page_mobile1.JPG?raw=true)
  
 
