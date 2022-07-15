@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add rider profile + view Complete, Pending and Assign orders">
-      <change afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Medicine_assets/img/pending_order_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/Dispatch_Cancel_order.png" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="first Vision 1.0 Complete">
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/release/app-release.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/Home_page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/No_Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/No_internet_page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/callBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/gallery/GalleryFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/gallery/GalleryViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/home/HomeFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/home/HomeViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/slideshow/SlideshowFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/slideshow/SlideshowViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_camera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_gallery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_slideshow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/side_nav_bar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/activity_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/activity_no_internet_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/app_bar_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/content_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_gallery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_slideshow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/nav_header_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/menu/home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FYP.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../../FYP.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/CSS/TeamCard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/CSS/loginPopup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/DataTables/dynamic.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/DataTables/ga.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/Chart.min.js(1).download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/custom.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/custom.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/jquery.nice-select.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.nice-select.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/jquery.waypoints.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/jquery.waypoints.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/metisMenu.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/metisMenu.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/owl.carousel.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/owl.carousel.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/popper.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/popper.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Hospital_files/swiper.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/static/Hospital_files/swiper.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/custom.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/jquery.counterup.min.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/Order_pending.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/alejandro-escamilla-N7XodRrbzS0-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/doct_login 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/doct_login 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/doct_login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/female_doctor_dp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/images.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/lab 3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/lab1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/lab2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/labbg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/lauren-mancke-aOC7TSLb1o8-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/lauren-mancke-aOC7TSLb1o8-unsplash_9EERWmG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/madical_reports.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/male_doctor_dp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/panadol.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Products/s7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/MyApplication/.idea/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +119,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Medicine_assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TakeCare System" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -73,11 +137,11 @@
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Team members" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Hospital_files" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider\templates" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage\templates" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Slider_images" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Pharmacy_Store\templates" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -364,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657316810159</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="first Vision 1.0 Complete">
+      <created>1657717138123</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1657717138123</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,7 +474,8 @@
     <MESSAGE value="Solve Rider Module Problem" />
     <MESSAGE value="add logo image in admin sites" />
     <MESSAGE value="add rider profile + view Complete, Pending and Assign orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rider profile + view Complete, Pending and Assign orders" />
+    <MESSAGE value="first Vision 1.0 Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="first Vision 1.0 Complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
