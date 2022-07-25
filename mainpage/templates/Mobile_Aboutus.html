@@ -1,0 +1,356 @@
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{% static 'Medicine_assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <!-- Font Awsome CND -->
+    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+    <title>TakeCare: Find, Book &amp; Consult Doctors | Pakistan's Most Trusted Platform</title>
+    <meta content="TakeCare" name="author"/>
+
+    <!-- CSS here -->
+    <link href="{% static 'Medicine_assets/css/meanmenu.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/owl-carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/swiper-bundle.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/ui-range-slider.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/nice-select.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/flaticon/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/font-awesome-pro.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/default.css' %}" rel="stylesheet">
+    <link href="{% static 'Medicine_assets/css/style.css' %}" rel="stylesheet">
+
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        html
+         {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent
+         }
+
+
+        @media (max-width: 400px){
+          @media (min-width: 50px){
+          .breadcrumb-title{
+             font-size:30px;
+          }
+          }}
+
+        //////////////////////////////////////////header_CSS END//////////////////////////////////
+    </style>
+    <style>
+    .page-banner-area {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      background-image:url({% static 'Medicine_assets/img/banner/page-banner-1.jpg' %});
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+    .page-banner-area::before {
+      position: absolute;
+      content: "";
+      background: #0e2641;
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <!-- page-banner-area-start -->
+    <div class="page-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class=" text-center">
+                        <b class="breadcrumb-title">About Us</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- page-banner-area-end -->
+
+
+        <!-- team-area-start -->
+        <div class="team-area light-bg-s pt-70 pb-40">
+            <div class="container">
+                <div class="row mb-35">
+                    <div class="col-xl-12">
+                        <div class="abs-section-title text-center">
+                            <span>THE TEAM</span>
+                            <h4>Meet Our Team</h4>
+                            <p>The perfect way to enjoy brewing tea on low hanging fruit to identify. Duis autem vel eum iriure dolor in hendrerit <br> in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-team text-center mb-30">
+                            <div class="team-image mb-35 w-img">
+                                <div class="inner-timg">
+                                    <a href="about.html">
+                                        <img src="{% static 'Team members/membar 1.jpg' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tauthor-degination mb-15">
+                                <h5><a href="about.html">Malik Akmal Naseer</a></h5>
+                                <span>Django Developer</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-team text-center mb-30">
+                            <div class="team-image mb-35 w-img">
+                                <div class="inner-timg">
+                                    <a href="about.html">
+                                        <img src="{% static 'Team members/Supervisor.png' %}" alt=" Dr.Tariq Sadad">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tauthor-degination mb-15">
+                                <h5><a href="about.html">Dr.Tariq Sadad</a></h5>
+                                <span>SuperVisor</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-team text-center mb-30">
+                            <div class="team-image mb-35 w-img">
+                                <div class="inner-timg">
+                                    <a href="about.html">
+                                        <img src="{% static 'Team members/membar3.PNG' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tauthor-degination mb-15">
+                                <h5><a href="about.html">Abdul Wasay</a></h5>
+                                <span>Developer</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- team-area-end -->
+
+                <!-- location-area-start -->
+        <div class="location-area pt-70 pb-25">
+            <div class="container">
+                <div class="row mb-25">
+                    <div class="col-xl-12">
+                        <div class="abs-section-title text-center">
+                            <span>Our Branches</span>
+                            <h4>Where We Are</h4>
+                            <p>We here to help you
+                                <br>We Have a multiple Branches in Different cities of Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mx-auto">
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="location-item mb-30">
+                            <div class="location-image w-img mb-20">
+                                <img alt="Lahore Branch Image"
+                                     src="{% static 'Medicine_assets/img/location/location5.jfif' %}">
+                            </div>
+                            <h6>Mall Road - Lahore</h6>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Find us</span>
+                                    <p>Lahore Mall,Mall Rd Lahore </p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-phone-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Call us</span>
+                                    <p><a href="tel:+8804568">(+100) 123 456 7890</a></p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Mail us</span>
+                                    <p>
+                                        <a href="https://themepure.net/cdn-cgi/l/email-protection#a2d1d6cdd0c7e2c1cdcfd2c3ccdb8cc1cdcf"><span
+                                                class="__cf_email__"
+                                                data-cfemail="3744435845527754585a4756594e1954585a">[email&#160;protected]</span></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="location-item mb-30">
+                            <div class="location-image w-img mb-20">
+                                <img alt="Karachi Branch Image"
+                                     src="{% static 'Medicine_assets/img/location/Karachi.jfif' %}">
+                            </div>
+                            <h6>150 Stanley Rd - Karachi</h6>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Find us</span>
+                                    <p>teen talwar, Karachi, Pak</p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-phone-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Call us</span>
+                                    <p><a href="tel:+8804568">(+100) 123 456 7890</a></p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Mail us</span>
+                                    <p>
+                                        TakeCare.Karachi@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="location-item mb-30">
+                            <div class="location-image w-img mb-20">
+                                <img alt="Islamabad Branch Image"
+                                     src="{% static 'Medicine_assets/img/location/Islamabad.jfif' %}">
+                            </div>
+                            <h6>Blue Area - Islamabad (Headquarter)</h6>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Find us</span>
+                                    <p>Atlantic, Office floor 3, Islamabad, Pak</p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-phone-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Call us</span>
+                                    <p><a href="tel:0330 1382816">(+92) 123 456 7890</a></p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Mail us</span>
+                                    <p>TakeCare.ISB@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="location-item mb-30">
+                            <div class="location-image w-img mb-20">
+                                <img alt="Multan Branch Image"
+                                     src="{% static 'Medicine_assets/img/location/location-1.jpg' %}">
+                            </div>
+                            <h6>86 Georgia Rd - Mardrid</h6>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Find us</span>
+                                    <p>Calle del Correo, 4, Madrid, Spain</p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc sm-item-border mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-phone-alt"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Call us</span>
+                                    <p><a href="tel:+8804568">(+100) 123 456 7890</a></p>
+                                </div>
+                            </div>
+                            <div class="sm-item-loc mb-20">
+                                <div class="sml-icon mr-20">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="sm-content">
+                                    <span>Mail us</span>
+                                    <p>
+                                        <a href="https://themepure.net/cdn-cgi/l/email-protection#82f1f6edf0e7c2e1edeff2e3ecfbace1edef"><span
+                                                class="__cf_email__"
+                                                data-cfemail="82f1f6edf0e7c2e1edeff2e3ecfbace1edef">[email&#160;protected]</span></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- location-area-end -->
+
+
+    </main>
+</body>

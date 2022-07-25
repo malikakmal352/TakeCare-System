@@ -29,6 +29,9 @@ def About_us(request):
     Data = {'labcity': labcity, 'Customer': Customer}
     return render(request, 'about.html', Data)
 
+def Mobile_About_us(request):
+    return render(request, 'Mobile_Aboutus.html')
+
 
 def Contact_us(request):
     labcity = Labcity.objects.all()
@@ -176,25 +179,25 @@ def Logout(request):
         request.session['Phy_id'] = None
         request.session['Phy_email'] = None
         return redirect('pharmacy Login')
-    elif Customer_id:
+    if Customer_id:
         request.session['id'] = None
         request.session['email'] = None
         request.session['phone'] = None
         request.session['Address'] = None
         request.session['fullname'] = None
         request.session['city'] = None
-    elif superAdmin:
+    if superAdmin:
         request.session['admin_id'] = None
         request.session['admin_email'] = None
         return redirect('SuperAdmin_Login')
-    elif lab_id:
+    if lab_id:
         request.session['lab_id'] = None
         request.session['lab_email'] = None
         return redirect('Laboratory Login')
-    elif Rider_id:
+    if Rider_id:
         request.session['lab_id'] = None
         return redirect(mainindex)
-    elif Doctor_email:
+    if Doctor_email:
         request.session['doctor_id'] = None
         request.session['Doctor_email'] = None
         return redirect('Doctor_Login')

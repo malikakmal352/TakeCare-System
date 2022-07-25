@@ -1911,8 +1911,6 @@ def ChangePassword_doctor(request, token):
             print(user_id, 'print 2')
             if user_id is None:
                 messages.success(request, 'No user id found.')
-                print(user_id, 'print 3')
-
                 return redirect(f'/change-password_doctor/{token}/')
 
             if new_password != confirm_password:

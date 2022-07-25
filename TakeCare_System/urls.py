@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+import Rider_dashboard
+from Rider_dashboard.urls import *
 
 from Laboratory.views import Labs, test_list, Booking_form, View_Your_Appointments, lab_search
 from Laboratory.views import lab_admin, Lab_Login, add_new_test, test_delete, update_test, add_new_Samplest, \
@@ -27,7 +30,7 @@ from TakeCare_System import settings
 
 from mainpage.views import mainindex, Login, Signup, Logout, ForgetPassword, ChangePassword, Patient_Setting, \
     Change_patient_profile_img, updates_patient_profile, Save_Records, Add_new_Reports, view_report_detail, \
-    Update_Reports, Save_Records_confirmation, About_us, Contact_us
+    Update_Reports, Save_Records_confirmation, About_us, Contact_us, Mobile_About_us
 
 from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admin, ForgetPassword_Admin, \
     view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
@@ -48,13 +51,11 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts, \
     View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
 
-from Rider_dashboard.views import Rider_Login, Rider_Dashboard, Rider_delivery, View_Complete_Deliveries, \
-    View_Pending_Deliveries, Rider_profile, Rider_profile_img, updates_Rider_profile, Deliveries_History
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("about us/", About_us, name="About us"),
     path('Contact_us/', Contact_us, name="Contact_us"),
+    path('Mobile_About_us/', Mobile_About_us, name="Mobile_About_us"),
 
     # ////////////////////////////////// URLS for Super Admin start//////////////////////////////////////////////
     path("Super_admin/", Super_admin, name="Super_admin"),
@@ -210,15 +211,7 @@ urlpatterns = [
     # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
     path("Rider_Login/", Rider_Login, name="Rider_Login"),
-    path("Rider_Dashboard/", Rider_Dashboard, name="Rider_Dashboard"),
-    path("Rider_Dashboard/Rider_delivery/", Rider_delivery, name="Rider_delivery"),
-    path("Rider_Dashboard/view complete orders/", View_Complete_Deliveries, name="View_Complete_Deliveries"),
-    path("Rider_Dashboard/view_all_pending_Orders/", View_Pending_Deliveries, name="View_Pending_Deliveries"),
-    path("Rider_Dashboard/Delivery orders History/", Deliveries_History, name="Deliveries_History"),
-
-    path("Rider_Dashboard/Rider_Profile/", Rider_profile, name="Rider_profile"),
-    path('Rider_Dashboard/Rider_profile_img/', Rider_profile_img, name="Rider_profile_img"),
-    path("Rider_Dashboard/updates_Rider_profile/", updates_Rider_profile, name="updates_Rider_profile"),
+    path("Rider_Dashboard/", include(Rider_dashboard.urls)),
     # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
     path('register/', Signup),
@@ -245,14 +238,8 @@ urlpatterns = [
 
 ]
 
-# handler404 = "mainpage.views.page_not_found_view"
-
 handler404 = 'mainpage.views.not_found'
 
-# handler404 = 'mainpage.views.error_404'
-# # handler500 = 'mainpage.views.error_500'
-# handler403 = 'mainpage.views.error_403'
-# handler400 = 'mainpage.views.error_400'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
