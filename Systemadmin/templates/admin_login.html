@@ -165,8 +165,22 @@ reduce the size of the label and move upwards
     <h2 style="text-align: center;color: white;"><b>Super Admin Login</b></h2>
     <form action="/SuperAdmin_Login/" method="POST">
         {% csrf_token %}
-        {% if error %}
 
+        {% if messages %}
+        {% for message in messages %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+        {% endfor %}
+        {% endif %}
+        {% if error %}
         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100" role="alert">
             <div class="d-flex alert-danger">
                 <div class="toast-body ">

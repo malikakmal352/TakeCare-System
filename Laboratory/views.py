@@ -253,14 +253,18 @@ def View_Your_Appointments(request, id):
 
     data = {'book_Test': book_Test, 'labcity': labcity, 'w': w,
             'Customer': Customer, "book_appointments": book_appointments,
-            "Save_reports": Save_reports, "patient": patient, "success": success, "re" : re}
+            "Save_reports": Save_reports, "patient": patient, "success": success, "re": re}
     return render(request, 'View Your Appointments and orders.html', data)
 
 
 # ///////////////////////////////////////Laboratory admin Login ////////////////////////////////////////////////////////
 def Lab_Login(request):
     if request.method == 'GET':
-        return render(request, 'Lab_login.html')
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'Lab_login.html', {'path': path})
+        else:
+            return render(request, 'Lab_login.html')
     else:
         Data = request.POST
         email = Data.get('email')
@@ -279,8 +283,12 @@ def Lab_Login(request):
                 return render(request, 'Lab_login.html', {'error': error_message})
             for i in Laboratory:
                 request.session['lab_id'] = i.id
-                fa = request.session['lab_email'] = i.email
-                return redirect(lab_admin)
+                request.session['lab_email'] = i.email
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(lab_admin)
         else:
             error_message = "Email or Password Invalid......"
 
@@ -293,6 +301,7 @@ def Lab_Login(request):
 def lab_admin(request):
     error_message = None
     success = None
+    request.session['required_path'] = None
 
     Test_today = 0
     month = datetime.now().month
@@ -422,8 +431,6 @@ def Lab_profile(request):
 @Lab_middleware
 def Lab_profile_img(request):
     lb = request.session.get('lab_id')
-    error_message = None
-    success = None
     Laboratory_img = Lab.objects.get(id=lb)
     if request.method == 'POST':
         Laboratory_profile_img = request.FILES.get('image')

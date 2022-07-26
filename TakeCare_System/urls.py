@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from TakeCare_System import settings
+
 
 import Rider_dashboard
+import Systemadmin
 from Rider_dashboard.urls import *
+from Systemadmin.urls import *
 
 from Laboratory.views import Labs, test_list, Booking_form, View_Your_Appointments, lab_search
 from Laboratory.views import lab_admin, Lab_Login, add_new_test, test_delete, update_test, add_new_Samplest, \
@@ -26,17 +30,10 @@ from Laboratory.views import lab_admin, Lab_Login, add_new_test, test_delete, up
     Lab_profile, Lab_profile_img, upload_test_report, view_all_comfirm_booking, View_all_new_booking, view_test_list, \
     View_all_samplest, updates_lab_profile
 
-from TakeCare_System import settings
-
 from mainpage.views import mainindex, Login, Signup, Logout, ForgetPassword, ChangePassword, Patient_Setting, \
     Change_patient_profile_img, updates_patient_profile, Save_Records, Add_new_Reports, view_report_detail, \
     Update_Reports, Save_Records_confirmation, About_us, Contact_us, Mobile_About_us
 
-from Systemadmin.views import Super_admin, SuperAdmin_Login, ChangePassword_Admin, ForgetPassword_Admin, \
-    view_Patient_list, Status_Patients, add_new_Patient, Patients_del, view_Labs_list, Status_Labs, add_new_Laboratory, \
-    Laboratory_del, update_Laboratory, Admin_profile, Admin_profile_img, updates_admin_profile, view_N_D, \
-    all_Register_doctor, Status_doctor, Add_new_Doctor, ADD_New_Pharmacy, view_Pharmacy_list, Status_Pharmacy, \
-    Pharmacy_del, Update_Pharmacy, add_new_Rider, view_Rider_list, Status_Rider, view_New_Rider_Requests
 
 from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doctor, Doctor_request_form, \
     Create_password_doctor, view_all_doctors, Doctors_Special, Doctors_Special_in_city, Doctors_in_city, \
@@ -58,7 +55,7 @@ urlpatterns = [
     path('Mobile_About_us/', Mobile_About_us, name="Mobile_About_us"),
 
     # ////////////////////////////////// URLS for Super Admin start//////////////////////////////////////////////
-    path("Super_admin/", Super_admin, name="Super_admin"),
+    path("Super_admin/", include(Systemadmin.urls)),
     path("SuperAdmin_Login/", SuperAdmin_Login, name="SuperAdmin_Login"),
     path("Admin_profile/", Admin_profile, name="Admin_profile"),
     path("Admin_profile_img/", Admin_profile_img, name="Admin_profile_img"),
@@ -239,7 +236,7 @@ urlpatterns = [
 ]
 
 handler404 = 'mainpage.views.not_found'
-
+handler400 = 'mainpage.views.not_found'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -175,7 +175,11 @@ def Medicine_search(request):
 @Phy_login_check
 def phy_login(request):
     if request.method == 'GET':
-        return render(request, "Pharmacy_Login.html")
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'Pharmacy_Login.html', {'path': path})
+        else:
+           return render(request, "Pharmacy_Login.html")
     else:
         Data = request.POST
         email = Data.get('email')
@@ -195,12 +199,22 @@ def phy_login(request):
         for i in pharmacy:
             request.session['Phy_id'] = i.id
             fa = request.session['Phy_email'] = i.email
-            return redirect(Phy_admin)
+            path = request.session.get("required_path")
+            if path:
+                return redirect(path)
+            else:
+               return redirect(Phy_admin)
     else:
         error_message = "Email or Password Invalid......"
 
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Pharmacy_Login.html', {'error': error_message})
+
+@Phy_middleware
+def Phy_logout(request):
+    request.session['Phy_id'] = None
+    request.session['Phy_email'] = None
+    return redirect(mainindex)
 
 
 def Create_password_Pharmacy(request, token):
@@ -377,7 +391,7 @@ def Phy_admin(request):
     month = datetime.now().date()
     year = datetime.now().year
     w = datetime.date(now())
-
+    request.session['required_path'] = None
     Py = request.session.get('Phy_id')
     Total_medicines = Add_New_Medicine.objects.filter(Pharmacy=Py, is_Expired=False, status="Active").count()
     Expired_Medicine_count = Add_New_Medicine.objects.filter(Pharmacy=Py, is_Expired=True, status="Active").count()

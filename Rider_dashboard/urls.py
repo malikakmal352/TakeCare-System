@@ -17,7 +17,9 @@ from django.conf.urls.static import static
 from django.urls import path
 from TakeCare_System import settings
 
-from Rider_dashboard.views import *
+from Rider_dashboard.views import Rider_Login, Rider_Dashboard, Rider_delivery, View_Complete_Deliveries, \
+    View_Pending_Deliveries, Deliveries_History, Rider_profile, Rider_profile_img, updates_Rider_profile, \
+    Rider_Logout
 
 urlpatterns = [
     # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
@@ -31,16 +33,14 @@ urlpatterns = [
     path("Rider_Profile/", Rider_profile, name="Rider_profile"),
     path('Rider_profile_img/', Rider_profile_img, name="Rider_profile_img"),
     path("updates_Rider_profile/", updates_Rider_profile, name="updates_Rider_profile"),
-    # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
-    # path('Logout/', Logout, name='Logout'),
+    path('Rider_Logout/', Rider_Logout, name='Rider_Logout'),
+    # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
 
 ]
 
-
 handler404 = 'mainpage.views.not_found'
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

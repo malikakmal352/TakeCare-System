@@ -23,10 +23,12 @@ from Pharmacy_Store.models.Add_pharmacy import Pharmacy
 from Pharmacy_Store.models.Medicine_Order import order
 from Doctor.models.ADD_Docror import Doctors
 from Rider_dashboard.models.Rider import Rider
+from mainpage.views import mainindex
 
 
 @Admin_middleware
 def Super_admin(request):
+    request.session['required_path'] = None
     all_pat = Patient.objects.all().count()
     Total_labs = Lab.objects.all().count()
     Doctors_count = Doctors.objects.all().count()
@@ -48,10 +50,21 @@ def Super_admin(request):
     return render(request, "admin_dashboard.html", data)
 
 
+@Admin_middleware
+def Super_admin_logout(request):
+    request.session['admin_id'] = None
+    request.session['admin_email'] = None
+    return redirect(mainindex)
+
+
 @Admin_login_check
 def SuperAdmin_Login(request):
     if request.method == 'GET':
-        return render(request, 'admin_login.html')
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'admin_login.html', {'path': path})
+        else:
+            return render(request, 'admin_login.html')
     else:
         Data = request.POST
         email = Data.get('email')
@@ -65,7 +78,11 @@ def SuperAdmin_Login(request):
             for i in Admin:
                 request.session['admin_id'] = i.id
                 request.session['admin_email'] = i.email
-                return redirect(Super_admin)
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(Super_admin)
         else:
             error_message = "Email or Password Invalid......"
 

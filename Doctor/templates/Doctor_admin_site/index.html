@@ -220,6 +220,7 @@
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
+                                    <th>Medical Record</th>
                                     <th style="font-size:12px;" >Prescription/ <br>Cancel Reason</th>
 
                                 </tr>
@@ -237,7 +238,7 @@
                                     </a></td>
                                     <td>{{i.Appointment_date}}</td>
                                     <td>{{i.Time_slot}}</td>
-                                    <td>
+                                    <td class="Appointment_status">
                                         {% if i.Status == "Completed" %}
                                         <span class="badge badge-success">Completed</span>
                                         {% elif i.Status == "Pending" %}
@@ -250,7 +251,18 @@
 
                                     </td>
 
-                                    <td>
+                                    <td class="Reports">
+                                      {%if i.Medical_report_1 %}
+                                        <a class="btn btn-success" target="_blank"
+                                            href="{{i.Medical_report_1.Reports.url}}" style="font-size:13px"
+                                            type="button">View
+                                    </a>
+                                     {% else %}
+                                        <h5>No Record Share</h5>
+                                        {% endif %}
+                                    </td>
+
+                                    <td class="prescription+cancel Reason">
                                         {% if i.Status == "Completed" %}
                                         <a class="mr-1 helpline-number-link"
                                            data-toggle="modal" href="#view-prescription{{i.id}}"

@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="first Vision 1.0.1 Complete">
-      <change afterPath="$PROJECT_DIR$/Rider_dashboard/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/templates/Mobile_Aboutus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainpage/urls.py" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="update urls and security">
+      <change afterPath="$PROJECT_DIR$/Systemadmin/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TakeCare-System-master/.idea/TakeCare System.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/Middleware/Lab_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/Middleware/Lab_auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/Middleware/Rider_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/Middleware/Rider_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Rider_Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Rider_Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rider_dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/Middleware/Admin_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/Middleware/Admin_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/Middleware/Lab_auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/Checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Patient_Setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Patient_Setting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../dukamarket/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/senser_project.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/release/app-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/Home_page.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/No_Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/No_internet_page.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/callBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/gallery/GalleryFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/gallery/GalleryViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/home/HomeFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/home/HomeViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/slideshow/SlideshowFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/java/com/example/takecareadminpanels/ui/slideshow/SlideshowViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_camera.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_gallery.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/ic_menu_slideshow.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/drawable/side_nav_bar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/activity_home_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/activity_no_internet_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/app_bar_home_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/content_home_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_gallery.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_home.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/fragment_slideshow.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/layout/nav_header_home_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/menu/home_page.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-land/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-w1240dp/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values-w600dp/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/New folder/app/src/main/res/values/dimens.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +92,8 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mainpage" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Systemadmin" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -98,11 +104,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Systemadmin" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider_dashboard" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Hospital_files" />
@@ -410,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657902395754</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="update urls and security">
+      <created>1658782809644</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1658782809644</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,7 +439,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="add requirement.txt" />
     <MESSAGE value="update Login forms" />
     <MESSAGE value="commit" />
@@ -451,7 +463,8 @@
     <MESSAGE value="add rider profile + view Complete, Pending and Assign orders" />
     <MESSAGE value="first Vision 1.0 Complete" />
     <MESSAGE value="first Vision 1.0.1 Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="first Vision 1.0.1 Complete" />
+    <MESSAGE value="update urls and security" />
+    <option name="LAST_COMMIT_MESSAGE" value="update urls and security" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

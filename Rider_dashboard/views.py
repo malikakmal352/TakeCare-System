@@ -8,13 +8,18 @@ from Pharmacy_Store.models.Medicine_Order import order
 from django.contrib import messages
 from Rider_dashboard.Middleware.Rider_auth import Rider_middleware, Rider_login_check
 
-
 # Create your views here.
+from mainpage.views import mainindex
+
 
 @Rider_login_check
 def Rider_Login(request):
     if request.method == 'GET':
-        return render(request, "Rider_Login.html")
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'Rider_Login.html', {'path': path})
+        else:
+            return render(request, "Rider_Login.html")
     else:
         Data = request.POST
         email = Data.get('email')
@@ -31,12 +36,22 @@ def Rider_Login(request):
             return render(request, 'Rider_Login.html', {'error': error_message})
         for i in rider:
             request.session['Rid_id'] = i.id
-            return redirect(Rider_Dashboard)
+            path = request.session.get("required_path")
+            if path:
+                return redirect(path)
+            else:
+                return redirect(Rider_Dashboard)
     else:
         error_message = "Rider ID or Password Invalid......"
         Data = {'error': error_message}
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Rider_Login.html', Data)
+
+
+@Rider_middleware
+def Rider_Logout(request):
+    request.session['lab_id'] = None
+    return redirect(mainindex)
 
 
 @Rider_middleware
@@ -53,6 +68,8 @@ def Rider_Dashboard(request):
                                                     Rider_Request_status='Assign a Rider').count()
     Total_Dispatch_Deliver = order.objects.filter(Rider=Current_Rider, Rider_Request_status='Cancelled').count()
     Assign_Orders = order.objects.filter(Rider=Current_Rider)
+    request.session['required_path'] = None
+
     Data = {"Current_Rider": Current_Rider, "Pick_order_count": Pick_order_count,
             "Total_Deliveries_count": Total_Deliveries_count,
             "Complete_Deliveries_count": Complete_Deliveries_count,

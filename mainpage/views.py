@@ -6,13 +6,10 @@ from django.utils.timezone import now
 
 from mainpage.models.Patient import Patient
 from Laboratory.models.Labcity import Labcity
-from Laboratory.models.add_lab import Lab
 
 from Laboratory.Middleware.Lab_auth import Lab_middleware, Lab_login_check
 from mainpage.Middleware.Patient_auth import Patient_middleware
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.contrib import messages
 from mainpage.Sent_Email import send_forget_password_mail
 from Doctor.models.ADD_Docror import Doctors
@@ -46,8 +43,8 @@ def mainindex(request):
     # Data = {'labcity': labcity}
     Customer = Patient.objects.all()
     All_Doctor = Doctors.objects.all()
-    cs = 'Child Specialist'
-    Child_Specialist = Doctors.objects.filter(Speciality=cs).count()
+    request.session['required_path'] = None
+
 
     w = datetime.date(now())
     all_Medicine = Add_New_Medicine.objects.filter(is_Expired=False)
@@ -58,8 +55,7 @@ def mainindex(request):
                 i.save()
 
     Data = {'labcity': labcity, 'Customer': Customer,
-            'All_Doctor': All_Doctor,
-            'Child_Specialist': Child_Specialist}
+            'All_Doctor': All_Doctor}
 
     return render(request, 'slider.html', Data)
 
@@ -108,10 +104,6 @@ def registeruser(request):
     if not error_message:
         Customer.password = make_password(Customer.password)
         Customer.save()
-        # Customer = Customer.get_by_email(email)
-        # request.session['id'] = Customer.id
-        # print(request.session.id)
-        # print(Customer.email, Customer.id)
         return redirect(mainindex)
     else:
         data = {
@@ -132,7 +124,11 @@ def Signup(request):
 @Lab_login_check
 def Login(request):
     if request.method == 'GET':
-        return render(request, 'Login.html')
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'Login.html', {'path': path})
+        else:
+            return render(request, 'Login.html')
     else:
         print('view reach ')
         Data = request.POST
@@ -141,7 +137,6 @@ def Login(request):
 
         # Validations
         Customer = Patient.get_by_email(email)
-        error_message = None
         Customer_active = Patient.objects.filter(email=email, is_Active=True)
 
         if not Customer_active:
@@ -152,14 +147,16 @@ def Login(request):
             print('pass not match', Customer)
             if flag:
                 request.session['id'] = Customer.id
-                fa = request.session['email'] = Customer.email
+                request.session['email'] = Customer.email
                 request.session['phone'] = Customer.Mn
                 request.session['Address'] = Customer.Address
                 request.session['fullname'] = Customer.name
                 request.session['city'] = Customer.city
-                print('you are ', Customer)
-                print('customer Login')
-                return redirect(mainindex)
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(mainindex)
             else:
                 error_message = "Email or Password Invalid......"
         else:
@@ -186,17 +183,17 @@ def Logout(request):
         request.session['Address'] = None
         request.session['fullname'] = None
         request.session['city'] = None
-    if superAdmin:
-        request.session['admin_id'] = None
-        request.session['admin_email'] = None
-        return redirect('SuperAdmin_Login')
+    # if superAdmin:
+    #     request.session['admin_id'] = None
+    #     request.session['admin_email'] = None
+    #     return redirect('SuperAdmin_Login')
     if lab_id:
         request.session['lab_id'] = None
         request.session['lab_email'] = None
         return redirect('Laboratory Login')
-    if Rider_id:
-        request.session['lab_id'] = None
-        return redirect(mainindex)
+    # if Rider_id:
+    #     request.session['lab_id'] = None
+    #     return redirect(mainindex)
     if Doctor_email:
         request.session['doctor_id'] = None
         request.session['Doctor_email'] = None

@@ -30,7 +30,6 @@ from Doctor.Middleware.Doctor_auth import Doctor_middleware, Doctor_login_check
 # Create your views here.
 
 
-
 def Doctor_request_form(request):
     error_message = None
     success_message = None
@@ -1417,8 +1416,11 @@ def blog_detail(request, id, Health_blogs_issue):
 def Doctor_Login(request):
     success_message = None
     if request.method == 'GET':
-        print('doctor login')
-        return render(request, 'doctor_login.html')
+        if request.session.get("required_path"):
+            path = request.session.get("required_path")
+            return render(request, 'doctor_login.html', {'path': path})
+        else:
+            return render(request, 'doctor_login.html')
     else:
         Data = request.POST
         email = Data.get('email')
@@ -1437,8 +1439,11 @@ def Doctor_Login(request):
             for i in Doctor:
                 request.session['doctor_id'] = i.id
                 request.session['doctor_email'] = i.email
-                success_message = 'Login Successfully'
-                return redirect(Doctor_admin)
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(Doctor_admin)
         else:
             error_message = "Email or Password Invalid......"
         # return render(request, 'Login.html', {'error': error_message})
@@ -1452,7 +1457,7 @@ def Doctor_admin(request):
     error_message = None
     success = None
     lb = request.session.get('doctor_id')
-
+    request.session['required_path'] = None
     Test_today = 0
     month = datetime.now().month
     year = datetime.now().year
@@ -1719,7 +1724,7 @@ def New_Appointment_Requests(request):
     Test_today = 0
     month = datetime.now().month
     year = datetime.now().year
-    Appointments = Appointment.objects.filter(Doctor=lb, Status='Pending')
+    Appointments = Appointment.objects.filter(Doctor=lb, Status='Pending').order_by('Appointment_date')
     P_name = None
     current_doctor = Doctors.objects.get(id=lb)
 
