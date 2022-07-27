@@ -183,6 +183,8 @@ def Logout(request):
         request.session['Address'] = None
         request.session['fullname'] = None
         request.session['city'] = None
+        return redirect(mainindex)
+
     # if superAdmin:
     #     request.session['admin_id'] = None
     #     request.session['admin_email'] = None
@@ -196,7 +198,7 @@ def Logout(request):
     #     return redirect(mainindex)
     if Doctor_email:
         request.session['doctor_id'] = None
-        request.session['Doctor_email'] = None
+        request.session['doctor_email'] = None
         return redirect('Doctor_Login')
     else:
         request.session.clear()

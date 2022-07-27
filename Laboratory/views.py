@@ -183,7 +183,10 @@ def Booking_form(request, id):
     labcity = Labcity.objects.all()
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
+    print("jshgjfdhsaddhfdsdhsd\n\n")
     if request.method == 'POST':
+        print("Post Working\n\n")
+
         Data = request.POST
         email = Data.get('email')
         email = Patient.objects.get(id=email)
@@ -198,7 +201,7 @@ def Booking_form(request, id):
         test_price = Data.get('test_price')
         Address = Data.get('address')
         Test_type = Data.get('Test_type')
-        print(Test_type)
+        print(Test_type, "jshgjfdhsaddhfdsdhsd\n\n")
         Booking_test = Book_Test(Patient_Name=name, city=city, email=email, Phone=phone, Address=Address,
                                  Laboratory=labname, Book_Test=test_name, Test_date=date, Test_Type=Test_type)
         Booking_test.save()

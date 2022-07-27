@@ -9,6 +9,7 @@ from Doctor.models.ADD_Docror import Doctors
 class Health_blogs(models.Model):
     Doctor = models.ForeignKey(Doctors, on_delete=models.CASCADE, null=True, blank=True)
     img = models.ImageField(upload_to='Health_blogs_img/', default='', null=True, blank=True)
+    Blog_View = models.PositiveIntegerField(default=0)
     Health_blogs_issue = models.CharField(max_length=200, blank=True)
     Main_heading = models.CharField(max_length=200, blank=True)
     Health_blogs_Detail = models.TextField()

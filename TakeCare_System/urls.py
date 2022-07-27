@@ -46,7 +46,7 @@ from Pharmacy_Store.views import phy_login, Phy_admin, Create_password_Pharmacy,
     Medicine_delete, update_Medicine, view_Expired_Medicine_list, view_Expiry_Soon_Medicine_list, Pharmacies, \
     Medicine_details, Tracking_Order, Cancel_order, Medicine_order_form, Order_Confirmed, order_cancel_confirm, \
     cart_add, cart_clear, item_decrement, item_increment, item_clear, cart_detail, Checkout, Order_Confirmed_by_Carts, \
-    View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders
+    View_all_new_Orders, view_all_comfirm_Orders, view_all_complete_Orders, All_Medicines
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -135,7 +135,7 @@ urlpatterns = [
     path("Doctors_by_city/<city>/", Doctors_in_city, name='Doctors_in_city'),
     path("Doctors/<Speciality>/<city>/", Doctors_Special_in_city, name='Doctors_Special_in_city'),
     path("Health_blog/", Health_blog, name="Health_blog"),
-    path("Health_blog/<Health_blogs_issue>/<int:id>/", blog_detail, name="blog_detail"),
+    path("Health_blog/<int:id>/", blog_detail, name="blog_detail"),
     path("Health_blog/<Health_blogs_issue>/", blog_via_issue, name="blog_via_issue"),
     path("Update_health_blog/", Update_health_blog, name="Update_health_blog"),
     path("Book_appointment/<int:id>/", Book_appointment, name="Book_appointment"),
@@ -148,6 +148,7 @@ urlpatterns = [
     path("Medical Records/<str:message>/", Save_Records_confirmation, name="Save_Records_confirmation"),
 
     path('Pharmacies/<int:id>', Pharmacies, name='Pharmacies_card_page'),
+    path('Pharmacies/', All_Medicines, name='All_Medicines_card_page'),
     path("Medicine_details/<int:id>", Medicine_details, name="Medicine_details"),
     path('Order Medicine Form/', Medicine_order_form, name="Medicine_order_form"),
     path('Order Confirmed/', Order_Confirmed, name="Order_Confirmed"),

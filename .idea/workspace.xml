@@ -1,56 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="update urls and security">
-      <change afterPath="$PROJECT_DIR$/Systemadmin/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../TakeCare-System-master/.idea/TakeCare System.iml" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add  View medical record on doctor side">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/New_Appointment_Requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_confirm_appointments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/doctor_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/models/Health_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/Health_blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Blog_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/Middleware/Lab_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/Middleware/Lab_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View lab_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View lab_test_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/Middleware/Phy_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/Middleware/Rider_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/Middleware/Rider_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_Profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/Rider_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Complete_Rider_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Pending_Deliveries.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Dashboard/View_Rider_History.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/templates/Rider_Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/templates/Rider_Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rider_dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rider_dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/Middleware/Admin_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/Middleware/Admin_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/Middleware/Lab_auth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Admin_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/Update_Laboratory_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/View_all_laboratories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Add_New_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/Update_Pharmacy_record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Pharmacy_fuctions/view_all_Pharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/admin_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/Patient_Setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Patient_Setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FaucetPay.lnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TakeCare  Find, Book &amp; Consult Doctors   Pakistan's Most Trusted Platform.lnk" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658782809644</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add  View medical record on doctor side">
+      <created>1658869650189</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1658869650189</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,7 +418,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add requirement.txt" />
     <MESSAGE value="update Login forms" />
     <MESSAGE value="commit" />
     <MESSAGE value="Preview Pdf function" />
@@ -464,7 +442,8 @@
     <MESSAGE value="first Vision 1.0 Complete" />
     <MESSAGE value="first Vision 1.0.1 Complete" />
     <MESSAGE value="update urls and security" />
-    <option name="LAST_COMMIT_MESSAGE" value="update urls and security" />
+    <MESSAGE value="add  View medical record on doctor side" />
+    <option name="LAST_COMMIT_MESSAGE" value="add  View medical record on doctor side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

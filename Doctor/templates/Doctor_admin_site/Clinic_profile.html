@@ -707,7 +707,8 @@
                                         <div class="question  checkbox-item border">
                                             <label>Select Clinic Days<span
                                                     style="color:red;margin-left:0">*</span></label>
-                                            <div class="question-answer ">
+
+                                            <div class="question-answer">
                                                 <div style="float:left;margin-right:50px;">
                                                     <input id="check_1" name="Days" type="checkbox" value="Monday"/>
                                                     <label class="check" for="check_1"><span>Monday</span></label>
@@ -743,23 +744,23 @@
                                             </div>
                                         </div>
                                         <div class="item sa">
-                                            <label>No of Appointments PerDay<span>*</span></label>
-                                            <select name="N_A_PD"
-                                                    required type="text">
-                                                <option value="">No of Appointments PerDay</option>
-                                                <option value="1">1 Person per day</option>
-                                                <option value="2">2 Person per day</option>
-                                                <option value="3">3 Person per day</option>
-                                                <option value="4">4 Person per day</option>
-                                                <option value="5">5 Person per day</option>
-                                                <option value="6">6 Person per day</option>
-                                                <option value="7">7 Person per day</option>
-                                                <option value="8">8 Person per day</option>
-                                                <option value="9">9 Person per day</option>
-                                                <option value="10">10 Person per day</option>
+                                            <label>Per Appointments Time<span>*</span></label>
+                                            <select name="N_A_PD" class="form-select form-select-md mb-3"
+                                                    required>
+                                                <option value="">Per Appointment Time</option>
+                                                <option value="5">5 Minutes</option>
+                                                <option value="10">10 Minutes</option>
+                                                <option value="15">15 Minutes</option>
+                                                <option value="20">20 Minutes</option>
+                                                <option value="25">25 Minutes</option>
+                                                <option value="30">30 Minutes</option>
+                                                <option value="35">35 Minutes</option>
+                                                <option value="45">45 Minutes</option>
+                                                <option value="60">1 Hours</option>
                                             </select>
-
                                         </div>
+
+
                                     </div>
                                     <div class="btn-block">
                                         <button class='button btn-info btn' type="submit">Submit</button>

@@ -1377,6 +1377,8 @@ def Health_blog(request):
     page_obj = paginator.get_page(page_number)
 
     Blogs_new = Health_blogs.objects.all().order_by('-blog_create_time')
+    Popular_Blogs = Health_blogs.objects.all().order_by('-Blog_View')
+
     if request.method == 'POST':
         data = request.POST
         search = data.get('search')
@@ -1387,7 +1389,7 @@ def Health_blog(request):
     Data = {'Customer': Customer, 'labcity': labcity,
             'Blogs': Blogs, "Blogs_new": Blogs_new,
             "search": search, "Blogs_new_count": Blogs_new_count,
-            'page_obj': page_obj}
+            'page_obj': page_obj, 'Popular_Blogs': Popular_Blogs}
     return render(request, 'Health_blogs.html', Data)
 
 
@@ -1401,12 +1403,13 @@ def blog_via_issue(request, Health_blogs_issue):
     return render(request, 'blog_via_issue.html', Data)
 
 
-def blog_detail(request, id, Health_blogs_issue):
+def blog_detail(request, id):
     labcity = Labcity.objects.all()
     Customer = Patient.objects.all()
-    Blogs = Health_blogs.objects.get(id=id, Health_blogs_issue=Health_blogs_issue)
+    Blogs = Health_blogs.objects.get(id=id)
+    Blogs.Blog_View = Blogs.Blog_View + 1
+    Blogs.save()
     Blogs_next = Health_blogs.objects.last()
-    print(Blogs, '\n', Blogs_next)
     Data = {'Customer': Customer, 'labcity': labcity, 'Blogs': Blogs}
     return render(request, 'Blog_detail.html', Data)
 
@@ -1451,12 +1454,13 @@ def Doctor_Login(request):
 
 
 # ////////////////////////////Functions Related  Doctor Admin Dashboard+profile page start///////////////////////////
-
 @Doctor_middleware
 def Doctor_admin(request):
     error_message = None
     success = None
     lb = request.session.get('doctor_id')
+    # if lb is None:
+    #     return redirect("/Doctor_Login/")
     request.session['required_path'] = None
     Test_today = 0
     month = datetime.now().month
@@ -1614,6 +1618,7 @@ def clinic_profile(request):
         clinic_name = Clinic.objects.get(Doctor_email=email, Clinic_Name=name)
         if clinic_name:
             current_doctor.Doctor_Clinic = clinic_name
+            current_doctor.is_Live = True
             current_doctor.save()
 
     Data = {"current_doctor": current_doctor, 'error': error_message,

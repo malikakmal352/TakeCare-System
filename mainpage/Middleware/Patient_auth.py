@@ -10,7 +10,7 @@ def Patient_middleware(get_response):
             messages.error(request, "Please Login First For Future Operations")
             print(request.path)
             request.session['required_path'] = request.path
-            return redirect('/login/?next=%s' % request.path)
+            return redirect('/Login/?next=%s' % request.path)
 
         response = get_response(request)
         return response

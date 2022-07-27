@@ -72,14 +72,32 @@ def Pharmacies(request, id):
             s = d.id
 
         labs = Pharmacy.objects.filter(city=s)
-
         data = {'labs': labs, 'ci': ci, 'labcity': labcity,
-                'all_Medicine': all_Medicine, 'labcitys': labcitys, 'Test_name': Test_name, 'Customer': Customer}
-    else:
-        labs = Pharmacy.objects.all()
-        data = {'labs': labs, 'labcity': labcity,
                 'all_Medicine': all_Medicine, 'labcitys': labcitys,
                 'Test_name': Test_name, 'Customer': Customer}
+    # else:
+    #     labs = Pharmacy.objects.all()
+    #     data = {'labs': labs, 'labcity': labcity,
+    #             'all_Medicine': all_Medicine, 'labcitys': labcitys,
+    #             'Test_name': Test_name, 'Customer': Customer}
+
+    return render(request, "Medicine_Card.html", data)
+
+def All_Medicines(request):
+    labcity = Labcity.objects.all()
+    labcitys = Labcity.objects.all()
+    Test_name = Add_New_Medicine.objects.all()
+    all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
+    Customer = Patient.objects.all()
+
+    paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+    page_number = request.GET.get('page')
+    all_Medicine = paginator.get_page(page_number)
+
+    labs = Pharmacy.objects.all()
+    data = {'labs': labs, 'labcity': labcity,
+            'all_Medicine': all_Medicine, 'labcitys': labcitys,
+             'Test_name': Test_name, 'Customer': Customer}
 
     return render(request, "Medicine_Card.html", data)
 
@@ -111,58 +129,14 @@ def Medicine_search(request):
         labcity = Labcity.objects.filter(Lab_city_name__startswith=ser)
         Test_name = Test_list.objects.filter(Test_name__startswith=ser)
         labs = Lab.objects.filter(Labname__startswith=ser)
-        # print(ser)
-        # print(Labcitys)
-        print('Lab City out ', labcity)
 
-        if labcity:
-            print('Lab City', labcity)
-            for i in labcity:
-                d = i.id
-                print(d)
-                LabCity = Labcity.objects.filter(id=d)
-                ci = LabCity
-                print(ci)
 
-            for d in ci:
-                s = d.id
-
-            labs = Lab.objects.filter(city=s)
-            labcity = Labcity.objects.all()
-            data = {'labs': labs, 'ci': ci, 'labcity': labcity,
-                    'all_lab': all_lab, 'labcitys': labcitys, 'Test_name': Test_name, 'Customer': Customer}
-            return render(request, "index.html", data)
-        elif labs:
-            print(labs)
-            for i in labs:
-                d = i.id
-                s = i.Labname
-                print(d)
-            labs = Lab.objects.filter(Labname=s)
-            labcity = Labcity.objects.all()
-            data = {'labs': labs, 'labcity': labcity, 'Customer': Customer}
-            return render(request, 'Search_via_lab name.html', data)
-        elif Test_name:
-            print(Test_name)
-            for i in Test_name:
-                d = i.id
-                s = i.Test_name
-                print(d)
-            Test_name = Test_list.objects.filter(Test_name=s)
-            labcity = Labcity.objects.all()
-            data = {'Test_name': Test_name, 'labcity': labcity,
-                    'labs': labs,
-                    'all_lab': all_lab, 'labcitys': labcitys,
-                    'Customer': Customer
-                    }
-            return render(request, 'Search_via_test_name.html', data)
-        else:
-            data = {'Test_name': Test_name, 'labcity': labcity,
+        data = {'Test_name': Test_name, 'labcity': labcity,
                     'labs': labs, 'ser': ser,
                     'all_lab': all_lab, 'labcitys': labcitys,
                     'Customer': Customer
                     }
-            return render(request, 'Search_via_test_name.html', data)
+        return render(request, 'Search_via_test_name.html', data)
 
     data = {'labs': labs, 'labcity': labcity,
             'all_Medicine': all_Medicine, 'labcitys': labcitys,

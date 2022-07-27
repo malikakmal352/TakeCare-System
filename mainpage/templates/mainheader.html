@@ -346,11 +346,6 @@
           transition: 0.5s;
           padding:0 5px;
         }
-
-
-
-
-
     </style>
 
 <!--    ///////////CSS for Pre-loader///////////////////////-->
@@ -777,33 +772,13 @@
                 <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
 
 
-                <!-- /////////////////////////////////////Order Medicines dropdown//////////////////////////////// -->
-                <li class="nav-link dropdown hd"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <l>Order Medicines</l>
-                </a>
-                    <div class="dropdown-menu p-0">
-                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+                <!-- /////////////////////////////////////Order Medicines//////////////////////////////// -->
 
-                            <div class="mega-dropdown-column py-4 px-3">
-                                <div class="mb-3">
-                                    <h6 style="color: #014e78 !important">Pharmacies in Pakistan</h6>
-                                    <ul class="ga-event-desktop-header-labs-in-pakistan  ">
-                                        {% for i in labcity %}
-                                        {% if forloop.counter < 6 %}
-                                        <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
-                                            {{i.Lab_city_name}}</a></li>
-                                        {% endif %}
-                                        {% endfor %}
-                                        <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
 
+                <li class="nav-link hd mt-1"><a href="/Pharmacies/">
+                    <l>Order Medicine</l>
+                </a></li>
                 <!--  /////////////////////////////////// dropdown end/////////////////////////////////////////////-->
-
 
                 <li class="nav-link hd mt-1"><a href="/Health_blog/">
                     <l>Health Tips</l>
@@ -983,19 +958,9 @@
                                     <li class="pb-1"><a href="/laboratory/400">Labs in Pakistan</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="/Pharmacies/400">Order Medicines<i
-                                        class="far fa-angle-down"></i></a>
-                                <ul class="mega-menu mega-menu-2">
-                                    {% for i in labcity %}
-                                    {% if forloop.counter < 6 %}
-                                    <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
-                                        {{i.Lab_city_name}}</a></li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/Pharmacies/">
+                                <l>Order Medicines</l>
+                            </a></li>
 
                             <li><a href="/Health_blog/">
                                 <l>Health Tips</l>
@@ -1011,6 +976,7 @@
                                 <ul class="mega-menu mega-menu-2">
                                     <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
                                     <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
+                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>
                                     <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
                                     <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
                                 </ul>

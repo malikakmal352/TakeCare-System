@@ -69,16 +69,15 @@
                   <div class="col-lg-10 col-12 col-sm-10">
                     <div class="news-detalis-content mb-50">
                         <ul class="blog-meta mb-20">
-                           <li><a href="blog-details.html"><i class="fal fa-eye"></i>100 Views</a></li>
+                           <li><a href="blog-details.html"><i class="fal fa-eye"></i>{{Blogs.Blog_View}} Views</a></li>
 <!--                           <li><a href="blog-details.html"><i class="fal fa-comments"></i> 30 Comments</a></li>-->
                            <li><a href="blog-details.html"><i class="fal fa-calendar-alt"></i> {{Blogs.blog_create_time}}</a></li>
                         </ul>
                         <div class="news-thumb mt-40">
                            <img src="/media/{{Blogs.img}}" alt="blog">
                         </div>
-                        <h2 class="news-title mt-60"><b>{{Blogs.Main_heading}}</b></h2>
-                        <textarea disabled data-width="120" height="100"
-                                  style="outline:none;max-height:20%;min-height:10%;border:none;outline:none;" class="mb-20 w-100">{{Blogs.Health_blogs_Detail}}</textarea>
+                        <h2 class="news-title mt-60"><b>{{Blogs.Main_heading | title}}</b></h2>
+                        <p data-width="120" class="mb-20 w-100">{{Blogs.Health_blogs_Detail | linebreaks}}</p>
                         <div class="news-info d-sm-flex align-items-center justify-content-between mt-50 mb-50">
                            <div class="news-share">
                               <h6 class="tag-title mb-25">Social Share</h6>

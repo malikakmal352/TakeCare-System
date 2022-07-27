@@ -71,7 +71,7 @@
                             <div class="single-smblog mb-30">
                                 <div class="smblog-thum">
                                     <div class="blog-image w-img">
-                                        <a href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">
+                                        <a href="/Health_blog/{{i.id}}">
                                             <img alt="" src="/media/{{i.img}}" style="height:200px;"></a>
                                     </div>
                                     <div class="blog-tag blog-tag-2">
@@ -80,21 +80,21 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="smblog-content smblog-content-3">
-                                    <h6><a href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">
-                                        {{i.Main_heading}}
+                                <div class="smblog-content smblog-content-3" style="max-height:100%;">
+                                    <h6><a href="/Health_blog/{{i.id}}" >
+                                        {{i.Main_heading | title}}
                                     </a>
                                     </h6>
                                     <span class="author mb-10">posted by <a href="#"> {{i.Doctor}}</a></span>
-                                    <p style="height:100px;overflow:hidden;">
-                                        {{i.Health_blogs_Detail}} ...</p>
+                                    <p>
+                                        {{i.Health_blogs_Detail | linebreaks | truncatewords:20}}</p>
                                     <div class="smblog-foot pt-15">
                                         <div class="post-readmore">
-                                            <a href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}"> Read More <span
+                                            <a href="/Health_blog/{{i.id}}"> Read More <span
                                                     class="icon"></span></a>
                                         </div>
                                         <div class="post-date">
-                                            <a href="/Health_blog/{{i.Health_blogs_issue}}/{{i.id}}">
+                                            <a href="/Health_blog/{{i.id}}">
                                                 {{i.blog_create_time}}
                                             </a>
                                         </div>
@@ -128,46 +128,18 @@
                                 <div class="widget">
                                     <h6 class="sidebar-title d-none d-lg-block">Popular Issues Blog Read</h6>
                                     <ul class="n-sidebar-categories">
+                                        {% for i in Popular_Blogs %}
+                                         {% if forloop.counter < 5 %}
                                         <li>
-                                            <a href="blog-details.html">
+                                            <a href="/Health_blog/{{i.id}}/">
                                                 <div class="single-category p-relative mb-10">
-                                                    Business
-                                                    <span class="category-number">26</span>
+                                                    {{i.Health_blogs_issue | truncatewords:4}}
+                                                    <span class="category-number">{{i.Blog_View}}</span>
                                                 </div>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="blog-details.html">
-                                                <div class="single-category p-relative mb-10">
-                                                    consultant
-                                                    <span class="category-number">30</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html">
-                                                <div class="single-category p-relative mb-10">
-                                                    Creative
-                                                    <span class="category-number">71</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html">
-                                                <div class="single-category p-relative mb-10">
-                                                    UI/UX
-                                                    <span class="category-number">56</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details.html">
-                                                <div class="single-category p-relative">
-                                                    Texhnology
-                                                    <span class="category-number">60</span>
-                                                </div>
-                                            </a>
-                                        </li>
+                                        {% endif %}
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
