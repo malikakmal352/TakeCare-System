@@ -21,11 +21,12 @@ from Laboratory.views import Labs, test_list, Booking_form, View_Your_Appointmen
 from Laboratory.views import lab_admin, Lab_Login, add_new_test, test_delete, update_test, add_new_Samplest, \
     Status_samplest, Samplest_del, update_samplest, ChangePassword_Lab, ForgetPassword_Lab, Test_Booking_conformation, \
     Lab_profile, Lab_profile_img, upload_test_report, view_all_comfirm_booking, View_all_new_booking, view_test_list, \
-    View_all_samplest, updates_lab_profile
+    View_all_samplest, updates_lab_profile, Lab_logout
 
 urlpatterns = [
 
     path('', lab_admin, name="lab_Admin"),
+    path('Logout/', Lab_logout, name="Lab_logout"),
 
 ]
 

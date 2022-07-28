@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="remove decorator bugs">
-      <change afterPath="$PROJECT_DIR$/Doctor/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laboratory/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/urls.py" afterDir="false" />
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="separate Logout every app (except lab &amp; Doctor)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Labs list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Labs list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Add_new_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Lab_admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Lab_admin_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Samplest_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Samplest_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Test_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/Test_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_new_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_new_booking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_samplest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/View_all_samplest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/add_new_Samplest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/add_new_Samplest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_all_confirm_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_all_confirm_booking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/view_test_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +47,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Pharmacy_Store/views.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/cart/cart.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mainpage/views.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="2ACCKG5EjBYTtRwY3gm7azAdwq3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -416,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658936882754</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="separate Logout every app (except lab &amp; Doctor)">
+      <created>1659019016040</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1659019016040</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,7 +429,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
     <MESSAGE value="Preview Pdf function" />
     <MESSAGE value="add order Tracking" />
     <MESSAGE value="add order Placed Function" />
@@ -457,7 +453,8 @@
     <MESSAGE value="update urls and security" />
     <MESSAGE value="add  View medical record on doctor side" />
     <MESSAGE value="remove decorator bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove decorator bugs" />
+    <MESSAGE value="separate Logout every app (except lab &amp; Doctor)" />
+    <option name="LAST_COMMIT_MESSAGE" value="separate Logout every app (except lab &amp; Doctor)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

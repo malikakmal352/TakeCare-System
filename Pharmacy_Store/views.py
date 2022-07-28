@@ -231,7 +231,8 @@ def Medicine_order_form(request):
             return render(request, "Medicine_Order_Form.html", Data)
     else:
         messages.error(request, "Place Login First For Order Medicine")
-        return render(request, 'Login.html', {"message": messages})
+        return redirect("/Login/")
+    return redirect(All_Medicines)
 
 
 @Patient_middleware

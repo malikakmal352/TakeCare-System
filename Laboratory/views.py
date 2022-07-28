@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils.timezone import now
 
-from Laboratory.Middleware.Lab_auth import Lab_middleware
+from Laboratory.Middleware.Lab_auth import Lab_middleware, Lab_login_check
 from Laboratory.models.Book_lab_test import Book_Test
 from Laboratory.models.Lab_tests_list import Test_list
 from Laboratory.models.Labcity import Labcity
@@ -260,6 +260,7 @@ def View_Your_Appointments(request, id):
 
 
 # ///////////////////////////////////////Laboratory admin Login ////////////////////////////////////////////////////////
+@Lab_login_check
 def Lab_Login(request):
     if request.method == 'GET':
         if request.session.get("required_path"):
@@ -296,6 +297,12 @@ def Lab_Login(request):
 
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Lab_login.html', {'error': error_message})
+
+@Lab_login_check
+def Lab_logout(request):
+    request.session['lab_id'] = None
+    request.session['lab_email'] = None
+    return redirect('/')
 
 
 # ////////////////////////////Functions Related  Laboratory Admin Dashboard+profile page start///////////////////////////

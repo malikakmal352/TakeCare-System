@@ -7,7 +7,7 @@ from django.utils.timezone import now
 from mainpage.models.Patient import Patient
 from Laboratory.models.Labcity import Labcity
 
-from Laboratory.Middleware.Lab_auth import Lab_middleware, Lab_login_check
+from Laboratory.Middleware.Lab_auth import Lab_login_check
 from mainpage.Middleware.Patient_auth import Patient_middleware
 
 from django.contrib import messages
@@ -25,6 +25,7 @@ def About_us(request):
     Customer = Patient.objects.all()
     Data = {'labcity': labcity, 'Customer': Customer}
     return render(request, 'about.html', Data)
+
 
 def Mobile_About_us(request):
     return render(request, 'Mobile_Aboutus.html')
@@ -44,7 +45,6 @@ def mainindex(request):
     Customer = Patient.objects.all()
     All_Doctor = Doctors.objects.all()
     request.session['required_path'] = None
-
 
     w = datetime.date(now())
     all_Medicine = Add_New_Medicine.objects.filter(is_Expired=False)
@@ -166,36 +166,12 @@ def Login(request):
 
 
 def Logout(request):
-    Phy_id = request.session.get('Phy_id')
-    Rider_id = request.session.get('Rid_id')
-    lab_id = request.session.get('lab_email')
+    # lab_id = request.session.get('lab_email')
     Doctor_email = request.session.get('doctor_email')
-    Customer_id = request.session.get('id')
-    superAdmin = request.session.get('admin_email')
-    # if Phy_id:
-    #     request.session['Phy_id'] = None
-    #     request.session['Phy_email'] = None
-    #     return redirect('pharmacy Login')
-    # if Customer_id:
-    #     request.session['id'] = None
-    #     request.session['email'] = None
-    #     request.session['phone'] = None
-    #     request.session['Address'] = None
-    #     request.session['fullname'] = None
-    #     request.session['city'] = None
-    #     return redirect(mainindex)
-
-    # if superAdmin:
-    #     request.session['admin_id'] = None
-    #     request.session['admin_email'] = None
-    #     return redirect('SuperAdmin_Login')
-    if lab_id:
-        request.session['lab_id'] = None
-        request.session['lab_email'] = None
-        return redirect('Laboratory Login')
-    # if Rider_id:
-    #     request.session['lab_id'] = None
-    #     return redirect(mainindex)
+    # if lab_id:
+    # request.session['lab_id'] = None
+    # request.session['lab_email'] = None
+    # return redirect('Laboratory Login')
     if Doctor_email:
         request.session['doctor_id'] = None
         request.session['doctor_email'] = None
@@ -203,6 +179,7 @@ def Logout(request):
     # else:
     #     request.session.clear()
     return redirect(mainindex)
+
 
 @Patient_middleware
 def Customer_Logout(request):
@@ -216,6 +193,7 @@ def Customer_Logout(request):
         request.session['city'] = None
         return redirect(mainindex)
     return redirect(mainindex)
+
 
 @Patient_middleware
 def Save_Records(request):
@@ -256,26 +234,6 @@ def Add_new_Reports(request):
                                               Patient=Patients)
         Add_new_report.save()
         return redirect("Save_medical_Records")
-
-        # car = Save_Medical_Reports.objects.filter(Reports=report, Report_Title=Report_Title).order_by('-id')
-        # files = []
-        # for i in car:
-        #     files.append(i.Reports)
-        #     break
-        # for f in files:
-        #     shutil.copy(f, "static/Reports/")
-
-    # success = "Patient new Report is Save Successfully"
-    # prescription_records = Appointment.objects.filter(Patients=pa)
-    # Save_Reports = Save_Medical_Reports.objects.filter(Patient=pa)
-    # prescription_records_count = Appointment.objects.filter(Patients=pa, Status="Completed").count()
-    #
-    # Data = {"Customer": Customer, "labcity": labcity,
-    #         "prescription_records": prescription_records,
-    #         "prescription_records_count": prescription_records_count,
-    #         "Save_Reports": Save_Reports, "success": success}
-    # return render(request, "medical_Record.html", Data)
-
     Data = {'Customer': Customer,
             'labcity': labcity, 'error': error_message,
             'success': success}
@@ -285,7 +243,6 @@ def Add_new_Reports(request):
 def view_report_detail(request, id):
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
-    Patients = Patient.objects.get(id=pa)
     Edit_records = Save_Medical_Reports.objects.get(Patient=pa, id=id)
     report_date = Edit_records.Date
     print(report_date)
@@ -301,7 +258,7 @@ def view_report_detail(request, id):
 def Update_Reports(request, id):
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
-    Patients = Patient.objects.get(id=pa)
+    # Patients = Patient.objects.get(id=pa)
     Edit_records = Save_Medical_Reports.objects.get(Patient=pa, id=id)
     report_date = Edit_records.Date
     print(report_date)
@@ -348,7 +305,6 @@ def Save_Records_confirmation(request, message):
     prescription_records = Appointment.objects.filter(Patients=pa)
     Save_Reports = Save_Medical_Reports.objects.filter(Patient=pa)
     prescription_records_count = Appointment.objects.filter(Patients=pa, Status="Completed").count()
-    error_message = None
     success = message
 
     Data = {"Customer": Customer, "labcity": labcity,
@@ -359,7 +315,6 @@ def Save_Records_confirmation(request, message):
 
 
 @Patient_middleware
-# @login_required(login_url='/Login/')
 def Patient_Setting(request):
     pa = request.session.get('id')
     Customer = Patient.objects.filter(id=pa)
@@ -400,7 +355,6 @@ def Patient_Setting(request):
 
 
 @Patient_middleware
-# @login_required(login_url='/Login/')
 def Change_patient_profile_img(request):
     pa = request.session.get('id')
     Customer = Patient.objects.get(id=pa)
@@ -472,8 +426,8 @@ def ChangePassword(request, token):
                 return redirect(f'/change-password/{token}/')
 
             if new_password != confirm_password:
-                # messages.success(request, 'both should  be equal.')
-                success = "both should  be equal."
+                messages.success(request, 'both should  be equal.')
+                # success = "both should  be equal."
                 return redirect(f'/change-password/{token}/')
 
             user_obj = Patient.objects.get(id=user_id)
@@ -523,12 +477,9 @@ def ForgetPassword(request):
 # ##################################################### Forget Password Email Sent End  ##############################
 
 
-# def page_not_found_view(request):
-
-
 # custom not found url page for improve security
 def not_found(request, exception):
     labcity = Labcity.objects.all()
     Customer = Patient.objects.all()
-    Data = {'labcity': labcity}
+    Data = {'labcity': labcity, 'Customer': Customer}
     return render(request, "page_not_found.html", Data)
