@@ -144,7 +144,7 @@ border-color:#014e78
         <tr>
             <td align="center">
                 <div class="search">
-                    <form action="/Medicine_search/" method="post" style="background-color:#49738f;">
+                    <form action="/Pharmacies/" method="post" style="background-color:#49738f;">
                         {% csrf_token %}
 
                         <input class="ta" id="tag" name="search"
@@ -163,6 +163,7 @@ border-color:#014e78
     </table>
 </section>
 <br><br>
+{% if Medicine_name %}
 <section class="container-xl mb-2  justify-content-evenly" style="">
     <div class="shop-area mb-2">
         <div class="container">
@@ -333,7 +334,15 @@ border-color:#014e78
     <!-- shop modal end -->
     {% endfor %}
 </section>
-
+{% else %}
+<section class="box-shadow-sm bg-white container-lg my-2 py-2" style="text-align: center;justify-content: space-around;">
+    <h1> You Search <em style="color:49738f">'{{ser}}'</em> </h1>
+    <div class="d-flex" style="justify-content: space-around;margin-top:-60px;">
+          <img alt="not found img Logo" class="col-lg-4 col-sm-auto col-md-6 col-auto" src='{% static "not_found.png" %}'/>
+    </div>
+    <h2>Sorry Search Not Found </h2>
+</section>
+{% endif %}
 <br><br>
 <!-- footer-start -->
 {% include 'Footer.html'%}

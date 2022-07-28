@@ -172,18 +172,18 @@ def Logout(request):
     Doctor_email = request.session.get('doctor_email')
     Customer_id = request.session.get('id')
     superAdmin = request.session.get('admin_email')
-    if Phy_id:
-        request.session['Phy_id'] = None
-        request.session['Phy_email'] = None
-        return redirect('pharmacy Login')
-    if Customer_id:
-        request.session['id'] = None
-        request.session['email'] = None
-        request.session['phone'] = None
-        request.session['Address'] = None
-        request.session['fullname'] = None
-        request.session['city'] = None
-        return redirect(mainindex)
+    # if Phy_id:
+    #     request.session['Phy_id'] = None
+    #     request.session['Phy_email'] = None
+    #     return redirect('pharmacy Login')
+    # if Customer_id:
+    #     request.session['id'] = None
+    #     request.session['email'] = None
+    #     request.session['phone'] = None
+    #     request.session['Address'] = None
+    #     request.session['fullname'] = None
+    #     request.session['city'] = None
+    #     return redirect(mainindex)
 
     # if superAdmin:
     #     request.session['admin_id'] = None
@@ -200,10 +200,22 @@ def Logout(request):
         request.session['doctor_id'] = None
         request.session['doctor_email'] = None
         return redirect('Doctor_Login')
-    else:
-        request.session.clear()
+    # else:
+    #     request.session.clear()
     return redirect(mainindex)
 
+@Patient_middleware
+def Customer_Logout(request):
+    Customer_id = request.session.get('id')
+    if Customer_id:
+        request.session['id'] = None
+        request.session['email'] = None
+        request.session['phone'] = None
+        request.session['Address'] = None
+        request.session['fullname'] = None
+        request.session['city'] = None
+        return redirect(mainindex)
+    return redirect(mainindex)
 
 @Patient_middleware
 def Save_Records(request):

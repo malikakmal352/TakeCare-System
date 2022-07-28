@@ -25,6 +25,7 @@
       height: 100%;
       z-index: -1;
     }
+
     </style>
 </head>
 
@@ -58,13 +59,14 @@
     </div>
     <!-- page-banner-area-end -->
     {% if search %}
-    <h1 class="archive-heading mt-15"> Search Results: <span>{{search}} ({{Blogs_new_count}})</span></h1>
+    <h1 class="archive-heading mt-15 container"> Search Results: <span>{{search}} ({{Blogs_new_count}})</span></h1>
     {% endif %}
     <!-- news-detalis-area-start -->
     <div class="blog-area mt-50 mb-75">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
+                    {% if Blogs_new%}
                     <div class="row">
                         {% for i in page_obj %}
                         <div class="col-xl-6">
@@ -81,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="smblog-content smblog-content-3" style="max-height:100%;">
-                                    <h6><a href="/Health_blog/{{i.id}}" >
+                                    <h6><a href="/Health_blog/{{i.id}}">
                                         {{i.Main_heading | title}}
                                     </a>
                                     </h6>
@@ -104,7 +106,21 @@
                         </div>
                         {% endfor %}
                     </div>
+                    {% else %}
+                    <div class="row">
+                        <section class="box-shadow-sm bg-white container-lg my-2 py-2"
+                                 style="text-align: center;justify-content: space-around;">
+                            <h1> You Search <em style="color:49738f">'{{search}}'</em></h1>
+                            <div class="d-flex" style="justify-content: space-around;margin-top:-60px;">
+                                <img alt="not found img Logo" class="col-lg-4 col-sm-auto col-md-6 col-auto"
+                                     src='{% static "not_found.png" %}'/>
+                            </div>
+                            <h2>Sorry Search Not Found </h2>
+                        </section>
+                    </div>
+                    {% endif %}
                 </div>
+
                 <div class="col-xl-4 col-lg-5">
                     <div class="news-sidebar pl-10">
                         <div class="row">
@@ -129,7 +145,7 @@
                                     <h6 class="sidebar-title d-none d-lg-block">Popular Issues Blog Read</h6>
                                     <ul class="n-sidebar-categories">
                                         {% for i in Popular_Blogs %}
-                                         {% if forloop.counter < 5 %}
+                                        {% if forloop.counter < 5 %}
                                         <li>
                                             <a href="/Health_blog/{{i.id}}/">
                                                 <div class="single-category p-relative mb-10">

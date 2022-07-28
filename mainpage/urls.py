@@ -17,19 +17,31 @@ from django.conf.urls.static import static
 from django.urls import path
 from TakeCare_System import settings
 
-from Pharmacy_Store.views import *
 from mainpage.views import mainindex, Login, Signup, Logout, ForgetPassword, ChangePassword, Patient_Setting, \
     Change_patient_profile_img, updates_patient_profile, Save_Records, Add_new_Reports, view_report_detail, \
-    Update_Reports, Save_Records_confirmation, About_us, Contact_us, Mobile_About_us
+    Update_Reports, Save_Records_confirmation, About_us, Contact_us, Mobile_About_us, Customer_Logout
 
 urlpatterns = [
+
+    path('', mainindex, name='home'),
+
+    path('register/', Signup),
+    path('Login/', Login, name='login'),
+    path('Logout/', Logout, name='Logout'),
+    path('Customer_Logout/', Customer_Logout, name='Customer_Logout'),
+
+    path("Patient_Setting/", Patient_Setting, name="Patient_Setting"),
+    path("patient_profile_img/", Change_patient_profile_img, name="Change_patient_profile_img"),
+    path("updates_patient_profile/", updates_patient_profile, name="updates_patient_profile"),
+
+    path("Medical Records/", Save_Records, name="Save_medical_Records"),
+    path("Medical Records/Add_new_Reports/", Add_new_Reports, name="Add_new_Reports"),
+    path("view report detail/<int:id>/", view_report_detail, name="view report detail"),
+    path("Medical Records/Update_Reports/<int:id>/", Update_Reports, name="Update_Reports"),
+    path("Medical Records/<str:message>/", Save_Records_confirmation, name="Save_Records_confirmation"),
+
     path('forget-password/', ForgetPassword, name="forget_password"),
     path('change-password/<token>/', ChangePassword, name="change_password"),
-
-
-    path('forget-password Pharmacy/', ForgetPassword_Pharmacy, name="ForgetPassword_Pharmacy"),
-    path('change-password_Pharmacy/<token>/', ChangePassword_Pharmacy, name="ChangePassword_Pharmacy"),
-
 
 ]
 

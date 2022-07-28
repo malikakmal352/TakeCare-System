@@ -86,7 +86,7 @@ def Pharmacies(request, id):
 def All_Medicines(request):
     labcity = Labcity.objects.all()
     labcitys = Labcity.objects.all()
-    Test_name = Add_New_Medicine.objects.all()
+    Medicine_name = Add_New_Medicine.objects.filter(status="Active", is_Expired=False)
     all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
     Customer = Patient.objects.all()
 
@@ -94,13 +94,30 @@ def All_Medicines(request):
     page_number = request.GET.get('page')
     all_Medicine = paginator.get_page(page_number)
 
-    labs = Pharmacy.objects.all()
-    data = {'labs': labs, 'labcity': labcity,
+    # labs = Pharmacy.objects.all()
+    data = {'labcity': labcity,
             'all_Medicine': all_Medicine, 'labcitys': labcitys,
-             'Test_name': Test_name, 'Customer': Customer}
+             'Medicine_name': Medicine_name, 'Customer': Customer}
+
+    if request.method == 'POST':
+        ser = request.POST.get('search')
+        all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False,
+                                                        Medicine_name__startswith=ser).order_by('-id')
+        Customer = Patient.objects.all()
+        Medicine_name = Add_New_Medicine.objects.filter(Medicine_name__startswith=ser, status="Active", is_Expired=False,)
+
+
+        paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+        page_number = request.GET.get('page')
+        all_Medicine = paginator.get_page(page_number)
+
+
+        data = {'labcity': labcity,'labcitys': labcitys,
+                'all_Medicine': all_Medicine,'ser': ser,
+                'Medicine_name': Medicine_name, 'Customer': Customer}
+        return render(request, 'Medicine_Card.html', data)
 
     return render(request, "Medicine_Card.html", data)
-
 
 def Medicine_details(request, id):
     Customer = Patient.objects.all()
@@ -109,40 +126,6 @@ def Medicine_details(request, id):
     data = {"Medicine_detail": Medicine_detail, "labcity": labcity, 'Customer': Customer}
     return render(request, "Medicine_Detail.html", data)
 
-
-def Medicine_search(request):
-    global d
-
-    labcity = Labcity.objects.all()
-    labcitys = Labcity.objects.all()
-    Test_name = Add_New_Medicine.objects.all()
-    all_Medicine = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
-    Customer = Patient.objects.all()
-    # book_Test = Book_Test.objects.all()
-    w = datetime.date(now())
-
-    Customer = Patient.objects.all()
-
-    if request.method == 'POST':
-        ser = request.POST.get('search')
-        Labcitys = Labcity.objects.filter()
-        labcity = Labcity.objects.filter(Lab_city_name__startswith=ser)
-        Test_name = Test_list.objects.filter(Test_name__startswith=ser)
-        labs = Lab.objects.filter(Labname__startswith=ser)
-
-
-        data = {'Test_name': Test_name, 'labcity': labcity,
-                    'labs': labs, 'ser': ser,
-                    'all_lab': all_lab, 'labcitys': labcitys,
-                    'Customer': Customer
-                    }
-        return render(request, 'Search_via_test_name.html', data)
-
-    data = {'labs': labs, 'labcity': labcity,
-            'all_Medicine': all_Medicine, 'labcitys': labcitys,
-            'Test_name': Test_name, 'Customer': Customer}
-
-    return Pharmacies(request, 400)
 
 
 # ///////////////////////////////////////Pharmacy admin Login ////////////////////////////////////////////////////////
@@ -188,7 +171,7 @@ def phy_login(request):
 def Phy_logout(request):
     request.session['Phy_id'] = None
     request.session['Phy_email'] = None
-    return redirect(mainindex)
+    return redirect("/")
 
 
 def Create_password_Pharmacy(request, token):
@@ -739,7 +722,6 @@ def cart_add(request, id):
 # return redirect('/Login?next=/Carts/cart_add/')
 
 
-# @login_required(login_url="/users/login")
 def item_clear(request, id):
     cart = Cart(request)
     product = Add_New_Medicine.objects.get(id=id)

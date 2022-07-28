@@ -243,7 +243,6 @@
             .navbar-expand-lg .dropdown-menu.show {
                 display: none
             }
-
         }
 
         @media (max-width: 400px){
@@ -476,7 +475,7 @@
                             <i class="fas fa-box-check"></i></a>
                         <a href="/Medical Records/">My Medical Records
                             <i class="fas fa-books-medical"></i></a>
-                        <a href="/Logout/">Log Out
+                        <a href="/Customer_Logout/">Log Out
                             <i class="fal fa-sign-out"></i></a>
                     </div>
                 </div>
@@ -987,7 +986,7 @@
                             {% endif %}
                             {% if request.session.email %}
                             <li><a href="/Medical Records/">My Medical Records</a></li>
-                            <li><a href="/Logout/">Log Out</a></li>
+                            <li><a href="/Customer_Logout/">Log Out</a></li>
 
                             {% else %}
                             <li><a href="/Login/">Login</a></li>
@@ -1079,5 +1078,5 @@
   })
 </script>
 </body>
-</html>
+
 

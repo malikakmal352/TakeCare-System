@@ -5,14 +5,9 @@ from django.shortcuts import render, redirect
 import datetime
 import uuid
 from datetime import *
-import time
 from django.contrib import messages
 
-from Doctor.models.save_reports import Save_Medical_Reports
 from Laboratory.models.Labcity import Labcity
-from Laboratory.models.Samplest import Samplest
-from Laboratory.models.add_lab import Lab
-
 from mainpage.Sent_Email import send_forget_password_mail_doctor, Doctor_Request_Sent_mail_doctor
 from mainpage.models.Patient import Patient
 from django.core.paginator import Paginator
@@ -23,7 +18,6 @@ from Doctor.models.Clinic import Clinic
 from Doctor.models.All_Specialist import Special
 from Doctor.models.Health_blog import Health_blogs
 from Doctor.models.appointments import Appointment
-from Doctor.models.save_reports import Save_Medical_Reports
 from Doctor.Middleware.Doctor_auth import Doctor_middleware, Doctor_login_check
 
 
@@ -1386,6 +1380,10 @@ def Health_blog(request):
         Blogs_new = Health_blogs.objects.filter(Health_blogs_issue__startswith=search)
         Blogs_new_count = Health_blogs.objects.filter(Health_blogs_issue__startswith=search).count()
 
+        paginator = Paginator(Blogs, 5)  # Show 25 contacts per page.
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
     Data = {'Customer': Customer, 'labcity': labcity,
             'Blogs': Blogs, "Blogs_new": Blogs_new,
             "search": search, "Blogs_new_count": Blogs_new_count,
@@ -1846,7 +1844,7 @@ def view_Doctor_blogs(request):
             if name == "delete_blog":
                 Health_Blog_delete = Health_blogs.objects.get(Doctor=current_doctor, id=blog_id)
                 Health_Blog_delete.delete()
-                success = "Your Health Blog Deleted Successfully"
+                messages.success(request, "Your Health Blog Deleted Successfully")
             elif name == "update_blog":
                 Img = request.FILES.get('blog_img')
                 Health_blogs_issue = Data.get("Health_blogs_issue")
@@ -1860,10 +1858,11 @@ def view_Doctor_blogs(request):
                 Health_Blog_update.Main_heading = Main_heading
                 Health_Blog_update.Health_blogs_Detail = Blog_details
                 Health_Blog_update.save()
-                success = "Your Health Blog Updated Successfully"
+                messages.success(request, "Your Health Blog Updated Successfully")
                 print(Img, Health_blogs_issue, Main_heading, Blog_details)
         else:
-            error_message = "Health Blog is already Deleted."
+            messages.error(request, "Health Blog is already Deleted.")
+        return redirect(view_Doctor_blogs)
     Data = {"current_doctor": current_doctor, 'error': error_message,
             'success': success, "Health_Blog": Health_Blog, 'page_obj': page_obj}
     return render(request, "Doctor_admin_site/View_all_your_blogs.html", Data)

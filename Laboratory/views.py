@@ -60,7 +60,6 @@ def Labs(request, id):
         else:
             print('not works')
 
-    data = {'labcity': labcity}
 
     if id != 400:
         LabCity = Labcity.objects.filter(id=id)
@@ -72,7 +71,8 @@ def Labs(request, id):
         labs = Lab.objects.filter(city=s)
 
         data = {'labs': labs, 'ci': ci, 'labcity': labcity,
-                'all_lab': all_lab, 'labcitys': labcitys, 'Test_name': Test_name, 'Customer': Customer}
+                'all_lab': all_lab, 'labcitys': labcitys,
+                'Test_name': Test_name, 'Customer': Customer}
     else:
         labs = Lab.objects.all()
         data = {'labs': labs, 'labcity': labcity,
@@ -100,7 +100,6 @@ def lab_search(request):
         labs = Lab.objects.filter(Labname__startswith=ser)
         # print(ser)
         # print(Labcitys)
-        print('Lab City out ', labcity)
 
         if labcity:
             print('Lab City', labcity)
@@ -145,7 +144,7 @@ def lab_search(request):
             return render(request, 'Search_via_test_name.html', data)
         else:
             data = {'Test_name': Test_name, 'labcity': labcity,
-                    'labs': labs, 'ser': ser,
+                    'labs': labs, 'ser': ser, 'Labcitys': Labcitys,
                     'all_lab': all_lab, 'labcitys': labcitys,
                     'Customer': Customer
                     }

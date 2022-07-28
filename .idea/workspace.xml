@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="add  View medical record on doctor side">
+    <list default="true" id="4bdc2897-3d78-4673-8823-339e93d3b228" name="Changes" comment="remove decorator bugs">
+      <change afterPath="$PROJECT_DIR$/Doctor/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Laboratory/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pharmacy_Store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/Middleware/Doctor_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/models/Health_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/Health_blog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Blog_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/Clinic_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/View_all_your_blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_admin_site/view_Full_Doctor_blogs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Health_blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View lab_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View lab_test_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Labs list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Labs list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Medicine_Detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Add_New_Medicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Medicine_Expiry_Soon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/View_all_new_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_all_comfirm_Orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Orders/view_complete_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Phy_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/Update_Medicine_Detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Expiry_Medicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/View_Medicine_List.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Pharmacy_Admin/admin_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/Middleware/Patient_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FaucetPay.lnk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare  Find, Book &amp; Consult Doctors   Pakistan's Most Trusted Platform.lnk" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Systemadmin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Doctor" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="ReaderModeSettings">
@@ -76,11 +83,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Systemadmin" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Doctor" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Laboratory" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\mainpage" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Rider_dashboard" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Medicine_assets\img" />
-      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\img" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Pharmacy_Store" />
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\Systemadmin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static\Hospital_files" />
@@ -402,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658869650189</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="remove decorator bugs">
+      <created>1658936882754</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1658936882754</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +432,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update Login forms" />
     <MESSAGE value="commit" />
     <MESSAGE value="Preview Pdf function" />
     <MESSAGE value="add order Tracking" />
@@ -443,7 +456,8 @@
     <MESSAGE value="first Vision 1.0.1 Complete" />
     <MESSAGE value="update urls and security" />
     <MESSAGE value="add  View medical record on doctor side" />
-    <option name="LAST_COMMIT_MESSAGE" value="add  View medical record on doctor side" />
+    <MESSAGE value="remove decorator bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove decorator bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

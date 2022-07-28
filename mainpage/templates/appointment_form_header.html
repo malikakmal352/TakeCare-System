@@ -238,7 +238,6 @@
             .navbar-expand-lg .dropdown-menu.show {
                 display: none
             }
-
         }
 
         @media (max-width: 400px){
@@ -366,7 +365,7 @@
                     <div class="col-xl-6 col-lg-7">
                         <div class="header-inner-start">
                             <div class="support d-none d-lg-block">
-                                <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                                <p>Need Help? <a href="tel:+923234567890">+92 334 456 7890</a></p>
                             </div>
                         </div>
                     </div>
@@ -374,10 +373,10 @@
                         <div class="header-inner-end text-md-end">
                             <div class="ovic-menu-wrapper">
                                 <ul>
-                                    <li><a href="/about us/">About Us</a></li>
-                                    <!--                                    <li><a href="contact.html">Order Tracking</a></li>-->
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="/Our Services/">Our Services</a></li>
+                                    <li><a href="/about us">About Us</a></li>
+                                    <!--<li><a href="contact.html">Order Tracking</a></li>-->
+                                    <li><a href="/Contact_us">Contact Us</a></li>
+                                    <li><a href="/#overservice">Our Services</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -467,7 +466,7 @@
                             <i class="fas fa-box-check"></i></a>
                         <a href="/Medical Records/">My Medical Records
                             <i class="fas fa-books-medical"></i></a>
-                        <a href="/Logout/">Log Out
+                        <a href="/Customer_Logout/">Log Out
                             <i class="fal fa-sign-out"></i></a>
                     </div>
                 </div>
@@ -763,33 +762,13 @@
                 <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
 
 
-                <!-- /////////////////////////////////////Order Medicines dropdown//////////////////////////////// -->
-                <li class="nav-link dropdown hd"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <l>Order Medicines</l>
-                </a>
-                    <div class="dropdown-menu p-0">
-                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
+                <!-- /////////////////////////////////////Order Medicines//////////////////////////////// -->
 
-                            <div class="mega-dropdown-column py-4 px-3">
-                                <div class="mb-3">
-                                    <h6 style="color: #014e78 !important">Pharmacies in Pakistan</h6>
-                                    <ul class="ga-event-desktop-header-labs-in-pakistan  ">
-                                        {% for i in labcity %}
-                                        {% if forloop.counter < 6 %}
-                                        <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
-                                            {{i.Lab_city_name}}</a></li>
-                                        {% endif %}
-                                        {% endfor %}
-                                        <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
 
+                <li class="nav-link hd mt-1"><a href="/Pharmacies/">
+                    <l>Order Medicine</l>
+                </a></li>
                 <!--  /////////////////////////////////// dropdown end/////////////////////////////////////////////-->
-
 
                 <li class="nav-link hd mt-1"><a href="/Health_blog/">
                     <l>Health Tips</l>
@@ -815,7 +794,7 @@
                                         <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
                                         <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
                                         <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
-
+                                        <li class="pb-1"><a href="/Rider_Login/">Rider Login</a></li>
 
                                     </ul>
                                 </div>
@@ -969,34 +948,10 @@
                                     <li class="pb-1"><a href="/laboratory/400">Labs in Pakistan</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="/Pharmacies/400">Order Medicines<i
-                                        class="far fa-angle-down"></i></a>
-                                <ul class="mega-menu mega-menu-2">
-                                    {% for i in labcity %}
-                                    {% if forloop.counter < 6 %}
-                                    <li class="pb-1"><a href="/Pharmacies/{{i.id}}">Pharmacies in
-                                        {{i.Lab_city_name}}</a></li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    <li class="pb-1"><a href="/Pharmacies/400">Pharmacies in Pakistan</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/Pharmacies/">
+                                <l>Order Medicines</l>
+                            </a></li>
 
-                            <li>
-                                <a href="product.html">New Arrivals <i class="far fa-angle-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="product.html">Home Appliances</a></li>
-                                    <li><a href="product.html">Technology</a>
-                                        <ul class="submenu">
-                                            <li><a href="product.html">Storage Devices</a></li>
-                                            <li><a href="product.html">Monitors</a></li>
-                                            <li><a href="product.html">Laptops</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="product.html">Office Equipments</a></li>
-                                </ul>
-                            </li>
                             <li><a href="/Health_blog/">
                                 <l>Health Tips</l>
                             </a></li>
@@ -1011,6 +966,7 @@
                                 <ul class="mega-menu mega-menu-2">
                                     <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
                                     <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
+                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>
                                     <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
                                     <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
                                 </ul>
@@ -1021,7 +977,7 @@
                             {% endif %}
                             {% if request.session.email %}
                             <li><a href="/Medical Records/">My Medical Records</a></li>
-                            <li><a href="/Logout/">Log Out</a></li>
+                            <li><a href="/Customer_Logout/">Log Out</a></li>
 
                             {% else %}
                             <li><a href="/Login/">Login</a></li>
@@ -1049,7 +1005,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__logo mb-40">
                 <a href="index.html">
-                    <img alt="logo" src="{% static 'Medicine_assets/img/logo/logo-white.png' %}">
+                    <img alt="logo" src="{% static 'logo/logo-2.png' %}" style="width:40%;margin-left:30%;">
                 </a>
             </div>
             <div class="mobile-menu fix"></div>
@@ -1092,11 +1048,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>-->
-<!--<script crossorigin="anonymous"-->
-<!--        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"-->
-<!--        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>-->
-
 
 <!-- JS here -->
 <!--<script src="{% static 'Medicine_assets/js/vendor/jquery.js' %}"></script>-->
@@ -1107,8 +1058,5 @@
 <script src="{% static 'Medicine_assets/js/main.js' %}"></script>
 
 </body>
-</html>
 
-</body>
-</html>
 

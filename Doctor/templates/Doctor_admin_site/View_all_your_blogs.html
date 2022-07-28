@@ -870,6 +870,7 @@
 }
 
 
+
 </style>
 <link href="{% static 'health_blog_style.css' %}" media="all" rel="stylesheet">
 
@@ -997,32 +998,45 @@
     <!--/ menu  -->
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
-
+            {% if error %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                 role="alert">
+                <div class="d-flex alert-danger">
+                    <div class="toast-body ">
+                        {{error}}
+                    </div>
+                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            type="button"></button>
+                </div>
+            </div>
+            {% elif success %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                 role="alert">
+                <div class="d-flex alert-success">
+                    <div class="toast-body ">
+                        {{success}}
+                    </div>
+                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            type="button"></button>
+                </div>
+            </div>
+            {% endif %}
+            {% if messages%}
+            {% for message in messages %}
+            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                 role="alert">
+                <div class="d-flex alert-success">
+                    <div class="toast-body ">
+                        {{ message }}
+                    </div>
+                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            type="button"></button>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
             <div class="row justify-content-center">
                 {% if Health_Blog %}
-                {% if error %}
-                <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                     role="alert">
-                    <div class="d-flex alert-danger">
-                        <div class="toast-body ">
-                            {{error}}
-                        </div>
-                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                type="button"></button>
-                    </div>
-                </div>
-                {% elif success %}
-                <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
-                     role="alert">
-                    <div class="d-flex alert-success">
-                        <div class="toast-body ">
-                            {{success}}
-                        </div>
-                        <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                type="button"></button>
-                    </div>
-                </div>
-                {% endif %}
 
                 <div class="l-post  mb-0  H_Blog">
                     <div class="container">
@@ -1045,11 +1059,11 @@
                                             </div>
                                             <div class="smblog-content smblog-content-3">
                                                 <h6><a href="/view_Doctor_blogs/{{i.id}}">
-                                                    {{i.Main_heading}}
+                                                    {{i.Main_heading | title }}
                                                 </a>
                                                 </h6>
-                                                <p style="height:100px;overflow:hidden;">
-                                                    {{i.Health_blogs_Detail}} ...</p>
+                                                <p>
+                                                    {{i.Health_blogs_Detail | linebreaks | truncatewords:15}}</p>
                                                 <div class="smblog-foot pt-15">
                                                     <div class="post-readmore">
                                                         <a href="/view_Doctor_blogs/{{i.id}}"> Read
@@ -1063,7 +1077,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 mt-3">
                                                 <a class="delete-record-link col-5"
                                                    data-toggle="modal" href="#delete{{i.id}}">
                                                     <button class="btn btn-danger H_btn col-5 text-center">

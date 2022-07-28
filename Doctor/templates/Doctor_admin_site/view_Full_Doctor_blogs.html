@@ -203,10 +203,11 @@
                                         <div class="news-thumb mt-40">
                                             <img alt="blog" src="/media/{{i.img}}">
                                         </div>
-                                        <h2 class="news-title mt-60"><b>{{i.Main_heading}}</b></h2>
-                                        <textarea class="mb-20 w-100" data-width="120" disabled
-                                                  height="100"
-                                                  style="outline:none;max-height:20%;min-height:10%;border:none;outline:none;">{{i.Health_blogs_Detail}}</textarea>
+                                        <h2 class="news-title" style="margin-top:20px;">
+                                            <b>{{i.Main_heading | title}}</b>
+                                        </h2>
+                                        <p class="mb-20"
+                                                  style="border:none;outline:none;">{{i.Health_blogs_Detail | linebreaks }}</p>
                                         <div class="news-info d-sm-flex align-items-center justify-content-between mt-50 mb-50">
                                             <div class="news-share">
                                                 <h6 class="tag-title mb-25">Social Share</h6>
@@ -310,11 +311,9 @@
                         </div>
                     </div>
                     {% endfor %}
-
             </div>
-</div>
-</div>
-</div>
+        </div>
+    </div>
 
 </section>
 
