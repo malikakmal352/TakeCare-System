@@ -16,7 +16,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="15">
+          <list size="17">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -32,6 +32,8 @@
             <item index="12" class="java.lang.String" itemvalue="style" />
             <item index="13" class="java.lang.String" itemvalue="div" />
             <item index="14" class="java.lang.String" itemvalue="i" />
+            <item index="15" class="java.lang.String" itemvalue="a" />
+            <item index="16" class="java.lang.String" itemvalue="l" />
           </list>
         </value>
       </option>
@@ -40,8 +42,21 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="1">
+          <list size="14">
             <item index="0" class="java.lang.String" itemvalue="Pillow" />
+            <item index="1" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="2" class="java.lang.String" itemvalue="autocomplete" />
+            <item index="3" class="java.lang.String" itemvalue="Faker" />
+            <item index="4" class="java.lang.String" itemvalue="laboratory" />
+            <item index="5" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="6" class="java.lang.String" itemvalue="PyPDF2" />
+            <item index="7" class="java.lang.String" itemvalue="django-email-verification" />
+            <item index="8" class="java.lang.String" itemvalue="firebase" />
+            <item index="9" class="java.lang.String" itemvalue="Student" />
+            <item index="10" class="java.lang.String" itemvalue="mysqlclient" />
+            <item index="11" class="java.lang.String" itemvalue="pytz" />
+            <item index="12" class="java.lang.String" itemvalue="tzdata" />
+            <item index="13" class="java.lang.String" itemvalue="sqlparse" />
           </list>
         </value>
       </option>
@@ -93,6 +108,32 @@
           <option value="Doctor.models.All_Specialist.Special.objects" />
           <option value="datetime.date.now" />
           <option value="dict.success" />
+          <option value="Laboratory.models.Labcity.Labcity.objects" />
+          <option value="Pharmacy_Store.models.Add_Medicine.Add_New_Medicine.objects" />
+          <option value="mainpage.models.Patient.Patient.objects" />
+          <option value="Pharmacy_Store.models.Add_pharmacy.Pharmacy.objects" />
+          <option value="Pharmacy_Store.models.Medicine_Order.order.objects" />
+          <option value="Rider_dashboard.models.Rider.Rider.objects" />
+          <option value="cloths.models.Cloth.objects" />
+          <option value="cloths.models.Brand.objects" />
+          <option value="tailor.urls" />
+          <option value="cloths.urls" />
+          <option value="Rider_dashboard.urls" />
+          <option value="Systemadmin.urls" />
+          <option value="Laboratory.models.Lab_tests_list.Test_list.objects" />
+          <option value="Laboratory.models.add_lab.Lab.objects" />
+          <option value="Laboratory.models.Book_lab_test.Book_Test.objects" />
+          <option value="Doctor.models.appointments.Appointment.objects" />
+          <option value="Doctor.models.save_reports.Save_Medical_Reports.objects" />
+          <option value="Laboratory.models.Samplest.Samplest.objects" />
+          <option value="Doctor.models.ADD_Docror.Doctors.objects" />
+          <option value="Doctor.models.Health_blog.Health_blogs.objects" />
+          <option value="Doctor.models.Doctor_Request.Doctor_request.objects" />
+          <option value="Doctor.models.Clinic.Clinic.objects" />
+          <option value="mainpage.urls" />
+          <option value="Pharmacy_Store.urls" />
+          <option value="Doctor.urls" />
+          <option value="Laboratory.urls" />
         </list>
       </option>
     </inspection_tool>

@@ -298,7 +298,7 @@ def Lab_Login(request):
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Lab_login.html', {'error': error_message})
 
-@Lab_login_check
+@Lab_middleware
 def Lab_logout(request):
     request.session['lab_id'] = None
     request.session['lab_email'] = None

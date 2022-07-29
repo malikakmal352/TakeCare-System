@@ -50,7 +50,7 @@ def Rider_Login(request):
 
 @Rider_middleware
 def Rider_Logout(request):
-    request.session['lab_id'] = None
+    request.session['Rid_id'] = None
     return redirect(mainindex)
 
 
@@ -145,8 +145,6 @@ def Deliveries_History(request):
 
 
 # ////////////////////////////Functions Related  Rider Admin Dashboard+profile page start///////////////////////////
-
-
 @Rider_middleware
 def Rider_profile(request):
     Rd = request.session.get('Rid_id')

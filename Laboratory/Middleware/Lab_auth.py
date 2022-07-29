@@ -4,7 +4,6 @@ from django.shortcuts import redirect
 
 def Lab_middleware(get_response):
     def middleware(request):
-        print('middleware Run \n')
 
         if not request.session.get('lab_email'):
             messages.error(request, "Please Login First For Future Operations")
@@ -19,7 +18,6 @@ def Lab_middleware(get_response):
 
 def Lab_login_check(get_response):
     def middleware(request):
-        print('middleware Run \n')
 
         if request.session.get('lab_email'):
             return redirect('lab_Admin')
