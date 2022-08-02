@@ -1,9 +1,7 @@
-{% include "Admin_site/admin_header.html" %}
-
+{% extends "Admin_site/admin_header.html" %}
 {% load static %}
 
-<body class="crm_body_bg">
-
+{% block content %}
 
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
@@ -166,6 +164,22 @@
 
                         <div class="table-responsive">
                             <h2 align="center">View All New Doctor Requests</h2>
+
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                                 role="alert">
+                                <div class="d-flex alert-success">
+                                    <div class="toast-body ">
+                                        {{ message }}
+                                    </div>
+                                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                            type="button"></button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+
                             {% if error_message %}
                             <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
                                  role="alert">
@@ -598,37 +612,6 @@
 
 
 </section>
-
-<!-- popper js -->
-<script src='{% static "Hospital_files/popper.min.js.download" %}'></script>
-<!-- sidebar menu  -->
-<script src='{% static "Hospital_files/metisMenu.js.download" %}'></script>
-<!-- waypoints js -->
-<script src='{% static "Hospital_files/jquery.waypoints.min.js.download" %}'></script>
-<!-- waypoints js -->
-<!--<script src='{% static "Hospital_files/Chart.min.js.download" %}'></script>-->
-<!-- counterup js -->
-<script src='{% static "jquery.counterup.min.js.download" %}'></script>
-<!-- swiper slider js -->
-<script src='{% static "Hospital_files/swiper.min.js.download" %}'></script>
-<!-- nice select -->
-<script src='{% static  "Hospital_files/jquery.nice-select.min.js.download" %}'></script>
-<!-- owl carousel -->
-<script src='{% static  "Hospital_files/owl.carousel.min.js.download" %}'></script>
-
-<!-- tag input -->
-<script src='{% static "Hospital_files/tagsinput.js.download" %}'></script>
-<!-- text editor js -->
-<script src='{% static "Hospital_files/summernote-bs4.js.download" %}'></script>
-
-
-<!-- custom js -->
-<script src='{% static "custom.js.download" %}'></script>
-
-
-<link href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" rel="stylesheet">
-<!--<script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script>
   $( function() {
     var availableTags = [
@@ -646,4 +629,4 @@
 
 </script>
 
-</body>
+{% endblock %}

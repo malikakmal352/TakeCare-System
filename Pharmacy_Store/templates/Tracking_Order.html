@@ -33,6 +33,24 @@
 <body>
 <!-- header-start -->
 {% include "mainheader.html" %}
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.11.4/datatables.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.11.4/datatables.min.js" type="text/javascript"></script>
+
+
+    <script>
+
+			$(document).ready( function () {
+				$('#examples')
+
+					.dataTable( {
+						responsive: true,
+
+					} );
+			} );
+
+    </script>
 
 
 <main>
@@ -87,7 +105,7 @@
                     <form action="/Cancel Order/" method="POST">
                         {% csrf_token %}
                         <div class="table-content table-responsive">
-                            <table class="table">
+                            <table class="table table-bordered table-hover" id="examples">
                                 <thead>
                                 <tr>
                                     <th class="product-thumbnail">Images</th>

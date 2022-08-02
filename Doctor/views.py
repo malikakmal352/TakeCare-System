@@ -62,7 +62,8 @@ def Doctor_request_form(request):
                                          Doctor_PMID_number=PMID_number)
 
         Doctor_requests.save()
-        success_message = 'Request is sent successfully. \n You will be informed about request is accept or not through E-mail'
+        success_message = 'Request is sent successfully.' \
+                          ' \n You will be informed about request is accept or not through E-mail'
         Doctor_Request_Sent_mail_doctor(email, name)
         data = {'error': error_message, 'success': success_message,
                 'labcitys': labcitys, 'all_sp': all_sp}

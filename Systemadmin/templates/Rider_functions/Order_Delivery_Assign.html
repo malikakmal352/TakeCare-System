@@ -248,43 +248,32 @@
                                                 <table class="table width:100% align-middle">
                                                     <tbody>
                                                     <tr align="center">
-                                                        <th class="col-6" colspan="2"><img src="/media/{{ i.img }}"
+                                                        <th class="col-6" colspan="2"><img src="/media/{{ i.Medicine.img }}"
                                                                                            style="height:10vh;">
                                                         </th>
 
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider Name </h6>
+                                                        <th class="col-6"><h6 style="color:green">Pharmacy Name </h6>
                                                         </th>
-                                                        <th class="col-6"><h6 style="color:green">{{i.name}} </h6>
+                                                        <th class="col-6"><h6 style="color:green">{{i.Pharmacy}} </h6>
                                                         </th>
                                                     </tr>
                                                     <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider CNIC</h6>
+                                                        <th class="col-6"><h6 style="color:green">Medicine Name </h6>
                                                         </th>
-                                                        <td>{{i.CNIC}}</td>
+                                                        <td>{{i.Medicine}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Customer</h6></th>
+                                                        <td>{{i.Customer}}</td>
                                                     </tr>
                                                     <tr align="center">
                                                         <th class="col-6"><h6 style="color:green">Phone No</h6></th>
-                                                        <td>0{{i.Callnumber}}</td>
+                                                        <td>0{{i.phone}}</td>
                                                     </tr>
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Rider City</h6></th>
-                                                        <td>{{i.Rider_city}}</td>
-                                                    </tr>
-                                                    {% if i.is_Active %}
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Status</h6>
-                                                        </th>
-                                                        <td>Activate</td>
-                                                    </tr>
-                                                    {% else %}
-                                                    <tr align="center">
-                                                        <th class="col-6"><h6 style="color:green">Status</h6>
-                                                        </th>
-                                                        <td>Deactivate</td>
-                                                    </tr>
-                                                    {% endif %}
+
+
 
 
                                                     </tbody>

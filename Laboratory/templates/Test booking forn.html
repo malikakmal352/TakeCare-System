@@ -22,6 +22,7 @@
 
 
 
+
     </style>
     <style>
       html, body {
@@ -230,6 +231,7 @@
       }
 
 
+
     </style>
 </head>
 <body>
@@ -244,9 +246,9 @@
         <div class="colums">
             {% for i in Booktest %}
             <div class="item col-12 mx-auto ">
-                    <h5 class="m-2 mt-2"><b>Laboratory:</b> {{i.laboratory}}</h5>
-                    <h5 class="m-2 mt-2"><b>Book Test:</b> {{i.Test_name}}</h5>
-                    <h5 class="m-2 mt-2"><b>Test Rate:</b> {{i.test_price}}Rs</h5>
+                <h5 class="m-2 mt-2"><b>Laboratory:</b> {{i.laboratory}}</h5>
+                <h5 class="m-2 mt-2"><b>Book Test:</b> {{i.Test_name}}</h5>
+                <h5 class="m-2 mt-2"><b>Test Rate:</b> {{i.test_price}}Rs</h5>
             </div>
 
             <div class="item sa ">
@@ -266,26 +268,35 @@
                 <label for="city">City<span>*</span></label>
                 <input id="city" name="city" required type="text" value="{{request.session.city}}"/>
             </div>
+
             <div class="item sa ">
                 <label for="Date">Pick a Lab Test Date<span>*</span></label>
-                <input id="Date" name="Test_Date" min="{% now '20y-m-d'%}"  required type="date"  aria-required="true"/>
+                <input aria-required="true" id="Date" min="{% now '20y-m-d'%}" name="Test_Date" required type="date"/>
             </div>
 
             <div class="question">
-          <label>Select Test Type<span style="color:red;margin-left:0">*</span></label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="Lab Visit" id="Lab_visit" name="Test_type" required  checked/>
-              <label for="Lab_visit" class="radio"><span>Lab Visit</span></label>
+                <label>Select Test Type<span style="color:red;margin-left:0">*</span></label>
+                <div class="question-answer">
+                    <div>
+                        <input checked id="Lab_visit" name="Test_type" required type="radio" value="Lab Visit"/>
+                        <label class="radio" for="Lab_visit"><span>Lab Visit</span></label>
+                    </div>
+                </div>
+                {% if i.Home_Sample %}
+                <div>
+                    <input id="home_sample" name="Test_type" required type="radio" value="home sample"/>
+                    <label class="radio" for="home_sample"><span>Home Sample</span></label>
+                </div>
             </div>
-
+            {% else %}
             <div>
-              <input type="radio" value="home sample" id="home_sample" name="Test_type" required/>
-              <label for="home_sample" class="radio"><span>Home Sample</span></label>
+                <input disabled name="Test_type" required type="radio" value="home sample"/>
+                <label class="radio" for="home_sample"><span>Home Sample</span></label>
             </div>
-          </div>
-        </div>
-
+            <div>
+                <input class="d-none" name="address" value="{{request.session.Address}}"/>
+            </div>
+            {% endif %}
 
             <div class="item sa d-none">
                 <label for="labname">lab Name<span>*</span></label>
@@ -301,10 +312,19 @@
             </div>
 
         </div>
+        {% if i.Home_Sample %}
+
         <div class="item" id="address">
             <label for="visit">Patient Address for Home sampling</label>
             <textarea id="visit" name='address' rows="5">{{request.session.Address}}</textarea>
         </div>
+        {% else %}
+
+        <div>
+            <input class="d-none" name="address" value="{{request.session.Address}}"/>
+        </div>
+        {% endif %}
+
         {% endfor %}
 
         <div class="btn-block">
@@ -327,6 +347,7 @@
         {
            address.style.display= 'none';
         }
+
 </script>
 </body>
 </html>

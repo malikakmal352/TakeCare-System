@@ -221,15 +221,11 @@ def add_new_Patient(request):
 
         Is_Exit = Patient.objects.filter(email=email)
         if Is_Exit:
-            error_message = " This CNIC is already exit"
-            Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                    "all_city": all_city, "current_admin": current_admin}
-            return render(request, "Admin_site/add_new_Samplest.html", Data)
+            messages.error(request, " This email is already exit")
+            return redirect(add_new_Patient)
         elif len(Callnumber) < 10:
-            error_message = " This Phone number must be 10 digits"
-            Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                    "all_city": all_city, "current_admin": current_admin}
-            return render(request, "Admin_site/add_new_Samplest.html", Data)
+            messages.error(request,  " This Phone number must be 10 digits")
+            return redirect(add_new_Patient)
 
         Add_new_Patient = Patient(name=name, email=email, Mn=Callnumber, password=password, is_Active=True)
         Add_new_Patient.password = make_password(Add_new_Patient.password)
@@ -252,13 +248,7 @@ def view_Patient_list(request):
 
 @Admin_middleware
 def Status_Patients(request):
-    error_message = None
-    success = None
     current_lab = SuperAdmin.objects.get()
-    all_Patients = Patient.objects.all().order_by('-id')
-    lb = request.session.get('admin_id')
-    current_admin = SuperAdmin.objects.filter(id=lb)
-
     if request.method == 'POST':
         Data = request.POST
         name = Data.get('name')
@@ -268,15 +258,13 @@ def Status_Patients(request):
 
         if Update_Patient.is_Active:
             Update_Patient.is_Active = False
-            success = name + "is Deactivate Successfully"
+            messages.success(request, name + "is Deactivate Successfully")
         else:
             Update_Patient.is_Active = True
-            success = name + "is Active Successfully"
+            messages.success(request, name + "is Active Successfully")
         Update_Patient.save()
+    return redirect(view_Patient_list)
 
-    Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-            'all_Patients': all_Patients, "current_admin": current_admin}
-    return render(request, "View_all_patients.html", Data)
 
 
 @Admin_middleware
@@ -297,7 +285,8 @@ def Patients_del(request):
         if d_Patient:
             d_Patient = Patient.objects.get(id=id)
             d_Patient.delete()
-            success = name + "Deleted Successfully"
+            messages.success(request, name + "Deleted Successfully")
+            redirect(view_Patient_list)
         else:
             error_message = name + " Not Exist or already deleted from System"
 
@@ -511,9 +500,9 @@ def add_new_Laboratory(request):
         email = Data.get('email')
         Callnumber = Data.get('phone')
         password = Data.get('password')
-        City = Data.get('City')
+        City = Data.get('city')
         Address = Data.get('Address')
-        city = Labcity.objects.get(Lab_city_name=City)
+        city = Labcity.objects.get(id=City)
 
         Is_Exit = Lab.objects.filter(email=email)
         if Is_Exit:

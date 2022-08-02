@@ -12,7 +12,7 @@ from Laboratory.models.Lab_tests_list import Test_list
 from Laboratory.models.Labcity import Labcity
 from Laboratory.models.Samplest import Samplest
 from Laboratory.models.add_lab import Lab
-from mainpage.Sent_Email import send_forget_password_mail_Lab
+from mainpage.Sent_Email import send_forget_password_mail_Lab,Lab_Report_Ready_Sent_mail_Patient
 from mainpage.models.Patient import Patient
 from Doctor.models.appointments import Appointment
 from Doctor.models.save_reports import Save_Medical_Reports
@@ -729,6 +729,9 @@ def update_samplest(request, id):
         Update_Samplest.CNIC = CNIC
         Update_Samplest.save()
         success = name + "Record is Updated Successfully"
+        success_message = 'Request is sent successfully.' \
+                          ' \n You will be informed about request is accept or not through E-mail'
+
         Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success, 'samplest': samplest}
         return render(request, "Admin_site/View_all_samplest.html", Data)
 
@@ -802,7 +805,10 @@ def upload_test_report(request):
                     i.status = 'Dispatch'
                     i.save()
                 print(i.Test_date)
-
+        email = Report.email
+        name = Report.Patient_Name
+        test_id = Report.email.id
+        Lab_Report_Ready_Sent_mail_Patient(email, name, test_id)
         data = {'current_lab': current_lab, 'Test_pending_booking': Test_pending_booking,
                 'book_Test': book_Test, "Test_conform_booking": Test_conform_booking,
                 "Test_conform_booking_today": Test_conform_booking_today, 'all_Test': all_Test}

@@ -41,7 +41,7 @@
                 <i class="fas fa-user-md"></i>
                 <span>Doctors<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
+            <ul class="mm-collapse">
                 <li><a href="/all_Register_doctor/">View All Doctors</a></li>
                 <li><a href="/view_N_D/">New Doctor Request</a></li>
                 <li><a class="active" href="/add_new_doctor/">ADD New Doctor</a></li>
@@ -52,7 +52,7 @@
                 <i class="fas fa-pills"></i>
                 <span>Pharmacies<i class="fal fa-chevron-down" style="float: right;"></i></span>
             </a>
-            <ul class="mm-collapse" style="height: 0px;">
+            <ul class="mm-collapse">
                 <li><a href="/View ALL Pharmacy/">View All Pharmacies</a></li>
                 <li><a href="/ADD_New_Pharmacy/">ADD New pharmacy</a></li>
             </ul>
@@ -165,6 +165,21 @@
                 <div class="col-lg-12 col-xl-12">
                     <div class="white_box mb_30 " style="position: relative;">
 
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+                             role="alert">
+                            <div class="d-flex alert-success">
+                                <div class="toast-body ">
+                                    {{ message }}
+                                </div>
+                                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        type="button"></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
 
                         {% if error_message %}
                         <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"

@@ -26,10 +26,10 @@ class Patient(models.Model):
     def __str__(self):
         return self.email
 
-    def delete(self, using=None, keep_parents=False):
-        self.img.storage.delete(self.img.name)
-        self.img.storage.delete(self.img.name)
-        super().delete()
+    # def delete(self, using=None, keep_parents=False):
+    #     self.img.storage.delete(self.img.name)
+    #     self.img.storage.delete(self.img.name)
+    #     super().delete()
 
     def get_by_email(email):
         try:
