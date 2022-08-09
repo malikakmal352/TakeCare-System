@@ -12,7 +12,7 @@ from Laboratory.models.Lab_tests_list import Test_list
 from Laboratory.models.Labcity import Labcity
 from Laboratory.models.Samplest import Samplest
 from Laboratory.models.add_lab import Lab
-from mainpage.Sent_Email import send_forget_password_mail_Lab,Lab_Report_Ready_Sent_mail_Patient
+from mainpage.Sent_Email import send_forget_password_mail_Lab, Lab_Report_Ready_Sent_mail_Patient
 from mainpage.models.Patient import Patient
 from Doctor.models.appointments import Appointment
 from Doctor.models.save_reports import Save_Medical_Reports
@@ -59,7 +59,6 @@ def Labs(request, id):
             print(labs)
         else:
             print('not works')
-
 
     if id != 400:
         LabCity = Labcity.objects.filter(id=id)
@@ -298,6 +297,7 @@ def Lab_Login(request):
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Lab_login.html', {'error': error_message})
 
+
 @Lab_middleware
 def Lab_logout(request):
     request.session['lab_id'] = None
@@ -370,6 +370,10 @@ def lab_admin(request):
             Report.status = "Test Report"
             Report.save()
             success = 'Test Report Uploaded Successfully'
+            email = Report.email
+            name = Report.Patient_Name
+            test_id = Report.email.id
+            Lab_Report_Ready_Sent_mail_Patient(email, name, test_id)
         elif Status == "Payment_received":
             Payment = Book_Test.objects.get(id=ID)
             Payment.payment = "Paid"

@@ -29,7 +29,7 @@ def Pharmacies(request, id):
     all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
     Customer = Patient.objects.all()
 
-    paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+    paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
     page_number = request.GET.get('page')
     all_Medicine = paginator.get_page(page_number)
 
@@ -90,7 +90,7 @@ def All_Medicines(request):
     all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
     Customer = Patient.objects.all()
 
-    paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+    paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
     page_number = request.GET.get('page')
     all_Medicine = paginator.get_page(page_number)
 
@@ -107,7 +107,7 @@ def All_Medicines(request):
         Medicine_name = Add_New_Medicine.objects.filter(Medicine_name__startswith=ser, status="Active", is_Expired=False,)
 
 
-        paginator = Paginator(all_Medicines, 4)  # Show 5 contacts per page.
+        paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
         page_number = request.GET.get('page')
         all_Medicine = paginator.get_page(page_number)
 

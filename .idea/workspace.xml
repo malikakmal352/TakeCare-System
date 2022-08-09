@@ -1,53 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="Remove Rider and lab logout bug">
-      <change afterPath="$USER_HOME$/ApkProjects/base/base.iml" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Google/Chrome/User Data/BrowserMetrics-spare.pma" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Google/Chrome/User Data/CrashpadMetrics.pma" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Google/Chrome/User Data/Profile 2/Code Cache/js/index-dir/the-real-index" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/JetBrains/PyCharmCE2021.2/index/.persistent/trigram.index/values.values.at" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/JetBrains/PyCharmCE2021.2/index/stubs/py.class.attributes/Py.class.attributes.storage.values.at" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Microsoft/Windows/Caches/{1EA7F3B3-B905-4D30-88C9-B63C603DA134}.3.ver0x0000000000000001.db" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Microsoft/XboxLive/AuthStateCache.dat" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/AC/INetCache/LZJIXSMT/Charts[1].json" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/AC/INetCache/S7CV8AX5/actions[1].json" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/AC/INetCache/S7CV8AX5/th[1].jpg" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/AC/INetCache/S7CV8AX5/th[2].jpg" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/AC/INetCache/S7CV8AX5/th[3].jpg" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/LocalState/Flighting/FlightingLogging.txt" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/LocalState/ShellFeeds/GLEAM-DARK.svg" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Local/Packages/Microsoft.Windows.Search_cw5n1h2txyewy/LocalState/ShellFeeds/GLEAM-LIGHT.svg" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Roaming/JetBrains/PyCharmCE2021.1/demo/PyCharmLearningProject/.idea/PyCharmLearningProject.iml" afterDir="false" />
-      <change afterPath="$APPLICATION_CONFIG_DIR$/demo/PyCharmLearningProject/.idea/PyCharmLearningProject.iml" afterDir="false" />
-      <change afterPath="$USER_HOME$/AppData/Roaming/Opera Software/Opera Stable/opera_shutdown_ms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/CSS/Admin_panel.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Documents/Custom Office Templates/TakeCare System/.idea/TakeCare System.iml" afterDir="false" />
-      <change afterPath="$USER_HOME$/Downloads/crash-course-CRM-Part-14-User-Registration-Login-Authentication (1)/.idea/crash-course-CRM-Part-14-User-Registration-Login-Authentication (1).iml" afterDir="false" />
+    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="E-mail alert on upload lab report + E-mail Change">
+      <change beforePath="$PROJECT_DIR$/../../FYP.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../../FYP.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/templates/Doctor_request_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/Doctor_request_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Test booking forn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/templates/Tracking_Order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Add_New_Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_new_doctor_requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/view_register_docters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Laboratory_fuctions/add_new_Laboratory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Add_New_Rider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/Order_Delivery_Assign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Rider_functions/View_all_Riders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/View_all_patients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/Sent_Email.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/Sent_Email.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/models/Patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/models/Patient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../GitHub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../GitHub.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TakeCare-System-master/.idea/TakeCare System.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,10 +28,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Cloth and Stiching" />
+    <property name="last_opened_file_path" value="F:/TakeCare System" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\static" />
       <recent name="C:\Users\DELL\Desktop\FYP\TakeCare System\TakeCare System\static" />
     </key>
@@ -93,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659121856298</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="E-mail alert on upload lab report + E-mail Change">
+      <created>1659410961739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659410961739</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +80,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove Rider and lab logout bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove Rider and lab logout bug" />
+    <MESSAGE value="E-mail alert on upload lab report + E-mail Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="E-mail alert on upload lab report + E-mail Change" />
   </component>
 </project>
