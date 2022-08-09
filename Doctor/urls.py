@@ -20,7 +20,8 @@ from Doctor.views import Doctor_Login, ForgetPassword_doctor, ChangePassword_doc
     Create_password_doctor, view_all_doctors, Doctors_Special, Doctors_Special_in_city, Doctors_in_city, \
     view_specialities, Doctor_admin, Doctor_profile, updates_Doctor_profile, clinic_profile, updates_clinic_profile, \
     Health_blog, add_new_blog, view_Doctor_blogs, Update_health_blog, blog_detail, view_Full_Doctor_blogs, \
-    blog_via_issue, New_Appointment_Requests, Confirm_appointments, Book_appointment, appointment_booked_Scheduled
+    blog_via_issue, New_Appointment_Requests, Confirm_appointments, Book_appointment, appointment_booked_Scheduled,\
+    Give_Review
 
 urlpatterns = [
 

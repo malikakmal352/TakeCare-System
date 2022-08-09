@@ -113,7 +113,8 @@ urlpatterns = [
     path('View_list/<int:id>/', test_list, name='Laboratory test list'),
     path('Booking_form/<int:id>/', Booking_form, name='Lab test booking form'),
 
-    path('View_Your_Appointments/<int:id>/', View_Your_Appointments, name='View all Appointments,orders'),
+    path('View_Your_Appointments/<int:id>/', View_Your_Appointments, name='View_all_Appointments_orders'),
+    path("Give_Review/", Give_Review, name='Give_Review'),
     path("view_specialities/", view_specialities, name='view_specialities'),
     path('view_all_doctors/', view_all_doctors, name="view_all_doctors"),
     path("Doctors/<Speciality>/", Doctors_Special, name="Doctors_Special"),

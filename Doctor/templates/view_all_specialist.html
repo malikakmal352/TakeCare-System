@@ -713,7 +713,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
+                                {% if i.satisfaction_per %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                                {% else %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                                {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -1000,7 +1004,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
+                                {% if i.satisfaction_per %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                                {% else %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                                {% endif %}
                         </div>
                         <div class="mx-auto col-6 col-sm-6 col-md-6">
                             <div class="d-flex">
@@ -1313,8 +1321,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
-                        </div>
+                        {% if i.satisfaction_per %}
+                        <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                        {% else %}
+                        <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                        {% endif %}                        </div>
                         <div class="mx-auto col-6 col-sm-6 col-md-6">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
@@ -1623,7 +1634,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
+                                {% if i.satisfaction_per %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                                {% else %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                                {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -1880,7 +1895,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
+                                {% if i.satisfaction_per %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                                {% else %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                                {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -2138,8 +2157,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                            <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
-                        </div>
+                                {% if i.satisfaction_per %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                                {% else %}
+                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                                {% endif %}                        </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"

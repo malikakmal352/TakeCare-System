@@ -8,6 +8,7 @@ from datetime import *
 from django.contrib import messages
 
 from Laboratory.models.Labcity import Labcity
+from mainpage.Middleware.Patient_auth import Patient_middleware
 from mainpage.Sent_Email import send_forget_password_mail_doctor, Doctor_Request_Sent_mail_doctor
 from mainpage.models.Patient import Patient
 from django.core.paginator import Paginator
@@ -1096,6 +1097,7 @@ def Book_appointment(request, id):
             Appointment_Slot_list11.remove(element)
     slot_list11 = Appointment_Slot_list11.copy()
     Appointment_Slots_start = Appointment_Slots_start - timedelta(minutes=n)
+    Appointment_Reviews = Appointment.objects.filter(Doctor=id)
 
     Customer = Patient.objects.all()
     if request.method == 'POST':
@@ -1130,6 +1132,7 @@ def Book_appointment(request, id):
             'Doctor': Doctor, 'labcitys': labcitys,
             'All_Speciality': All_Speciality,
             'doctor_clinic': doctor_clinic, "Doctor_get": Doctor_get,
+            'Appointment_Reviews': Appointment_Reviews,
 
             "formatDate1": formatDate1, "formatDate1_back": formatDate1_back, "day1": day1,
             "formatDate2_back": formatDate2_back, "formatDate2": formatDate2, "day2": day2,
@@ -1159,6 +1162,34 @@ def appointment_booked_Scheduled(request, id):
     Data = {"Customer": Customer, "labcity": labcity,
             "Appointment_con_id": Appointment_con_id}
     return render(request, "appointment_booked_Scheduled.html", Data)
+
+@Patient_middleware
+def Give_Review(request):
+    id = request.session.get('id')
+
+    if request.method == 'POST':
+        Data = request.POST
+        id = Data.get('id')
+        Review = Data.get('Review')
+        Rate = Data.get('rate')
+        Rate = int(Rate)
+        Appointment_Review = Appointment.objects.get(id=id)
+        Appointment_Review.Patients_Review = Review
+        Doctor_id = Appointment_Review.Doctor.id
+        Doctor_id = int(Doctor_id)
+        Doctor_Rate = Doctors.objects.get(id=Doctor_id)
+        Total_Reviews = Doctor_Rate.Total_Reviews + 1
+        Patient_satisfaction = Doctor_Rate.Patient_satisfaction + Rate
+        Doctor_Rate.Total_Reviews = Total_Reviews
+        Doctor_Rate.Patient_satisfaction = Patient_satisfaction
+        Appointment_Review.save()
+        Doctor_Rate.save()
+        Doctor_Rate.satisfaction_per = Doctor_Rate.Patient_satisfaction / Doctor_Rate.Total_Reviews
+        Doctor_Rate.save()
+
+        messages.success(request, "Thank you for Review")
+
+    return redirect('View_all_Appointments_orders', id=id)
 
 
 def Doctors_in_city(request, city):

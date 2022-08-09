@@ -25,6 +25,9 @@ class Doctors(models.Model):
     Address = models.TextField(max_length=300, default="", blank=True, null=True)
     forget_password_token = models.CharField(max_length=100, null=True, blank=True)
     Doctor_Clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, null=True, blank=True)
+    Total_Reviews = models.PositiveIntegerField(default=0)
+    Patient_satisfaction = models.PositiveBigIntegerField(default=0)
+    satisfaction_per = models.PositiveBigIntegerField(default=0)
 
     # Satisfaction =
     is_Active = models.BooleanField(default=True)

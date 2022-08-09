@@ -38,10 +38,8 @@ class Appointment(models.Model):
     appointment_cancel_reason = models.TextField(max_length=300, null=True, default="", blank=True)
     Prescription = models.TextField(max_length=500, null=True, default="", blank=True)
     Medical_report_1 = models.ForeignKey(Save_Medical_Reports, on_delete=models.CASCADE, null=True, blank=True)
-    # Report_2 = models.ForeignKey(Save_Medical_Reports, on_delete=models.CASCADE, null=True, blank=True)
-    # Medical_report_3 = models.ForeignKey(Save_Medical_Reports, on_delete=models.CASCADE, null=True, blank=True)
+    Patients_Review = models.TextField(max_length=300, null=True, default="", blank=True)
 
-    # Doctor_Clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.Name

@@ -124,7 +124,22 @@
 {% endif %}
 
 <div class="testbox" style="justify-content: center;align-items: center;height: inherit;">
+
     <div class="card_body" style="justify-content: center;align-items: center;height: inherit;">
+        {% if messages %}
+        {% for message in messages %}
+        <div aria-atomic="true" aria-live="assertive" class="toast  show align-items-center w-100"
+             role="alert">
+            <div class="d-flex alert-success">
+                <div class="toast-body ">
+                    {{ message }}
+                </div>
+                <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                        type="button"></button>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
         <h5 class="text-center">Your All Book Lab tests, doctor Appointments, Medicine Orders</h5>
         <s style="color:green;">
             <hr>
@@ -789,6 +804,22 @@
                                         href="#appointment_upcoming_detail{{i.id}}"
                                         style="color:white; " type="button">View Detail
                                 </button>
+                                {% if i.Status == 'Completed'%}
+                                {% if i.Patients_Review == ""%}
+                                <a class="btn btn-outline-danger btn-block col-10"
+                                        data-toggle="modal"
+                                        href="#appointment_Review_write{{i.id}}"
+                                        type="button">Give Review
+                                </a>
+                                {% else %}
+                                <a class="btn btn-outline-danger btn-block col-12"
+                                        data-toggle="modal"
+                                        href="#appointment_Review_view{{i.id}}"
+                                        type="button">View Review
+                                </a>
+                                {% endif %}
+                                {% endif %}
+
                                 <div class="status_sm">
                                     {% if i.Status == 'Pending' or i.Status == 'Accepted'%}
                                     {% if i.Medical_report_1 %}
@@ -953,8 +984,8 @@
                                                         </tr>
                                                         <tr>
                                                             <td align="center" colspan="2">
-                                                                <textarea disabled
-                                                                          rows="4">{{i.Prescription}}</textarea></td>
+                                                                <p>{{i.Prescription | linebreaks}}</p>
+                                                            </td>
 
                                                         </tr>
                                                         </tfoot>
@@ -1050,6 +1081,143 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div aria-hidden="true" class="modal" id="appointment_Review_write{{i.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog p-3" role="document" style="margin-top: 30px;">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                    type="button"></button>
+                                        </div>
+                                        <div class="modal-body tab-content">
+                                            <h5 class="text-center">Write your Review </h5>
+                                            <div class="table-responsive">
+                                                <table class="table width:100% align-middle">
+                                                    <tbody>
+
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Appointment ID</h6>
+                                                        </th>
+                                                        <td>0{{i.id}}</td>
+                                                    </tr>
+                                                    <tr align="center">
+                                                        <th class="col-6"><h6 style="color:green">Patient Name</h6>
+                                                        </th>
+                                                        <td>{{i.Name}}</td>
+                                                    </tr><br>
+                                                    <tr align="center">
+                                                        <th colspan="2">
+                                                            <form action="/Give_Review/" method="post">
+                                                                {% csrf_token%}
+                                                            <h4>
+                                                             <h4 style="color:green;">Rate your satisfaction</h4>
+                                                             <div class="12 text-center ml-1">
+                                                                 <h1 class="col-1"></h1>
+                                                                <div class="col-2" style="float:left;">
+                                                                    <input type="radio" name="rate"  value="20" required>
+                                                                </div>
+                                                                <div class="col-2" style="float:left;">
+                                                                    <input type="radio" name="rate"  value="40" required>
+                                                                </div>
+                                                                <div class="col-2" style="float:left;">
+                                                                    <input type="radio" name="rate"  value="60" required>
+                                                                </div>
+                                                                <div class="col-2" style="float:left;">
+                                                                    <input type="radio" name="rate"  value="80" required>
+                                                                </div>
+                                                                <div class="col-2" style="float:left;">
+                                                                    <input type="radio" name="rate"  value="100" required>
+                                                                </div>
+                                                             </div><br>
+                                                                <div class="12 text-center">
+                                                                 <h1 class="col-1"></h1>
+                                                                <div class="col-2 text-center" style="float:left;">
+                                                                    1
+                                                                </div>
+                                                                <div class="col-2 text-center" style="float:left;">
+                                                                    2
+                                                                </div>
+                                                                <div class="col-2 text-center" style="float:left;">
+                                                                    3
+                                                                </div>
+                                                                <div class="col-2 text-center" style="float:left;">
+                                                                    4
+                                                                </div>
+                                                                <div class="col-2 text-center" style="float:left;">
+                                                                    5
+                                                                </div>
+                                                                </div>
+                                                                <br>
+                                                                <textarea rows="4" style="width:100%" required
+                                                                          placeholder="Start Writing Reviews"
+                                                                          name="Review"></textarea>
+                                                                <input type="number" name="id" value="{{i.id}}" hidden/>
+                                                                <br><br>
+                                                                <button class="btn btn-danger"
+                                                                        style="font-family:sans-serif;">
+                                                                    Submit
+                                                                </button>
+                                                            </h4>
+                                                            </form>
+                                                        </th>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <br/>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div aria-hidden="true" class="modal" id="appointment_Review_view{{i.id}}"
+                                     role="dialog"
+                                     tabindex="-1">
+                                    <div class="modal-dialog p-3" role="document" style="margin-top: 80px;">
+                                        <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <button aria-label="Close" class="btn-close" data-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body tab-content">
+                                                <h5 class="text-center">Your Review</h5>
+                                                <div class="table-responsive">
+                                                    <table class="table width:100% align-middle ">
+                                                        <thead>
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Appointment
+                                                                ID </h6>
+                                                            </th>
+                                                            <th class="col-6"><h6 style="color:green">0{{i.id}} </h6>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="table-light table-borderless">
+                                                        <tr align="center">
+                                                            <th class="col-6"><h6 style="color:green">Doctor</h6>
+                                                            </th>
+                                                            <td>{{i.Doctor.Doctor_name}}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <td colspan="2">{{i.Appointment_date}} | {{i.Time_slot}}
+                                                            </td>
+                                                        </tr>
+                                                        <tfoot class="borderless">
+                                                        <tr>
+                                                            <td align="center" colspan="2">
+                                                                <p>{{i.Patients_Review | linebreaks}}</p>
+                                                            </td>
+
+                                                        </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

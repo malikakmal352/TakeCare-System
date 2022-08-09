@@ -297,7 +297,11 @@ border-color:#014e78
                             </svg>
                             <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                         </div>
-                        <p class="font-size-sm" style="margin-left: 22px;"><b>95%</b></p>
+                        {% if i.satisfaction_per %}
+                        <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                        {% else %}
+                        <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                        {% endif %}
                     </div>
                     <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                         <div class="d-flex">
@@ -1113,6 +1117,29 @@ border-color:#014e78
 
 </div>
 
+<br><br>
+
+<div class="container-lg  bg-white">
+    <h3 class="font-weight-bold   mb-0 paddingTopTenPx text-center mt-2 py-3">Reviews</h3>
+    <section class="mb-3 " >
+        <div class="row">
+            {% for i in Appointment_Reviews %}
+            <div class="col-10 col-sm-8">
+                {% if i.Patients.img %}
+                <img class="rounded-circle"
+                     src="/media/{{i.Patients.img}}" style="width:5%;max-height:6vh;">
+                {% else %}
+                <img class="rounded col-1"
+                     src="{% static  'deault_profile_image.png' %}"
+                     style="width:4%;">
+                {% endif%}
+                <span style="font-size:15px;"><b>{{i.Patients.name}}</b></span>
+                <p style="margin-left:10%;">{{i.Patients_Review}}</p>
+                <hr style="border:solid 1px;"><br>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </div>
 
 
