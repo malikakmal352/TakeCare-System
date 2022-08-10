@@ -56,6 +56,10 @@ border-color:#014e78
 
 
 
+
+
+
+
     </style>
 
     <style type="text/css">
@@ -87,6 +91,10 @@ border-color:#014e78
         border: none;
         cursor: pointer;
     }
+
+
+
+
 
 
 
@@ -264,6 +272,10 @@ border-color:#014e78
 
 
 
+
+
+
+
     </style>
     <style>
     /*----------------------------------------*/
@@ -397,6 +409,10 @@ border-color:#014e78
 
 
 
+
+
+
+
     </style>
 
     <link href="https://h7u5d3a4.stackpathcdn.com/assets/images/favicon.png" rel="icon" type="image/png">
@@ -420,6 +436,10 @@ border-color:#014e78
     margin-top:10px;
     margin-bottom:10px;
     }
+
+
+
+
 
 
 
@@ -678,9 +698,21 @@ border-color:#014e78
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
-                            class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                    <p>
+                        <b class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
+                           style="text-decoration: underline;">
+                            Dr. {{i.Doctor_name}}
+                        </b>
+
+                        <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review"
+                           style="margin-left:10px;">
+                            <l style="text-decoration: underline;color:yellow;">
+                                <b>Reviews({{i.Total_Reviews}})</b>
+                            </l>
+                        </a>
+
+                    </p>
+
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -713,11 +745,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                                {% if i.satisfaction_per %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                                {% else %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                                {% endif %}
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -892,8 +924,8 @@ border-color:#014e78
             </div>
             {% endfor %}
             <div class="basic-pagination text-center pt-30 pb-30">
-                        <nav>
-                            <ul>
+                <nav>
+                    <ul>
                        <span class="step-links">
                             {% if Doctor.has_previous %}
                             <a href="?page=1">
@@ -916,9 +948,9 @@ border-color:#014e78
                                 </a>
                             {% endif %}
                         </span>
-                            </ul>
-                        </nav>
-                    </div>
+                    </ul>
+                </nav>
+            </div>
 
         </div>
 
@@ -969,9 +1001,20 @@ border-color:#014e78
 
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
-                            class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                    <p>
+                        <b class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
+                           style="text-decoration: underline;">
+                            Dr. {{i.Doctor_name}}
+                        </b>
+
+                        <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review"
+                           style="margin-left:10px;">
+                            <l style="text-decoration: underline;color:yellow;">
+                                <b>Reviews({{i.Total_Reviews}})</b>
+                            </l>
+                        </a>
+
+                    </p>
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -1004,11 +1047,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                                {% if i.satisfaction_per %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                                {% else %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                                {% endif %}
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
                         </div>
                         <div class="mx-auto col-6 col-sm-6 col-md-6">
                             <div class="d-flex">
@@ -1286,9 +1329,21 @@ border-color:#014e78
 
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
-                            class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                    <p>
+                        <b class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
+                           style="text-decoration: underline;">
+                            Dr. {{i.Doctor_name}}
+                        </b>
+
+                        <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review"
+                           style="margin-left:10px;">
+                            <l style="text-decoration: underline;color:yellow;">
+                                <b>Reviews({{i.Total_Reviews}})</b>
+                            </l>
+                        </a>
+
+                    </p>
+
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -1321,11 +1376,12 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                        {% if i.satisfaction_per %}
-                        <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                        {% else %}
-                        <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                        {% endif %}                        </div>
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
+                        </div>
                         <div class="mx-auto col-6 col-sm-6 col-md-6">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
@@ -1599,9 +1655,21 @@ border-color:#014e78
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
-                            class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                    <p>
+                        <b class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
+                           style="text-decoration: underline;">
+                            Dr. {{i.Doctor_name}}
+                        </b>
+
+                        <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review"
+                           style="margin-left:10px;">
+                            <l style="text-decoration: underline;color:yellow;">
+                                <b>Reviews({{i.Total_Reviews}})</b>
+                            </l>
+                        </a>
+
+                    </p>
+
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -1634,11 +1702,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                                {% if i.satisfaction_per %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                                {% else %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                                {% endif %}
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -1818,7 +1886,7 @@ border-color:#014e78
         <div class="table-responsive" id="fee(High to low)">
 
             {% for i in F_H_to_l %}
-               {% if i.Doctor_Clinic %}
+            {% if i.Doctor_Clinic %}
             <div class="row bg-white mb-2 box-shadow-sm doctor-card  py-2" style="margin:10px;">
                 <div class="col-12 py-2 d-lg-block d-none">
                     <div class="d-sm-block d-none d-flex" style="float:right; ">
@@ -1860,9 +1928,18 @@ border-color:#014e78
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
+                    <p>
+                    <h2
                             class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2>
+
+                    </p>
+                    <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review" style="margin-left:10px;">
+                        <h6 style="text-decoration: underline;color:yellow;">
+                            Reviews({{i.Total_Reviews}})
+                        </h6>
+                    </a>
+
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -1895,11 +1972,11 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                                {% if i.satisfaction_per %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                                {% else %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                                {% endif %}
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
                         </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
@@ -2080,7 +2157,7 @@ border-color:#014e78
         <div class="table-responsive" id="High_Doctor_experience">
 
             {% for i in Doctor_experience %}
-   {% if i.Doctor_Clinic %}
+            {% if i.Doctor_Clinic %}
             <div class="row bg-white mb-2 box-shadow-sm doctor-card  py-2" style="margin:10px;">
                 <div class="col-12 py-2 d-lg-block d-none">
                     <div class="d-sm-block d-none d-flex" style="float:right; ">
@@ -2122,9 +2199,17 @@ border-color:#014e78
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                    <a href="#"><h2
+                    <p><b
                             class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                            style="text-decoration: underline;">Dr. {{i.Doctor_name}}</b>
+
+                        <a class="font-size-md" href="/Book_appointment/{{i.id}}/#Review" style="margin-left:10px;">
+                            <l style="text-decoration: underline;color:yellow;">
+                                <b>Reviews({{i.Total_Reviews}})</b>
+                            </l>
+                        </a>
+
+                    </p>
 
                     <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                         <l class="text-success mx-2">{{i.Speciality}}</l>
@@ -2157,11 +2242,12 @@ border-color:#014e78
                                 </svg>
                                 <p class="mb-0 font-size-md  px-1">Satisfaction</p>
                             </div>
-                                {% if i.satisfaction_per %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
-                                {% else %}
-                                <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
-                                {% endif %}                        </div>
+                            {% if i.satisfaction_per %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>{{i.satisfaction_per}}%</b></p>
+                            {% else %}
+                            <p class="font-size-sm" style="margin-left: 22px;"><b>No Review</b></p>
+                            {% endif %}
+                        </div>
                         <div class="mx-auto col-sm-6 col-sm-6 col-md-6 d-sm-block d-none">
                             <div class="d-flex">
                                 <svg class="mt-1 bg-secondar" height="21" viewBox="0 0 18 18" width="21"
@@ -2338,8 +2424,6 @@ border-color:#014e78
         </div>
 
 
-
-
         <script type="text/javascript">
               document.getElementById('all_doctors').style.display = "block";
               document.getElementById('all_Female_doctors').style.display = "none";
@@ -2418,6 +2502,10 @@ border-color:#014e78
 
 
 
+
+
+
+
         </script>
 
         <style>
@@ -2441,6 +2529,10 @@ border-color:#014e78
                            #F_H_to_l{
                             display:none;
                            }
+
+
+
+
 
 
 
@@ -2651,6 +2743,10 @@ border-color:#014e78
                  source: availableTags
              });
            } );
+
+
+
+
 
 
 

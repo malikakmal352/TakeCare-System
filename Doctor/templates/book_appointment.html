@@ -262,15 +262,24 @@ border-color:#014e78
             </div>
 
             <div class="col-md-8 col-lg-6 col-8  ga-event-listing-doctor-photo">
-                <a href="#"><h2
+                <p><b
                         class="font-size-md text-accent font-weight-bold mb-0 ga-event-listing-doctor-name"
-                        style="text-decoration: underline;">Dr. {{i.Doctor_name}}</h2></a>
+                        style="text-decoration: underline;">Dr. {{i.Doctor_name}}</b>
+
+                <a href="#Review"  class="font-size-md" style="margin-left:10px;">
+                    <l style="text-decoration: underline;color:yellow;">
+                        <b>Reviews({{i.Total_Reviews}})</b>
+                    </l>
+                </a>
+
+                </p>
+
 
                 <p class="mb-0 font-size-sm product-meta d-md-block "><b>Speciality:</b>
                     <l class="text-success mx-2">{{i.Speciality}}</l>
                 </p>
 
-                <p class="mb-0 font-size-sm product-meta d-md-block">|MBBS | FCPS (Psychiatry) |</p>
+                <p class="mb-0 font-size-sm product-meta d-md-block">MBBS</p>
 
                 <p class="product-meta d-block font-size-sm mb-0"></p>
                 <p class="font-size-sm mb-0">{{i.Experience}} year(s) Experience</p>
@@ -1120,8 +1129,8 @@ border-color:#014e78
 <br><br>
 
 <div class="container-lg  bg-white">
-    <h3 class="font-weight-bold   mb-0 paddingTopTenPx text-center mt-2 py-3">Reviews</h3>
-    <section class="mb-3 " >
+    <h3 class="font-weight-bold  mb-0 paddingTopTenPx text-center mt-2 py-3">Reviews</h3>
+    <section class="mb-3 " id="#Review" >
         <div class="row">
             {% for i in Appointment_Reviews %}
             <div class="col-10 col-sm-8">

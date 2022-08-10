@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="E-mail alert on upload lab report + E-mail Change">
-      <change afterPath="$PROJECT_DIR$/Laboratory/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laboratory/migrations/0002_alter_book_test_month.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FYP.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../../FYP.rar" afterDir="false" />
+    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="Add Doctor Review+Rating System">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/models/ADD_Docror.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/ADD_Docror.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/models/appointments.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/models/appointments.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/book_appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/Admin_site/admin_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/templates/View Your Appointments and orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doctor/templates/view_all_specialist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/templates/view_all_specialist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/dataTables.responsive.min.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/datatables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/responsive.dataTables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/DataTables/site.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../GitHub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../GitHub.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TakeCare-System-master/.idea/TakeCare System.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660076746007</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Doctor Review+Rating System">
+      <created>1660086598130</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660086598131</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +91,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove Rider and lab logout bug" />
     <MESSAGE value="E-mail alert on upload lab report + E-mail Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="E-mail alert on upload lab report + E-mail Change" />
+    <MESSAGE value="Add Doctor Review+Rating System" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Doctor Review+Rating System" />
   </component>
 </project>
