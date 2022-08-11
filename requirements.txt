@@ -37,17 +37,11 @@ protobuf==3.19.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pyparsing==2.4.7
-pypiwin32
 pyserial==3.5
 python-bidi==0.4.2
-python-dateutil==2.8.2
-python-dotenv==0.19.2
-python-jwt==2.0.1
-pyttsx3==2.90
 pytz==2021.3
 reportlab==3.6.1
 requests==2.11.1
-requests-toolbelt==0.7.0
 rsa==4.7.2
 self==2020.12.3
 six==1.16.0
