@@ -45,6 +45,14 @@ def Doctor_request_form(request):
 
         Doctor = Doctor_request.objects.filter(email=email)
 
+        for i in name:
+            if i.isdigit():
+                error_message = "name cannot be numeric"
+                data = {'error': error_message, 'success': success_message,
+                        'labcitys': labcitys, 'all_sp': all_sp}
+                return render(request, 'Doctor_request_form.html', data)
+
+
         if Doctor:
             error_message = "E-mail is already exited"
             data = {'error': error_message, 'success': success_message,
@@ -1555,6 +1563,14 @@ def updates_Doctor_profile(request):
         Experience = data.get("Experience")
         Doctor_profile_img = request.FILES.get('image')
 
+        for i in name:
+            if i.isdigit():
+                error_message = "name cannot be numeric"
+                current_doctor = Doctors.objects.get(id=lb)
+                Data = {"current_doctor": current_doctor, 'error': error_message,
+                        'success': success}
+                return render(request, "Doctor_admin_site/Doctor_profile_page.html", Data)
+
         if name:
             name = name.capitalize()
             current_doctor.Doctor_name = name
@@ -1685,9 +1701,13 @@ def updates_clinic_profile(request):
 
         if name:
             name = name.capitalize()
-            current_doctor.Doctor_Clinic.Clinic_Name = name
-            current_doctor.Doctor_Clinic.save()
-            success = "Your Clinic Name Change Successfully"
+            for i in name:
+                if i.isdigit():
+                    error_message = "name cannot be numeric"
+                else:
+                    current_doctor.Doctor_Clinic.Clinic_Name = name
+                    current_doctor.Doctor_Clinic.save()
+                    success = "Your Clinic Name Change Successfully"
         elif phone:
             if len(phone) < 10:
                 error_message = " Password must be At-least 10 digit long without first '0' "

@@ -176,9 +176,13 @@ def updates_admin_profile(request):
         if name:
             name = name.capitalize()
             Profile = SuperAdmin.objects.get(id=lb)
-            Profile.Username = name
-            Profile.save()
-            success = "Your Username Change Successfully"
+            for i in name:
+                if i.isdigit():
+                    error_message = "name cannot be numeric"
+                else:
+                    Profile.Username = name
+                    Profile.save()
+                    success = "Your Username Change Successfully"
         elif phone:
             if len(phone) < 10:
                 error_message = " Password must be At-least 10 digit long without first '0' "
@@ -218,6 +222,11 @@ def add_new_Patient(request):
         Callnumber = Data.get('phone')
         password = Data.get('password')
         City = Data.get('City')
+        for i in name:
+            if i.isdigit():
+                messages.error(request, "name cannot be numeric")
+                return redirect(add_new_Patient)
+
 
         Is_Exit = Patient.objects.filter(email=email)
         if Is_Exit:
@@ -226,6 +235,7 @@ def add_new_Patient(request):
         elif len(Callnumber) < 10:
             messages.error(request,  " This Phone number must be 10 digits")
             return redirect(add_new_Patient)
+
 
         Add_new_Patient = Patient(name=name, email=email, Mn=Callnumber, password=password, is_Active=True)
         Add_new_Patient.password = make_password(Add_new_Patient.password)
@@ -443,6 +453,13 @@ def Add_new_Doctor(request):
         Is_Exit = Doctors.objects.filter(email=email)
         Is_PMID_number_Exit = Doctors.objects.filter(Doctor_PMID_number=Doctor_PMID_number)
 
+        for i in Doctor_name:
+            if i.isdigit():
+                error_message = " name cannot be numeric"
+                Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
+                        "all_city": all_city, "current_admin": current_admin, 'All_Speciality': All_Speciality}
+                return render(request, "Doctors_functions/Add_new_doctor.html", Data)
+
         if Is_PMID_number_Exit:
             error_message = " Doctor With This PMID Number is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
@@ -505,6 +522,15 @@ def add_new_Laboratory(request):
         city = Labcity.objects.get(id=City)
 
         Is_Exit = Lab.objects.filter(email=email)
+
+
+        for i in name:
+            if i.isdigit():
+                error_message = " name cannot be numeric"
+                Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
+                        "all_city": all_city, "current_admin": current_admin}
+                return render(request, "Laboratory_fuctions/add_new_Laboratory.html", Data)
+
         if Is_Exit:
             error_message = " This E-mail Address is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
@@ -672,6 +698,17 @@ def ADD_New_Pharmacy(request):
         Is_Exit = Pharmacy.objects.filter(email=email)
         Is_Phone_number_Exit = Pharmacy.objects.filter(Callnumber=Callnumber)
 
+
+        for i in Pharmacy_name:
+            if i.isdigit():
+                error_message = " name cannot be numeric"
+                Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
+                        "all_city": all_city, "current_admin": current_admin,
+                        "Pharmacy_name": Pharmacy_name, "Pharmacy_Address": Pharmacy_Address,
+                        "Notes": Notes, "City": City, "Callnumber": Callnumber, "email": email
+                        }
+                return render(request, "Pharmacy_fuctions/Add_New_Pharmacy.html", Data)
+
         if Is_Phone_number_Exit:
             error_message = " Pharmacy With This Phone Number is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
@@ -807,6 +844,15 @@ def Update_Pharmacy(request, id):
         Pharmacy_Address = Data.get('Pharmacy_Address')
         Note = Data.get('Note')
 
+
+
+        for i in name:
+            if i.isdigit():
+                error_message = " name cannot be numeric"
+                Data = {"current_lab": current_lab, 'Current_Pharmacy': Current_Pharmacy,
+                        'all_city': all_city, "error_message": error_message, "current_admin": current_admin}
+                return render(request, "Pharmacy_fuctions/Update_Pharmacy_record.html", Data)
+
         # ci = Labcity.objects.filter(Lab_city_name__startswith=City)
         ci = Labcity.objects.filter(Lab_city_name=City)
         if ci:
@@ -864,6 +910,14 @@ def add_new_Rider(request):
         img = request.FILES.get('image')
 
         Is_Exit = Rider.objects.filter(CNIC=CNIC)
+
+        for i in name:
+            if i.isdigit():
+                error_message = " name cannot be numeric"
+                Data = {"current_lab": current_lab, 'error_message': error_message,
+                        'success': success, 'name': CNIC, 'all_city': all_city}
+                return render(request, "Rider_functions/Add_New_Rider.html", Data)
+
         if Is_Exit:
             error_message = " This CNIC is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message,

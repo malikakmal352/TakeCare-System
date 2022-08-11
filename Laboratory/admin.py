@@ -19,9 +19,12 @@ class BookTestView(admin.ModelAdmin):
 class SamplestView(admin.ModelAdmin):
     list_display = ['name', 'CNIC', 'Laboratory', 'is_Active']
 
+class labView(admin.ModelAdmin):
+    list_display = ['Test_name', 'laboratory', 'id', 'Home_Sample']
+
 
 admin.site.register(Lab, LabView)
 admin.site.register(Labcity)
-admin.site.register(Test_list)
+admin.site.register(Test_list, labView)
 admin.site.register(Book_Test, BookTestView)
 admin.site.register(Samplest, SamplestView)

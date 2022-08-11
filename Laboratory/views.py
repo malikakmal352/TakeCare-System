@@ -114,6 +114,7 @@ def lab_search(request):
 
             labs = Lab.objects.filter(city=s)
             labcity = Labcity.objects.all()
+
             data = {'labs': labs, 'ci': ci, 'labcity': labcity,
                     'all_lab': all_lab, 'labcitys': labcitys, 'Test_name': Test_name, 'Customer': Customer}
             return render(request, "index.html", data)
@@ -140,7 +141,8 @@ def lab_search(request):
                     'all_lab': all_lab, 'labcitys': labcitys,
                     'Customer': Customer
                     }
-            return render(request, 'Search_via_test_name.html', data)
+            return redirect("Laboratory test list", id=lb)
+
         else:
             data = {'Test_name': Test_name, 'labcity': labcity,
                     'labs': labs, 'ser': ser, 'Labcitys': Labcitys,
@@ -507,11 +509,12 @@ def add_new_test(request):
     current_lab = Lab.objects.get(id=lb)
 
     if request.method == 'POST':
-        Data = request.POST
+        Data = request.POSTlab
         name = Data.get('name')
         Price = Data.get('Price')
         Test_type = Data.get('Test_type')
-        Is_Exit = Test_list.objects.filter(Test_name=name)
+        Is_Exit = Test_list.objects.filter(Test_name=name, laboratory=lb)
+        print(Is_Exit)
         if Is_Exit:
             error_message = "New with this name is already exit"
             print(error_message)

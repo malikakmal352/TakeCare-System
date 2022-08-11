@@ -84,6 +84,10 @@ def registeruser(request):
     error_message = None
     Customer = Patient(name=fullname, email=email, password=password, Mn=phone, city=city, Address=Address)
 
+    for i in fullname:
+        if i.isdigit():
+            error_message = "name cannot be numeric"
+
     if not fullname:
         error_message = "Fullname is Required."
     elif len(fullname) < 4:
