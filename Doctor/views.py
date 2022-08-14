@@ -8,6 +8,9 @@ from datetime import *
 from django.contrib import messages
 
 from Laboratory.models.Labcity import Labcity
+from Laboratory.models.add_lab import Lab
+from Pharmacy_Store.models.Add_pharmacy import Pharmacy
+from Systemadmin.models.Super_Admin import SuperAdmin
 from mainpage.Middleware.Patient_auth import Patient_middleware
 from mainpage.Sent_Email import send_forget_password_mail_doctor, Doctor_Request_Sent_mail_doctor
 from mainpage.models.Patient import Patient
@@ -43,6 +46,11 @@ def Doctor_request_form(request):
         Speciality = Data.get('Speciality')
         Gender = Data.get('gender')
 
+        Lab_Is_Exit = Lab.objects.filter(email=email)
+        SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+        Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+        Is_Exit = Patient.objects.filter(email=email)
+        Doctor_Is_Exit = Doctors.objects.filter(email=email)
         Doctor = Doctor_request.objects.filter(email=email)
 
         for i in name:
@@ -53,7 +61,7 @@ def Doctor_request_form(request):
                 return render(request, 'Doctor_request_form.html', data)
 
 
-        if Doctor:
+        if Doctor or Is_Exit or SuperAdmin_Is_Exit or Lab_Is_Exit or Phy_Is_Exit or Doctor_Is_Exit:
             error_message = "E-mail is already exited"
             data = {'error': error_message, 'success': success_message,
                     'labcitys': labcitys, 'all_sp': all_sp}
@@ -1469,7 +1477,6 @@ def Doctor_Login(request):
 
         # # Validations
         Doctor = Doctors.objects.filter(email=email, password=password)
-
         Doctor_active = Doctors.objects.filter(email=email, password=password, is_Active=True)
         error_message = None
         #

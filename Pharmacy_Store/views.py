@@ -83,6 +83,7 @@ def Pharmacies(request, id):
 
     return render(request, "Medicine_Card.html", data)
 
+
 def All_Medicines(request):
     labcity = Labcity.objects.all()
     labcitys = Labcity.objects.all()
@@ -97,27 +98,27 @@ def All_Medicines(request):
     # labs = Pharmacy.objects.all()
     data = {'labcity': labcity,
             'all_Medicine': all_Medicine, 'labcitys': labcitys,
-             'Medicine_name': Medicine_name, 'Customer': Customer}
+            'Medicine_name': Medicine_name, 'Customer': Customer}
 
     if request.method == 'POST':
         ser = request.POST.get('search')
         all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False,
                                                         Medicine_name__startswith=ser).order_by('-id')
         Customer = Patient.objects.all()
-        Medicine_name = Add_New_Medicine.objects.filter(Medicine_name__startswith=ser, status="Active", is_Expired=False,)
-
+        Medicine_name = Add_New_Medicine.objects.filter(Medicine_name__startswith=ser, status="Active",
+                                                        is_Expired=False, )
 
         paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
         page_number = request.GET.get('page')
         all_Medicine = paginator.get_page(page_number)
 
-
-        data = {'labcity': labcity,'labcitys': labcitys,
-                'all_Medicine': all_Medicine,'ser': ser,
+        data = {'labcity': labcity, 'labcitys': labcitys,
+                'all_Medicine': all_Medicine, 'ser': ser,
                 'Medicine_name': Medicine_name, 'Customer': Customer}
         return render(request, 'Medicine_Card.html', data)
 
     return render(request, "Medicine_Card.html", data)
+
 
 def Medicine_details(request, id):
     Customer = Patient.objects.all()
@@ -125,7 +126,6 @@ def Medicine_details(request, id):
     Medicine_detail = Add_New_Medicine.objects.filter(status="Active", is_Expired=False, id=id)
     data = {"Medicine_detail": Medicine_detail, "labcity": labcity, 'Customer': Customer}
     return render(request, "Medicine_Detail.html", data)
-
 
 
 # ///////////////////////////////////////Pharmacy admin Login ////////////////////////////////////////////////////////
@@ -136,7 +136,7 @@ def phy_login(request):
             path = request.session.get("required_path")
             return render(request, 'Pharmacy_Login.html', {'path': path})
         else:
-           return render(request, "Pharmacy_Login.html")
+            return render(request, "Pharmacy_Login.html")
     else:
         Data = request.POST
         email = Data.get('email')
@@ -160,12 +160,13 @@ def phy_login(request):
             if path:
                 return redirect(path)
             else:
-               return redirect(Phy_admin)
+                return redirect(Phy_admin)
     else:
         error_message = "Email or Password Invalid......"
 
         # return render(request, 'Login.html', {'error': error_message})
     return render(request, 'Pharmacy_Login.html', {'error': error_message})
+
 
 @Phy_middleware
 def Phy_logout(request):
@@ -504,7 +505,7 @@ def add_new_Medicine(request):
         date_time_obj = datetime.strptime(Expiry_Date, '%Y-%m-%d')
 
         # print(name, Price, Total_Stock, Medicine_type, Expiry_Date)
-        back_day = timedelta(days=14)
+        back_day = timedelta(days=30)
         Expiry_Alert_Date = date_time_obj - back_day
         add_New_Medicine = Add_New_Medicine(Medicine_name=name, Medicine_price=Price,
                                             Pharmacy=Current_pharmacy, Total_Stock=Total_Stock,
@@ -633,6 +634,7 @@ def update_Medicine(request):
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine, 'success': success}
     return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
 
+
 @Phy_middleware
 def View_all_new_Orders(request):
     Py = request.session.get('Phy_id')
@@ -642,6 +644,7 @@ def View_all_new_Orders(request):
             'All_Orders': All_Orders}
     return render(request, "Pharmacy_Admin/Orders/View_all_new_Orders.html", data)
 
+
 @Phy_middleware
 def view_all_comfirm_Orders(request):
     Py = request.session.get('Phy_id')
@@ -650,6 +653,7 @@ def view_all_comfirm_Orders(request):
     data = {"Current_pharmacy": Current_pharmacy,
             'All_Orders': All_Orders}
     return render(request, "Pharmacy_Admin/Orders/view_all_comfirm_Orders.html", data)
+
 
 @Phy_middleware
 def view_all_complete_Orders(request):
@@ -863,8 +867,6 @@ def ForgetPassword_Pharmacy(request):
     try:
         if request.method == 'POST':
             username = request.POST.get('username')
-            print(username)
-
             if not Pharmacy.objects.filter(email=username).first():
                 messages.error(request, 'Not user found with this username.')
                 return redirect('/forget-password Pharmacy/')

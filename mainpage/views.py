@@ -4,6 +4,11 @@ from django.contrib.auth.hashers import check_password, make_password
 from django.shortcuts import render, redirect
 from django.utils.timezone import now
 
+from Laboratory.models.add_lab import Lab
+from Laboratory.views import lab_admin
+from Pharmacy_Store.models.Add_pharmacy import Pharmacy
+from Pharmacy_Store.views import Phy_admin
+from Systemadmin.models.Super_Admin import SuperAdmin
 from mainpage.models.Patient import Patient
 from Laboratory.models.Labcity import Labcity
 
@@ -11,7 +16,8 @@ from Laboratory.Middleware.Lab_auth import Lab_login_check
 from mainpage.Middleware.Patient_auth import Patient_middleware
 
 from django.contrib import messages
-from mainpage.Sent_Email import send_forget_password_mail
+from mainpage.Sent_Email import send_forget_password_mail, send_forget_password_mail_doctor, \
+    send_forget_password_mail_Lab, send_forget_password_mail_Pharmacy, send_forget_password_mail_Admin
 from Doctor.models.ADD_Docror import Doctors
 from Doctor.models.appointments import Appointment
 from Doctor.models.save_reports import Save_Medical_Reports
@@ -82,6 +88,12 @@ def registeruser(request):
         # 'gender': gender
     }
     error_message = None
+    Doctor_Is_Exit = Doctors.objects.filter(email=email)
+    Lab_Is_Exit = Lab.objects.filter(email=email)
+    SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+    Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+    Is_Exit = Patient.objects.filter(email=email)
+
     Customer = Patient(name=fullname, email=email, password=password, Mn=phone, city=city, Address=Address)
 
     for i in fullname:
@@ -102,7 +114,7 @@ def registeruser(request):
         error_message = " Phone number must be 10 digit long "
     elif city == 'No-cities':
         error_message = 'Please select your city'
-    elif Customer.isExits():
+    elif Is_Exit or Doctor_Is_Exit or Lab_Is_Exit or SuperAdmin_Is_Exit or Phy_Is_Exit:
         error_message = "Email Already Exits "
     # Saving
     if not error_message:
@@ -134,21 +146,25 @@ def Login(request):
         else:
             return render(request, 'Login.html')
     else:
-        print('view reach ')
         Data = request.POST
         email = Data.get('email')
         password = Data.get('password')
 
         # Validations
-        Customer = Patient.get_by_email(email)
-        Customer_active = Patient.objects.filter(email=email, is_Active=True)
+        Doctor_Is_Exit = Doctors.objects.filter(email=email, password=password)
+        Laboratory = Lab.objects.filter(email=email, password=password)
+        Admin = SuperAdmin.objects.filter(email=email, password=password)
+        pharmacy = Pharmacy.objects.filter(email=email, password=password)
+        Customer = Patient.objects.filter(email=email)
 
-        if not Customer_active:
-            error_message = email + " is Deactivated by the TakeCare Team"
-        elif Customer:
-            print(Customer.password)
+        if Customer:
+            Customer_active = Patient.objects.filter(email=email, is_Active=True)
+            if not Customer_active:
+                print('customer')
+                messages.error(request, email + " is Deactivated by the TakeCare Team")
+                return redirect(Login)
+            Customer = Patient.objects.get(email=email)
             flag = check_password(password, Customer.password)
-            print('pass not match', Customer)
             if flag:
                 request.session['id'] = Customer.id
                 request.session['email'] = Customer.email
@@ -162,24 +178,74 @@ def Login(request):
                 else:
                     return redirect(mainindex)
             else:
-                error_message = "Email or Password Invalid......"
-        else:
-            error_message = "Email or Password Invalid......"
+                messages.error(request, "Email or Password Invalid......")
+                return redirect(Login)
+        elif Doctor_Is_Exit:
+            Doctor_active = Doctors.objects.filter(email=email, password=password, is_Active=True)
+            if not Doctor_active:
+                messages.error(request, email + " is Deactivated by the TakeCare Team")
+                return redirect(Login)
+            for i in Doctor_Is_Exit:
+                request.session['doctor_id'] = i.id
+                request.session['doctor_email'] = i.email
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect("/Doctor_admin/")
+        elif Laboratory:
+            Laboratory_active = Lab.objects.filter(email=email, password=password, is_Active=True)
+            if not Laboratory_active:
+                messages.error(email + " is Deactivated by the TakeCare Team")
+                print('Lab\n')
+                return redirect(Login)
+            for i in Laboratory:
+                request.session['lab_id'] = i.id
+                request.session['lab_email'] = i.email
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(lab_admin)
+        elif Admin:
+            for i in Admin:
+                request.session['admin_id'] = i.id
+                request.session['admin_email'] = i.email
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect("/Super_admin/")
+        elif pharmacy:
+            Pharmacy_active = Pharmacy.objects.filter(email=email, password=password, is_Active=True)
+            if not Pharmacy_active:
+                messages.error(request, email + " is Deactivated by the TakeCare Team")
+                print('Pharmacy')
 
-        return render(request, 'Login.html', {'error': error_message})
+                return redirect(Login)
+            for i in pharmacy:
+                request.session['Phy_id'] = i.id
+                fa = request.session['Phy_email'] = i.email
+                path = request.session.get("required_path")
+                if path:
+                    return redirect(path)
+                else:
+                    return redirect(Phy_admin)
+        else:
+            messages.error(request, "Email or Password Invalid......")
+            return redirect(Login)
+
+        return render(request, 'Login.html')
 
 
 def Logout(request):
-    # lab_id = request.session.get('lab_email')
     Doctor_email = request.session.get('doctor_email')
-    # if lab_id:
-    # request.session['lab_id'] = None
-    # request.session['lab_email'] = None
-    # return redirect('Laboratory Login')
     if Doctor_email:
         request.session['doctor_id'] = None
         request.session['doctor_email'] = None
-        return redirect('Doctor_Login')
+        return redirect(mainindex)
+
+        # return redirect('Doctor_Login')
     # else:
     #     request.session.clear()
     return redirect(mainindex)
@@ -412,6 +478,7 @@ def updates_patient_profile(request):
 
 # ##################################################### Forget Password Email Sent ##############################
 
+
 def ChangePassword(request, token):
     context = {}
 
@@ -456,23 +523,69 @@ def ChangePassword(request, token):
 def ForgetPassword(request):
     try:
         if request.method == 'POST':
-            username = request.POST.get('username')
+            email = request.POST.get('username')
+            Doctor_Is_Exit = Doctors.objects.filter(email=email)
+            Lab_Is_Exit = Lab.objects.filter(email=email)
+            SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+            Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+            Is_Exit = Patient.objects.filter(email=email)
 
-            if not Patient.objects.filter(email=username).first():
-                messages.success(request, 'Not user found with this username.')
+            if Is_Exit:
+                user_obj = Patient.objects.get(email=email)
+                token = str(uuid.uuid4())
+                profile_obj = Patient.objects.get(email=user_obj)
+                profile_obj.forget_password_token = token
+                profile_obj.save()
+                send_forget_password_mail(user_obj.email, token)
+                messages.success(request, 'An email is sent.')
                 return redirect('/forget-password/')
-
-            user_obj = Patient.objects.get(email=username)
-            token = str(uuid.uuid4())
-            profile_obj = Patient.objects.get(email=user_obj)
-            profile_obj.forget_password_token = token
-            profile_obj.save()
-            send_forget_password_mail(user_obj.email, token)
-            messages.success(request, 'An email is sent.')
-            return redirect('/forget-password/')
-
-
-
+            elif Doctor_Is_Exit:
+                user_obj = Doctors.objects.get(email=email)
+                token = str(uuid.uuid4())
+                print(token)
+                profile_obj = Doctors.objects.get(email=email)
+                print(profile_obj)
+                profile_obj.forget_password_token = token
+                profile_obj.save()
+                send_forget_password_mail_doctor(user_obj.email, token)
+                messages.success(request, 'An email is sent.')
+                return redirect('/forget-password/')
+            elif Lab_Is_Exit:
+                user_obj = Lab.objects.get(email=email)
+                token = str(uuid.uuid4())
+                print(token)
+                profile_obj = Lab.objects.get(email=email)
+                print(profile_obj)
+                profile_obj.forget_password_token = token
+                profile_obj.save()
+                send_forget_password_mail_Lab(user_obj.email, token)
+                messages.success(request, 'An email is sent.')
+                return redirect('/forget-password/')
+            elif Phy_Is_Exit:
+                user_obj = Pharmacy.objects.get(email=email)
+                token = str(uuid.uuid4())
+                print(token)
+                profile_obj = Pharmacy.objects.get(email=email)
+                print(profile_obj)
+                profile_obj.forget_password_token = token
+                profile_obj.save()
+                send_forget_password_mail_Pharmacy(user_obj.email, token)
+                messages.success(request, 'An email is sent.')
+                return redirect('/forget-password/')
+            elif SuperAdmin_Is_Exit:
+                user_obj = SuperAdmin.objects.get(email=email)
+                token = str(uuid.uuid4())
+                print(token)
+                profile_obj = SuperAdmin.objects.get(email=email)
+                print(profile_obj)
+                profile_obj.forget_password_token = token
+                profile_obj.save()
+                send_forget_password_mail_Admin(user_obj.email, token)
+                messages.success(request, 'An email is sent.')
+                return redirect('/forget-password/')
+            else:
+                messages.success(request, 'Not user found with this E-mail.')
+                return redirect('/forget-password/')
     except Exception as e:
         print(e)
     return render(request, 'forget-password.html')

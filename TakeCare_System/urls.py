@@ -196,8 +196,6 @@ urlpatterns = [
     # ////////////////////////////////// URLS for Rider Admin End//////////////////////////////////////////////
 
 
-
-
     path('forget-password/', ForgetPassword, name="forget_password"),
     path('change-password/<token>/', ChangePassword, name="change_password"),
 

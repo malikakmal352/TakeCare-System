@@ -797,12 +797,11 @@
 
                             <div class="mega-dropdown-column py-4 px-3">
                                 <div class="mb-3">
-                                    <h6 style="color: #014e78 !important">Labs in Pakistan</h6>
                                     <ul class="ga-event-desktop-header-labs-in-pakistan  ">
-                                        <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
-                                        <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
-                                        <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
-                                        <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
+<!--                                        <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>-->
+<!--                                        <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>-->
+<!--                                        <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>-->
+<!--                                        <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>-->
                                         <li class="pb-1"><a href="/Rider_Login/">Rider Login</a></li>
 
                                     </ul>
@@ -964,22 +963,25 @@
                             <li><a href="/Health_blog/">
                                 <l>Health Tips</l>
                             </a></li>
+                            <li><a href="/Rider_Login/">
+                                <l>Rider Login</l>
+                            </a></li>
                             {% if request.session.email %}
                             <li><a href="/View_Your_Appointments/{{request.session.id}}">
                                 <l>View Appointment</l>
                             </a></li>
                             {% else %}
                             <!-- /////////////////////////////////////Login as provider dropdown//////////////////////////////// -->
-                            <li>
-                                <a href="#">Login as provider <i class="far fa-angle-down"></i></a>
-                                <ul class="mega-menu mega-menu-2">
-                                    <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
-                                    <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
-                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>
-                                    <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
-                                    <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
-                                </ul>
-                            </li>
+<!--                            <li>-->
+<!--                                <a href="#">Login as provider <i class="far fa-angle-down"></i></a>-->
+<!--                                <ul class="mega-menu mega-menu-2">-->
+<!--                                    <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>-->
+<!--                                    <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
 
                             <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
 
@@ -1077,6 +1079,23 @@
      loader.style.display="none";
   })
 </script>
-</body>
 
-
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            email: "malikakmalmalik30@gmail.com", // Email
+            whatsapp: "+923408564761", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            button_color: "#932C8B", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "email,whatsapp", // Order of buttons
+            pre_filled_message: "Welcome to Our compliant desk. What I can help you", // WhatsApp pre-filled message
+        };
+        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->

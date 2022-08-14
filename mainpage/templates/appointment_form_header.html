@@ -790,10 +790,10 @@
                                 <div class="mb-3">
                                     <h6 style="color: #014e78 !important">Labs in Pakistan</h6>
                                     <ul class="ga-event-desktop-header-labs-in-pakistan  ">
-                                        <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
-                                        <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
-                                        <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
-                                        <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
+<!--                                        <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>-->
+<!--                                        <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>-->
+<!--                                        <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>-->
+<!--                                        <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>-->
                                         <li class="pb-1"><a href="/Rider_Login/">Rider Login</a></li>
 
                                     </ul>
@@ -955,22 +955,25 @@
                             <li><a href="/Health_blog/">
                                 <l>Health Tips</l>
                             </a></li>
+                            <li><a href="/Rider_Login/">
+                                <l>Rider Login</l>
+                            </a></li>
                             {% if request.session.email %}
                             <li><a href="/View_Your_Appointments/{{request.session.id}}">
                                 <l>View Appointment</l>
                             </a></li>
                             {% else %}
                             <!-- /////////////////////////////////////Login as provider dropdown//////////////////////////////// -->
-                            <li>
-                                <a href="#">Login as provider <i class="far fa-angle-down"></i></a>
-                                <ul class="mega-menu mega-menu-2">
-                                    <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>
-                                    <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>
-                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>
-                                    <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>
-                                    <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>
-                                </ul>
-                            </li>
+<!--                            <li>-->
+<!--                                <a href="#">Login as provider <i class="far fa-angle-down"></i></a>-->
+<!--                                <ul class="mega-menu mega-menu-2">-->
+<!--                                    <li class="pb-1"><a href="/Lab_Login/">laboratories</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Phy_Login/">Pharmacy</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Phy_Login/">Rider_Login</a></li>-->
+<!--                                    <li class="pb-1"><a href="/Doctor_Login/">Doctor</a></li>-->
+<!--                                    <li class="pb-1"><a href="/SuperAdmin_Login/">Super Admin</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
 
                             <!--  ///////////////////////////////////Lab test dropdown end/////////////////////////////////////////////-->
 

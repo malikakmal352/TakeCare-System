@@ -4,16 +4,12 @@ from datetime import *
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
-from django.utils.timezone import now
+# from django.utils.timezone import now
 
 from Systemadmin.Middleware.Admin_auth import Admin_middleware, Admin_login_check
-from Laboratory.models.Book_lab_test import Book_Test
-from Laboratory.models.Lab_tests_list import Test_list
 from Laboratory.models.Labcity import Labcity
-from Laboratory.models.Samplest import Samplest
 from Laboratory.models.add_lab import Lab
 from Doctor.models.Doctor_Request import Doctor_request
-from Doctor.models.ADD_Docror import Doctors
 from mainpage.Sent_Email import send_forget_password_mail_Admin, Doctor_Request_Accepted_Sent_mail_doctor, \
     Doctor_Request_Rejected_Sent_mail_doctor, Pharmacy_Create_FirstPassword_Sent_mail_doctor
 from mainpage.models.Patient import Patient
@@ -223,19 +219,22 @@ def add_new_Patient(request):
         password = Data.get('password')
         City = Data.get('City')
         for i in name:
+            print(i)
             if i.isdigit():
                 messages.error(request, "name cannot be numeric")
                 return redirect(add_new_Patient)
 
-
+        Doctor_Is_Exit = Doctors.objects.filter(email=email)
+        Lab_Is_Exit = Lab.objects.filter(email=email)
+        SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+        Phy_Is_Exit = Pharmacy.objects.filter(email=email)
         Is_Exit = Patient.objects.filter(email=email)
-        if Is_Exit:
+        if Is_Exit or Doctor_Is_Exit or Lab_Is_Exit or SuperAdmin_Is_Exit or Phy_Is_Exit:
             messages.error(request, " This email is already exit")
             return redirect(add_new_Patient)
         elif len(Callnumber) < 10:
-            messages.error(request,  " This Phone number must be 10 digits")
+            messages.error(request, " This Phone number must be 10 digits")
             return redirect(add_new_Patient)
-
 
         Add_new_Patient = Patient(name=name, email=email, Mn=Callnumber, password=password, is_Active=True)
         Add_new_Patient.password = make_password(Add_new_Patient.password)
@@ -274,7 +273,6 @@ def Status_Patients(request):
             messages.success(request, name + "is Active Successfully")
         Update_Patient.save()
     return redirect(view_Patient_list)
-
 
 
 @Admin_middleware
@@ -450,31 +448,28 @@ def Add_new_Doctor(request):
         Address = Data.get('Address')
         Gender = Data.get('gender')
 
-        Is_Exit = Doctors.objects.filter(email=email)
+        Doctor_Is_Exit = Doctors.objects.filter(email=email)
+        Lab_Is_Exit = Lab.objects.filter(email=email)
+        SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+        Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+        Is_Exit = Patient.objects.filter(email=email)
+
         Is_PMID_number_Exit = Doctors.objects.filter(Doctor_PMID_number=Doctor_PMID_number)
 
         for i in Doctor_name:
             if i.isdigit():
-                error_message = " name cannot be numeric"
-                Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                        "all_city": all_city, "current_admin": current_admin, 'All_Speciality': All_Speciality}
-                return render(request, "Doctors_functions/Add_new_doctor.html", Data)
+                messages.error(request," name cannot be numeric")
+                return redirect(Add_new_Doctor)
 
         if Is_PMID_number_Exit:
-            error_message = " Doctor With This PMID Number is already exit"
-            Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                    "all_city": all_city, "current_admin": current_admin, 'All_Speciality': All_Speciality}
-            return render(request, "Doctors_functions/Add_new_doctor.html", Data)
-        if Is_Exit:
-            error_message = " This E-mail Address is already exit"
-            Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                    "all_city": all_city, "current_admin": current_admin, 'All_Speciality': All_Speciality}
-            return render(request, "Doctors_functions/Add_new_doctor.html", Data)
+            messages.error(request, " Doctor With This PMID Number is already exit")
+            return redirect(Add_new_Doctor)
+        if Is_Exit or Doctor_Is_Exit or Lab_Is_Exit or SuperAdmin_Is_Exit or Phy_Is_Exit:
+            messages.error(request, " This email is already exit")
+            return redirect(Add_new_Doctor)
         elif len(Callnumber) < 10:
-            error_message = " This Phone number must be 10 digits"
-            Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
-                    "all_city": all_city, "current_admin": current_admin, 'All_Speciality': All_Speciality}
-            return render(request, "Doctors_functions/Add_new_doctor.html", Data)
+            messages.error(request, " This Phone number must be 10 digits")
+            return redirect(Add_new_Doctor)
         token = str(uuid.uuid4())
         Add_new_Labs = Doctors(Doctor_name=Doctor_name, email=email,
                                Callnumber=Callnumber, Gender=Gender,
@@ -521,8 +516,11 @@ def add_new_Laboratory(request):
         Address = Data.get('Address')
         city = Labcity.objects.get(id=City)
 
-        Is_Exit = Lab.objects.filter(email=email)
-
+        Doctor_Is_Exit = Doctors.objects.filter(email=email)
+        Lab_Is_Exit = Lab.objects.filter(email=email)
+        SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+        Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+        Is_Exit = Patient.objects.filter(email=email)
 
         for i in name:
             if i.isdigit():
@@ -531,7 +529,7 @@ def add_new_Laboratory(request):
                         "all_city": all_city, "current_admin": current_admin}
                 return render(request, "Laboratory_fuctions/add_new_Laboratory.html", Data)
 
-        if Is_Exit:
+        if Is_Exit or Doctor_Is_Exit or Lab_Is_Exit or SuperAdmin_Is_Exit or Phy_Is_Exit:
             error_message = " This E-mail Address is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
                     "all_city": all_city, "current_admin": current_admin}
@@ -695,9 +693,12 @@ def ADD_New_Pharmacy(request):
         Pharmacy_Address = Data.get('Pharmacy_Address')
         Notes = Data.get('Address')
 
-        Is_Exit = Pharmacy.objects.filter(email=email)
+        Doctor_Is_Exit = Doctors.objects.filter(email=email)
+        Lab_Is_Exit = Lab.objects.filter(email=email)
+        SuperAdmin_Is_Exit = SuperAdmin.objects.filter(email=email)
+        Phy_Is_Exit = Pharmacy.objects.filter(email=email)
+        Is_Exit = Patient.objects.filter(email=email)
         Is_Phone_number_Exit = Pharmacy.objects.filter(Callnumber=Callnumber)
-
 
         for i in Pharmacy_name:
             if i.isdigit():
@@ -716,7 +717,7 @@ def ADD_New_Pharmacy(request):
                     "Pharmacy_name": Pharmacy_name, "email": email, "Pharmacy_Address": Pharmacy_Address,
                     "Notes": Notes, "City": City}
             return render(request, "Pharmacy_fuctions/Add_New_Pharmacy.html", Data)
-        if Is_Exit:
+        if Is_Exit or Doctor_Is_Exit or Lab_Is_Exit or SuperAdmin_Is_Exit or Phy_Is_Exit:
             error_message = " This E-mail Address is already exit"
             Data = {"current_lab": current_lab, 'error_message': error_message, 'success': success,
                     "all_city": all_city, "current_admin": current_admin,
@@ -843,8 +844,6 @@ def Update_Pharmacy(request, id):
         City = Data.get('city')
         Pharmacy_Address = Data.get('Pharmacy_Address')
         Note = Data.get('Note')
-
-
 
         for i in name:
             if i.isdigit():
@@ -1066,7 +1065,6 @@ def ForgetPassword_Admin(request):
     try:
         if request.method == 'POST':
             username = request.POST.get('username')
-            print(username)
 
             if not SuperAdmin.objects.filter(email=username).first():
                 messages.error(request, 'Not user found with this Email.')
