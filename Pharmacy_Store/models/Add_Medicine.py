@@ -28,6 +28,7 @@ class Add_New_Medicine(models.Model):
     packing_cost = models.PositiveIntegerField(default=0)
     Description = models.TextField(default='', blank=True, null=True)
     status = models.CharField(max_length=200, choices=Status, default='Active')
+    is_Expired_soon = models.BooleanField(default=False)
     is_Expired = models.BooleanField(default=False)
 
     def __str__(self):

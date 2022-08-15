@@ -458,7 +458,7 @@ def Add_new_Doctor(request):
 
         for i in Doctor_name:
             if i.isdigit():
-                messages.error(request," name cannot be numeric")
+                messages.error(request, " name cannot be numeric")
                 return redirect(Add_new_Doctor)
 
         if Is_PMID_number_Exit:

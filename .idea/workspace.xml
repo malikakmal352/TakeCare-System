@@ -1,278 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="Add name cannot be numeric +  solve add lab test  issue">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c9cf2be9-8cc6-460e-b8f4-c4a47b604d99" name="Changes" comment="Login through single login form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Doctor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Doctor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Laboratory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pharmacy_Store/models/Add_Medicine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/models/Add_Medicine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pharmacy_Store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pharmacy_Store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/templates/Doctors_functions/Add_new_doctor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Systemadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Systemadmin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TakeCare_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TakeCare_System/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/appointment_form_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/forget-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/forget-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/mainheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/mainheader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage/templates/Signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/templates/Signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/backtotop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/font-awesome-pro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_444444_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_555555_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_777620_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_777777_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_cc0000_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/images/ui-icons_ffffff_256x240.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/meanmenu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/nice-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/owl-carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/owl.video.play.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/preloader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/swiper-bundle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/css/ui-range-slider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon10fb.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon10fb.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon10fb.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon10fb.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/flaticon/flaticon10fb.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-brands-400d41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-duotone-900d41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-light-300d41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-regular-400d41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/fonts/fa-solid-900d41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/about/ab-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/about/ab-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/about/about-b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/about/c-icon-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/author/author-sm-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/404.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/banner-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/page-banner-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/page-banner-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/page-banner-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/sl-banner-sm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/banner/sl-banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/bg/about-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/bg/img-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/bg/img-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/bg/menu-item.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/blog-thumb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/incen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/news-author.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/p-author-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/p-author-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/p-author-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sm-b2-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/blog/sponsor-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/app_android.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/app_ios.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/brand/brand-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/cart/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/cart/shop-p-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/cart/shop-p-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/categorie/cat-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fp-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fpb-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fpb-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fpsm-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/fpsm-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/features-product/product-content-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/gallery/gal-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/location/location-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/location/location-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/location/location-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/location/location-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/logo/logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/logo/logo1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/payment/payment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-big-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-big-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/nav/product-nav-big-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/sm-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/product/tp-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-nav-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-nav-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-nav-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-nav-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-view-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-view-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-view-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/quick-view/quick-view-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/01-slide-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/01-slide-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/01-slide-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/02-slide-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/02-slide-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/02-slide-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/03-slide-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/03-slide-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/slider/03-slide-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/team/person-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/team/person-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/img/team/person-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/ajax-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/backtotop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/bootstrap-bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/countdown.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/counterup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/imagesloaded-pkgd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/isotope-pkgd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/magnific-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/meanmenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/nice-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/owl-carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/parallax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/swiper-bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/tweenmax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/ui-slider-range.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/vendor/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/vendor/waypoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/assets/js/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/blog-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/ch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/my-account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/popup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/product-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/shop-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/shop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dukamarket/wishlist.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,6 +19,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2CciHmUwRRj6CcYK0ky4gqSuOMn" />
@@ -354,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660205105350</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Login through single login form">
+      <created>1660501278734</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660501278734</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +127,18 @@
     <MESSAGE value="Add Doctor Review+Rating System" />
     <MESSAGE value="Add Doctor Review view button" />
     <MESSAGE value="Add name cannot be numeric +  solve add lab test  issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add name cannot be numeric +  solve add lab test  issue" />
+    <MESSAGE value="Login through single login form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login through single login form" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mainpage/views.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

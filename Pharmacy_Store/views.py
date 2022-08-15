@@ -32,6 +32,17 @@ def Pharmacies(request, id):
     paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
     page_number = request.GET.get('page')
     all_Medicine = paginator.get_page(page_number)
+    w = datetime.date(now())
+    for i in all_Medicine:
+        if w > i.Medicine_Expiry_date:
+            if not i.is_Expired:
+                i.is_Expired = True
+                i.is_Expired_soon = True
+                i.save()
+        elif w > i.Expiry_Alert_Date:
+            if not i.is_Expired:
+                i.is_Expired_soon = True
+                i.save()
 
     # book_Test = Book_Test.objects.all()
     # w = datetime.date(now())
@@ -87,8 +98,8 @@ def Pharmacies(request, id):
 def All_Medicines(request):
     labcity = Labcity.objects.all()
     labcitys = Labcity.objects.all()
-    Medicine_name = Add_New_Medicine.objects.filter(status="Active", is_Expired=False)
-    all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False).order_by('-id')
+    Medicine_name = Add_New_Medicine.objects.filter(status="Active", is_Expired=False, is_Expired_soon=False)
+    all_Medicines = Add_New_Medicine.objects.filter(status="Active", is_Expired=False, is_Expired_soon=False).order_by('-id')
     Customer = Patient.objects.all()
 
     paginator = Paginator(all_Medicines, 8)  # Show 5 contacts per page.
@@ -542,7 +553,9 @@ def view_Medicine_list(request):
             if not i.is_Expired:
                 i.is_Expired = True
                 i.save()
-    all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=False).order_by('-id')
+    all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active",
+                                                   is_Expired=False,
+                                                   is_Expired_soon=False).order_by('-id')
 
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine}
     return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
@@ -550,11 +563,11 @@ def view_Medicine_list(request):
 
 @Phy_middleware
 def Medicine_delete(request):
-    error_message = None
-    success = None
-    Py = request.session.get('Phy_id')
-    Current_pharmacy = Pharmacy.objects.get(id=Py)
-    all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=False).order_by('-id')
+    # error_message = None
+    # success = None
+    # Py = request.session.get('Phy_id')
+    # Current_pharmacy = Pharmacy.objects.get(id=Py)
+    # all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=False).order_by('-id')
     if request.method == 'POST':
         Data = request.POST
         name = Data.get('name')
@@ -566,13 +579,10 @@ def Medicine_delete(request):
         # return redirect(request, add_new_Medicine)
         return redirect(Medicine_delete)
 
+    return redirect(view_Medicine_list)
     # Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine,
-    #         'error_message': error_message, "success": success}
-    # return render(request, "Admin_site/view_test_list.html", Data)
-
-    Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine,
-            'error_message': error_message}
-    return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
+    #         'error_message': error_message}
+    # return render(request, "Pharmacy_Admin/View_Medicine_List.html", Data)
 
 
 @Phy_middleware
@@ -598,7 +608,7 @@ def update_Medicine(request):
 
         if Expiry_Date:
             date_time_obj = datetime.strptime(Expiry_Date, '%Y-%m-%d')
-            back_day = timedelta(days=14)
+            back_day = timedelta(days=30)
             Expiry_Alert_Date = date_time_obj - back_day
             Update_Medicine.Expiry_Alert_Date = Expiry_Alert_Date
             Update_Medicine.Medicine_Expiry_date = Expiry_Date
@@ -797,7 +807,13 @@ def view_Expired_Medicine_list(request):
         if w > i.Medicine_Expiry_date:
             if not i.is_Expired:
                 i.is_Expired = True
+                i.is_Expired_soon = True
                 i.save()
+        elif w > i.Expiry_Alert_Date:
+            if not i.is_Expired:
+                i.is_Expired_soon = True
+                i.save()
+
     all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, status="Active", is_Expired=True).order_by('-id')
 
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine}
@@ -808,9 +824,8 @@ def view_Expired_Medicine_list(request):
 def view_Expiry_Soon_Medicine_list(request):
     Py = request.session.get('Phy_id')
     Current_pharmacy = Pharmacy.objects.get(id=Py)
-    w = datetime.date(now())
     all_Medicine = Add_New_Medicine.objects.filter(Pharmacy=Py, is_Expired=False, status="Active",
-                                                   Expiry_Alert_Date__lt=w).order_by('-id')
+                                                   is_Expired_soon=True).order_by('-id')
 
     Data = {"Current_pharmacy": Current_pharmacy, 'all_Medicine': all_Medicine}
     return render(request, "Pharmacy_Admin/Medicine_Expiry_Soon.html", Data)

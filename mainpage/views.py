@@ -58,6 +58,11 @@ def mainindex(request):
         if w > i.Medicine_Expiry_date:
             if not i.is_Expired:
                 i.is_Expired = True
+                i.is_Expired_soon = True
+                i.save()
+        elif w > i.Expiry_Alert_Date:
+            if not i.is_Expired:
+                i.is_Expired_soon = True
                 i.save()
 
     Data = {'labcity': labcity, 'Customer': Customer,

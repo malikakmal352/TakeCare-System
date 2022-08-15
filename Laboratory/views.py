@@ -141,7 +141,13 @@ def lab_search(request):
                     'all_lab': all_lab, 'labcitys': labcitys,
                     'Customer': Customer
                     }
-            return redirect("Laboratory test list", id=lb)
+            data = {'Test_name': Test_name, 'labcity': labcity,
+                    'labs': labs, 'ser': ser, 'Labcitys': Labcitys,
+                    'all_lab': all_lab, 'labcitys': labcitys,
+                    'Customer': Customer
+                    }
+            return render(request, 'Search_via_test_name.html', data)
+            # return redirect("Laboratory test list", 400)
 
         else:
             data = {'Test_name': Test_name, 'labcity': labcity,

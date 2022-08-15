@@ -12,7 +12,7 @@ class PharmacyView(admin.ModelAdmin):
 
 class New_MedicineView(admin.ModelAdmin):
     list_display = ["Medicine_name", "Medicine_price", "Medicine_Expiry_date", "Total_Stock", "Pharmacy", "id",
-                    "is_Expired"]
+                    "is_Expired", 'is_Expired_soon']
 
 
 class Medicine_Order_View(admin.ModelAdmin):

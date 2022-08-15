@@ -1993,8 +1993,8 @@ def ChangePassword_doctor(request, token):
             profile_obj = Doctors.objects.get(email=user_obj.email)
             profile_obj.forget_password_token = token
             profile_obj.save()
-            success_message = 'Your Password has been changed Now '
-            return render(request, 'doctor_login.html', {'success': success_message})
+            success = 'Your Password has been changed Now '
+            return render(request, 'Login.html', {'success': success})
         else:
             return render(request, 'change-password.html')
 
