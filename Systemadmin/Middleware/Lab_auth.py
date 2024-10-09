@@ -10,7 +10,6 @@ def Lab_middleware(get_response):
 
         response = get_response(request)
         return response
-
     return middleware
 
 
